@@ -1,10 +1,10 @@
-% !TeX program = txs:///arara
-% arara: pdflatex: {synctex: on, interaction: nonstopmode, shell: yes}
+% !TeX TS-program = txs:///latexmk | txs:///view-log | txs:///view-pdf | txs:///convert
+
 \documentclass{article}
 \usepackage[svgnames]{xcolor}
 \usepackage{tikz}
 
-\usepackage[paper=a3paper,landscape,paperwidth=60cm]{geometry}
+\usepackage[paperwidth=38cm,paperheight=32cm,margin=1cm]{geometry}
 
 \usepackage{bbding}
 
@@ -48,9 +48,9 @@
 }
 
 \newcommand{\addsunglasses}{
-	\draw[line width=3pt,color=black] (50,95) arc (190:370:20) ;
-	\path[draw=black,line width=3pt] (100,90) -- (130,100);
-	\path[fill=black, rotate=20] (116,56) ellipse (0.4cm and 0.4cm);
+	\draw[line width=3pt,color=black] (48,95) arc (190:370:20) ;
+	\path[draw=black,line width=3pt] (95,90) -- (130,100);
+	\path[fill=black, rotate=20] (111,58) ellipse (0.4cm and 0.4cm);
 	\path[fill=black, rotate=20] (80,60) ellipse (0.37cm and 0.37cm);
 }
 
