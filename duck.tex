@@ -34,6 +34,32 @@
 
 }
 
+\newcommand{\grumpyduck}[1]{%
+
+	\colorlet{duck}{#1}
+	\colorlet{eye}{Cornsilk}
+	\colorlet{pupil}{black}
+	\colorlet{bill}{orange}
+		
+	%body
+	\path[fill=duck] (51.2815,135.5394) .. controls (26.6859,139.7884) and (-12.5215,184.2616) .. (28.9411,223.8858) .. controls (70.4036,263.5099) and (286.2675,236.9673) .. (181.7701,108.1215) .. controls (93.7517,155.4266) and (123.9624,112.1537) .. (51.2815,135.5394) -- cycle;
+
+	%head
+	\path[fill=duck] (90,100) ellipse (1.4cm and 1.75cm);
+	
+	% duck's bill
+	\path[fill=bill, xshift=-11pt, xscale=1.1] (49.3866,102.7929) .. controls (70.9472,97.0244) and (70.9472,97.0244) .. (85.1826,120) .. controls (20,165) and (36.9082,113.0997) .. (49.3866,102.7929) -- cycle;
+	
+	% right eye
+	\path[fill=eye, rotate=20, xshift=-4pt, yshift=1pt] (112,58) ellipse (0.25cm and 0.35cm);
+	\path[fill=pupil, rotate=20, xshift=-4pt, yshift=1pt] (115,59) ellipse (0.1cm and 0.2cm);
+	
+	% left eye
+	\path[fill=eye, rotate=20] (78,62) ellipse (0.22cm and 0.32cm);
+	\path[fill=pupil, rotate=20] (81,63) ellipse (0.08cm and 0.18cm);
+
+}
+
 \newcommand{\addalien}{%
 	\draw[line width=3pt,color=YellowGreen] (110,62) -- (130,20);
 	\draw[line width=3pt,color=YellowGreen] (72,58) -- (60,15);
@@ -99,8 +125,15 @@
 	\draw[line width=6pt,color=white] (85,168.333) -- (80,176.666);
 }
 
+
+
 \begin{document}
 
+% grumpy
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+	\grumpyduck{Gold}
+\end{tikzpicture}
+%
 %Christian Hupfer
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
 	\duck{Gold}
@@ -117,7 +150,7 @@
 %
 %Men in black
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Wheat}
+	\grumpyduck{Wheat}
 	\addtshirt{white}
 	\addshirt{black}
 	\addtie{black}
@@ -125,15 +158,15 @@
 	\addsunglasses
 \end{tikzpicture}
 %
-% swimming
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\foreach \i in {1,...,100} {
-	   \pgfmathsetmacro{\x}{random(0,200)}%
-	   \pgfmathsetmacro{\y}{random(150,200)}%
-	   \pgftext[at=\pgfpoint{\x}{\y}, left, base]{\textcolor{blue!\i!black}{\rotatebox{90}{S}}}
-	}; 
-\end{tikzpicture}
+%% swimming
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+%	\duck{Gold}
+%	\foreach \i in {1,...,100} {
+%	   \pgfmathsetmacro{\x}{random(0,200)}%
+%	   \pgfmathsetmacro{\y}{random(150,200)}%
+%	   \pgftext[at=\pgfpoint{\x}{\y}, left, base]{\textcolor{blue!\i!black}{\rotatebox{90}{S}}}
+%	}; 
+%\end{tikzpicture}
 
 % ducklings
 \begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.6, xscale=0.6, inner sep=0pt, outer sep=0pt]
