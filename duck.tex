@@ -8,7 +8,6 @@
 \usepackage[paperwidth=38cm,paperheight=42cm,margin=1cm]{geometry}
 
 \usepackage{bbding}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %250 - ??
 
@@ -78,10 +77,10 @@
 }
 
 \newcommand{\addsunglasses}{
-	\draw[line width=3pt,color=black] (48,95) arc (190:370:20) ;
-	\path[draw=black,line width=3pt] (95,90) -- (130,100);
-	\path[fill=black, rotate=20] (111,58) ellipse (0.4cm and 0.4cm);
-	\path[fill=black, rotate=20] (80,60) ellipse (0.37cm and 0.37cm);
+	\draw[line width=2pt,color=black] (62,80) arc (267:297:20) ;
+	\path[draw=black,line width=2pt] (93,88) -- (130,100);
+	\path[draw=black,fill=black,line width=2pt, rotate=20] (107,58) ellipse (0.35cm and 0.35cm);
+	\path[draw=black,fill=black,line width=2pt, rotate=20] (78,61) ellipse (0.32cm and 0.32cm);
 }
 
 \newcommand{\addglasses}[1]{
@@ -144,9 +143,15 @@
 
 }
 
+\newcommand{\makeknuth}[1]{
+	\path[fill=#1,xshift=-4pt] (138.8464,101.5870) .. controls (147.4304,104.7122) and (153.7677,78.7304) .. (144.6396,63.4203) .. controls (115.7075,14.8940) and (56.8869,33.9125) .. (48.8131,81.8359) .. controls (50.7476,53.8151) and (95.0656,29.4120) .. (118.0836,46.0977) .. controls (152.0340,75.3088) and (108.4273,90.5126) .. (138.8464,101.5870) -- cycle;
+	
+}
+
 \newcommand{\addbook}[2]{
 		\path[fill=#1,rotate=20] (110,120) rectangle (150,180);
-		\node[rotate=-20, color=white] at (73,180)  {\makebox[2cm][c]{#2}};
+		\node[rotate=-20, color=white] at (73,180)  {%
+			\resizebox{1cm}{!}{#2}};
 }
 
 \newcommand{\addwater}[1]{
@@ -279,7 +284,18 @@
 	\duck{Gold!40!white}
 	\makeeinstein{gray!50!white}
 	\addglasses{brown!70!black}
+	\addbook{brown!70!black}{$E=mc^2$}
+\end{tikzpicture}
+%
+% Knuth
+\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+	\duck{Wheat}
+	\addtshirt{white!93!black}
+	\addshirt{DarkRed}
+	\makeknuth{gray!50!white}
+	\addglasses{brown!20!LightGray}
 	\addbook{brown!70!black}{\TeX}
 \end{tikzpicture}
+
 
 \end{document}
