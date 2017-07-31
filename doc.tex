@@ -1,0 +1,92 @@
+\documentclass{ltxdockit}
+\usepackage{btxdockit}
+
+\usepackage[T1]{fontenc}	
+\usepackage[utf8]{inputenc}		
+\usepackage[english]{babel}
+
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{hyperref}
+
+\usepackage{booktabs}
+\usepackage{microtype}
+
+\lstset{
+    basicstyle=\ttfamily,
+    keepspaces=true,
+    upquote=true,
+    frame=single,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
+}
+
+\KOMAoptions{numbers=noenddot}
+\addtokomafont{title}{\sffamily}
+\addtokomafont{paragraph}{\spotcolor}
+\addtokomafont{section}{\spotcolor}
+\addtokomafont{subsection}{\spotcolor}
+\addtokomafont{subsubsection}{\spotcolor}
+\addtokomafont{descriptionlabel}{\spotcolor}
+\setkomafont{caption}{\bfseries\sffamily\spotcolor}
+\setkomafont{captionlabel}{\bfseries\sffamily\spotcolor}
+
+\makeatletter
+\patchcmd{\paragraph}
+  {3.25ex \@plus1ex \@minus.2ex}{-3.25ex\@plus -1ex \@minus -.2ex}{}{}
+\patchcmd{\paragraph}{-1em}{1.5ex \@plus .2ex}{}{}
+\makeatother
+
+\titlepage{%
+  title={The \tikzducks Package},
+  subtitle={using ducks in tikz},
+  url={https://github.com/samcarter8/tikzducks},
+  author={samcarter},
+  email={sam.carter8 at aol.com},
+  revision={0.1},
+  date={\today}}
+
+\hypersetup{%
+  pdftitle={The tikzducks package},
+  pdfsubject={using ducks in tikz},
+  pdfauthor={samcarter},
+  pdfkeywords={tex, latex, tikz, ducks}
+}
+
+\usepackage{xspace}
+
+\newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
+
+
+\begin{document}
+
+\printtitlepage
+
+\section{Introduction}
+\label{intro}
+
+The \tikzducks package is a latex package for ducks to be used in \emph{tikz} pictures. This project originates from an answer of mine on TeX.Stackexchange (\url{https://tex.stackexchange.com/a/347458/36296}.
+
+This package is work in progress and will probably never be really finished as there is an infinite amount of things which could be added, therefore I would be happy to hear your feedback and ideas how to improve the package. The source code can be found on \url{https://github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it!
+
+\subsection{License}
+
+Copyright \textcopyright\ \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c \url{http://www.latex-project.org/lppl.txt}
+
+The shown example ducks are purely fictional characters and no copyright infringement is intended.
+
+\subsection{Acknowledgements}
+
+I would like to thank \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks -- \emph{Quack!}
+
+\section{Usage}
+
+The order in which additional items are added to the basic duck shape is important. If the duck should wear a t-shirt and eat ice cream, then the t-shirt has to be added first, otherwise it conceal the ice cream cone.
+ 
+\subsection{Body parts}
+
+\subsection{Accessoire}
+
+\section{Examples}
+
+\end{document}
+
