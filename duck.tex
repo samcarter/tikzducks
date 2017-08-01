@@ -8,121 +8,154 @@
 \usepackage[paperwidth=38cm,paperheight=42cm,margin=1cm]{geometry}
 
 \usepackage{bbding}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%250 - ??
+
+
+% convert Y: 250 - y
+% convert circles: 50/1.4*xcm
+% convert x: 1.1*x-11/0.8
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% combine ducks
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\duck}[1]{%
-
 	\colorlet{duck}{#1}
 	\colorlet{eye}{Cornsilk}
 	\colorlet{pupil}{black}
 	\colorlet{bill}{orange}
 		
-	%body
-	\path[fill=duck] (51.2815,135.5394) .. controls (26.6859,139.7884) and (-12.5215,184.2616) .. (28.9411,223.8858) .. controls (70.4036,263.5099) and (286.2675,236.9673) .. (181.7701,108.1215) .. controls (93.7517,155.4266) and (123.9624,112.1537) .. (51.2815,135.5394) -- cycle;
-
-	%head
-	\path[fill=duck] (90,100) ellipse (1.4cm and 1.75cm);
-	
-	% duck's bill
-	\path[fill=bill, xshift=-11pt, xscale=1.1] (49.3866,102.7929) .. controls (70.9472,97.0244) and (61.6632,119.6616) .. (95.1826,113) .. controls (20,165) and (36.9082,113.0997) .. (49.3866,102.7929) -- cycle;
-	
-	% right eye
-	\path[fill=eye, rotate=20, xshift=-4pt, yshift=1pt] (112,58) ellipse (0.25cm and 0.35cm);
-	\path[fill=pupil, rotate=20, xshift=-4pt, yshift=1pt] (115,59) ellipse (0.1cm and 0.2cm);
-	
-	% left eye
-	\path[fill=eye, rotate=20] (78,62) ellipse (0.22cm and 0.32cm);
-	\path[fill=pupil, rotate=20] (81,63) ellipse (0.08cm and 0.18cm);
+	\duckbody{duck}
+	\duckhead{duck}
+	\duckbill{bill}
+	\duckeyes{pupil}{eye}
 
 }
 
 \newcommand{\grumpyduck}[1]{%
-
 	\colorlet{duck}{#1}
 	\colorlet{eye}{Cornsilk}
 	\colorlet{pupil}{black}
 	\colorlet{bill}{orange}
 		
-	%body
-	\path[fill=duck] (51.2815,135.5394) .. controls (26.6859,139.7884) and (-12.5215,184.2616) .. (28.9411,223.8858) .. controls (70.4036,263.5099) and (286.2675,236.9673) .. (181.7701,108.1215) .. controls (93.7517,155.4266) and (123.9624,112.1537) .. (51.2815,135.5394) -- cycle;
+	\duckbody{duck}
+	\duckhead{duck}
+	\duckgrummpybill{bill}
+	\duckeyes{pupil}{eye}
+}
 
-	%head
-	\path[fill=duck] (90,100) ellipse (1.4cm and 1.75cm);
-	
-	% duck's bill
-	\path[fill=bill, xshift=-11pt, xscale=1.1] (49.3866,102.7929) .. controls (70.9472,97.0244) and (70.9472,97.0244) .. (85.1826,120) .. controls (20,165) and (36.9082,113.0997) .. (49.3866,102.7929) -- cycle;
-	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% body parts
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\duckbody}[1]{%
+	\path[fill=#1] (51.28,114.46) .. controls (26.69,110.21) and (-12.52,65.74) .. (28.94,26.11) .. controls (70.40,-13.51) and (286.27,13.03) .. (181.77,141.88) .. controls (93.75,94.57) and (123.96,137.85) .. (51.28,114.46) -- cycle;
+}
+
+\newcommand{\duckhead}[1]{%
+	\path[fill=#1] (90,150) ellipse (50 and 62.5);
+}
+
+\newcommand{\duckbill}[1]{%
+	\path[fill=#1] (40.56,147.21) .. controls (64.29,152.98) and (54.08,130.34) .. (90.95,137) .. controls (8.25,85) and (26.85,136.90) .. (40.58,147.21) -- cycle;
+}
+
+\newcommand{\duckgrummpybill}[1]{%
+	\path[fill=#1] (40.58,147.21) .. controls (64.29,152.98) and (64.29,152.98) .. (79.95,130) .. controls (8.25,85) and (26.85,136.90) .. (40.58,147.21) -- cycle;
+}
+
+\newcommand{\duckeyes}[2]{%
 	% right eye
-	\path[fill=eye, rotate=20, xshift=-4pt, yshift=1pt] (112,58) ellipse (0.25cm and 0.35cm);
-	\path[fill=pupil, rotate=20, xshift=-4pt, yshift=1pt] (115,59) ellipse (0.1cm and 0.2cm);
+	\path[fill=#2, rotate=-20] (23,176.75) ellipse (8.93 and 12.5);
+	\path[fill=#1, rotate=-20] (26,175.75) ellipse (3.57 and 7.14);
 	
 	% left eye
-	\path[fill=eye, rotate=20] (78,62) ellipse (0.22cm and 0.32cm);
-	\path[fill=pupil, rotate=20] (81,63) ellipse (0.08cm and 0.18cm);
-
+	\path[fill=#2, rotate=-20] (-6,174) ellipse (7.86 and 11.43);
+	\path[fill=#1, rotate=-20] (-3,173) ellipse (2.86 and 6.43);
 }
 
-\newcommand{\addalien}{%
-	\draw[line width=3pt,color=YellowGreen] (110,62) -- (130,20);
-	\draw[line width=3pt,color=YellowGreen] (72,58) -- (60,15);
-	\path[fill=YellowGreen] (130,20) circle (0.2cm);
-	\path[fill=YellowGreen] (60,15) circle (0.2cm);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hair styles
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\addshorthair}[1]{
+	\path[fill=#1] (139.47,141.75) .. controls (145.46,145.18) and (146.99,165.66) .. (143.43,179.92) .. controls (125.28,250.33) and (23.39,227.10) .. (41.51,159.07) .. controls (43.45,187.09) and (74.21,209.99) .. (94.94,190.54) .. controls (122.41,164.76) and (133.16,138.14) .. (139.47,141.75) -- cycle;
 }
 
-\newcommand{\addhat}[1]{%
-	\path[fill=#1] (90,55) ellipse (1.3cm and 0.25cm);
-	\path[fill=#1] (90,30) ellipse (0.7cm and 0.2cm);
-	\path[fill=#1] (115,30) rectangle (65,55);
+\newcommand{\addlonghair}[1]{%
+	\path[fill=#1] (145.08,75.65) .. controls (151.46,78.88) and (158.54,82.16) .. (162.47,88.31) .. controls (158.59,88.47) and (147.26,94.57) .. (155.87,97.06) .. controls (163.17,96.85) and (170.16,100.46) .. (173.14,107.34) .. controls (179.31,116.60) and (166.16,111.76) .. (162.77,115.66) .. controls (168.53,117.41) and (178.40,118.29) .. (181.23,122.44) .. controls (170.22,124.88) and (156.88,126.63) .. (150.63,137.39) .. controls (146.19,151.43) and (146.96,166.49) .. (143.40,180.76) .. controls (125.24,251.17) and (23.35,227.94) .. (41.48,159.91) .. controls (43.41,187.93) and (66.29,211.30) .. (90.11,195.78) .. controls (124.27,173.82) and (133.50,142.14) .. (109.05,106.10) .. controls (108.97,101.09) and (111.03,91.66) .. (118.05,86.70) .. controls (125.07,81.74) and (135.03,78.53) .. (145.08,75.65) 
+	-- cycle;
 }
 
-\newcommand{\addsunglasses}{
-	\draw[line width=2pt,color=black] (62,80) arc (267:297:20) ;
-	\path[draw=black,line width=2pt] (93,88) -- (130,100);
-	\path[draw=black,fill=black,line width=2pt, rotate=20] (107,58) ellipse (0.35cm and 0.35cm);
-	\path[draw=black,fill=black,line width=2pt, rotate=20] (78,61) ellipse (0.32cm and 0.32cm);
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% clothing
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\addglasses}[1]{
-	\draw[line width=2pt,color=#1] (62,80) arc (267:297:20) ;
-	\path[draw=#1,line width=2pt] (93,88) -- (130,100);
-	\path[draw=#1,line width=2pt, rotate=20] (107,58) ellipse (0.35cm and 0.35cm);
-	\path[draw=#1,line width=2pt, rotate=20] (78,61) ellipse (0.32cm and 0.32cm);
-}
-
-\newcommand{\addicecream}[3]{
-	\path[draw=Sienna,fill=Goldenrod,line width=1pt,yshift=50pt,rotate=20,xshift=50pt] 
-	(45,60)--(60,120)--(75,60);
-	\path[draw=Sienna, fill=Goldenrod, rotate=20,line width=1pt] (144,118) ellipse (0.4cm and 0.25cm);
-	\path[fill=#1, rotate=20] (138,116) circle (0.3cm);
-	\path[fill=#2, rotate=20] (148,116) circle (0.3cm);
-	\path[fill=#3, rotate=20] (142,102) circle (0.3cm);
-}
-
-\newcommand{\addunicorn}{
-	\path[draw=VioletRed,fill=Pink,line width=1pt,yshift=20pt,rotate=-25,xshift=0pt] 
-	(50,60)--(60,20)--(70,60);
-}
-
-\newcommand{\addhair}[1]{%
-	\path[fill=#1, xshift=-5pt] (151.3277,174.3473) .. controls (157.7099,171.1213) and (164.7938,167.8644) .. (168.7230,161.6896) .. controls (164.8427,161.5316) and (153.5102,155.4255) .. (162.1164,152.9395) .. controls (169.4207,153.1460) and (176.4092,149.5358) .. (179.3920,142.6587) .. controls (185.5577,133.4026) and (172.4051,138.2448) .. (169.0163,134.3455) .. controls (174.7801,132.5948) and (184.6532,131.7138) .. (187.4798,127.5635) .. controls (176.4675,125.1191) and (163.1258,123.3733) .. (156.8817,112.6068) .. controls (152.4387,98.5734) and (153.2098,83.5059) .. (149.6492,69.2411) .. controls (131.4926,-1.1678) and (29.6020,22.0627) .. (47.7294,90.0940) .. controls (49.6639,62.0732) and (72.5401,38.6998) .. (96.3583,54.2220) .. controls (130.5162,76.1752) and (139.7469,117.8581) .. (115.3043,143.8986) .. controls (115.2213,148.9109) and (117.2762,158.3403) .. (124.2981,163.2993) .. controls (131.3200,168.2584) and (141.2814,171.4676) .. (151.3277,174.3473) -- cycle;
+\newcommand{\addtshirt}[1]{
+	\path[fill=#1] (49,114.46) .. controls (26.69,110.21) and (-12.52,65.74) .. (28.94,26.11) .. controls (70.40,-13.51) and (286.27,13.03) .. (181.77,141.88) .. controls (93.75,97.57) and (123.96,127.85) .. (59,100) -- cycle;
 }
 
 \newcommand{\addshirt}[1]{%
-	\path[fill=#1] (50,135.5394) .. controls (26.6859,139.7884) and (-12.5215,184.2616) .. (28.9411,223.8858) .. controls (70.4036,263.5099) and (286.2675,236.9673) .. (181.7701,108.1215) .. controls (93.7517,155.4266) and (123.9624,112.1537) .. (51.2815,180) -- cycle;
+	\path[fill=#1] (50,114.4606) .. controls (26.6859,110.2116) and (-12.5215,65.7384) .. (28.9411,26.1142) .. controls (70.4036,-13.5099) and (286.2675,13.0327) .. (181.7701,141.8785) .. controls (93.7517,94.5734) and (123.9624,137.8463) .. (51.2815,70) -- cycle;
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Accessories
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\addalien}[1]{%
+	\draw[line width=3pt,color=#1] (100,183) -- (120,230);
+	\draw[line width=3pt,color=#1] (65,192) -- (60,235);
+	\path[fill=#1] (120,230) circle (7);
+	\path[fill=#1] (60,235) circle (7);
+}
+
+\newcommand{\addhat}[1]{%
+	\path[fill=#1] (90,195) ellipse (46 and 8.93);
+	\path[fill=#1] (90,220) ellipse (25 and 7.14);
+	\path[fill=#1] (115,220) rectangle (65,195);
+}
+
+\newcommand{\addunicorn}{
+	\path[draw=VioletRed,fill=Pink,line width=1pt,rotate=25] 
+	(150,143.75)--(160,183.75)--(170,143.75);
+}
+
+\newcommand{\addsunglasses}[1]{
+	\path[draw=#1,line width=2pt] (93,162) -- (130,150);
+	\draw[line width=2pt,color=#1] (73,167) arc (65:92:20);
+	\path[draw=#1,fill=black,line width=2pt,rotate=-20] (23,176.75) circle (12.5);
+	\path[draw=#1,fill=black,line width=2pt,rotate=-20] (-6,174) circle (11.43);
+}
+
+\newcommand{\addglasses}[1]{
+	\path[draw=#1,line width=2pt] (93,162) -- (130,150);
+	\draw[line width=2pt,color=#1] (73,167) arc (65:92:20);
+	\path[draw=#1,line width=2pt,rotate=-20] (23,176.75) circle (12.5);
+	\path[draw=#1,line width=2pt,rotate=-20] (-6,174) circle (11.43);
 }
 
 \newcommand{\addtie}[1]{
-	\draw[line width=10pt,color=#1] (60,150) -- (50,190);
+	\draw[line width=10pt,color=#1] (60,100) -- (50,60);
 }
 
-\newcommand{\addtshirt}[1]{
-	\path[fill=#1] (50,135.5394) .. controls (26.6859,139.7884) and (-12.5215,184.2616) .. (28.9411,223.8858) .. controls (70.4036,263.5099) and (286.2675,236.9673) .. (181.7701,108.1215) .. controls (93.7517,155.4266) and (123.9624,122.1537) .. (59,150) -- cycle;
-}
 
-\newcommand{\addshorthair}[1]{
-	\path[fill=#1, xshift=-5pt] (145.7190,108.2466) .. controls (151.7052,104.8240) and (153.2448,84.3447) .. (149.6842,70.0799) .. controls (131.5276,-0.3291) and (29.6371,22.9015) .. (47.7644,90.9328) .. controls (49.6989,62.9120) and (80.4610,40.0060) .. (101.1924,59.4599) .. controls (128.6626,85.2375) and (139.4074,111.8552) .. (145.7190,108.2466) -- cycle;
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
 
 \newcommand{\addwizzard}{
 	\path[fill=BlueViolet!50!Pink,line width=1pt,yshift=-40pt,rotate=5,xshift=32pt] 
@@ -134,6 +167,24 @@
 	\draw[line width=6pt,color=black] (90,160) -- (60,210);
 	\draw[line width=6pt,color=white] (85,168.333) -- (80,176.666);
 }
+
+
+
+
+
+
+
+
+\newcommand{\addicecream}[3]{
+	\path[draw=Sienna,fill=Goldenrod,line width=1pt,yshift=50pt,rotate=20,xshift=50pt] 
+	(45,60)--(60,120)--(75,60);
+	\path[draw=Sienna, fill=Goldenrod, rotate=20,line width=1pt] (144,118) ellipse (0.4cm and 0.25cm);
+	\path[fill=#1, rotate=20] (138,116) circle (0.3cm);
+	\path[fill=#2, rotate=20] (148,116) circle (0.3cm);
+	\path[fill=#3, rotate=20] (142,102) circle (0.3cm);
+}
+
+
 
 \newcommand{\makeeinstein}[1]{
 	\path[fill=#1,xshift=-4pt] (24.7738,59.7679) .. controls (31.3318,44.0108) and (53.1939,44.5256) .. (52.1285,41.2094) .. controls (51.4718,28.9400) and (30.1562,26.0780) .. (30.1562,26.0780) .. controls (48.5184,20.6686) and (79.2723,56.9617) .. (62.4298,11.1490) .. controls (65.1702,13.6709) and (88.0663,32.6096) .. (85.8201,7.5499) .. controls (87.7073,21.1456) and (96.9496,45.9959) .. (104.3286,23.2724) .. controls (113.1425,-15.9325) and (101.8773,49.6572) .. (138.4988,13.8484) .. controls (141.5713,17.0755) and (121.2714,39.5689) .. (139.2365,36.1290) .. controls (136.0271,66.8833) and (155.4874,23.7659) .. (155.4874,23.7659) .. controls (155.4874,23.7659) and (151.7518,45.0675) .. (147.8705,54.3986) .. controls (147.8705,54.3986) and (173.2987,55.3029) .. (176.7812,61.7670) .. controls (124.2612,69.4624) and (206.6010,77.2343) .. (154.2298,77.2507) .. controls (158.6628,83.1536) and (135.1295,89.9115) .. (169.9992,90.5427) .. controls (93.3592,92.0258) and (132.6373,57.7941) .. (94.5654,45.5826) .. controls (60.1628,40.4228) and (57.2813,64.7295) .. (51.9497,70.3679) .. controls (53.2460,53.9344) and (41.0100,59.0530) .. (24.7738,59.7679) -- cycle;
@@ -166,121 +217,121 @@
 
 \begin{document}
 
-% grumpy
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\grumpyduck{Gold}
-\end{tikzpicture}
+%% normal
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%\end{tikzpicture}
 %
-%Christian Hupfer
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\addwizzard
-\end{tikzpicture}
+%% grumpy
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\grumpyduck{Gold}
+%\end{tikzpicture}
+%
+%% alien duck
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%	\addalien{LimeGreen}
+%\end{tikzpicture}
 %
 % short hairs
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Wheat}
-	\addtshirt{LightBlue!50!white}
-	\addshirt{LightSlateGrey}
-	\addshorthair{brown!50!Grey}
-\end{tikzpicture}
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Wheat}
+%	\addtshirt{LightBlue!50!white}
+%	\addshirt{LightSlateGrey}
+%	\addshorthair{brown!50!Grey}
+%\end{tikzpicture}
 %
 %Men in black
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\grumpyduck{Wheat}
-	\addtshirt{white}
-	\addshirt{black}
-	\addtie{black}
-	\addhat{black}
-	\addsunglasses
-\end{tikzpicture}
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\grumpyduck{Wheat}
+%	\addtshirt{white}
+%	\addshirt{black}
+%	\addtie{black}
+%	\addhat{black}
+%	\addsunglasses{black}
+%\end{tikzpicture}
 %
-
-% ducklings
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-0.6, xscale=0.6, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\begin{scope}[xshift=300pt, scale=.3, yshift=400pt]
-		\duck{Gold}
-	\end{scope}
-	\begin{scope}[xshift=180pt, scale=.3, yshift=350pt]
-		\duck{Gold}
-	\end{scope}
-	\begin{scope}[xshift=240pt, scale=.3, yshift=450pt]
-		\duck{Gold}
-	\end{scope}		
-\end{tikzpicture}
+%
+%% ducklings
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt, scale=0.6]
+%	\duck{Gold}
+%	\begin{scope}[xshift=300pt, scale=.3, yshift=250pt]
+%		\duck{Gold}
+%	\end{scope}
+%	\begin{scope}[xshift=180pt, scale=.3, yshift=150pt]
+%		\duck{Gold}
+%	\end{scope}
+%	\begin{scope}[xshift=240pt, scale=.3, yshift=50pt]
+%		\duck{Gold}
+%	\end{scope}		
+%\end{tikzpicture}
 %
 % samcarter
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Wheat!95!red}
-	\addshirt{MidnightBlue}
-	\addhair{OrangeRed!50!Brown}
-\end{tikzpicture}
-%
-% hair
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\addhair{SeaGreen}
-\end{tikzpicture}
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Wheat!95!red}
+%	\addshirt{MidnightBlue}
+%	\addlonghair{OrangeRed!50!Brown}
+%\end{tikzpicture}
+
+%% hair
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%	\addlonghair{SeaGreen}
+%\end{tikzpicture}
 %
 % unicorn
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Pink}
-	\addhair{MediumVioletRed}
-	\addunicorn
-\end{tikzpicture}
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Pink}
+%	\addlonghair{MediumVioletRed}
+%	\addunicorn
+%\end{tikzpicture}
+%
+% hat duck
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%	\addhat{SaddleBrown}
+%\end{tikzpicture}
+%
+% sunglasses
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%	\addsunglasses{black!50!brown}
+%\end{tikzpicture}
+%
+% normal duck
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{Gold}
+%\end{tikzpicture}
+%
+% blue duck
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\duck{SteelBlue}
+%\end{tikzpicture}
+%
+% Brazil colour duck for Paulo
+%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+%	\definecolor{brazilgreen}{RGB}{0,155,58}
+%	\definecolor{brazilyellow}{RGB}{254,223,0}
+%	\definecolor{brazilblue}{RGB}{0,39,118}
+%	\duck{brazilyellow}
+%	\addshirt{brazilblue}
+%	\addshorthair{brazilgreen}
+%\end{tikzpicture}
 
 % icecream
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.80pt]
 	\duck{Gold}
 	\addicecream{Wheat}{Plum}{Chocolate}
 \end{tikzpicture}
-%
-% sunglasses
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\addsunglasses
-\end{tikzpicture}
-%
-% normal duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-\end{tikzpicture}
-% blue duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{SteelBlue}
-\end{tikzpicture}
 
-% alien duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\addalien
-\end{tikzpicture}
-%
-% hat duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\duck{Gold}
-	\addhat{SaddleBrown}
-\end{tikzpicture}
-%
 % swimming
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.80pt]
 	\duck{Gold}
 	\addwater{blue!50!cyan} 
 \end{tikzpicture}
-%
-% Brazil colour duck for Paulo
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
-	\definecolor{brazilgreen}{RGB}{0,155,58}
-	\definecolor{brazilyellow}{RGB}{254,223,0}
-	\definecolor{brazilblue}{RGB}{0,39,118}
-	\duck{brazilyellow}
-	\addshirt{brazilblue}
-	\addshorthair{brazilgreen}
-\end{tikzpicture}
 
 % prof. van duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.80pt]
 	\duck{Gold!40!white}
 	\makeeinstein{gray!50!white}
 	\addglasses{brown!70!black}
@@ -288,7 +339,7 @@
 \end{tikzpicture}
 %
 % Knuth
-\begin{tikzpicture}[y=0.80pt, x=0.80pt, yscale=-1.000000, xscale=1.000000, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.80pt]
 	\duck{Wheat}
 	\addtshirt{white!93!black}
 	\addshirt{DarkRed}
@@ -297,5 +348,10 @@
 	\addbook{brown!70!black}{\TeX}
 \end{tikzpicture}
 
+% for the counter wizard Christian Hupfer
+\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+	\duck{Gold}
+	\addwizzard
+\end{tikzpicture}
 
 \end{document}
