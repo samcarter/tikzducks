@@ -1,18 +1,14 @@
-% !TeX TS-program = txs:///latexmk | txs:///view-log | txs:///view-pdf | txs:///convert
+\ProvidesPackage{tikzducks}
 
-\documentclass{article}
-\usepackage[svgnames]{xcolor}
-\usepackage{tikz}
+\RequirePackage[svgnames]{xcolor}
+\RequirePackage{tikz}
 \usetikzlibrary{decorations.pathmorphing}
 
-\usepackage[paperwidth=38cm,paperheight=42cm,margin=1cm]{geometry}
-
-\usepackage{bbding}
-
-
-% convert Y: 250 - y
-% convert circles: 50/1.4*xcm
-% convert x: 1.1*x-11/0.8
+% Conversion of images exported from inkscape
+% used for the complex shapes like the hair styles
+% inverted y scale: 250 - y
+% convert cm to whatever unit I use: 50/1.4*cm
+% scale and shift x: 1.1*x-11/0.8 [xscale=1.1, xshift=-11pt]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -20,6 +16,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%1: skin colour
 \newcommand{\duck}[1]{%
 	\colorlet{duck}{#1}
 	\colorlet{eye}{Cornsilk}
@@ -33,6 +30,7 @@
 
 }
 
+%1: skin colour
 \newcommand{\grumpyduck}[1]{%
 	\colorlet{duck}{#1}
 	\colorlet{eye}{Cornsilk}
@@ -51,22 +49,28 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%1: skin colour
 \newcommand{\duckbody}[1]{%
 	\path[fill=#1] (51.28,114.46) .. controls (26.69,110.21) and (-12.52,65.74) .. (28.94,26.11) .. controls (70.40,-13.51) and (286.27,13.03) .. (181.77,141.88) .. controls (93.75,94.57) and (123.96,137.85) .. (51.28,114.46) -- cycle;
 }
 
+%1: skin colour
 \newcommand{\duckhead}[1]{%
 	\path[fill=#1] (90,150) ellipse (50 and 62.5);
 }
 
+%1: bill colour
 \newcommand{\duckbill}[1]{%
 	\path[fill=#1] (40.56,147.21) .. controls (64.29,152.98) and (54.08,130.34) .. (90.95,137) .. controls (8.25,85) and (26.85,136.90) .. (40.58,147.21) -- cycle;
 }
 
+%1: bill colour
 \newcommand{\duckgrummpybill}[1]{%
 	\path[fill=#1] (40.58,147.21) .. controls (64.29,152.98) and (64.29,152.98) .. (79.95,130) .. controls (8.25,85) and (26.85,136.90) .. (40.58,147.21) -- cycle;
 }
 
+%1: pupile colour
+%2: eye colour
 \newcommand{\duckeyes}[2]{%
 	% right eye
 	\path[fill=#2, rotate=-20] (23,176.75) ellipse (8.93 and 12.5);
@@ -83,13 +87,31 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%1: hair colour
 \newcommand{\addshorthair}[1]{
 	\path[fill=#1] (139.47,141.75) .. controls (145.46,145.18) and (146.99,165.66) .. (143.43,179.92) .. controls (125.28,250.33) and (23.39,227.10) .. (41.51,159.07) .. controls (43.45,187.09) and (74.21,209.99) .. (94.94,190.54) .. controls (122.41,164.76) and (133.16,138.14) .. (139.47,141.75) -- cycle;
 }
 
+%1: hair colour
 \newcommand{\addlonghair}[1]{%
 	\path[fill=#1] (145.08,75.65) .. controls (151.46,78.88) and (158.54,82.16) .. (162.47,88.31) .. controls (158.59,88.47) and (147.26,94.57) .. (155.87,97.06) .. controls (163.17,96.85) and (170.16,100.46) .. (173.14,107.34) .. controls (179.31,116.60) and (166.16,111.76) .. (162.77,115.66) .. controls (168.53,117.41) and (178.40,118.29) .. (181.23,122.44) .. controls (170.22,124.88) and (156.88,126.63) .. (150.63,137.39) .. controls (146.19,151.43) and (146.96,166.49) .. (143.40,180.76) .. controls (125.24,251.17) and (23.35,227.94) .. (41.48,159.91) .. controls (43.41,187.93) and (66.29,211.30) .. (90.11,195.78) .. controls (124.27,173.82) and (133.50,142.14) .. (109.05,106.10) .. controls (108.97,101.09) and (111.03,91.66) .. (118.05,86.70) .. controls (125.07,81.74) and (135.03,78.53) .. (145.08,75.65) 
 	-- cycle;
+}
+
+%1: hair colour
+\newcommand{\addcrazyhair}[1]{%
+	\path[fill=#1] (19.7738,190.2321) .. controls (26.3318,205.9892) and (48.1939,205.4744) .. (47.1285,208.7906) .. controls (46.4718,221.06) and (25.1562,223.922) .. (25.1562,223.922) .. controls (43.5184,229.3314) and (74.2723,193.0383) .. (57.4298,238.851) .. controls (60.1702,236.3291) and (83.0663,217.3904) .. (80.8201,242.4501) .. controls (82.7073,228.8544) and (91.9496,204.0041) .. (99.3286,226.7276) .. controls (108.1425,265.9325) and (96.8773,200.3428) .. (133.4988,236.1516) .. controls (136.5713,232.9245) and (	116.2714,210.4311) .. (134.2365,213.871) .. controls (	131.0271,183.1167) and (150.4874,226.2341) .. (150.4874,226.2341) .. controls (150.4874,226.2341) and (146.7518,204.9325) .. (142.8705,195.6014) .. controls (142.8705,195.6014) and (168.2987,194.6971) .. (171.7812,188.233) .. controls (119.2612,180.5376) and (201.601,172.7657) .. (149.2298,172.7493) .. controls (153.6628,166.8464) and (130.1295,160.0885) .. (164.9992,159.4573) .. controls (88.3592,157.9742) and (127.6373,192.2059) .. (89.5654,204.4174) .. controls (55.1628,209.5772) and (52.2813,185.2705) .. (46.9497,179.6321) .. controls (48.246,196.0656) and (36.01,190.947) .. (19.7738,190.2321) -- cycle;
+}
+
+%1: hair colour
+\newcommand{\addrecedinghair}[1]{%
+	\path[fill=#1] (138.8464,101.5870) .. controls (147.4304,104.7122) and (153.7677,78.7304) .. (144.6396,63.4203) .. controls (115.7075,14.8940) and (56.8869,33.9125) .. (48.8131,81.8359) .. controls (50.7476,53.8151) and (95.0656,29.4120) .. (118.0836,46.0977) .. controls (152.0340,75.3088) and (108.4273,90.5126) .. (138.8464,101.5870) -- cycle;
+}
+
+%1: hair colour
+\newcommand{\addeyebrow}[1]{%
+	\draw[line width=5pt,color=#1,line cap=round] (96,170) -- (168,73);
+	\draw[line width=5pt,color=#1,line cap=round] (50,181) -- (60,182);
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,11 +120,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%1: fabric colour
 \newcommand{\addtshirt}[1]{
 	\path[fill=#1] (49,114.46) .. controls (26.69,110.21) and (-12.52,65.74) .. (28.94,26.11) .. controls (70.40,-13.51) and (286.27,13.03) .. (181.77,141.88) .. controls (93.75,97.57) and (123.96,127.85) .. (59,100) -- cycle;
 }
 
-\newcommand{\addshirt}[1]{%
+%1: fabric colour
+\newcommand{\addjacket}[1]{%
 	\path[fill=#1] (50,114.4606) .. controls (26.6859,110.2116) and (-12.5215,65.7384) .. (28.9411,26.1142) .. controls (70.4036,-13.5099) and (286.2675,13.0327) .. (181.7701,141.8785) .. controls (93.7517,94.5734) and (123.9624,137.8463) .. (51.2815,70) -- cycle;
 }
 
@@ -112,6 +136,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%1: antennae colour
 \newcommand{\addalien}[1]{%
 	\draw[line width=3pt,color=#1] (100,183) -- (120,230);
 	\draw[line width=3pt,color=#1] (65,192) -- (60,235);
@@ -119,24 +144,29 @@
 	\path[fill=#1] (60,235) circle (7);
 }
 
+%1: fabric colour
 \newcommand{\addhat}[1]{%
 	\path[fill=#1] (90,195) ellipse (46 and 8.93);
 	\path[fill=#1] (90,220) ellipse (25 and 7.14);
 	\path[fill=#1] (115,220) rectangle (65,195);
 }
 
-\newcommand{\addunicorn}{
-	\path[draw=VioletRed,fill=Pink,line width=1pt,rotate=25] 
+%1: hair colour, fure will be 50% lighter
+\newcommand{\addunicorn}[1]{
+	\path[draw=#1,fill=#1!50!white,line width=1pt,rotate=25] 
 	(150,143.75)--(160,183.75)--(170,143.75);
 }
 
-\newcommand{\addsunglasses}[1]{
+%1: frame colour
+%2: glass colour
+\newcommand{\addsunglasses}[2]{
 	\path[draw=#1,line width=2pt] (93,162) -- (130,150);
 	\draw[line width=2pt,color=#1] (73,167) arc (65:92:20);
-	\path[draw=#1,fill=black,line width=2pt,rotate=-20] (23,176.75) circle (12.5);
-	\path[draw=#1,fill=black,line width=2pt,rotate=-20] (-6,174) circle (11.43);
+	\path[draw=#1,fill=#2,line width=2pt,rotate=-20] (23,176.75) circle (12.5);
+	\path[draw=#1,fill=#2,line width=2pt,rotate=-20] (-6,174) circle (11.43);
 }
 
+%1: frame colour
 \newcommand{\addglasses}[1]{
 	\path[draw=#1,line width=2pt] (93,162) -- (130,150);
 	\draw[line width=2pt,color=#1] (73,167) arc (65:92:20);
@@ -144,214 +174,28 @@
 	\path[draw=#1,line width=2pt,rotate=-20] (-6,174) circle (11.43);
 }
 
+%1: fabric colour
 \newcommand{\addtie}[1]{
 	\draw[line width=10pt,color=#1] (60,100) -- (50,60);
 }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% some wrapper for likly combinations of attributes
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
-
-
-\newcommand{\addwizzard}{
-	\path[fill=BlueViolet!50!Pink,line width=1pt,yshift=-40pt,rotate=5,xshift=32pt] 
-	(20,100)--(60,0)--(100,100);
-	\pgftext[at=\pgfpoint{71}{-15}, left, base]{\color{Gold}\EightStarBold}
-	\pgftext[at=\pgfpoint{63}{0}, left, base]{\color{Gold}\EightStarBold~\EightStarBold}
-	\pgftext[at=\pgfpoint{56}{15}, left, base]{\color{Gold}\EightStarBold~\EightStarBold~\EightStarBold}
-	\pgftext[at=\pgfpoint{56}{30}, left, base]{\color{Gold}\EightStarBold~\EightStarBold~\EightStarBold}
-	\draw[line width=6pt,color=black] (90,160) -- (60,210);
-	\draw[line width=6pt,color=white] (85,168.333) -- (80,176.666);
+%1: hair colour
+\newcommand{\makeeinstein}[1]{%
+	\addcrazyhair{#1}
+	\addeyebrow{#1}
 }
 
-
-
-
-
-
-
-
-\newcommand{\addicecream}[3]{
-	\path[draw=Sienna,fill=Goldenrod,line width=1pt,yshift=50pt,rotate=20,xshift=50pt] 
-	(45,60)--(60,120)--(75,60);
-	\path[draw=Sienna, fill=Goldenrod, rotate=20,line width=1pt] (144,118) ellipse (0.4cm and 0.25cm);
-	\path[fill=#1, rotate=20] (138,116) circle (0.3cm);
-	\path[fill=#2, rotate=20] (148,116) circle (0.3cm);
-	\path[fill=#3, rotate=20] (142,102) circle (0.3cm);
-}
-
-
-
-\newcommand{\makeeinstein}[1]{
-	\path[fill=#1,xshift=-4pt] (24.7738,59.7679) .. controls (31.3318,44.0108) and (53.1939,44.5256) .. (52.1285,41.2094) .. controls (51.4718,28.9400) and (30.1562,26.0780) .. (30.1562,26.0780) .. controls (48.5184,20.6686) and (79.2723,56.9617) .. (62.4298,11.1490) .. controls (65.1702,13.6709) and (88.0663,32.6096) .. (85.8201,7.5499) .. controls (87.7073,21.1456) and (96.9496,45.9959) .. (104.3286,23.2724) .. controls (113.1425,-15.9325) and (101.8773,49.6572) .. (138.4988,13.8484) .. controls (141.5713,17.0755) and (121.2714,39.5689) .. (139.2365,36.1290) .. controls (136.0271,66.8833) and (155.4874,23.7659) .. (155.4874,23.7659) .. controls (155.4874,23.7659) and (151.7518,45.0675) .. (147.8705,54.3986) .. controls (147.8705,54.3986) and (173.2987,55.3029) .. (176.7812,61.7670) .. controls (124.2612,69.4624) and (206.6010,77.2343) .. (154.2298,77.2507) .. controls (158.6628,83.1536) and (135.1295,89.9115) .. (169.9992,90.5427) .. controls (93.3592,92.0258) and (132.6373,57.7941) .. (94.5654,45.5826) .. controls (60.1628,40.4228) and (57.2813,64.7295) .. (51.9497,70.3679) .. controls (53.2460,53.9344) and (41.0100,59.0530) .. (24.7738,59.7679) -- cycle;
-	
-	\draw[line width=5pt,color=#1,line cap=round] (96,80) -- (82,73);
-	\draw[line width=5pt,color=#1,line cap=round] (50,69) -- (60,68);
-
-}
-
-\newcommand{\makeknuth}[1]{
-	\path[fill=#1,xshift=-4pt] (138.8464,101.5870) .. controls (147.4304,104.7122) and (153.7677,78.7304) .. (144.6396,63.4203) .. controls (115.7075,14.8940) and (56.8869,33.9125) .. (48.8131,81.8359) .. controls (50.7476,53.8151) and (95.0656,29.4120) .. (118.0836,46.0977) .. controls (152.0340,75.3088) and (108.4273,90.5126) .. (138.8464,101.5870) -- cycle;
-	
-}
-
-\newcommand{\addbook}[2]{
-		\path[fill=#1,rotate=20] (110,120) rectangle (150,180);
-		\node[rotate=-20, color=white] at (73,180)  {%
-			\resizebox{1cm}{!}{#2}};
-}
-
-\newcommand{\addwater}[1]{
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (0,200) -- (100,200);
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (180,200) -- (220,200);
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (50,210) -- (150,210);
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (110,230) -- (250,230);
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (20,240) -- (70,240);
-	\draw [decorate,decoration=snake, line width=3pt, color=#1] (60,250) -- (250,250);
-}
-
-
-\begin{document}
-
-%% normal
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%\end{tikzpicture}
-%
-%% grumpy
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\grumpyduck{Gold}
-%\end{tikzpicture}
-%
-%% alien duck
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%	\addalien{LimeGreen}
-%\end{tikzpicture}
-%
-% short hairs
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Wheat}
-%	\addtshirt{LightBlue!50!white}
-%	\addshirt{LightSlateGrey}
-%	\addshorthair{brown!50!Grey}
-%\end{tikzpicture}
-%
-%Men in black
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\grumpyduck{Wheat}
-%	\addtshirt{white}
-%	\addshirt{black}
-%	\addtie{black}
-%	\addhat{black}
-%	\addsunglasses{black}
-%\end{tikzpicture}
-%
-%
-%% ducklings
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt, scale=0.6]
-%	\duck{Gold}
-%	\begin{scope}[xshift=300pt, scale=.3, yshift=250pt]
-%		\duck{Gold}
-%	\end{scope}
-%	\begin{scope}[xshift=180pt, scale=.3, yshift=150pt]
-%		\duck{Gold}
-%	\end{scope}
-%	\begin{scope}[xshift=240pt, scale=.3, yshift=50pt]
-%		\duck{Gold}
-%	\end{scope}		
-%\end{tikzpicture}
-%
-% samcarter
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Wheat!95!red}
-%	\addshirt{MidnightBlue}
-%	\addlonghair{OrangeRed!50!Brown}
-%\end{tikzpicture}
-
-%% hair
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%	\addlonghair{SeaGreen}
-%\end{tikzpicture}
-%
-% unicorn
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Pink}
-%	\addlonghair{MediumVioletRed}
-%	\addunicorn
-%\end{tikzpicture}
-%
-% hat duck
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%	\addhat{SaddleBrown}
-%\end{tikzpicture}
-%
-% sunglasses
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%	\addsunglasses{black!50!brown}
-%\end{tikzpicture}
-%
-% normal duck
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{Gold}
-%\end{tikzpicture}
-%
-% blue duck
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\duck{SteelBlue}
-%\end{tikzpicture}
-%
-% Brazil colour duck for Paulo
-%\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-%	\definecolor{brazilgreen}{RGB}{0,155,58}
-%	\definecolor{brazilyellow}{RGB}{254,223,0}
-%	\definecolor{brazilblue}{RGB}{0,39,118}
-%	\duck{brazilyellow}
-%	\addshirt{brazilblue}
-%	\addshorthair{brazilgreen}
-%\end{tikzpicture}
-
-% icecream
-\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-	\duck{Gold}
-	\addicecream{Wheat}{Plum}{Chocolate}
-\end{tikzpicture}
-
-% swimming
-\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-	\duck{Gold}
-	\addwater{blue!50!cyan} 
-\end{tikzpicture}
-
-% prof. van duck
-\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-	\duck{Gold!40!white}
-	\makeeinstein{gray!50!white}
-	\addglasses{brown!70!black}
-	\addbook{brown!70!black}{$E=mc^2$}
-\end{tikzpicture}
-%
-% Knuth
-\begin{tikzpicture}[y=0.80pt, x=0.80pt]
+\newcommand{\makeknuth}{%
 	\duck{Wheat}
 	\addtshirt{white!93!black}
-	\addshirt{DarkRed}
-	\makeknuth{gray!50!white}
+	\addjacket{DarkRed}
+	\addrecedinghair{gray!50!white}
 	\addglasses{brown!20!LightGray}
 	\addbook{brown!70!black}{\TeX}
-\end{tikzpicture}
-
-% for the counter wizard Christian Hupfer
-\begin{tikzpicture}[y=0.80pt, x=0.80pt]
-	\duck{Gold}
-	\addwizzard
-\end{tikzpicture}
-
-\end{document}
+}
