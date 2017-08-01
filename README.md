@@ -8,4 +8,4 @@ This repository host an (in-preparation) LaTeX package for ducks to be used in *
 
 ----
 
-This project is licensed under the LaTeX Project Public License (LPPL)
+This project is licensed under the LaTeX Project Public License (LPPL), see http://www.latex-project.org/lppl.txt
