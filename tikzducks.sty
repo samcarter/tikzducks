@@ -67,17 +67,17 @@
 
 %1: skin colour
 \newcommand{\duckbody}[1]{%
-	\path[fill=#1, scale=0.01] (51.28,114.46) .. controls (26.69,110.21) and (-12.52,65.74) .. (28.94,26.11) .. controls (70.40,-13.51) and (286.27,13.03) .. (181.77,141.88) .. controls (93.75,94.57) and (123.96,137.85) .. (51.28,114.46) -- cycle;
+	\path[fill=#1] (0.5128,1.1446) .. controls (0.2669,1.1021) and (-0.1252,0.6574) .. (0.2894,0.2611) .. controls (0.7040,-0.1351) and (2.8627,0.1303) .. (1.8177,1.4188) .. controls (0.9375,0.9457) and (1.2396,1.3785) .. (0.5128,1.1446) -- cycle;
 }
 
 %1: skin colour
 \newcommand{\duckhead}[1]{%
-	\path[fill=#1, scale=0.01] (90,150) ellipse (50 and 62.5);
+	\path[fill=#1] (0.90,1.50) ellipse (0.50 and 0.625);
 }
 
 %1: bill colour
 \newcommand{\duckbill}[1]{%
-	\path[fill=#1, scale=0.01] (40.56,147.21) .. controls (64.29,152.98) and (54.08,130.34) .. (90.95,137) .. controls (8.25,85) and (26.85,136.90) .. (40.58,147.21) -- cycle;
+	\path[fill=#1] (0.4056,1.4721) .. controls (0.6429,1.5298) and (0.5408,1.3034) .. (0.9095,1.37) .. controls (0.0825,0.85) and (0.2685,1.3690) .. (0.4058,1.4721) -- cycle;
 }
 
 %1: bill colour
@@ -89,12 +89,12 @@
 %2: eye colour
 \newcommand{\duckeyes}[2]{%
 	% right eye
-	\path[fill=#2, rotate=-20, scale=0.01] (23,176.75) ellipse (8.93 and 12.5);
-	\path[fill=#1, rotate=-20, scale=0.01] (26,175.75) ellipse (3.57 and 7.14);
+	\path[fill=#2, rotate=-20] (0.23,1.7675) ellipse (0.0893 and 0.125);
+	\path[fill=#1, rotate=-20] (0.26,1.7575) ellipse (0.0357 and 0.0714);
 	
 	% left eye
-	\path[fill=#2, rotate=-20, scale=0.01] (-6,174) ellipse (7.86 and 11.43);
-	\path[fill=#1, rotate=-20, scale=0.01] (-3,173) ellipse (2.86 and 6.43);
+	\path[fill=#2, rotate=-20] (-0.06,1.74) ellipse (0.0786 and 0.1143);
+	\path[fill=#1, rotate=-20] (-0.03,1.73) ellipse (0.0286 and 0.0643);
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,9 +167,9 @@
 	\path[fill=#1, scale=0.01] (115,220) rectangle (65,195);
 }
 
-%1: hair colour, fure will be 50% lighter
+%1: hair colour, fure will be 75% lighter
 \newcommand{\addunicorn}[1]{
-	\path[draw=#1,fill=#1!50!white,line width=1,rotate=25, scale=0.01] 
+	\path[draw=#1,fill=#1!35!white,line width=1,rotate=25, scale=0.01] 
 	(150,143.75)--(160,183.75)--(170,143.75);
 }
 
@@ -184,10 +184,10 @@
 
 %1: frame colour
 \newcommand{\addglasses}[1]{
-	\path[draw=#1,line width=1, scale=0.01] (93,162) -- (130,150);
-	\draw[line width=1,color=#1, scale=0.01] (73,167) arc (65:92:20);
-	\path[draw=#1,line width=1,rotate=-20, scale=0.01] (23,176.75) circle (12.5);
-	\path[draw=#1,line width=1,rotate=-20, scale=0.01] (-6,174) circle (11.43);
+	\path[draw=#1,line width=1] (0.93,1.62) -- (1.30,1.50);
+	\draw[line width=1,color=#1] (0.73,1.67) arc (65:92:0.20);
+	\path[draw=#1,line width=1,rotate=-20] (0.23,1.7675) circle (0.125);
+	\path[draw=#1,line width=1,rotate=-20] (-0.06,1.74) circle (0.1143);
 }
 
 %1: fabric colour
