@@ -40,7 +40,14 @@
   title={The \tikzducks Package},
   subtitle={using ducks in tikz},
   url={https://github.com/samcarter8/tikzducks},
-  author={samcarter},
+  author={%
+  samcarter (alias 
+	  \begin{tikzpicture}[scale=0.3,baseline=5pt]
+	  	\duck{Wheat!95!red}
+	  	\addjacket{MidnightBlue}
+	  	\addlonghair{OrangeRed!50!Brown}
+	  \end{tikzpicture}%
+	)},
   email={sam.carter8 at aol.com},
   revision={0.1},
   date={\today}}
@@ -52,6 +59,7 @@
   pdfkeywords={tex, latex, tikz, ducks}
 }
 
+\usepackage{tikzducks}
 \usepackage{xspace}
 
 \newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
@@ -72,7 +80,7 @@ This package is work in progress and will probably never be really finished as t
 
 Copyright \textcopyright\ \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c \url{http://www.latex-project.org/lppl.txt}
 
-The shown example ducks are purely fictional characters and no copyright infringement is intended.
+The shown example ducks are purely fictional characters, any resemblance to real persons is purely coincidental and no copyright infringement is intended.
 
 \subsection{Acknowledgements}
 
@@ -83,6 +91,8 @@ I would like to thank \href{https://tex.stackexchange.com/users/101651/carlatex}
 The order in which additional items are added to the basic duck shape is important. If the duck should wear a t-shirt and eat ice cream, then the t-shirt has to be added first, otherwise it conceal the ice cream cone.
  
 \subsection{Body parts}
+
+\subsection{Hair styles}
 
 \subsection{Accessoire}
 
