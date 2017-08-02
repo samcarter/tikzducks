@@ -107,8 +107,12 @@
 	\definecolor{brazilyellow}{RGB}{254,223,0}
 	\definecolor{brazilblue}{RGB}{0,39,118}
 	\duck[body=brazilyellow,
-				jacket=brazilblue,
 				shorthair=brazilgreen]
+	\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] 
+		(0.500,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+		(0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
+		(1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.378) .. 
+		(0.513,0.700) -- cycle;
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}

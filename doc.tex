@@ -4,21 +4,10 @@
 \usepackage[T1]{fontenc}	
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
-
 \usepackage[bitstream-charter]{mathdesign}
-%\usepackage{hyperref}
-
-\usepackage{booktabs}
-\usepackage{microtype}
-
-\lstset{
-    basicstyle=\ttfamily,
-    keepspaces=true,
-    upquote=true,
-    frame=single,
-    breaklines=true,
-    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}}
-}
+\usepackage{tikzducks}
+\usepackage{xspace}
+\usepackage[most]{tcolorbox}
 
 \KOMAoptions{numbers=noenddot}
 \addtokomafont{title}{\sffamily}
@@ -36,25 +25,26 @@
 \patchcmd{\paragraph}{-1em}{1.5ex \@plus .2ex}{}{}
 \makeatother
 
-\hypersetup{%
-  pdftitle={The tikzducks package},
-  pdfsubject={using ducks in tikz},
-  pdfauthor={samcarter},
-  pdfkeywords={tex, latex, tikz, ducks}
-}
-
-\usepackage{tikzducks}
-\usepackage{xspace}
-
-\newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
-
-\title{The \tikzducks Package}
+\title{The tikzducks package}
 \subtitle{using ducks in tikz}
+\author{samcarter}
+ 
+\newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
+\definecolor{duckblue}{rgb}{0.0,0.2,0.4}
+\lstloadlanguages{[LaTeX]Tex} 
+
+\tcbset{%
+	colframe=duckblue,
+	arc=2mm,
+	fonttitle=\bfseries,
+	sidebyside,
+	listing options={language={[latex]TeX}, tabsize=2,breaklines},	righthand width=6.5cm
+}
 
 \begin{document}
 
 \begin{center}
-	{\LARGE \textbf{The \texttt{tikzducks} Package (version 0.1)}}
+	{\LARGE \textbf{The \texttt{tikzducks} Package (version 0.2)}}
 	
 	\large using ducks in \texttt{tikz}
 	
@@ -93,22 +83,25 @@ I would like to thank a few fellow user from \href{https://tex.stackexchange.com
 \bigskip\noindent
 Without them, this package would not exist!
 
+\newpage
 \section{Usage}
 
-The basic usage is fairly simple, to draw a duck:
-
+The basic usage is fairly simple, to draw a duck
+\begin{tcblisting}{title={basic duck}}
 \begin{tikzpicture}
-\duck
+	\duck
 \end{tikzpicture}
+\end{tcblisting}
 
-To customise this basic duck, the package uses \texttt{pgf} keys. For example to change the colour of the duck:
-
+To customise this basic duck, the package uses \texttt{pgf} keys. For almost all parts the colour can be changed using \verb|<shape name>=<colour name>|. For example to change the colour of the duck:
+\begin{tcblisting}{title={blue duck}}
 \begin{tikzpicture}
-\duck[body=blue]
+	\duck[body=blue]
 \end{tikzpicture}
+\end{tcblisting}
 
-scaling:
-
+If the size of the ducks should be changed:
+\begin{tcblisting}{title={scaled duck},	righthand width=3cm}
 \begin{tikzpicture}[scale=0.6]
 	\duck
 	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
@@ -121,184 +114,219 @@ scaling:
 		\duck
 	\end{scope}		
 \end{tikzpicture}
- 
+\end{tcblisting}
+
 \subsection{Body parts}
 
-The various parts of the duck body can also be coloured independently:
-
+The various parts of the duck body can also be coloured independently, i.e. \texttt{body}, \texttt{head} and \texttt{bill}
+\begin{tcblisting}{title={harlequin duck}}
 \begin{tikzpicture}
-\duck[body=yellow,
-			head=yellow!50!orange, 
-			bill=red]
+	\duck[body=yellow,
+		head=yellow!50!orange, 
+		bill=red]
 \end{tikzpicture}
+\end{tcblisting}
 
-using the keyword \texttt{grumpy} the shape of the bill can be changed
-
+Furthermore using the keyword \texttt{grumpy} the shape of the bill can be changed:
+\begin{tcblisting}{title={grumpy duck}}
 \begin{tikzpicture}
-\duck[grumpy]
+	\duck[grumpy]
 \end{tikzpicture}
+\end{tcblisting}
 
 \subsection{Hair styles}
 
 Some duck also like to have nice hair cuts, several different hair styles are available:
-
+\begin{tcblisting}{title={hairy duck}}
 \begin{tikzpicture}
-\duck[longhair]
+	\duck[longhair]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[shorthair]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[crazyhair]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[recedinghair]
+	\duck[shorthair]
 \end{tikzpicture}
 
-and of course the colour of each of the hair styles can be adjusted
-
 \begin{tikzpicture}
-\duck[longhair=teal]
+	\duck[crazyhair]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[recedinghair]
+\end{tikzpicture}
+\end{tcblisting}
+
+And of course the colour of each hair styles can be adjusted:
+\begin{tcblisting}{title={coloured hair duck}}
+\begin{tikzpicture}
+	\duck[longhair=teal]
+\end{tikzpicture}
+\end{tcblisting}
+
+Eyebrows are also part of the package. The colour choice is a bit complicate for them - if a colour is explicitly specified \verb|eyebrow=<colour name>| this colour is of coursed used. But if no colour is given, it falls first back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
+\begin{tcblisting}{title={eye brow duck}}
+\begin{tikzpicture}
+	\duck[eyebrow]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[longhair=blue, 
+		eyebrow]
 \end{tikzpicture}
 
-Eyebrows are also part of the package
+\begin{tikzpicture}
+	\duck[crazyhair=red, 
+		eyebrow=blue]
+\end{tikzpicture}
+\end{tcblisting}
+
+\newpage
+\subsection{Clothing}
+
+A respectable duck needs a suitable wardrobe. It can choose from a \texttt{tshirt}, a \texttt{jacket} and a \texttt{tie}.
+
+\begin{tcblisting}{title={dressed duck}}
+\begin{tikzpicture}
+	\duck[tshirt]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[jacket]
+\end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[eyebrow]
+	\duck[tie]
 \end{tikzpicture}
-\qquad
 \begin{tikzpicture}
-\duck[longhair=red, eyebrow]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[shorthair=blue, eyebrow=red]
-\end{tikzpicture}
-
-\subsection{Accessoire}
-
-There is a multitude of things a duck might need:
-
-\begin{tikzpicture}
-\duck[water=cyan!50!blue]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[tshirt=white!80!gray, 
+	\duck[tshirt=lightgray, 
 			jacket=blue!50!black, 
 			tie=blue!80!black, 
 			shorthair]
 \end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[alien=green!50!brown]
-\end{tikzpicture}
+\end{tcblisting}
 
-\begin{tikzpicture}
-\duck[icecream]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[icecream=brown, flavoura=brown, flavourb=white, flavourc=red]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[hat=red!50!black]
-\end{tikzpicture}
+\subsection{Accessoire}
 
-\begin{tikzpicture}
-\duck[body=pink,
-			unicorn=magenta!60!violet,
-			longhair=magenta!60!violet]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[glasses=red!50!black]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-\duck[sunglasses]
-\end{tikzpicture}
+There is a multitude of things a duck might need. All these examples also work without specifying a colour, but giving both examples with and without explicit colour just makes this overview unnecessary long.
 
+\begin{tcblisting}{title={swimming duck}}
+\begin{tikzpicture}
+	\duck[water=cyan!50!blue]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={alien duck}}
+\begin{tikzpicture}
+	\duck[alien=green!50!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={hat duck}}
+\begin{tikzpicture}
+	\duck[hat=red!50!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={unicorn duck}}
+\begin{tikzpicture}
+	\duck[body=pink,
+	unicorn=magenta!60!violet,
+	longhair=magenta!60!violet]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={glasses duck}}
+\begin{tikzpicture}
+	\duck[glasses=red!50!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={sunglasses duck}}
+\begin{tikzpicture}
+	\duck[sunglasses]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={book duck}}
+\begin{tikzpicture}
+	\duck[book=\scalebox{0.5}{\TeX}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[book=\scalebox{0.6}{$\pi$}, bookcolour=blue!50!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={magic duck}}
 \begin{tikzpicture}
 	\duck[magichat,
 				magicwand]
 \end{tikzpicture}
-
 \begin{tikzpicture}
 	\duck[magichat=teal,
-				magicstars=cyan]
+				magicstars=cyan,
+				magicwand]
 \end{tikzpicture}
+\end{tcblisting}
 
+\begin{tcblisting}{title={icecream duck}}
 \begin{tikzpicture}
-	\duck[book=\scalebox{0.5}{\TeX},
-]
+	\duck[icecream]
 \end{tikzpicture}
-
 \begin{tikzpicture}
-	\duck[book=\scalebox{0.5}{\TeX},
-				bookcolour=blue!50!black
-]
+	\duck[icecream=brown, flavoura=brown, flavourb=white, flavourc=red]
 \end{tikzpicture}
+\end{tcblisting}
 
 \section{Examples}
 
+Some examples how the \tikzducks can be customised:
+\begin{tcblisting}{title={samcarter duck},	righthand width=3cm}
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!50!white, 
-				longhair=red!50!brown, 
-				jacket=blue!50!black]
+		longhair=red!50!brown, 
+		jacket=blue!50!black]
 \end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-	\definecolor{brazilgreen}{RGB}{0,155,58}
-	\definecolor{brazilyellow}{RGB}{254,223,0}
-	\definecolor{brazilblue}{RGB}{0,39,118}
-	\duck[body=brazilyellow,
-				jacket=brazilblue,
-				shorthair=brazilgreen]
-\end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-	\duck[grumpy,
-				body=yellow!50!brown!50!white,
-				tshirt=white,
-				jacket=black,
-				tie=black,
-				hat=black,
-				sunglasses=black]
-\end{tikzpicture}
+\end{tcblisting}
 
-% prof. van duck
+\begin{tcblisting}{title={Brazil duck},	righthand width=3cm}
+\begin{tikzpicture}
+\definecolor{brazilgreen}{RGB}{0,155,58}
+\definecolor{brazilyellow}{RGB}{254,223,0}
+\definecolor{brazilblue}{RGB}{0,39,118}
+	\duck[body=brazilyellow,
+				shorthair=brazilgreen]
+	\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] 
+		(0.500,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+		(0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
+		(1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.378) .. 
+		(0.513,0.700) -- cycle;
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={duck in black},	righthand width=3cm}
+\begin{tikzpicture}
+	\duck[grumpy, body=yellow!50!brown!50!white, tshirt=white, jacket=black, tie=black, hat=black, sunglasses=black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Prof. van Duck}, righthand width=3cm}
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!40!white,
-				crazyhair=gray!50!white,
-				eyebrow,
-				glasses=brown!70!black,
-				book=\scalebox{0.2}{$E=mc^2$},
-				bookcolour=red!20!brown
-]
+		crazyhair=gray!50!white,
+		eyebrow,
+		glasses=brown!70!black,
+		book=\scalebox{0.2}{$E=mc^2$},
+		bookcolour=red!20!brown]
 \end{tikzpicture}
-\qquad
-% knuth
+\end{tcblisting}
+
+\begin{tcblisting}{title={DEK},	righthand width=3cm}
 \begin{tikzpicture}
 	\duck[body=yellow!50!red!20!white,
-				recedinghair=gray!50!white,
-				eyebrow,
-				tshirt=white!93!black,
-				jacket=red!50!black,
-				glasses=brown!70!lightgray,
-				book=\scalebox{0.5}{\TeX},
-				bookcolour=black!20!brown
-]
+		recedinghair=gray!50!white,
+		eyebrow,
+		tshirt=white!93!black,
+		jacket=red!50!black,
+		glasses=brown!70!lightgray,
+		book=\scalebox{0.5}{\TeX},
+		bookcolour=black!20!brown]
 \end{tikzpicture}
-\qquad
-\begin{tikzpicture}
-	\duck[magichat,
-				magicwand]
-\end{tikzpicture}
-\qquad
-
-
+\end{tcblisting}
 
 \end{document}
 
