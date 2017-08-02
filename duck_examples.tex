@@ -4,130 +4,157 @@
 
 \begin{document}
 
-% normal duck
 \begin{tikzpicture}
-	\duck{Gold}
+\duck
 \end{tikzpicture}
-%
-% grumpy
+\qquad
 \begin{tikzpicture}
-	\grumpyduck{Gold}
+\duck[body=blue]
 \end{tikzpicture}
-%
-% blue duck
+\qquad
 \begin{tikzpicture}
-	\duck{SteelBlue}
-\end{tikzpicture}
-
-% female
-\begin{tikzpicture}
-	\duck{Gold}
-	\addlonghair{SeaGreen}
-\end{tikzpicture}
-%
-% alien duck
-\begin{tikzpicture}
-	\duck{Gold}
-	\addalien{LimeGreen}
-\end{tikzpicture}
-%
-% hat duck
-\begin{tikzpicture}
-	\duck{Gold}
-	\addhat{SaddleBrown}
+\duck[body=yellow,
+			head=yellow!50!orange, 
+			bill=red]
 \end{tikzpicture}
 
-% sunglasses
 \begin{tikzpicture}
-	\duck{Gold}
-	\addsunglasses{black!50!brown}{black}
+\duck[longhair]
 \end{tikzpicture}
-%
-% icecream
+\qquad
 \begin{tikzpicture}
-	\duck{Gold}
-	\addicecream{Wheat}{Orchid}{Chocolate}
+\duck[shorthair]
 \end{tikzpicture}
-%
-% samcarter
+\qquad
 \begin{tikzpicture}
-	\duck{Wheat!95!red}
-	\addjacket{MidnightBlue}
-	\addlonghair{OrangeRed!50!Brown}
+\duck[crazyhair]
 \end{tikzpicture}
 
-% unicorn
 \begin{tikzpicture}
-	\duck{MediumVioletRed!35!white}
-	\addlonghair{MediumVioletRed}
-	\addunicorn{MediumVioletRed}
+\duck[recedinghair]
 \end{tikzpicture}
-%
-% short hairs
+\qquad
 \begin{tikzpicture}
-	\duck{Wheat}
-	\addtshirt{LightBlue!50!white}
-	\addjacket{LightSlateGrey}
-	\addshorthair{brown!50!Grey}
+\duck[longhair=teal]
 \end{tikzpicture}
-%
-% Men in black
+\qquad
 \begin{tikzpicture}
-	\grumpyduck{Wheat}
-	\addtshirt{white}
-	\addjacket{black}
-	\addtie{black}
-	\addhat{black}
-	\addsunglasses{black}{black}
+\duck[grumpy]
 \end{tikzpicture}
 
-% prof. van duck
 \begin{tikzpicture}
-	\duck{Gold!40!white}
-	\makeeinstein{gray!50!white}
-	\addglasses{brown!70!black}
-	\addbook{brown!70!black}{\scalebox{0.2}{$E=mc^2$}}
+\duck[water=cyan!50!blue]
 \end{tikzpicture}
-%
-% Knuth
+\qquad
 \begin{tikzpicture}
-	\makeknuth
+\duck[tshirt=white!80!gray, 
+			jacket=blue!50!black, 
+			tie=blue!80!black, 
+			shorthair]
 \end{tikzpicture}
-%
-% for the counter wizard Christian Hupfer
+\qquad
 \begin{tikzpicture}
-	\duck{Gold}
-	\addwizzard{BlueViolet!50!Pink}{Gold}
+\duck[glasses=red!50!black]
 \end{tikzpicture}
 
-% Brazil colour duck for Paulo
+\begin{tikzpicture}
+\duck[alien=green!50!brown]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[hat=red!50!black]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[body=pink,
+			unicorn=magenta!60!violet,
+			longhair=magenta!60!violet]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\duck[body=yellow!50!brown!50!white, 
+				longhair=red!50!brown, 
+				jacket=blue!50!black]
+\end{tikzpicture}
+\qquad
 \begin{tikzpicture}
 	\definecolor{brazilgreen}{RGB}{0,155,58}
 	\definecolor{brazilyellow}{RGB}{254,223,0}
 	\definecolor{brazilblue}{RGB}{0,39,118}
-	\duck{brazilyellow}
-	\addjacket{brazilblue}
-	\addshorthair{brazilgreen}
+	\duck[body=brazilyellow,
+				jacket=brazilblue,
+				shorthair=brazilgreen]
 \end{tikzpicture}
+
+
+
+
+%%
+%% short hairs
+%\begin{tikzpicture}
+%	\duck{Wheat}
+%	\addtshirt{LightBlue!50!white}
+%	\addjacket{LightSlateGrey}
+%	\addshorthair{brown!50!Grey}
+%\end{tikzpicture}
+%%
+%% Men in black
+%\begin{tikzpicture}
+%	\grumpyduck{Wheat}
+%	\addtshirt{white}
+%	\addjacket{black}
+%	\addtie{black}
+%	\addhat{black}
+%	\addsunglasses{black}{black}
+%\end{tikzpicture}
+
 %
-% swimming
-\begin{tikzpicture}
-	\addwater{cyan!50!blue}
-	\duck{Gold}
-\end{tikzpicture}
+%% sunglasses
+%\begin{tikzpicture}
+%	\duck{Gold}
+%	\addsunglasses{black!50!brown}{black}
+%\end{tikzpicture}
+%%
+%% icecream
+%\begin{tikzpicture}
+%	\duck{Gold}
+%	\addicecream{Wheat}{Orchid}{Chocolate}
+%\end{tikzpicture}
+%%
+
 %
-% ducklings
-\begin{tikzpicture}[scale=0.6]
-	\duck{Gold}
-	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
-		\duck{Gold}
-	\end{scope}
-	\begin{scope}[xshift=60pt, scale=.3, yshift=100pt]
-		\duck{Gold}
-	\end{scope}
-	\begin{scope}[xshift=80pt, scale=.3, yshift=50pt]
-		\duck{Gold}
-	\end{scope}		
-\end{tikzpicture}
+%% prof. van duck
+%\begin{tikzpicture}
+%	\duck{Gold!40!white}
+%	\makeeinstein{gray!50!white}
+%	\addglasses{brown!70!black}
+%	\addbook{brown!70!black}{\scalebox{0.2}{$E=mc^2$}}
+%\end{tikzpicture}
+%%
+%% Knuth
+%\begin{tikzpicture}
+%	\makeknuth
+%\end{tikzpicture}
+%%
+%% for the counter wizard Christian Hupfer
+%\begin{tikzpicture}
+%	\duck{Gold}
+%	\addwizzard{BlueViolet!50!Pink}{Gold}
+%\end{tikzpicture}
+%
+
+%% ducklings
+%\begin{tikzpicture}[scale=0.6]
+%	\duck{Gold}
+%	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
+%		\duck{Gold}
+%	\end{scope}
+%	\begin{scope}[xshift=60pt, scale=.3, yshift=100pt]
+%		\duck{Gold}
+%	\end{scope}
+%	\begin{scope}[xshift=80pt, scale=.3, yshift=50pt]
+%		\duck{Gold}
+%	\end{scope}		
+%\end{tikzpicture}
 
 \end{document}

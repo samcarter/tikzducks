@@ -19,238 +19,343 @@
 \RequirePackage{tikz}
 \usetikzlibrary{patterns} % for the wizard hat
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% combine ducks
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\duck}[1][]{\tikzset{/duck/.cd,#1}\duck@draw}
 
-%1: skin colour
-\newcommand*{\duck}[1]{%
-	\colorlet{duck}{#1}%
-	\colorlet{eye}{Cornsilk}%
-	\colorlet{pupil}{black}%
-	\colorlet{bill}{orange}%
-	%	
-	\duckbody{duck}%
-	\duckhead{duck}%
-	\duckbill{bill}%
-	\duckeyes{pupil}{eye}%
+\newif\ifduck@grumpy
+\newif\ifduck@shorthair
+\newif\ifduck@longhair
+\newif\ifduck@crazyhair
+\newif\ifduck@recedinghair
+\newif\ifduck@eyebrow
+\newif\ifduck@tshirt
+\newif\ifduck@jacket
+\newif\ifduck@tie
+\newif\ifduck@glasses
+\newif\ifduck@alien
+\newif\ifduck@hat
+\newif\ifduck@unicorn
+\newif\ifduck@water
 
+\tikzset{
+	/duck/.cd,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% Environment
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	water/.code = \duck@watertrue \def\duck@water{#1},
+	% setting default
+	water/.default = blue,	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% body parts
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	body/.code		= \def\duck@body{#1},
+ 	head/.code		= \def\duck@head{#1},
+ 	eye/.code			= \def\duck@eye{#1},
+ 	pupil/.code		= \def\duck@pupil{#1},
+ 	bill/.code		= \def\duck@bill{#1},
+ 	grumpy/.code	= \duck@grumpytrue,
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	body	= yellow!80!brown,
+	eye		= white!85!yellow,
+	pupil	= black,
+	bill	= orange!50!brown, 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% clothing
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	tshirt/.code = \duck@tshirttrue	\def\duck@tshirt{#1},
+	jacket/.code = \duck@jackettrue	\def\duck@jacket{#1},
+	tie/.code 	 = \duck@tietrue		\def\duck@tie{#1},
+	% setting default %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	tshirt/.default	= white,
+	jacket/.default	= blue,
+	tie/.default		= blue,	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% hair styles
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	shorthair/.code			= \duck@shorthairtrue			\def\duck@hair{#1},
+ 	longhair/.code			= \duck@longhairtrue			\def\duck@hair{#1},
+ 	crazyhair/.code			= \duck@crazyhairtrue			\def\duck@hair{#1},
+ 	recedinghair/.code	= \duck@recedinghairtrue	\def\duck@hair{#1},
+ 	eyebrow/.code				= \duck@shorthairtrue			\def\duck@eyebrow{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	shorthair/.default 		= brown,
+	longhair/.default			= brown,
+	crazyhair/.default		= brown,
+	recedinghair/.default	= brown,
+	eyebrow/.default			= brown,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	%
+ 	% Accessories
+ 	%
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	glasses/.code=\duck@glassestrue	\def\duck@glasses{#1},
+ 	alien/.code=\duck@alientrue \def\duck@alien{#1},
+ 	hat/.code=\duck@hattrue \def\duck@hat{#1},
+ 	unicorn/.code=\duck@unicorntrue \def\duck@unicorn{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	glasses/.default=black,	
+	alien/.default=green,		
+	hat/.default=brown,
+	unicorn/.default=pink,
 }
 
-%1: skin colour
-\newcommand*{\grumpyduck}[1]{%
-	\colorlet{duck}{#1}%
-	\colorlet{eye}{Cornsilk}%
-	\colorlet{pupil}{black}%
-	\colorlet{bill}{orange}%
-	%	
-	\duckbody{duck}%
-	\duckhead{duck}%
-	\duckgrummpybill{bill}%
-	\duckeyes{pupil}{eye}%
-}
-
+\def\duck@draw{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Environment
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% water %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@water
+	\path[draw=\duck@water, line width=5] 
+		(1.00,0.40) ellipse (0.80 and 0.28);
+	\path[draw=\duck@water, line width=3] 
+		(1.00,0.40) ellipse (1.00 and 0.45);
+	\path[draw=\duck@water, line width=2] 
+		(1.00,0.40) ellipse (1.20 and 0.60);
+	\path[draw=\duck@water, line width=1] 
+		(1.00,0.40) ellipse (1.40 and 0.75);
+\fi
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % body parts
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%1: skin colour
-\newcommand*{\duckbody}[1]{%
-	\path[fill=#1] (0.5128,1.1446) .. controls (0.2669,1.1021) and (-0.1252,0.6574) .. (0.2894,0.2611) .. controls (0.7040,-0.1351) and (2.8627,0.1303) .. (1.8177,1.4188) .. controls (0.9375,0.9457) and (1.2396,1.3785) .. (0.5128,1.1446) -- cycle;%
-}
-
-%1: skin colour
-\newcommand*{\duckhead}[1]{%
-	\path[fill=#1] (0.90,1.50) ellipse (0.50 and 0.625);%
-}
-
-%1: bill colour
-\newcommand*{\duckbill}[1]{%
-	\path[fill=#1] (0.4056,1.4721) .. controls (0.6429,1.5298) and (0.5408,1.3034) .. (0.9095,1.37) .. controls (0.0825,0.85) and (0.2685,1.3690) .. (0.4058,1.4721) -- cycle;%
-}
-
-%1: bill colour
-\newcommand*{\duckgrummpybill}[1]{%
-	\path[fill=#1] (0.4058,1.4721) .. controls (0.6429,1.5298) and (0.6429,1.5298) .. (0.7995,1.30) .. controls (0.0825,0.85) and (0.2685,1.3690) .. (0.4058,1.4721) -- cycle;%
-}
-
-%1: pupile colour
-%2: eye colour
-\newcommand*{\duckeyes}[2]{%
-	% right eye
-	\path[fill=#2, rotate=-20] (0.23,1.7675) ellipse (0.0893 and 0.125);
-	\path[fill=#1, rotate=-20] (0.26,1.7575) ellipse (0.0357 and 0.0714);%
-	
-	% left eye
-	\path[fill=#2, rotate=-20] (-0.06,1.74) ellipse (0.0786 and 0.1143);%
-	\path[fill=#1, rotate=-20] (-0.03,1.73) ellipse (0.0286 and 0.0643);%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Hair styles
+% body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\path[fill=\duck@body]
+ 	(0.513,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+  (0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) ..
+  (1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.379) ..
+  (0.513,1.145) -- cycle;
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%1: hair colour
-\newcommand*{\addshorthair}[1]{%
-	\path[fill=#1] (1.3947,1.4175) .. controls (1.4546,1.4518) and (1.4699,1.6566) .. (1.4343,1.7992) .. controls (1.2528,2.5033) and (0.2339,2.2710) .. (0.4151,1.5907) .. controls (0.4345,1.8709) and (0.7421,2.0999) .. (0.9494,1.9054) .. controls (1.2241,1.6476) and (1.3316,1.3814) .. (1.3947,1.4175) -- cycle;%
-}
-
-%1: hair colour
-\newcommand*{\addlonghair}[1]{%
-	\path[fill=#1] (1.4508,0.7565) .. controls (1.5146,0.7888) and (1.5854,0.8216) .. (1.6247,0.8831) .. controls (1.5859,0.8847) and (1.4726,0.9457) .. (1.5587,0.9706) .. controls (1.6317,0.9685) and (1.7016,1.0046) .. (1.7314,1.0734) .. controls (1.7931,1.1660) and (1.6616,1.1176) .. (1.6277,1.1566) .. controls (1.6853,1.1741) and (1.7840,1.1829) .. (1.8123,1.2244) .. controls (1.7022,1.2488) and (1.5688,1.2663) .. (1.5063,1.3739) .. controls (1.4619,1.5143) and (1.4696,1.6649) .. (1.4340,1.8076) .. controls (1.2524,2.5117) and (0.2335,2.2794) .. (0.4148,1.5991) .. controls (0.4341,1.8793) and (0.6629,2.1130) .. (0.9011,1.9578) .. controls (1.2427,1.7382) and (1.3350,1.4214) .. (1.0905,1.0610) .. controls (1.0897,1.0109) and (1.1103,0.9166) .. (1.1805,0.8670) .. controls (1.2507,0.8174) and (1.3503,0.7853) .. (1.4508,0.7565) -- cycle;%
-}
-
-%1: hair colour
-\newcommand*{\addcrazyhair}[1]{%
-	\path[fill=#1] (0.197738,1.902321) .. controls (0.263318,2.059892) and (0.481939,2.054744) .. (0.471285,2.087906) .. controls (0.464718,2.2106) and (0.251562,2.23922) .. (0.251562,2.23922) .. controls (0.435184,2.293314) and (0.742723,1.930383) .. (0.574298,2.38851) .. controls (0.601702,2.363291) and (0.830663,2.173904) .. (0.808201,2.424501) .. controls (0.827073,2.288544) and (0.919496,2.040041) .. (0.993286,2.267276) .. controls (1.081425,2.659325) and (0.968773,2.003428) .. (1.334988,2.361516) .. controls (1.365713,2.329245) and (	1.162714,2.104311) .. (1.342365,2.13871) .. controls (	1.310271,1.831167) and (1.504874,2.262341) .. (1.504874,2.262341) .. controls (1.504874,2.262341) and (1.467518,2.049325) .. (1.428705,1.956014) .. controls (1.428705,1.956014) and (1.682987,1.946971) .. (1.717812,1.88233) .. controls (1.192612,1.805376) and (2.01601,1.727657) .. (1.492298,1.727493) .. controls (1.536628,1.668464) and (1.301295,1.600885) .. (1.649992,1.594573) .. controls (0.883592,1.579742) and (1.276373,1.922059) .. (0.895654,2.044174) .. controls (0.551628,2.095772) and (0.522813,1.852705) .. (0.469497,1.796321) .. controls (0.48246,1.960656) and (0.3601,1.90947) .. (0.197738,1.902321) -- cycle;%
-}
-
-%1: hair colour
-\newcommand*{\addrecedinghair}[1]{%
-	\path[fill=#1] (1.338464,1.48413) .. controls (1.424304,1.452878) and (1.487677,1.712696) .. (1.396396,1.865797) .. controls (1.107075,2.35106) and (0.518869,2.160875) .. (0.438131,1.681641) .. controls (0.457476,1.961849) and (0.900656,2.20588) .. (1.130836,2.039023) .. controls (1.47034,1.746912) and (1.034273,1.594874) .. (1.338464,1.48413) -- cycle;%
-}
-
-%1: eye brow colour
-\newcommand*{\addeyebrow}[1]{%
-	\draw[line width=2,color=#1,line cap=round] (0.96,1.70) -- (0.82,1.77);%
-	\draw[line width=2,color=#1,line cap=round] (0.50,1.81) -- (0.60,1.82);%
-}
-
+% head %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\duck@head\else\let\duck@head=\duck@body\fi
+\path[fill=\duck@head] 
+	(0.90,1.50) ellipse (0.50 and 0.625);
+%
+% bill %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@grumpy
+ 	\path[fill=\duck@bill] 
+ 		(0.406,1.472) .. controls (0.643,1.530) and (0.643,1.530) ..
+ 		(0.800,1.300) .. controls (0.083,0.850) and (0.269,1.369) .. 
+ 		(0.406,1.472) -- cycle;
+\else
+	\path[fill=\duck@bill] 
+		(0.406,1.472) .. controls (0.643,1.530) and (0.541,1.303) ..
+		(0.910,1.370) .. controls (0.083,0.850) and (0.269,1.369) ..
+		(0.406,1.472) -- cycle;
+\fi
+%
+% right eye %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\path[fill=\duck@eye, rotate=-20] 
+	(0.23,1.7675) ellipse (0.0893 and 0.125);
+\path[fill=\duck@pupil, rotate=-20] 
+	(0.26,1.7575) ellipse (0.0357 and 0.0714);
+%
+% left eye %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\path[fill=\duck@eye, rotate=-20] 
+	(-0.06,1.74) ellipse (0.0786 and 0.1143);
+\path[fill=\duck@pupil, rotate=-20] 
+	(-0.03,1.73) ellipse (0.0286 and 0.0643);
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % clothing
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%1: fabric colour
-\newcommand*{\addtshirt}[1]{%
-	\path[fill=#1] (0.49,1.1446) .. controls (0.2669,1.1021) and (-0.1252,0.6574) .. (0.2894,0.2611) .. controls (0.7040,-0.1351) and (2.8627,0.1303) .. (1.8177,1.4188) .. controls (0.9375,0.9757) and (1.2396,1.2785) .. (0.59,1.00) -- cycle;%
-}
-
-%1: fabric colour
-\newcommand*{\addjacket}[1]{%
-	\path[fill=#1] (0.50,1.144606) .. controls (0.266859,1.102116) and (-0.125215,0.657384) .. (0.289411,0.261142) .. controls (0.704036,-0.135099) and (2.862675,0.130327) .. (1.817701,1.418785) .. controls (0.937517,0.945734) and (1.239624,1.378463) .. (0.512815,0.70) -- cycle;%
-}
-
+%
+% tshirt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tshirt
+	\path[fill=\duck@tshirt]
+		(0.49,1.1446) .. controls (0.2669,1.1021) and (-0.1252,0.6574) .. (0.2894,0.2611) .. controls (0.7040,-0.1351) and (2.8627,0.1303) .. (1.8177,1.4188) .. controls (0.9375,0.9757) and (1.2396,1.2785) .. (0.59,1.00) -- cycle;
+\fi
+%
+% tie %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tie
+	\draw[line width=3,color=\duck@tie] (0.60,1.00) -- (0.50,0.60);
+\fi
+%
+% jacket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@jacket
+	\path[fill=\duck@jacket] 
+		(0.50,1.144606) .. controls (0.266859,1.102116) and (-0.125215,0.657384) .. (0.289411,0.261142) .. controls (0.704036,-0.135099) and (2.862675,0.130327) .. (1.817701,1.418785) .. controls (0.937517,0.945734) and (1.239624,1.378463) .. (0.512815,0.70) -- cycle;
+\fi
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% hair styles
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% short hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@shorthair
+	\path[fill=\duck@hair] 
+	(1.3947,1.4175) .. controls (1.4546,1.4518) and (1.4699,1.6566) .. 
+	(1.4343,1.7992) .. controls (1.2528,2.5033) and (0.2339,2.2710) .. 
+	(0.4151,1.5907) .. controls (0.4345,1.8709) and (0.7421,2.0999) .. 
+	(0.9494,1.9054) .. controls (1.2241,1.6476) and (1.3316,1.3814) .. 
+	(1.3947,1.4175) -- cycle;
+\fi
+%
+% long hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@longhair
+	\path[fill=\duck@hair] 
+	(1.4508,0.7565) .. controls (1.5146,0.7888) and (1.5854,0.8216) .. 
+	(1.6247,0.8831) .. controls (1.5859,0.8847) and (1.4726,0.9457) .. 
+	(1.5587,0.9706) .. controls (1.6317,0.9685) and (1.7016,1.0046) .. 
+	(1.7314,1.0734) .. controls (1.7931,1.1660) and (1.6616,1.1176) .. 
+	(1.6277,1.1566) .. controls (1.6853,1.1741) and (1.7840,1.1829) .. 
+	(1.8123,1.2244) .. controls (1.7022,1.2488) and (1.5688,1.2663) .. 
+	(1.5063,1.3739) .. controls (1.4619,1.5143) and (1.4696,1.6649) .. 
+	(1.4340,1.8076) .. controls (1.2524,2.5117) and (0.2335,2.2794) .. 
+	(0.4148,1.5991) .. controls (0.4341,1.8793) and (0.6629,2.1130) .. 
+	(0.9011,1.9578) .. controls (1.2427,1.7382) and (1.3350,1.4214) .. 
+	(1.0905,1.0610) .. controls (1.0897,1.0109) and (1.1103,0.9166) .. 
+	(1.1805,0.8670) .. controls (1.2507,0.8174) and (1.3503,0.7853) .. 
+	(1.4508,0.7565) -- cycle;
+\fi
+%
+% crazy hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crazyhair
+	\path[fill=\duck@hair]
+	(0.1977,1.9023) .. controls (0.2633,2.0599) and (0.4819,2.0547) ..
+	(0.4713,2.0879) .. controls (0.4647,2.2106) and (0.251562,2.23922) .. (0.251562,2.23922) .. controls (0.435184,2.293314) and (0.742723,1.930383) .. (0.5743,2.38851) .. controls (0.601702,2.363291) and (0.830663,2.173904) .. (0.808201,2.424501) .. controls (0.827073,2.288544) and (0.919496,2.040041) .. (0.993286,2.267276) .. controls (1.081425,2.659325) and (0.968773,2.003428) .. (1.334988,2.361516) .. controls (1.365713,2.329245) and (	1.162714,2.104311) .. (1.342365,2.13871) .. controls (	1.310271,1.831167) and (1.504874,2.262341) .. (1.504874,2.262341) .. controls (1.504874,2.262341) and (1.467518,2.049325) .. (1.428705,1.956014) .. controls (1.428705,1.956014) and (1.682987,1.946971) .. (1.717812,1.88233) .. controls (1.192612,1.805376) and (2.01601,1.727657) .. (1.492298,1.727493) .. controls (1.536628,1.668464) and (1.301295,1.600885) .. (1.649992,1.594573) .. controls (0.883592,1.579742) and (1.276373,1.922059) .. (0.895654,2.044174) .. controls (0.551628,2.095772) and (0.522813,1.852705) .. (0.469497,1.796321) .. controls (0.48246,1.960656) and (0.3601,1.90947) .. (0.197738,1.902321) -- cycle;%
+\fi
+%
+% receding hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@recedinghair
+	\path[fill=\duck@hair] 
+	(1.338464,1.48413) .. controls (1.424304,1.452878) and (1.487677,1.712696) .. (1.396396,1.865797) .. controls (1.107075,2.35106) and (0.518869,2.160875) .. (0.438131,1.681641) .. controls (0.457476,1.961849) and (0.900656,2.20588) .. (1.130836,2.039023) .. controls (1.47034,1.746912) and (1.034273,1.594874) .. (1.338464,1.48413) -- cycle;%
+\fi
+%
+% eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\duck@eyebrow\else\let\duck@eyebrow=\duck@hair\fi
+\ifduck@eyebrow
+	\draw[line width=2,color=\duck@eyebrow,line cap=round] 
+		(0.96,1.70) -- (0.82,1.77);
+	\draw[line width=2,color=\duck@eyebrow,line cap=round] 
+		(0.50,1.81) -- (0.60,1.82);
+\fi	
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Accessories
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%1: antennae colour
-\newcommand*{\addalien}[1]{%
-	\draw[line width=2,color=#1] (1.00,1.83) -- (1.20,2.30);%
-	\draw[line width=2,color=#1] (0.65,1.92) -- (0.60,2.35);%
-	\path[fill=#1] (1.20,2.30) circle (0.07);%
-	\path[fill=#1] (0.60,2.35) circle (0.07);%
-}
-
-%1: fabric colour
-\newcommand*{\addhat}[1]{%
-	\path[fill=#1] (0.90,1.95) ellipse (0.46 and 0.0893);%
-	\path[fill=#1] (0.90,2.20) ellipse (0.25 and 0.0714);%
-	\path[fill=#1] (1.15,2.20) rectangle (0.65,1.95);%
-}
-
-%1: hair colour, fure will be 75% lighter
-\newcommand*{\addunicorn}[1]{%
-	\path[draw=#1,fill=#1!35!white,line width=1,rotate=25] 
-	(1.50,1.4375)--(1.60,1.8375)--(1.70,1.4375);%
-}
-
-%1: frame colour
-%2: glass colour
-\newcommand*{\addsunglasses}[2]{%
-	\path[draw=#1,line width=1] (0.93,1.62) -- (1.30,1.50);%
-	\draw[line width=1,color=#1] (0.73,1.67) arc (65:92:0.20);%
-	\path[draw=#1,fill=#2,line width=1,rotate=-20] (0.23,1.7675) circle (0.125);%
-	\path[draw=#1,fill=#2,line width=1,rotate=-20] (-0.06,1.74) circle (0.1143);%
-}
-
-%1: frame colour
-\newcommand*{\addglasses}[1]{%
-	\path[draw=#1,line width=1] (0.93,1.62) -- (1.30,1.50);%
-	\draw[line width=1,color=#1] (0.73,1.67) arc (65:92:0.20);%
-	\path[draw=#1,line width=1,rotate=-20] (0.23,1.7675) circle (0.125);%
-	\path[draw=#1,line width=1,rotate=-20] (-0.06,1.74) circle (0.1143);%
-}
-
-%1: fabric colour
-\newcommand*{\addtie}[1]{%
-	\draw[line width=3,color=#1] (0.60,1.00) -- (0.50,0.60);%
-}
-
-%1: Ice cream 1
-%2: Ice cream 2
-%3: Ice cream 3
-\newcommand*{\addicecream}[3]{%
-	\path[draw=Sienna,fill=Goldenrod,line width=0.5,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);%
-	\path[draw=Sienna, fill=Goldenrod, rotate=-20,line width=0.5] (0.55,1.20) ellipse (0.20 and 0.09);%
-	\path[fill=#1] (0.82,1.03) circle (0.12);%
-	\path[fill=#2] (1.02,0.95) circle (0.12);%
-	\path[fill=#3] (0.95,1.06) circle (0.12);%
-}
-
-%1: book colour
-%2: title text
-\newcommand*{\addbook}[2]{%
-		\path[fill=#1,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);%
-		\node[rotate=-20, color=white] at (0.88,0.70) {#2};%
-}
-
-%1: background colour hat
-%2: colour of decoration stars
-\newcommand*{\addmagichat}[2]{%
-	\path[preaction={fill, #1},rotate=-5,pattern=fivepointed stars, pattern color=#2] (0.36,1.95)--(0.86,2.95)--(1.20,1.85);%
-}
-
-\newcommand*{\addmagicwand}{%
-	\draw[line width=2.5,color=black] (0.90,0.90) -- (0.60,0.40);%
-	\draw[line width=2.5,color=white] (0.85,0.8167) -- (0.80,0.7333);%
-}
-
-%1: water colour
-\newcommand*{\addwater}[1]{%
-	\path[draw=#1, line width=5] (1.00,0.40) ellipse (0.80 and 0.28);%
-	\path[draw=#1, line width=3] (1.00,0.40) ellipse (1.00 and 0.45);%
-	\path[draw=#1, line width=2] (1.00,0.40) ellipse (1.20 and 0.60);%
-	\path[draw=#1, line width=1] (1.00,0.40) ellipse (1.40 and 0.75);%
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% glasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@glasses
+  \path[draw=\duck@glasses,line width=1] 
+  	(0.93,1.62) -- (1.30,1.50);
+  \draw[line width=1,color=\duck@glasses] 
+  	(0.73,1.67) arc (65:92:0.20);
+  \path[draw=\duck@glasses,line width=1,rotate=-20] 
+  	(0.23,1.7675) circle (0.125);
+  \path[draw=\duck@glasses,line width=1,rotate=-20] 
+  	(-0.06,1.74) circle (0.1143);
+\fi
 %
-% some wrapper for likly combinations of attributes
+% alien %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@alien
+	\draw[line width=2,color=\duck@alien] (1.00,1.83) -- (1.20,2.30);
+	\draw[line width=2,color=\duck@alien] (0.65,1.92) -- (0.60,2.35);
+	\path[fill=\duck@alien] (1.20,2.30) circle (0.07);
+	\path[fill=\duck@alien] (0.60,2.35) circle (0.07);
+\fi
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@hat
+	\path[fill=\duck@hat] (0.90,1.95) ellipse (0.46 and 0.0893);%
+	\path[fill=\duck@hat] (0.90,2.20) ellipse (0.25 and 0.0714);%
+	\path[fill=\duck@hat] (1.15,2.20) rectangle (0.65,1.95);%
+\fi
+%
+% unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@unicorn
+	\path[draw=\duck@unicorn,fill=\duck@body,line width=1,rotate=25]
+		(1.50,1.4375)--(1.60,1.8375)--(1.70,1.4375);%
+\fi
 
-%1: hair colour
-\newcommand*{\makeeinstein}[1]{%
-	\addcrazyhair{#1}%
-	\addeyebrow{#1}%
-}
 
-\newcommand*{\makeknuth}{%
-	\duck{Wheat}%
-	\addtshirt{white!93!black}%
-	\addjacket{DarkRed}%
-	\addrecedinghair{gray!50!white}%
-	\addglasses{brown!20!LightGray}%
-	\addbook{brown!70!black}{\scalebox{0.5}{\TeX}}%
-}
+%
+%%1: background colour hat
+%%2: colour of decoration stars
+%\newcommand*{\addmagichat}[2]{%
+%\path[preaction={fill, #1},rotate=-5,pattern=fivepointed stars, pattern color=#2] (0.36,1.95)--(0.86,2.95)--(1.20,1.85);%
+%}
+%
+%\newcommand*{\addmagicwand}{%
+%\draw[line width=2.5,color=black] (0.90,0.90) -- (0.60,0.40);%
+%\draw[line width=2.5,color=white] (0.85,0.8167) -- (0.80,0.7333);%
+%}
 
-%1: background colour hat
-%2: colour of decoration stars
-\newcommand*{\addwizzard}[2]{%
-	\addmagichat{#1}{#2}%
-	\addmagicwand%
-}
+%%1: book colour
+%%2: title text
+%\newcommand*{\addbook}[2]{%
+%	\path[fill=#1,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);%
+%	\node[rotate=-20, color=white] at (0.88,0.70) {#2};%
+%}
+
+%%1: frame colour
+%%2: glass colour
+%\newcommand*{\addsunglasses}[2]{%
+%\path[draw=#1,line width=1] (0.93,1.62) -- (1.30,1.50);%
+%\draw[line width=1,color=#1] (0.73,1.67) arc (65:92:0.20);%
+%\path[draw=#1,fill=#2,line width=1,rotate=-20] (0.23,1.7675) circle (0.125);%
+%\path[draw=#1,fill=#2,line width=1,rotate=-20] (-0.06,1.74) circle (0.1143);%
+%}
+%
+%%1: Ice cream 1
+%%2: Ice cream 2
+%%3: Ice cream 3
+%\newcommand*{\addicecream}[3]{%
+%\path[draw=Sienna,fill=Goldenrod,line width=0.5,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);%
+%\path[draw=Sienna, fill=Goldenrod, rotate=-20,line width=0.5] (0.55,1.20) ellipse (0.20 and 0.09);%
+%\path[fill=#1] (0.82,1.03) circle (0.12);%
+%\path[fill=#2] (1.02,0.95) circle (0.12);%
+%\path[fill=#3] (0.95,1.06) circle (0.12);%
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% some wrapper for likly combinations of attributes
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%1: hair colour
+%\newcommand*{\makeeinstein}[1]{%
+%\addcrazyhair{#1}%
+%\addeyebrow{#1}%
+%}
+%
+%\newcommand*{\makeknuth}{%
+%\duck{Wheat}%
+%\addtshirt{white!93!black}%
+%\addjacket{DarkRed}%
+%\addrecedinghair{gray!50!white}%
+%\addglasses{brown!20!LightGray}%
+%\addbook{brown!70!black}{\scalebox{0.5}{\TeX}}%
+%}
+%
+%%1: background colour hat
+%%2: colour of decoration stars
+%\newcommand*{\addwizzard}[2]{%
+%\addmagichat{#1}{#2}%
+%\addmagicwand%
+%}
+
+
+}% from `\def\duck@draw{` at the very beginning 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                    32237378723223                                   
 %                 23737232212232237822                                
