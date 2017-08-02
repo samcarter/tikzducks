@@ -31,10 +31,15 @@
 \newif\ifduck@jacket
 \newif\ifduck@tie
 \newif\ifduck@glasses
+\newif\ifduck@sunglasses
 \newif\ifduck@alien
 \newif\ifduck@hat
 \newif\ifduck@unicorn
 \newif\ifduck@water
+\newif\ifduck@icecream
+\newif\ifduck@book
+\newif\ifduck@magichat
+\newif\ifduck@magicwand
 
 \tikzset{
 	/duck/.cd,
@@ -83,7 +88,7 @@
  	longhair/.code			= \duck@longhairtrue			\def\duck@hair{#1},
  	crazyhair/.code			= \duck@crazyhairtrue			\def\duck@hair{#1},
  	recedinghair/.code	= \duck@recedinghairtrue	\def\duck@hair{#1},
- 	eyebrow/.code				= \duck@shorthairtrue			\def\duck@eyebrow{#1},
+ 	eyebrow/.code				= \duck@eyebrowtrue			  \def\duck@eyebrow{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	shorthair/.default 		= brown,
 	longhair/.default			= brown,
@@ -95,15 +100,33 @@
  	% Accessories
  	%
  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	glasses/.code=\duck@glassestrue	\def\duck@glasses{#1},
- 	alien/.code=\duck@alientrue \def\duck@alien{#1},
- 	hat/.code=\duck@hattrue \def\duck@hat{#1},
- 	unicorn/.code=\duck@unicorntrue \def\duck@unicorn{#1},
+ 	glasses/.code			= \duck@glassestrue			\def\duck@glasses{#1},
+ 	sunglasses/.code	= \duck@sunglassestrue	\def\duck@sunglasses{#1},
+ 	alien/.code				= \duck@alientrue 			\def\duck@alien{#1},
+ 	hat/.code					= \duck@hattrue 				\def\duck@hat{#1},
+ 	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
+	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
+	flavoura/.code 		= 											\def\duck@flavoura{#1},
+	flavourb/.code 		= 											\def\duck@flavourb{#1},
+	flavourc/.code 		= 											\def\duck@flavourc{#1},
+	book/.code 				= \duck@booktrue 				\def\duck@book{#1},
+	bookcolour/.code 	= 											\def\duck@bookcolour{#1},
+	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
+	magicstars/.code	= 											\def\duck@magicstars{#1},
+	magicwand/.code		= \duck@magicwandtrue,
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	glasses/.default=black,	
-	alien/.default=green,		
-	hat/.default=brown,
-	unicorn/.default=pink,
+	glasses/.default		= black,	
+	sunglasses/.default	= black,	
+	alien/.default			= green,		
+	hat/.default				= brown,
+	unicorn/.default		= pink,
+	icecream/.default 	= brown!70!black,
+	flavoura 						= brown!50!black,
+	flavourb 						= white!70!brown,
+	flavourc 						= red!50!white,
+	bookcolour					= brown,
+	magichat/.default		= violet,
+	magicstars          = yellow!80!brown,
 }
 
 \def\duck@draw{
@@ -239,7 +262,7 @@
 \fi
 %
 % eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifdefined\duck@eyebrow\else\let\duck@eyebrow=\duck@hair\fi
+\ifdefined\duck@hair\let\duck@eyebrow=\duck@hair\fi
 \ifduck@eyebrow
 	\draw[line width=2,color=\duck@eyebrow,line cap=round] 
 		(0.96,1.70) -- (0.82,1.77);
@@ -253,16 +276,28 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
+% sunglasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@sunglasses
+  \path[draw=\duck@sunglasses,line width=1] 
+  	(0.93,1.62) -- (1.30,1.50);
+  \draw[line width=1,color=\duck@sunglasses] 
+  	(0.73,1.67) arc (65:92:0.20);
+	\path[fill=\duck@sunglasses, line width=1,rotate=-20] 
+		(0.23,1.7675) circle (0.125);
+	\path[fill=\duck@sunglasses,line width=1,rotate=-20] 
+		(-0.06,1.74) circle (0.1143);
+\fi
+%
 % glasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@glasses
   \path[draw=\duck@glasses,line width=1] 
   	(0.93,1.62) -- (1.30,1.50);
   \draw[line width=1,color=\duck@glasses] 
   	(0.73,1.67) arc (65:92:0.20);
-  \path[draw=\duck@glasses,line width=1,rotate=-20] 
-  	(0.23,1.7675) circle (0.125);
-  \path[draw=\duck@glasses,line width=1,rotate=-20] 
-  	(-0.06,1.74) circle (0.1143);
+	\path[draw=\duck@glasses, line width=1,rotate=-20] 
+		(0.23,1.7675) circle (0.125);
+	\path[draw=\duck@glasses,line width=1,rotate=-20] 
+		(-0.06,1.74) circle (0.1143);
 \fi
 %
 % alien %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -285,76 +320,36 @@
 	\path[draw=\duck@unicorn,fill=\duck@body,line width=1,rotate=25]
 		(1.50,1.4375)--(1.60,1.8375)--(1.70,1.4375);%
 \fi
-
-
 %
-%%1: background colour hat
-%%2: colour of decoration stars
-%\newcommand*{\addmagichat}[2]{%
-%\path[preaction={fill, #1},rotate=-5,pattern=fivepointed stars, pattern color=#2] (0.36,1.95)--(0.86,2.95)--(1.20,1.85);%
-%}
+% icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@icecream
+	\path[draw=\duck@cone,fill=\duck@cone!50!white,line width=0.5,rotate=-20] 
+		(0.35,1.20)--(0.50,0.60)--(0.75,1.20);
+	\path[draw=\duck@cone,fill=\duck@cone!50!white, rotate=-20,line width=0.5] 
+		(0.55,1.20) ellipse (0.20 and 0.09);
+	\path[fill=\duck@flavoura] (0.82,1.03) circle (0.12);
+	\path[fill=\duck@flavourb] (1.02,0.95) circle (0.12);
+	\path[fill=\duck@flavourc] (0.95,1.06) circle (0.12);
+\fi
 %
-%\newcommand*{\addmagicwand}{%
-%\draw[line width=2.5,color=black] (0.90,0.90) -- (0.60,0.40);%
-%\draw[line width=2.5,color=white] (0.85,0.8167) -- (0.80,0.7333);%
-%}
-
-%%1: book colour
-%%2: title text
-%\newcommand*{\addbook}[2]{%
-%	\path[fill=#1,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);%
-%	\node[rotate=-20, color=white] at (0.88,0.70) {#2};%
-%}
-
-%%1: frame colour
-%%2: glass colour
-%\newcommand*{\addsunglasses}[2]{%
-%\path[draw=#1,line width=1] (0.93,1.62) -- (1.30,1.50);%
-%\draw[line width=1,color=#1] (0.73,1.67) arc (65:92:0.20);%
-%\path[draw=#1,fill=#2,line width=1,rotate=-20] (0.23,1.7675) circle (0.125);%
-%\path[draw=#1,fill=#2,line width=1,rotate=-20] (-0.06,1.74) circle (0.1143);%
-%}
+% book %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@book
+	\path[fill=\duck@bookcolour,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);
+	\node[rotate=-20, color=white] at (0.88,0.70) {\duck@book};%
+\fi
 %
-%%1: Ice cream 1
-%%2: Ice cream 2
-%%3: Ice cream 3
-%\newcommand*{\addicecream}[3]{%
-%\path[draw=Sienna,fill=Goldenrod,line width=0.5,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);%
-%\path[draw=Sienna, fill=Goldenrod, rotate=-20,line width=0.5] (0.55,1.20) ellipse (0.20 and 0.09);%
-%\path[fill=#1] (0.82,1.03) circle (0.12);%
-%\path[fill=#2] (1.02,0.95) circle (0.12);%
-%\path[fill=#3] (0.95,1.06) circle (0.12);%
-%}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% some wrapper for likly combinations of attributes
-%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% magic hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@magichat
+	\path[preaction={fill, \duck@magichat},rotate=-5,pattern=fivepointed stars, pattern color=\duck@magicstars] 
+	(0.36,1.95)--(0.86,2.95)--(1.20,1.85);
+\fi
 %
-%%1: hair colour
-%\newcommand*{\makeeinstein}[1]{%
-%\addcrazyhair{#1}%
-%\addeyebrow{#1}%
-%}
+% magic wand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@magicwand
+	\draw[line width=2.5,color=black] (0.90,0.90) -- (0.60,0.40);
+	\draw[line width=2.5,color=white] (0.85,0.8167) -- (0.80,0.7333);
+\fi
 %
-%\newcommand*{\makeknuth}{%
-%\duck{Wheat}%
-%\addtshirt{white!93!black}%
-%\addjacket{DarkRed}%
-%\addrecedinghair{gray!50!white}%
-%\addglasses{brown!20!LightGray}%
-%\addbook{brown!70!black}{\scalebox{0.5}{\TeX}}%
-%}
-%
-%%1: background colour hat
-%%2: colour of decoration stars
-%\newcommand*{\addwizzard}[2]{%
-%\addmagichat{#1}{#2}%
-%\addmagicwand%
-%}
-
-
 }% from `\def\duck@draw{` at the very beginning 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                    32237378723223                                   

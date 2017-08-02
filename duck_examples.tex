@@ -43,6 +43,18 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}
+\duck[eyebrow]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[longhair=red, eyebrow]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[shorthair, eyebrow=red]
+\end{tikzpicture}
+
+\begin{tikzpicture}
 \duck[water=cyan!50!blue]
 \end{tikzpicture}
 \qquad
@@ -54,21 +66,34 @@
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}
-\duck[glasses=red!50!black]
+\duck[alien=green!50!brown]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[alien=green!50!brown]
+\duck[icecream]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[icecream=brown, flavoura=brown, flavourb=white, flavourc=red]
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}
 \duck[hat=red!50!black]
 \end{tikzpicture}
-\qquad
+
+
 \begin{tikzpicture}
 \duck[body=pink,
 			unicorn=magenta!60!violet,
 			longhair=magenta!60!violet]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[glasses=red!50!black]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+\duck[sunglasses]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -85,76 +110,63 @@
 				jacket=brazilblue,
 				shorthair=brazilgreen]
 \end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+	\duck[grumpy,
+				body=yellow!50!brown!50!white,
+				tshirt=white,
+				jacket=black,
+				tie=black,
+				hat=black,
+				sunglasses=black]
+\end{tikzpicture}
+
+% prof. van duck
+\begin{tikzpicture}
+	\duck[body=yellow!50!brown!40!white,
+				crazyhair=gray!50!white,
+				eyebrow,
+				glasses=brown!70!black,
+				book=\scalebox{0.2}{$E=mc^2$},
+				bookcolour=red!20!brown
+]
+\end{tikzpicture}
+\qquad
+% knuth
+\begin{tikzpicture}
+	\duck[body=yellow!50!red!20!white,
+				recedinghair=gray!50!white,
+				eyebrow,
+				tshirt=white!93!black,
+				jacket=red!50!black,
+				glasses=brown!70!lightgray,
+				book=\scalebox{0.5}{\TeX},
+				bookcolour=black!20!brown
+]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}
+	\duck[magichat,
+				magicwand]
+\end{tikzpicture}
 
 
-
-
-%%
-%% short hairs
-%\begin{tikzpicture}
-%	\duck{Wheat}
-%	\addtshirt{LightBlue!50!white}
-%	\addjacket{LightSlateGrey}
-%	\addshorthair{brown!50!Grey}
-%\end{tikzpicture}
-%%
-%% Men in black
-%\begin{tikzpicture}
-%	\grumpyduck{Wheat}
-%	\addtshirt{white}
-%	\addjacket{black}
-%	\addtie{black}
-%	\addhat{black}
-%	\addsunglasses{black}{black}
-%\end{tikzpicture}
-
-%
-%% sunglasses
-%\begin{tikzpicture}
-%	\duck{Gold}
-%	\addsunglasses{black!50!brown}{black}
-%\end{tikzpicture}
-%%
-%% icecream
-%\begin{tikzpicture}
-%	\duck{Gold}
-%	\addicecream{Wheat}{Orchid}{Chocolate}
-%\end{tikzpicture}
-%%
-
-%
-%% prof. van duck
-%\begin{tikzpicture}
-%	\duck{Gold!40!white}
-%	\makeeinstein{gray!50!white}
-%	\addglasses{brown!70!black}
-%	\addbook{brown!70!black}{\scalebox{0.2}{$E=mc^2$}}
-%\end{tikzpicture}
-%%
-%% Knuth
-%\begin{tikzpicture}
-%	\makeknuth
-%\end{tikzpicture}
-%%
-%% for the counter wizard Christian Hupfer
-%\begin{tikzpicture}
-%	\duck{Gold}
-%	\addwizzard{BlueViolet!50!Pink}{Gold}
-%\end{tikzpicture}
-%
-
-%% ducklings
-%\begin{tikzpicture}[scale=0.6]
-%	\duck{Gold}
-%	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
-%		\duck{Gold}
-%	\end{scope}
-%	\begin{scope}[xshift=60pt, scale=.3, yshift=100pt]
-%		\duck{Gold}
-%	\end{scope}
-%	\begin{scope}[xshift=80pt, scale=.3, yshift=50pt]
-%		\duck{Gold}
-%	\end{scope}		
-%\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[magichat=teal,
+				magicstars=cyan]
+\end{tikzpicture}
+\qquad
+\begin{tikzpicture}[scale=0.6]
+	\duck
+	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
+		\duck
+	\end{scope}
+	\begin{scope}[xshift=60pt, scale=.3, yshift=100pt]
+		\duck
+	\end{scope}
+	\begin{scope}[xshift=80pt, scale=.3, yshift=50pt]
+		\duck
+	\end{scope}		
+\end{tikzpicture}
 
 \end{document}
