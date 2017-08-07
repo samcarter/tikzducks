@@ -78,7 +78,7 @@ The shown example ducks are purely fictional characters, any resemblance to real
 
 I would like to thank a few fellow user from \href{https://tex.stackexchange.com/}{TeX.Stackexchange}: \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package,
 \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}),
-\href{https://tex.stackexchange.com/users/4427/egreg}{egreg} for his help to implement the \texttt{\tikzset{}} interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1} for his help with default key values and last but not least \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+\href{https://tex.stackexchange.com/users/4427/egreg}{egreg} for his help to implement the \texttt{\tikzset{}} interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1} for his help with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} for her valuable \texttt{tikz} advices and last but not least \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 \bigskip\noindent
 Without them, this package would not exist!
@@ -263,7 +263,7 @@ There is a multitude of things a duck might need. All these examples also work w
 \end{tikzpicture}
 \begin{tikzpicture}
 	\duck[magichat=teal,
-				magicstars=cyan,
+				magicstars=blue!30!cyan,
 				magicwand]
 \end{tikzpicture}
 \end{tcblisting}
@@ -290,7 +290,7 @@ This package will never be able to do everything every potential user might want
 \begin{tcblisting}{title={adding things to the duck}}
 \begin{tikzpicture}
 \duck
-\path[fill=blue] (2,0) rectangle (1,1);
+\fill[blue] (2,0) rectangle (1,1);
 \end{tikzpicture}
 \end{tcblisting}
 
