@@ -61,10 +61,10 @@
 	\today
 \end{center}
 
-\section{Introduction}
+\section{Introduc(k)tion}
 \label{intro}
 
-The \tikzducks package is a latex package for ducks to be used in \texttt{tikz} pictures. This project is a continuation of an answer at TeX.Stackexchange (\url{https://tex.stackexchange.com/a/347458/36296}).
+The \tikzducks package is a latex package for ducks to be used in \texttt{tikz} pictures. This project is a continuation of an answer at TeX.Stackexchange: \href{https://tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
 This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. The source code can be found on \url{https://github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it!
 
@@ -83,7 +83,11 @@ I would like to thank a few fellow user from \href{https://tex.stackexchange.com
 \bigskip\noindent
 Without them, this package would not exist!
 
-\newpage
+\subsection{Dependencies}
+
+The \tikzducks package loads the packages \texttt{xcolor} and \texttt{tikz}, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.\ \verb|\PassOptionsToPackage{svgnames}{xcolor}|.
+It also uses the \verb|\usetikzlibrary{patterns}|.
+
 \section{Usage}
 
 The basic usage is fairly simple, to draw a duck:
