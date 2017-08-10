@@ -1,6 +1,6 @@
-\documentclass{ltxdockit}
-\usepackage{btxdockit}
+\documentclass{scrartcl}
 
+% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[T1]{fontenc}	
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
@@ -8,27 +8,9 @@
 \usepackage{tikzducks}
 \usepackage{xspace}
 \usepackage[most]{tcolorbox}
+\usepackage{hyperref}
 
-\KOMAoptions{numbers=noenddot}
-\addtokomafont{title}{\sffamily}
-\addtokomafont{paragraph}{\spotcolor}
-\addtokomafont{section}{\spotcolor}
-\addtokomafont{subsection}{\spotcolor}
-\addtokomafont{subsubsection}{\spotcolor}
-\addtokomafont{descriptionlabel}{\spotcolor}
-\setkomafont{caption}{\bfseries\sffamily\spotcolor}
-\setkomafont{captionlabel}{\bfseries\sffamily\spotcolor}
-
-\makeatletter
-\patchcmd{\paragraph}
-  {3.25ex \@plus1ex \@minus.2ex}{-3.25ex\@plus -1ex \@minus -.2ex}{}{}
-\patchcmd{\paragraph}{-1em}{1.5ex \@plus .2ex}{}{}
-\makeatother
-
-\title{The tikzducks package}
-\subtitle{using ducks in tikz}
-\author{samcarter}
- 
+% customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
 \definecolor{duckblue}{rgb}{0.0,0.2,0.4}
 \lstloadlanguages{[LaTeX]Tex} 
@@ -40,6 +22,12 @@
 	sidebyside,
 	listing options={language={[latex]TeX}, tabsize=2,breaklines},	righthand width=6.5cm
 }
+
+% meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{The tikzducks package}
+\subtitle{using ducks in tikz}
+\author{samcarter}
+\date{\today}
 
 \begin{document}
 
@@ -84,8 +72,6 @@ I would like to thank a few fellow user from \href{https://tex.stackexchange.com
 Without them, this package would not exist!
 
 The ducks mostly consist of basic geometric shapes drawn in \texttt{tikz}. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape}\footnote{\url{inkscape.org}} and then exported to \texttt{tikz} paths using the \texttt{SVG to TikZ/PGF} extension\footnote{\url{github.com/kjellmf/svg2tikz}}
-
-
 
 \subsection{Dependencies}
 
@@ -184,10 +170,10 @@ Eyebrows are also part of the package. The colour choice is a bit complicate for
 \end{tikzpicture}
 \end{tcblisting}
 
-\newpage
 \subsection{Clothing}
 
-A respectable duck needs a suitable wardrobe. It can choose from a \texttt{tshirt}, a \texttt{jacket} and a \texttt{tie}.
+A respectable duck needs a suitable wardrobe. It can choose from a \texttt{tshirt}, a \texttt{jacket} and a \texttt{tie}. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
+
 \begin{tcblisting}{title={dressed duck}}
 \begin{tikzpicture}
 	\duck[tshirt]
@@ -310,6 +296,31 @@ This package will never be able to do everything every potential user might want
 \end{tikzpicture}
 \end{tcblisting}
 
+For convenience the more complex paths of this package are stored in macros, which can easily be reused. 
+
+\begin{tcblisting}{title={redraw hair}}
+\begin{tikzpicture}
+\duck
+\path[preaction={fill, blue!50!black},pattern=fivepointed stars, pattern color=white]  
+\duckpathlonghair;
+\end{tikzpicture}
+\end{tcblisting}
+
+In detail, the following paths are available:
+\begin{itemize}
+\item \verb|\duckpathbody|
+\item \verb|\duckpathgrumpybill|
+\item \verb|\duckpathbill|
+\item \verb|\duckpathtshirt|
+\item \verb|\duckpathjacket|
+\item \verb|\duckpathshorthair|
+\item \verb|\duckpathlonghair|
+\item \verb|\duckpathcrazyhair|
+\item \verb|\duckpathrecedinghair|
+\end{itemize}
+
+In case you need one of the other shapes, please have a look at the source code in \verb|tikzducks.sty|.
+
 \section{Examples}
 
 Some examples how the \tikzducks can be customised:
@@ -335,10 +346,7 @@ Some examples how the \tikzducks can be customised:
 	\duck[body=brazilyellow,
 				shorthair=brazilgreen]
 	\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] 
-		(0.500,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
-		(0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
-		(1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.378) .. 
-		(0.513,0.700) -- cycle;
+	\duckpathjacket;
 \end{tikzpicture}
 \end{tcblisting}
 
