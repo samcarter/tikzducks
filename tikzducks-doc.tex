@@ -8,13 +8,13 @@
 \usepackage{tikzducks}
 \usepackage{xspace}
 \usepackage[most]{tcolorbox}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
 
 % customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\tikzducks}{\texttt{tikzducks}\xspace}
-\definecolor{duckblue}{rgb}{0.0,0.2,0.4}
-\lstloadlanguages{[LaTeX]Tex} 
+\definecolor{duckblue}{RGB}{0,70,140}
+\addtokomafont{sectioning}{\color{duckblue}}
 
+\lstloadlanguages{[LaTeX]Tex} 
 \tcbset{%
 	colframe=duckblue,
 	arc=2mm,
@@ -22,6 +22,9 @@
 	sidebyside,
 	listing options={language={[latex]TeX}, tabsize=2,breaklines},	righthand width=6.5cm
 }
+
+\newcommand{\TikZ}{Ti{\em k}Z}
+
 
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The tikzducks package}
@@ -32,9 +35,9 @@
 \begin{document}
 
 \begin{center}
-	{\LARGE \textbf{The \texttt{tikzducks} Package (version 0.2)}}
+	{\LARGE \textbf{The \verb|tikzducks| Package (version 0.2)}}
 	
-	\large using ducks in \texttt{tikz}
+	\large using ducks in \verb|tikz|
 	
 	samcarter (alias 
 	\begin{tikzpicture}[scale=0.3,baseline=5pt]
@@ -45,6 +48,8 @@
 	)
 	
 	\url{https://github.com/samcarter8/tikzducks}
+	
+	\url{https://www.ctan.org/pkg/tikzducks}
 
 	\today
 \end{center}
@@ -52,30 +57,35 @@
 \section{Introduc(k)tion}
 \label{intro}
 
-The \tikzducks package is a latex package for ducks to be used in \texttt{tikz} pictures. This project is a continuation of an answer at TeX.Stackexchange: \href{https://tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
+The \verb|tikzducks| package is a latex package for ducks to be used in \verb|tikz| pictures. 
+This project is a continuation of an answer at TeX.Stackexchange: \href{https://tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
-This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. The source code can be found on \url{https://github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it!
+This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. 
+The head version of the source code can be found on \url{https://github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it!
+
+A more stable package version can be found on ctan (\url{https://www.ctan.org/pkg/tikzducks}) and is included in both
+miktex and texlive as \verb|tikzducks|. 
 
 \subsection{License}
 
-Copyright \textcopyright\ \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c \url{http://www.latex-project.org/lppl.txt}.
+Copyright \textcopyright\ \verb|samcarter|. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
 
 The shown example ducks are purely fictional characters, any resemblance to real persons is purely coincidental and no copyright infringement is intended.
 
 \subsection{Acknowledgements}
 
-I would like to thank a few fellow user from \href{https://tex.stackexchange.com/}{TeX.Stackexchange}: \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package,
+I would like to thank a few fellow user from \href{https://tex.stackexchange.com/}{TeX.Stackexchange}: \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \verb|tikzducks| package,
 \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}),
-\href{https://tex.stackexchange.com/users/4427/egreg}{egreg} for his help to implement the \verb|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1} for his help with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} for her valuable \texttt{tikz} advices and last but not least \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+\href{https://tex.stackexchange.com/users/4427/egreg}{egreg} for his help to implement the \verb|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1} for his help with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} for her valuable \verb|tikz| advices and last but not least \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 \bigskip\noindent
 Without them, this package would not exist!
 
-The ducks mostly consist of basic geometric shapes drawn in \texttt{tikz}. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape}\footnote{\url{inkscape.org}} and then exported to \texttt{tikz} paths using the \texttt{SVG to TikZ/PGF} extension\footnote{\url{github.com/kjellmf/svg2tikz}}
+The ducks mostly consist of basic geometric shapes drawn in \verb|tikz|. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \verb|inkscape|\footnote{\url{inkscape.org}} and then exported to \verb|tikz| paths using the \verb|SVG to TikZ/PGF| extension\footnote{\url{github.com/kjellmf/svg2tikz}}
 
 \subsection{Dependencies}
 
-The \tikzducks package loads the packages \texttt{xcolor} and \texttt{tikz}, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.\ \verb|\PassOptionsToPackage{svgnames}{xcolor}|.
+The \verb|tikzducks| package loads the packages \verb|xcolor| and \verb|tikz|, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \verb|tikzducks| package or use, e.g.\ \verb|\PassOptionsToPackage{svgnames}{xcolor}|.
 It also uses the \verb|\usetikzlibrary{patterns}|.
 
 \section{Usage}
@@ -87,7 +97,7 @@ The basic usage is fairly simple, to draw a duck:
 \end{tikzpicture}
 \end{tcblisting}
 
-To customise this basic duck, the package uses \texttt{pgf} keys. For almost all parts the colour can be changed using \verb|<shape name>=<colour name>|. For example to change the colour of the duck:
+To customise this basic duck, the package uses \verb|pgf| keys. For almost all parts the colour can be changed using \verb|<shape name>=<colour name>|. For example to change the colour of the duck:
 \begin{tcblisting}{title={blue duck}}
 \begin{tikzpicture}
 	\duck[body=blue]
@@ -112,7 +122,7 @@ If the size of the ducks should be changed:
 
 \subsection{Body parts}
 
-The various parts of the duck body can also be coloured independently, i.e. \texttt{body}, \texttt{head} and \texttt{bill}:
+The various parts of the duck body can also be coloured independently, i.e. \verb|body|, \verb|head| and \verb|bill|:
 \begin{tcblisting}{title={harlequin duck}}
 \begin{tikzpicture}
 	\duck[body=yellow,
@@ -121,7 +131,7 @@ The various parts of the duck body can also be coloured independently, i.e. \tex
 \end{tikzpicture}
 \end{tcblisting}
 
-Furthermore using the keyword \texttt{grumpy} the shape of the bill can be changed:
+Furthermore using the keyword \verb|grumpy| the shape of the bill can be changed:
 \begin{tcblisting}{title={grumpy duck}}
 \begin{tikzpicture}
 	\duck[grumpy]
@@ -172,7 +182,7 @@ Eyebrows are also part of the package. The colour choice is a bit complicate for
 
 \subsection{Clothing}
 
-A respectable duck needs a suitable wardrobe. It can choose from a \texttt{tshirt}, a \texttt{jacket} and a \texttt{tie}. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
+A respectable duck needs a suitable wardrobe. It can choose from a \verb|tshirt|, a \verb|jacket| and a \verb|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
 
 \begin{tcblisting}{title={dressed duck}}
 \begin{tikzpicture}
@@ -279,7 +289,7 @@ There is a multitude of things a duck might need. All these examples also work w
 
 \section{Further customisation}
 
-This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\rightarrow \infty$. But as the ducks are simply things inside \texttt{tikzpicture}s, all the heavy weapons of the \texttt{tikz} package are available for further customisation.
+This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\rightarrow \infty$. But as the ducks are simply things inside \verb|tikzpicture|s, all the heavy weapons of the \verb|tikz| package are available for further customisation.
 
 \begin{tcblisting}{title={adding things to the duck}}
 \begin{tikzpicture}
@@ -323,7 +333,7 @@ In case you need one of the other shapes, please have a look at the source code 
 
 \section{Examples}
 
-Some examples how the \tikzducks can be customised:
+Some examples how the \verb|tikzducks| can be customised:
 \begin{tcblisting}{title={samcarter duck},	righthand width=3cm}
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!50!white, 
