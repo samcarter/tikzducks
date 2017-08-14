@@ -10,6 +10,7 @@
 \usepackage[paper=a4paper,margin=3cm]{geometry}
 \usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
 \usepackage{xspace}
+\usepackage{scrlayer-scrpage} 
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -59,6 +60,27 @@
  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
+\setlength{\footheight}{27.21881pt}
+\cfoot{%
+	\begin{tikzpicture}[scale=0.3,baseline=-5pt]
+		\duck
+	\end{tikzpicture}%
+	\ifnum\thepage>1%
+		\foreach \x in{2,...,\thepage}{%
+			\ifodd\x
+				\begin{tikzpicture}[scale=0.15,baseline=-12pt]
+					\duck
+				\end{tikzpicture}
+			\else%
+				\begin{tikzpicture}[scale=0.15,baseline=-5pt]
+					\duck
+				\end{tikzpicture}
+			\fi%
+		}%
+	\fi%
+} 
+\pagestyle{scrheadings}
+
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The \texorpdfstring{\tikzducks}{tikzducks} package}
 \subtitle{using ducks in \TikZ}
@@ -75,8 +97,9 @@
 \date{Version 0.2 -- \today}
 
 \begin{document}
-
 \maketitle
+\thispagestyle{scrheadings}
+
 \section{Introduc(k)tion}
 \label{intro}
 
