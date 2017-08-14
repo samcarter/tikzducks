@@ -11,6 +11,7 @@
 \usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
 \usepackage{xspace}
 \usepackage{scrlayer-scrpage} 
+\usepackage{marvosym}
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -40,7 +41,7 @@
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
 		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	righthand width=6.5cm
@@ -56,7 +57,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet},
  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
@@ -403,7 +404,7 @@ To ease the placement of further accessoires, some particular spots of the duck 
 \end{tcblisting}
 }
 
-\section{Examples}
+\section{Showcase}
 
 \begin{tcblisting}{title={\texttt{samcarter} duck},	righthand width=3cm}
 \begin{tikzpicture}
@@ -479,5 +480,31 @@ To ease the placement of further accessoires, some particular spots of the duck 
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{If you try this at home, replace the \texttt{crinklepaper} with an image of the comet's surface, e.g. \url{arxiv.org/abs/1707.02945}}
+
+\begin{tcblisting}{title={With my username I had to...},	righthand width=3cm}
+\definecolor{sgskin}{RGB}{222,197,159}
+\definecolor{sgblond}{RGB}{238,203,96}
+\colorlet{sggreen}{olive!50!black}
+\colorlet{sgbill}{sgskin!85!black}
+\colorlet{sgshirt}{sggreen!50!black}
+
+\begin{tikzpicture}
+	\duck[body=sgskin,bill=sgbill,tshirt=sgshirt,jacket=sggreen,cap=sggreen]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\duck[body=sgskin,bill=sgbill,tshirt=sgshirt,jacket=sggreen,shorthair=sgblond]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\duck[body=sgskin,bill=sgbill,tshirt=sgshirt,jacket=sggreen,shorthair=brown!70!black,glasses=brown!30!gray, book={\AA}, bookcolour=brown!50!black]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\duck[body=brown!80!black,bill=brown!65!black,tshirt=sgshirt,jacket=sggreen,grumpy]
+	\fill[sgblond, rotate=-10] (0.45,2.0) ellipse (0.12 and 0.05);
+	\node[rotate=170] at (0.8,1.89) {\scalebox{0.35}{\Leo}};
+\end{tikzpicture}
+\end{tcblisting}
 
 \end{document}
