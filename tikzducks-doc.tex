@@ -40,7 +40,7 @@
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
 		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	righthand width=6.5cm
@@ -152,7 +152,7 @@ To customise this basic duck, the package uses \lstinline|pgf| keys. For almost 
 
 \clearpage
 If the size of the ducks should be changed or shifted:
-\begin{tcblisting}{title={Scaled duck},	righthand width=3cm}
+\begin{tcblisting}{title={Scaled duck and \emph{The Ugly Duckling}},	righthand width=3cm}
 \begin{tikzpicture}[scale=0.6]
 	\duck
 	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
@@ -341,7 +341,10 @@ The following examples all also work without specifying a colour, but giving an 
 	\duck[icecream]
 \end{tikzpicture}
 \begin{tikzpicture}
-	\duck[icecream=brown, flavoura=brown, flavourb=white, flavourc=red]
+	\duck[icecream=brown, 
+	      flavoura=brown, 
+				flavourb=white, 
+				flavourc=red]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -352,24 +355,24 @@ This package will never be able to do everything every potential user might want
 
 \begin{tcblisting}{title={Adding things to the duck}}
 \begin{tikzpicture}
-\duck
-\fill[blue] (2,0) rectangle (1,1);
+	\duck
+	\fill[blue] (2,0) rectangle (1,1);
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Monochrome duck}}
 \begin{tikzpicture}
-\selectcolormodel{gray}
-\duck
+	\selectcolormodel{gray}
+	\duck
 \end{tikzpicture}
 \end{tcblisting}
 
 For convenience the more complex paths of this package are stored in macros, which can easily be reused:
 \begin{tcblisting}{title={Redraw parts}}
 \begin{tikzpicture}
-\duck
-\path[preaction={fill, red!50!black},pattern=fivepointed stars, pattern color=yellow]  
-\duckpathlonghair;
+	\duck
+	\path[preaction={fill, red!50!black},pattern=fivepointed stars, pattern color=yellow]  
+			\duckpathlonghair;
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -383,7 +386,23 @@ In detail, the following paths are available:
 
 In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
 
-\clearpage
+To ease the placement of further accessoires, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head| and \lstinline|bill|. 
+
+{
+\footnotesize\ttfamily
+\begin{tcblisting}{title={\normalfont\normalsize\bfseries Coordinates}}
+\begin{tikzpicture}[scale=2]
+	\duck
+	\fill[black] (wing) circle (0.04);
+	\fill[black] (head) circle (0.04);
+	\fill[black] (bill) circle (0.04);
+	\node[xshift=15] at (wing) {wing};
+	\node[xshift=15] at (head) {head};
+	\node[xshift=18] at (bill) {bill};	
+\end{tikzpicture}
+\end{tcblisting}
+}
+
 \section{Examples}
 
 \begin{tcblisting}{title={\texttt{samcarter} duck},	righthand width=3cm}
@@ -402,9 +421,9 @@ In case one of the other shapes is needed, please have a look at the package sou
 
 \begin{tcblisting}{title={Brazil duck},	righthand width=3cm}
 \begin{tikzpicture}
-\definecolor{brazilgreen}{RGB}{0,155,58}
-\definecolor{brazilyellow}{RGB}{254,223,0}
-\definecolor{brazilblue}{RGB}{0,39,118}
+	\definecolor{brazilgreen}{RGB}{0,155,58}
+	\definecolor{brazilyellow}{RGB}{254,223,0}
+	\definecolor{brazilblue}{RGB}{0,39,118}
 	\duck[body=brazilyellow,
 				shorthair=brazilgreen]
 	\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] 
