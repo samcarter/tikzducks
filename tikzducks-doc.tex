@@ -9,6 +9,14 @@
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm]{geometry}
 \usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
+\usepackage{xspace}
+
+% macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CTAN}{\textsc{CTAN}\xspace}
+\newcommand{\TikZ}{Ti\emph{k}Z\xspace}
+\newcommand{\tikzducks}{Ti\emph{k}Zducks\xspace}
+\newcommand{\miktex}{MiK\TeX\xspace}
+\newcommand{\texlive}{\TeX{}Live\xspace}
 
 % customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{duckblue}{RGB}{0,70,140}
@@ -30,16 +38,30 @@
 		columns=fullflexible,
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
-		morekeywords={tikzpicture,scope},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node},
+		morekeywords={tikzpicture,scope,patterns},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	righthand width=6.5cm
 }
 
+\lstset{%
+	language={[latex]TeX},
+	tabsize=2,
+	breaklines,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle={\color{green!50!black}\slshape}, 
+	columns=fullflexible,
+	texcsstyle=*\color{duckblue}\bfseries,
+	keywordstyle=\color{red!60!black}\bfseries,
+	morekeywords={tikzpicture,scope,patterns},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary},
+ delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
+}
+
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{The \texorpdfstring{\texttt{tikzducks}}{tikzducks} package}
-\subtitle{using ducks in tikz}
+\title{The \texorpdfstring{\tikzducks}{tikzducks} package}
+\subtitle{using ducks in \TikZ}
 \author{%
 	\texorpdfstring{\texttt{samcarter} (alias 
 		\begin{tikzpicture}[scale=0.3,baseline=5pt]
@@ -58,33 +80,34 @@
 \section{Introduc(k)tion}
 \label{intro}
 
-The \verb|tikzducks| package is a latex package for ducks to be used in \verb|tikz| pictures. 
+The \tikzducks package is a latex package for ducks to be used in \TikZ pictures. 
 This project is a continuation of an answer at TeX.Stackexchange: \href{tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
 This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. 
-The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it! A more stable package version can be found on ctan (\url{www.ctan.org/pkg/tikzducks}) and is included in both
-miktex and texlive as \verb|tikzducks|. 
+The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. 
 
 \subsection{Acknowledgements}
 
 Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
 
-First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \verb|tikzducks| package and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \verb|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \verb|tikz| advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
-The ducks mostly consist of basic geometric shapes drawn in \verb|tikz|. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \verb|inkscape|\footnote{\url{inkscape.org}} and then exported to \verb|tikz| paths using the \verb|SVG to TikZ/PGF| extension\footnote{\url{github.com/kjellmf/svg2tikz}}
+The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape}\footnote{\url{inkscape.org}} and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension\footnote{\url{github.com/kjellmf/svg2tikz}}
 
 \subsection{Dependencies}
 
-The \verb|tikzducks| package loads the packages \verb|xcolor| and \verb|tikz|, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \verb|tikzducks| package or use, e.g.
+The \tikzducks package loads the packages \lstinline|xcolor| and \TikZ, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
 
-\verb|    \PassOptionsToPackage{svgnames}{xcolor}|
-
-It also uses the \verb|\usetikzlibrary{patterns}|.
+\vskip0.5em
+\begin{lstlisting}[morekeywords={xcolor,svgnames}]
+	\PassOptionsToPackage{svgnames}{xcolor}
+\end{lstlisting}
+It also uses the \lstinline|\usetikzlibrary{patterns}|.
 
 \subsection{License}
 
 Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright}
-\verb|samcarter|. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
+\texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
 
 The shown example ducks are purely fictional characters, any resemblance to real ducks or persons is purely coincidental and no copyright infringement is intended.
 
@@ -97,7 +120,7 @@ The basic usage is fairly simple, to draw a duck:
 \end{tikzpicture}
 \end{tcblisting}
 
-To customise this basic duck, the package uses \verb|pgf| keys. For almost all parts the colour can be changed using \verb|<shape name>=<colour name>|. For example to change the colour of the duck:
+To customise this basic duck, the package uses \lstinline|pgf| keys. For almost all parts the colour can be changed using \lstinline|<shape name>=<colour name>|. For example to change the colour of the duck:
 \begin{tcblisting}{title={Blue duck}}
 \begin{tikzpicture}
 	\duck[body=blue]
@@ -123,7 +146,7 @@ If the size of the ducks should be changed or shifted:
 
 \subsection{Body parts}
 
-The various parts of the duck body can also be coloured independently, i.e. \verb|body|, \verb|head| or \verb|bill|:
+The various parts of the duck body can also be coloured independently, i.e. \lstinline|body|, \lstinline|head| or \lstinline|bill|:
 \begin{tcblisting}{title={Harlequin duck}}
 \begin{tikzpicture}
 	\duck[body=yellow,
@@ -132,7 +155,7 @@ The various parts of the duck body can also be coloured independently, i.e. \ver
 \end{tikzpicture}
 \end{tcblisting}
 
-Furthermore using the keyword \verb|grumpy| the shape of the bill can be changed:
+Furthermore using the keyword \lstinline|grumpy| the shape of the bill can be changed:
 \begin{tcblisting}{title={Grumpy duck}}
 \begin{tikzpicture}
 	\duck[grumpy]
@@ -169,7 +192,7 @@ And of course the colour of each hair style can be adjusted:
 \end{tikzpicture}
 \end{tcblisting}
 
-Eyebrows are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified \verb|eyebrow=<colour name>| this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
+Eyebrows are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified \lstinline|eyebrow=<colour name>| this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
 	\duck[eyebrow]
@@ -187,7 +210,7 @@ Eyebrows are also part of the package. The colour choice is more tricky for them
 
 \subsection{Clothing}
 
-A respectable duck needs a suitable wardrobe. It can choose from a \verb|tshirt|, a \verb|jacket| and a \verb|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
+A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket| and a \lstinline|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
 \begin{tcblisting}{title={Dressed duck}}
 \begin{tikzpicture}
 	\duck[tshirt]
@@ -302,7 +325,7 @@ The following examples all also work without specifying a colour, but giving an 
 \clearpage
 \section{Further customisation}
 
-This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \verb|tikzpicture|s, all the heavy weapons of the \verb|tikz| package are available for further customisation.
+This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
 
 \begin{tcblisting}{title={Adding things to the duck}}
 \begin{tikzpicture}
@@ -327,7 +350,15 @@ For convenience the more complex paths of this package are stored in macros, whi
 \end{tikzpicture}
 \end{tcblisting}
 
-In detail, the following paths are available: \verb|\duckpathbody|, \verb|\duckpathgrumpybill|, \linebreak\verb|\duckpathbill|, \verb|\duckpathtshirt|, \verb|\duckpathjacket|, \verb|\duckpathshorthair|, \hbadness10000\linebreak\verb|\duckpathlonghair|, \verb|\duckpathcrazyhair|, \verb|\duckpathrecedinghair|. In case one of the other shapes is needed, please have a look at the source code in \verb|tikzducks.sty|.
+In detail, the following paths are available:
+
+\vskip0.5em
+\begin{lstlisting}[breakindent=0pt]
+\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,
+\duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair
+\end{lstlisting}
+
+In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
 
 \clearpage
 \section{Examples}

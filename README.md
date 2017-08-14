@@ -1,6 +1,6 @@
-# tikzducks
+# Tikzducks
 
-This is a little LaTeX package for ducks to be used in *TikZ* pictures. The project is a continuation of https://tex.stackexchange.com/a/347458/36296
+This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of https://tex.stackexchange.com/a/347458/36296
 
 This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt
 
