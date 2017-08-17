@@ -28,6 +28,7 @@
 \usepackage{xspace}
 \usepackage{scrlayer-scrpage} 
 \usepackage{marvosym}
+\usepackage{fontawesome}
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -57,7 +58,7 @@
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
 		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	righthand width=6.5cm
@@ -73,11 +74,12 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
 \setlength{\footheight}{27.21881pt}
+\newlength{\duckoffset}
 \cfoot{%
 	\begin{tikzpicture}[scale=0.3,baseline=-5pt]
 		\duck
@@ -85,14 +87,21 @@
 	\ifnum\thepage>1%
 		\foreach \x in{2,...,\thepage}{%
 			\ifodd\x
-				\begin{tikzpicture}[scale=0.15,baseline=-12pt]
-					\duck
-				\end{tikzpicture}
+				\setlength{\duckoffset}{-12pt}
 			\else%
-				\begin{tikzpicture}[scale=0.15,baseline=-5pt]
-					\duck
-				\end{tikzpicture}
+				\setlength{\duckoffset}{-5pt}
 			\fi%
+			\begin{tikzpicture}[scale=0.15,baseline=\duckoffset]
+				\ifnum\x=5
+					\duck[body=gray!50!white,head=gray!50!white]
+				\else
+					\ifnum\x=10
+						\duck[body=gray!50!white,head=gray!50!white]
+					\else
+						\duck
+					\fi
+				\fi
+			\end{tikzpicture}
 		}%
 	\fi%
 } 
@@ -132,7 +141,7 @@ Without the friendly and helpful community of \href{https://tex.stackexchange.co
 
 First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
-The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape}\footnote{\url{inkscape.org}} and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension\footnote{\url{github.com/kjellmf/svg2tikz}}
+The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{github.com/kjellmf/svg2tikz}).
 
 \subsection{Dependencies}
 
@@ -419,6 +428,7 @@ To ease the placement of further accessoires, some particular spots of the duck 
 \end{tikzpicture}
 \end{tcblisting}
 }
+An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}.. 
 
 \section{Showcase}
 
@@ -497,7 +507,8 @@ To ease the placement of further accessoires, some particular spots of the duck 
 \end{tcblisting}
 \footnotetext[\thefootnote]{If you try this at home, replace the \texttt{crinklepaper} with an image of the comet's surface, e.g. \url{https://arxiv.org/abs/1707.02945}}
 
-\begin{tcblisting}{title={With my username I had to...},	righthand width=3cm}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={With my username I had to...$^\thefootnote$},	righthand width=3cm}
 \definecolor{sgskin}{RGB}{222,197,159}
 \definecolor{sgblond}{RGB}{238,203,96}
 \colorlet{sggreen}{olive!50!black}
@@ -522,5 +533,35 @@ To ease the placement of further accessoires, some particular spots of the duck 
 	\node[rotate=170] at (0.8,1.89) {\scalebox{0.35}{\Leo}};
 \end{tikzpicture}
 \end{tcblisting}
+\footnotetext[\thefootnote]{this example uses the \lstinline|marvosym| package}
 
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Live long and prosper$^\thefootnote$},	righthand width=3cm, label=starducks}
+\definecolor{unigold}{RGB}{203,157,52}
+\definecolor{uniblue}{RGB}{46,114,167}
+\definecolor{unired}{RGB}{177,49,34}
+
+\definecolor{skink}{RGB}{245,206,193}
+\definecolor{skins}{RGB}{255,222,151}
+\definecolor{skinu}{RGB}{146,113,96}
+
+\newcommand*{\insignia}{\node[rotate=15] at (wing) {\color{yellow!80!brown}\faLocationArrow};}
+
+\begin{tikzpicture}
+\duck[tshirt=black!60!gray, jacket=unigold, body=skink, shorthair=brown!80!black, bill=skink!60!gray]
+\insignia
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[tshirt=black!60!gray, jacket=uniblue, body=skins, shorthair=black!60!brown, bill=skins!60!gray]
+\fill[skins,rotate=175, xshift=-46, yshift=-76] (0.45,1.20)--(0.50,0.80)--(0.65,1.20);
+\insignia
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[tshirt=black!60!gray, jacket=unired, body=skinu, longhair=black!60!brown, bill=skinu!70!black]
+\insignia
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{this example uses the \lstinline|fontawesome| package}
 \end{document}
