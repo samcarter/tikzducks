@@ -78,6 +78,18 @@
  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
+%\newbox\marginlst
+%\lstnewenvironment{marginlisting}{%
+%	\lstset{%
+%		linewidth=\marginparwidth,
+%		basicstyle=\footnotesize\ttfamily\color{duckblue}
+%	}%
+%  \setbox\marginlst\hbox\bgroup
+%}{%
+%	\egroup
+%  \marginpar{\vskip.7\baselineskip\unhbox\marginlst}%
+%}
+
 \setlength{\footheight}{27.21881pt}
 \newlength{\duckoffset}
 \cfoot{%
@@ -163,6 +175,9 @@ The shown example ducks are purely fictional characters, any resemblance to real
 \section{Usage}
 
 The basic usage is fairly simple, to draw a duck:
+%\begin{marginlisting}
+%\duck 
+%\end{marginlisting}
 \begin{tcblisting}{title={Basic duck}}
 \begin{tikzpicture}
 	\duck
@@ -196,15 +211,27 @@ If the size of the ducks should be changed or shifted:
 \subsection{Body parts}
 
 The various parts of the duck body can also be coloured independently, i.e. \lstinline|body|, \lstinline|head| or \lstinline|bill|:
+
+%\begin{marginlisting}
+%body
+%head
+%bill
+%eye
+%\end{marginlisting}
 \begin{tcblisting}{title={Harlequin duck}}
 \begin{tikzpicture}
 	\duck[body=yellow,
 		head=yellow!50!orange, 
-		bill=red]
+		bill=red,
+		eye=green]
 \end{tikzpicture}
 \end{tcblisting}
 
 Furthermore using the keyword \lstinline|grumpy| the shape of the bill can be changed:
+
+%\begin{marginlisting}
+%grumpy
+%\end{marginlisting}
 \begin{tcblisting}{title={Grumpy duck}}
 \begin{tikzpicture}
 	\duck[grumpy]
@@ -218,6 +245,13 @@ Furthermore using the keyword \lstinline|grumpy| the shape of the bill can be ch
 \subsection{Hair styles}
 
 Some duck also like to have nice hair cuts, several different hair styles are available:
+
+%\begin{marginlisting}
+%longhair
+%shorthair
+%crazyhair
+%recedinghair
+%\end{marginlisting}
 \begin{tcblisting}{title={Hairy duck}}
 \begin{tikzpicture}
 	\duck[longhair]
@@ -242,6 +276,10 @@ And of course the colour of each hair style can be adjusted:
 \end{tcblisting}
 
 Eyebrows are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified \lstinline|eyebrow=<colour name>| this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
+
+%\begin{marginlisting}
+%eyebrow
+%\end{marginlisting}
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
 	\duck[eyebrow]
@@ -260,6 +298,12 @@ Eyebrows are also part of the package. The colour choice is more tricky for them
 \subsection{Clothing}
 
 A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket| and a \lstinline|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
+
+%\begin{marginlisting}
+%tshirt
+%jacket
+%tie
+%\end{marginlisting}
 \begin{tcblisting}{title={Dressed duck}}
 \begin{tikzpicture}
 	\duck[tshirt]
@@ -285,36 +329,54 @@ There is a multitude of things a duck might need.
 
 The following examples all also work without specifying a colour, but giving an examples with and one without explicit colour just makes this overview unnecessary long, so only one is given.
 
+%\begin{marginlisting}
+%water
+%\end{marginlisting}
 \begin{tcblisting}{title={Swimming duck}}
 \begin{tikzpicture}
 	\duck[water=cyan!50!blue]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%alien
+%\end{marginlisting}
 \begin{tcblisting}{title={Alien duck}}
 \begin{tikzpicture}
 	\duck[alien=green!50!brown]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%hat
+%\end{marginlisting}
 \begin{tcblisting}{title={Hat duck}}
 \begin{tikzpicture}
 	\duck[hat=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%cap
+%\end{marginlisting}
 \begin{tcblisting}{title={Basecap duck}}
 \begin{tikzpicture}
 	\duck[cap=red!80!black]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%santa
+%\end{marginlisting}
 \begin{tcblisting}{title={Santa Clause}}
 \begin{tikzpicture}
 	\duck[santa=red!80!black]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%unicorn
+%\end{marginlisting}
 \begin{tcblisting}{title={Unicorn duck}}
 \begin{tikzpicture}
 	\duck[body=pink,
@@ -323,18 +385,28 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%glasses
+%\end{marginlisting}
 \begin{tcblisting}{title={Glasses duck}}
 \begin{tikzpicture}
 	\duck[glasses=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%sunglasses
+%\end{marginlisting}
 \begin{tcblisting}{title={Sunglasses duck}}
 \begin{tikzpicture}
 	\duck[sunglasses=blue]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%book
+%bookcolour
+%\end{marginlisting}
 \begin{tcblisting}{title={Book duck}}
 \begin{tikzpicture}
 	\duck[book=\scalebox{0.5}{\TeX}]
@@ -344,6 +416,11 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%magichat
+%magicwand
+%magicstars
+%\end{marginlisting}
 \begin{tcblisting}{title={Magic duck}}
 \begin{tikzpicture}
 	\duck[magichat,
@@ -356,12 +433,21 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%cricket
+%\end{marginlisting}
 \begin{tcblisting}{title={Cricket duck}}
 \begin{tikzpicture}
 	\duck[cricket=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
+%\begin{marginlisting}
+%icecream
+%flavoura
+%flavourb
+%flavourc
+%\end{marginlisting}
 \begin{tcblisting}{title={Icecream duck}}
 \begin{tikzpicture}
 	\duck[icecream]
@@ -394,6 +480,18 @@ This package will never be able to do everything every potential user might want
 \end{tcblisting}
 
 For convenience the more complex paths of this package are stored in macros, which can easily be reused:
+
+%\begin{marginlisting}
+%\duckpathbody
+%\duckpathgrumpybill
+%\duckpathbill
+%\duckpathtshirt
+%\duckpathjacket
+%\duckpathshorthair
+%\duckpathlonghair
+%\duckpathcrazyhair
+%\duckpathrecedinghair
+%\end{marginlisting}
 \begin{tcblisting}{title={Redraw parts}}
 \begin{tikzpicture}
 	\duck
@@ -414,6 +512,11 @@ In case one of the other shapes is needed, please have a look at the package sou
 
 To ease the placement of further accessoires, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head| and \lstinline|bill|. 
 
+%\begin{marginlisting}
+%wing
+%head
+%bill
+%\end{marginlisting}
 {
 \footnotesize\ttfamily
 \begin{tcblisting}{title={\normalfont\normalsize\bfseries Coordinates}}
