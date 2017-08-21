@@ -144,7 +144,7 @@
 	santa/.default			= red!80!black,
 	chef/.default				= gray!20!white,
 	unicorn/.default		= pink,
-	icecream/.default 	= brown!70!black,
+	icecream/.default 	= brown!60!gray,
 	flavoura 						= brown!50!black,
 	flavourb 						= white!70!brown,
 	flavourc 						= red!50!white,
@@ -360,15 +360,10 @@
 %
 % icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@icecream
-	\draw[\duck@cone,fill=\duck@cone!50!white,
-				line width=0.5,rotate=-20] 
-		(0.35,1.20)--(0.50,0.60)--(0.75,1.20);
-	\draw[\duck@cone,fill=\duck@cone!50!white, 
-				rotate=-20,line width=0.5] 
-		(0.55,1.20) ellipse (0.20 and 0.09);
-	\fill[\duck@flavoura] (0.82,1.03) circle (0.12);
-	\fill[\duck@flavourb] (1.02,0.95) circle (0.12);
-	\fill[\duck@flavourc] (0.95,1.06) circle (0.12);
+	\fill[\duck@cone,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);
+	\fill[\duck@flavoura] (0.85,1.03) circle (0.12);
+	\fill[\duck@flavourb] (1.05,0.95) circle (0.12);
+	\fill[\duck@flavourc] (0.95,1.1) circle (0.12);		
 \fi
 %
 % book %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
