@@ -29,6 +29,7 @@
 \usepackage{scrlayer-scrpage} 
 \usepackage{marvosym}
 \usepackage{fontawesome}
+\usepackage[hang,flushmargin]{footmisc}
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -42,6 +43,7 @@
 \addtokomafont{sectioning}{\color{duckblue}}
 \addtokomafont{date}{\normalsize}
 \addtokomafont{author}{\normalsize}
+\setlength{\footnotemargin}{0.7em}
 
 \tcbset{%
 	colframe=duckblue,
@@ -471,7 +473,7 @@ The following examples all also work without specifying a colour, but giving an 
 			rollingpin=brown!80!black]
 \end{tikzpicture}
 \end{tcblisting}
-\footnotetext[\thefootnote]{The chef duck is based on an answer by Calatex, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
+\footnotetext[\thefootnote]{The chef duck is based on an answer by CarLaTeX, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
 
 \section{Further customisation}
 
