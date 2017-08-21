@@ -460,7 +460,19 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
-\clearpage
+%\begin{marginlisting}
+%chef
+%rollingpin
+%\end{marginlisting}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Chef duck$^\thefootnote$}}
+\begin{tikzpicture}
+\duck[chef=white!95!yellow,
+			rollingpin=brown!80!black]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The chef duck is based on an answer by Calatex, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
+
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -500,6 +512,7 @@ For convenience the more complex paths of this package are stored in macros, whi
 \end{tikzpicture}
 \end{tcblisting}
 
+\clearpage
 In detail, the following paths are available:
 
 \vskip0.5em

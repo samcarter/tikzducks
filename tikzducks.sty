@@ -53,6 +53,9 @@
 \newif\ifduck@magichat
 \newif\ifduck@magicwand
 \newif\ifduck@cricket
+\newif\ifduck@rollingpin
+\newif\ifduck@chef
+
 
 \tikzset{
 	/duck/.cd,
@@ -119,6 +122,7 @@
  	hat/.code					= \duck@hattrue 				\def\duck@hat{#1},
  	cap/.code					= \duck@captrue					\def\duck@cap{#1},
  	santa/.code				= \duck@santatrue				\def\duck@santa{#1},
+ 	chef/.code				= \duck@cheftrue				\def\duck@chef{#1},
  	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
 	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
 	flavoura/.code 		= 											\def\duck@flavoura{#1},
@@ -130,6 +134,7 @@
 	magicstars/.code	= 											\def\duck@magicstars{#1},
 	magicwand/.code		= \duck@magicwandtrue,
 	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
+	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -137,6 +142,7 @@
 	hat/.default				= brown,
 	cap/.default				= blue,
 	santa/.default			= red!80!black,
+	chef/.default				= gray!20!white,
 	unicorn/.default		= pink,
 	icecream/.default 	= brown!70!black,
 	flavoura 						= brown!50!black,
@@ -146,6 +152,7 @@
 	magichat/.default		= violet,
 	magicstars          = yellow!80!brown,
 	cricket/.default		= brown,
+	rollingpin/.default	= brown,
 }
 
 \def\duck@draw{
@@ -335,6 +342,16 @@
 	\fill[white!80!brown] (1.6,1.0) circle (0.17);
 \fi
 %
+% Chef hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@chef
+	\fill[\duck@chef,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.08);	
+	\fill[\duck@chef,rotate=-15] (0.07,2.1) rectangle (0.81,2.55);
+	\fill[\duck@chef] (1.01,2.47) circle (0.17);
+	\fill[\duck@chef] (1.24,2.35) circle (0.15);
+	\fill[\duck@chef] (0.77,2.40) circle (0.12);
+	\fill[\duck@chef] (1.39,2.20) circle (0.12);
+\fi
+%
 % unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@unicorn
 	\draw[\duck@unicorn,fill=\duck@body!100,line width=1,rotate=25]
@@ -378,6 +395,12 @@
 \ifduck@cricket
 	\fill[\duck@cricket, rounded corners=2, rotate=-30] (0.4,1.2) rectangle (0.7,2.2);
 	\fill[\duck@cricket, rounded corners=1, rotate=-30] (0.5,0.8) rectangle (0.6,1.3);
+\fi
+%
+% rollingpin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@rollingpin
+	\fill[\duck@rollingpin, rounded corners=2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
+	\fill[\duck@rollingpin, rounded corners=1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
 \fi
 %
 }% from `\def\duck@draw{` at the very beginning 
