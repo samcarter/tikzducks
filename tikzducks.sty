@@ -40,6 +40,7 @@
 \newif\ifduck@tshirt
 \newif\ifduck@jacket
 \newif\ifduck@tie
+\newif\ifduck@cape
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -91,10 +92,12 @@
 	tshirt/.code = \duck@tshirttrue	\def\duck@tshirt{#1},
 	jacket/.code = \duck@jackettrue	\def\duck@jacket{#1},
 	tie/.code 	 = \duck@tietrue		\def\duck@tie{#1},
+	cape/.code	 = \duck@capetrue		\def\duck@cape{#1},
 	% setting default %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	tshirt/.default	= white,
 	jacket/.default	= blue,
 	tie/.default		= blue,	
+	cape/.default		= red,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%
 	% hair styles
@@ -235,6 +238,11 @@
 % jacket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@jacket
 	\fill[\duck@jacket] \duckpathjacket;
+\fi
+%
+% superhero cape %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cape
+	\fill[\duck@cape] \duckpathcape;
 \fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -496,6 +504,10 @@
 	(0.4381,1.6816) .. controls (0.4575,1.9618) and (0.9007,2.2059) .. 
 	(1.1308,2.0390) .. controls (1.4703,1.7469) and (1.0343,1.5949) .. 
 	(1.3385,1.4841) -- cycle;
+}
+
+\newcommand{\duckpathcape}{%
+	(0.225,0.966) .. controls (1.314,0.961) and (2.070,0.650) .. (2.042,1.245) .. controls (1.863,1.164) and (1.844,1.173) .. (1.792,1.340) .. controls (1.635,1.235) and (1.620,1.268) .. (1.567,1.393) .. controls (1.358,1.086) and (0.664,1.096) .. (0.460,1.110) .. controls (0.461,1.133) and (0.305,1.077) .. (0.235,0.966) -- cycle;
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

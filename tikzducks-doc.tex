@@ -60,9 +60,10 @@
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
 		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
+	center lower,
 	righthand width=6.5cm
 }
 
@@ -76,7 +77,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
@@ -130,7 +131,7 @@
 			\duck[body=yellow!50!brown!50!white,
 					longhair=red!50!brown, 
 					jacket=blue!50!black]
-		\end{tikzpicture})\\[0.8em]
+		\end{tikzpicture}\hskip-0.5em)\\[0.8em]
 		\url{https://github.com/samcarter8/tikzducks}\\
 		\url{https://www.ctan.org/pkg/tikzducks}
 	}{samcarter}}
@@ -317,6 +318,10 @@ A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|ts
 \begin{tikzpicture}
 	\duck[tie]
 \end{tikzpicture}
+\begin{tikzpicture}
+	\duck[cape=red!80!black]
+\end{tikzpicture}
+
 \begin{tikzpicture}
 	\duck[tshirt=lightgray, 
 			jacket=blue!50!black, 
@@ -519,8 +524,7 @@ In detail, the following paths are available:
 
 \vskip0.5em
 \begin{lstlisting}[breakindent=0pt]
-\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,
-\duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair
+\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair
 \end{lstlisting}
 
 In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
