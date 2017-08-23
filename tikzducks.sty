@@ -56,6 +56,7 @@
 \newif\ifduck@cricket
 \newif\ifduck@rollingpin
 \newif\ifduck@chef
+\newif\ifduck@signpost
 
 
 \tikzset{
@@ -133,6 +134,9 @@
 	flavourc/.code 		= 											\def\duck@flavourc{#1},
 	book/.code 				= \duck@booktrue 				\def\duck@book{#1},
 	bookcolour/.code 	= 											\def\duck@bookcolour{#1},
+	signpost/.code		= \duck@signposttrue			\def\duck@signpost{#1},
+	signcolour/.code  = 											\def\duck@signcolour{#1},
+	signback/.code		= 											\def\duck@signback{#1},
 	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
 	magicstars/.code	= 											\def\duck@magicstars{#1},
 	magicwand/.code		= \duck@magicwandtrue,
@@ -152,6 +156,8 @@
 	flavourb 						= white!70!brown,
 	flavourc 						= red!50!white,
 	bookcolour					= brown,
+	signcolour					= brown!50!black,
+	signback						= green!40!black,	
 	magichat/.default		= violet,
 	magicstars          = yellow!80!brown,
 	cricket/.default		= brown,
@@ -379,6 +385,14 @@
 	\fill[\duck@bookcolour,rotate=-20] 
 		(0.40,1.20) rectangle (0.80,0.60);
 	\node[rotate=-20, color=white] at (0.88,0.70) {\duck@book};%
+\fi
+%
+% signpost
+\ifduck@signpost
+	\fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
+  \fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
+  \fill[\duck@signback, rounded corners=1, rotate=-20] (0.45,1.75) rectangle (1.25,2.35);
+ 	\node[rotate=-20, color=white] at (1.5,1.65) {\duck@signpost};
 \fi
 %
 % magic hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

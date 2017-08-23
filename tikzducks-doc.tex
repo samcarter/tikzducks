@@ -424,6 +424,24 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tcblisting}
 
 %\begin{marginlisting}
+%signpost
+%signcolour
+%signback
+%\end{marginlisting}
+\begin{tcblisting}{title={Signpost duck}}
+\begin{tikzpicture} 
+    \duck[signpost=42]
+\end{tikzpicture}
+\begin{tikzpicture} 
+\duck[signpost=\scalebox{0.4}{
+	\parbox{2cm}{\color{black}
+	\centering Science\\ first}},
+	signcolour=brown!70!gray,
+	signback=white!80!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
+%\begin{marginlisting}
 %magichat
 %magicwand
 %magicstars
@@ -519,7 +537,6 @@ For convenience the more complex paths of this package are stored in macros, whi
 \end{tikzpicture}
 \end{tcblisting}
 
-\clearpage
 In detail, the following paths are available:
 
 \vskip0.5em
@@ -552,6 +569,7 @@ To ease the placement of further accessoires, some particular spots of the duck 
 }
 An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}.. 
 
+\clearpage
 \section{Showcase}
 
 \begin{tcblisting}{title={\texttt{samcarter} duck},	righthand width=3cm}
@@ -594,19 +612,6 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 		glasses=brown!70!black,
 		book=\scalebox{0.2}{$E=mc^2$},
 		bookcolour=red!20!brown]
-\end{tikzpicture}
-\end{tcblisting}
-
-\begin{tcblisting}{title={Knuth duck},	righthand width=3cm}
-\begin{tikzpicture}
-	\duck[body=yellow!50!red!20!white,
-		recedinghair=gray!50!white,
-		eyebrow,
-		tshirt=white!93!black,
-		jacket=red!50!black,
-		glasses=brown!70!lightgray,
-		book=\scalebox{0.5}{\TeX},
-		bookcolour=black!20!brown]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -686,4 +691,17 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{this example uses the \lstinline|fontawesome| package}
+
+\begin{tcblisting}{title={Knuth duck},	righthand width=3cm}
+\begin{tikzpicture}
+	\duck[body=yellow!50!red!20!white,
+		recedinghair=gray!50!white,
+		eyebrow,
+		tshirt=white!93!black,
+		jacket=red!50!black,
+		glasses=brown!70!lightgray,
+		book=\scalebox{0.5}{\TeX},
+		bookcolour=black!20!brown]
+\end{tikzpicture}
+\end{tcblisting}
 \end{document}
