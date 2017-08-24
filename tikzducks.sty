@@ -58,7 +58,6 @@
 \newif\ifduck@chef
 \newif\ifduck@signpost
 
-
 \tikzset{
 	/duck/.cd,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,6 +166,13 @@
 \def\duck@draw{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% minimal bounding box size
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\path (0.1,0.1) rectangle (2.1,2.12);
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 % defining some coordinates
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,7 +205,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fill[\duck@body] \duckpathbody;
+\begin{pgfinterruptboundingbox}
+	\fill[\duck@body] \duckpathbody;
+\end{pgfinterruptboundingbox}
 %
 % head %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifdefined\duck@head\else\let\duck@head=\duck@body\fi
@@ -233,7 +241,9 @@
 %
 % tshirt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@tshirt
-	\fill[\duck@tshirt] \duckpathtshirt;
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@tshirt] \duckpathtshirt;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % tie %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,12 +253,16 @@
 %
 % jacket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@jacket
-	\fill[\duck@jacket] \duckpathjacket;
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@jacket] \duckpathjacket;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % superhero cape %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@cape
-	\fill[\duck@cape] \duckpathcape;
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@cape] \duckpathcape;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -259,22 +273,34 @@
 %
 % short hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@shorthair
-	\fill[\duck@hair] \duckpathshorthair;
+	\path (0.1,0.1) rectangle (2.1,2.25);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathshorthair;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % long hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@longhair
-	\fill[\duck@hair] \duckpathlonghair;
+	\path (0.1,0.1) rectangle (2.1,2.25);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathlonghair;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % crazy hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@crazyhair
-	\fill[\duck@hair] \duckpathcrazyhair;
+	\path (0.1,0.1) rectangle (2.1,2.4);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathcrazyhair;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % receding hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@recedinghair
-	\fill[\duck@hair] \duckpathrecedinghair;
+	\path (0.1,0.1) rectangle (2.1,2.18);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] \duckpathrecedinghair;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -419,6 +445,9 @@
 	\fill[\duck@rollingpin, rounded corners=2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
 	\fill[\duck@rollingpin, rounded corners=1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
 \fi
+%
+%
+%\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
 }% from `\def\duck@draw{` at the very beginning 
 
