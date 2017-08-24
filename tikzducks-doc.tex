@@ -64,7 +64,11 @@
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	center lower,
-	righthand width=6.5cm
+	righthand width=6.5cm,
+	before lower={%
+		\setlength{\parskip}{0.5cm}%
+		\spaceskip=5\fontdimen2\font%
+	}
 }
 
 \lstset{%
@@ -78,7 +82,7 @@
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
 	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
- delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
+ 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
 %\newbox\marginlst
@@ -144,11 +148,11 @@
 \section{Introduc(k)tion}
 \label{intro}
 
-The \tikzducks package is a latex package for ducks to be used in \TikZ pictures. 
+Rubber ducks can be made of latex, but can they also be made with \LaTeX? Yes! The \tikzducks package is a \LaTeX{} package for rubber ducks to be used in \TikZ pictures. 
 This project is a continuation of an answer at TeX.Stackexchange: \href{tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
 This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. 
-The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker, please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports), I suggest using the \href{https://tex.stackexchange.com/questions/tagged/tikzducks}{\texttt{\{tikzducks\}}-tag} on TeX.Stackexchange.
+The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker --  please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest using the \href{https://tex.stackexchange.com/questions/tagged/tikzducks}{\texttt{\{tikzducks\}}-tag} on TeX.Stackexchange.
 
 \subsection{Acknowledgements}
 
@@ -319,7 +323,7 @@ A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|ts
 	\duck[tie]
 \end{tikzpicture}
 \begin{tikzpicture}
-	\duck[cape=red!80!black]
+	\duck[cape]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -634,8 +638,8 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tcblisting}
 \footnotetext[\thefootnote]{If you try this at home, replace the \texttt{crinklepaper} with an image of the comet's surface, e.g. \url{https://arxiv.org/abs/1707.02945}}
 
-\addtocounter{footnote}{1}
-\begin{tcblisting}{title={With my username I had to...$^\thefootnote$},	righthand width=3cm}
+\begin{tcblisting}{title={With my username I had to...},	righthand width=3cm}
+%\usepackage{marvosym}
 \definecolor{sgskin}{RGB}{222,197,159}
 \definecolor{sgblond}{RGB}{238,203,96}
 \colorlet{sggreen}{olive!50!black}
@@ -660,10 +664,9 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 	\node[rotate=170] at (0.8,1.89) {\scalebox{0.35}{\Leo}};
 \end{tikzpicture}
 \end{tcblisting}
-\footnotetext[\thefootnote]{this example uses the \lstinline|marvosym| package}
 
-\addtocounter{footnote}{1}
-\begin{tcblisting}{title={Live long and prosper$^\thefootnote$},	righthand width=3cm, label=starducks}
+\begin{tcblisting}{title={Live long and prosper},	righthand width=3cm, label=starducks}
+%\usepackage{fontawesome}
 \definecolor{unigold}{RGB}{203,157,52}
 \definecolor{uniblue}{RGB}{46,114,167}
 \definecolor{unired}{RGB}{177,49,34}
@@ -690,7 +693,6 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \insignia
 \end{tikzpicture}
 \end{tcblisting}
-\footnotetext[\thefootnote]{this example uses the \lstinline|fontawesome| package}
 
 \begin{tcblisting}{title={Knuth duck},	righthand width=3cm}
 \begin{tikzpicture}
