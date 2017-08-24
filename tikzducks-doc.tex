@@ -575,8 +575,9 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 
 \clearpage
 \section{Showcase}
+\tcbset{righthand width=3cm}
 
-\begin{tcblisting}{title={\texttt{samcarter} duck},	righthand width=3cm}
+\begin{tcblisting}{title={\texttt{samcarter} duck}}
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!50!white, 
 		longhair=red!50!brown, 
@@ -584,13 +585,13 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Paulo duck}, righthand width=3cm}
+\begin{tcblisting}{title={Paulo duck}}
 \begin{tikzpicture}
 	\duck[cap,cricket]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Brazil duck},	righthand width=3cm}
+\begin{tcblisting}{title={Brazil duck}}
 \begin{tikzpicture}
 	\definecolor{brazilgreen}{RGB}{0,155,58}
 	\definecolor{brazilyellow}{RGB}{254,223,0}
@@ -602,13 +603,13 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Duck in black},	righthand width=3cm}
+\begin{tcblisting}{title={Duck in black}}
 \begin{tikzpicture}
 	\duck[grumpy, body=yellow!50!brown!50!white, tshirt=white, jacket=black, tie=black, hat=black, sunglasses=black]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Prof.\ van Duck}, righthand width=3cm}
+\begin{tcblisting}{title={Prof.\ van Duck}}
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!40!white,
 		crazyhair=gray!50!white,
@@ -620,7 +621,7 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tcblisting}
 
 \addtocounter{footnote}{1}
-\begin{tcblisting}{title={67P/Churyumov-Gerasimenko duck$^\thefootnote$},	righthand width=3cm}
+\begin{tcblisting}{title={67P/Churyumov-Gerasimenko duck$^\thefootnote$}}
 \begin{tikzpicture}[path image/.style={path picture={\foreach \j in {0,...,2}{\node at (0,\j) {\foreach \i in {1,...,5}{\includegraphics[height=1cm]{#1}}};}}}]
 \path [path image=crinklepaper] 
 	(0.90,1.50) ellipse (0.50 and 0.625);
@@ -638,7 +639,7 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tcblisting}
 \footnotetext[\thefootnote]{If you try this at home, replace the \texttt{crinklepaper} with an image of the comet's surface, e.g. \url{https://arxiv.org/abs/1707.02945}}
 
-\begin{tcblisting}{title={With my username I had to...},	righthand width=3cm}
+\begin{tcblisting}{title={With my username I had to...}}
 %\usepackage{marvosym}
 \definecolor{sgskin}{RGB}{222,197,159}
 \definecolor{sgblond}{RGB}{238,203,96}
@@ -665,7 +666,7 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Live long and prosper},	righthand width=3cm, label=starducks}
+\begin{tcblisting}{title={Live long and prosper},label=starducks}
 %\usepackage{fontawesome}
 \definecolor{unigold}{RGB}{203,157,52}
 \definecolor{uniblue}{RGB}{46,114,167}
@@ -694,7 +695,7 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Knuth duck},	righthand width=3cm}
+\begin{tcblisting}{title={Knuth duck}}
 \begin{tikzpicture}
 	\duck[body=yellow!50!red!20!white,
 		recedinghair=gray!50!white,
