@@ -57,6 +57,7 @@
 \newif\ifduck@rollingpin
 \newif\ifduck@chef
 \newif\ifduck@signpost
+\newif\ifduck@witch
 
 \tikzset{
 	/duck/.cd,
@@ -133,12 +134,13 @@
 	flavourc/.code 		= 											\def\duck@flavourc{#1},
 	book/.code 				= \duck@booktrue 				\def\duck@book{#1},
 	bookcolour/.code 	= 											\def\duck@bookcolour{#1},
-	signpost/.code		= \duck@signposttrue			\def\duck@signpost{#1},
+	signpost/.code		= \duck@signposttrue		\def\duck@signpost{#1},
 	signcolour/.code  = 											\def\duck@signcolour{#1},
 	signback/.code		= 											\def\duck@signback{#1},
 	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
 	magicstars/.code	= 											\def\duck@magicstars{#1},
 	magicwand/.code		= \duck@magicwandtrue,
+	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
 	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
 	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +161,7 @@
 	signback						= green!40!black,	
 	magichat/.default		= violet,
 	magicstars          = yellow!80!brown,
+	witch/.default			= black,		
 	cricket/.default		= brown,
 	rollingpin/.default	= brown,
 }
@@ -432,6 +435,12 @@
 \ifduck@magicwand
 	\draw[line width=2.5,color=black] (0.90,0.90) -- (0.60,0.40);
 	\draw[line width=2.5,color=white] (0.85,0.8167) -- (0.80,0.7333);
+\fi
+%
+% witch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@witch
+	\fill[\duck@witch,rotate=-15] (0.44,2.13) ellipse (0.75 and 0.17);	
+	\fill[\duck@witch,rotate=-15] (0.05,2.2)--(0.45,3.2)--(0.82,2.2);
 \fi
 %
 % cricket bat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
