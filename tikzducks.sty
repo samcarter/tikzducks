@@ -199,14 +199,10 @@
 %
 % water %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@water
-	\draw[\duck@water, line width=5] 
-		(1.00,0.40) ellipse (0.80 and 0.28);
-	\draw[\duck@water, line width=3] 
-		(1.00,0.40) ellipse (1.00 and 0.45);
-	\draw[\duck@water, line width=2] 
-		(1.00,0.40) ellipse (1.20 and 0.60);
-	\draw[\duck@water, line width=1] 
-		(1.00,0.40) ellipse (1.40 and 0.75);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (0.88 and 0.35) (1.00,0.40) ellipse (0.75 and 0.25);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.05 and 0.50) (1.00,0.40) ellipse (0.95 and 0.42);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.23 and 0.63) (1.00,0.40) ellipse (1.17 and 0.57);
+	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.42 and 0.77) (1.00,0.40) ellipse (1.38 and 0.73);		
 \fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
