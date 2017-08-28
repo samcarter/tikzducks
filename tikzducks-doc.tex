@@ -29,7 +29,7 @@
 \usepackage{scrlayer-scrpage} 
 \usepackage{marvosym}
 \usepackage{fontawesome}
-\usepackage[hang,flushmargin]{footmisc}
+\usepackage[hang,flushmargin,bottom]{footmisc}
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -386,6 +386,16 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tcblisting}
 
 %\begin{marginlisting}
+%graduate
+%tassel
+%\end{marginlisting}
+\begin{tcblisting}{title={Graduate Duck}}
+\begin{tikzpicture}
+	\duck[graduate=gray!20!black,tassel=red!70!black]
+\end{tikzpicture}	
+\end{tcblisting}
+
+%\begin{marginlisting}
 %unicorn
 %\end{marginlisting}
 \begin{tcblisting}{title={Unicorn duck}}
@@ -514,6 +524,7 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tcblisting}
 \footnotetext[\thefootnote]{The chef duck is based on an answer by CarLaTeX, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
 
+\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -585,9 +596,10 @@ To ease the placement of further accessoires, some particular spots of the duck 
 }
 An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}.. 
 
-\clearpage
+%\clearpage
 \section{Showcase}
 \tcbset{righthand width=3cm}
+For more examples (or to show your own creations) please visit \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond}.
 
 \begin{tcblisting}{title={\texttt{samcarter} duck}}
 \begin{tikzpicture}
@@ -678,6 +690,19 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Knuth duck}}
+\begin{tikzpicture}
+	\duck[body=yellow!50!red!20!white,
+		recedinghair=gray!50!white,
+		eyebrow,
+		tshirt=white!93!black,
+		jacket=red!50!black,
+		glasses=brown!70!lightgray,
+		book=\scalebox{0.5}{\TeX},
+		bookcolour=black!20!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Live long and prosper},label=starducks}
 %\usepackage{fontawesome}
 \definecolor{unigold}{RGB}{203,157,52}
@@ -707,18 +732,4 @@ An example making use this option are the \hyperref[starducks]{``Live long and p
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Knuth duck}}
-\begin{tikzpicture}
-	\duck[body=yellow!50!red!20!white,
-		recedinghair=gray!50!white,
-		eyebrow,
-		tshirt=white!93!black,
-		jacket=red!50!black,
-		glasses=brown!70!lightgray,
-		book=\scalebox{0.5}{\TeX},
-		bookcolour=black!20!brown]
-\end{tikzpicture}
-\end{tcblisting}
-
-For more examples (or to show your own creations) please visit \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond}.
 \end{document}

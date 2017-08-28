@@ -58,6 +58,7 @@
 \newif\ifduck@chef
 \newif\ifduck@signpost
 \newif\ifduck@witch
+\newif\ifduck@graduate
 
 \tikzset{
 	/duck/.cd,
@@ -127,6 +128,8 @@
  	cap/.code					= \duck@captrue					\def\duck@cap{#1},
  	santa/.code				= \duck@santatrue				\def\duck@santa{#1},
  	chef/.code				= \duck@cheftrue				\def\duck@chef{#1},
+ 	graduate/.code		= \duck@graduatetrue		\def\duck@graduate{#1},
+ 	tassel/.code			=												\def\duck@tassel{#1},
  	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
 	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
 	flavoura/.code 		= 											\def\duck@flavoura{#1},
@@ -151,6 +154,8 @@
 	cap/.default				= blue,
 	santa/.default			= red!80!black,
 	chef/.default				= gray!20!white,
+	graduate/.default		= black,
+	tassel							= red,
 	unicorn/.default		= pink,
 	icecream/.default 	= brown!60!gray,
 	flavoura 						= brown!50!black,
@@ -395,6 +400,15 @@
 	\fill[\duck@chef] (1.39,2.20) circle (0.12);
 \fi
 %
+% graduate hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@graduate
+	\fill[\duck@graduate,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.1);	
+	\fill[\duck@graduate,rotate=-15] (0.07,2.1) rectangle (0.81,2.3);
+	\fill[\duck@graduate] (0.3,2.25) -- (1.05,2.35) -- (1.7,1.95) -- (0.92,1.85) -- cycle;
+	\fill[\duck@tassel,rounded corners=1] (1.12,1.89) -- (1.01,2.1) -- (1.09,2.11) -- (1.2,1.9) -- (1.2,1.3) -- (1.12,1.3) -- cycle;
+	\fill[\duck@tassel] (1.16,1.3) ellipse (0.06 and 0.12);
+\fi
+%
 % unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@unicorn
 	\draw[\duck@unicorn,fill=\duck@body!100,line width=1,rotate=25]
@@ -416,7 +430,7 @@
 	\node[rotate=-20, color=white] at (0.88,0.70) {\duck@book};%
 \fi
 %
-% signpost
+% signpost %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@signpost
 	\fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
   \fill[\duck@signcolour, rounded corners=1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
