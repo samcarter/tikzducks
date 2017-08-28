@@ -525,6 +525,15 @@ The following examples all also work without specifying a colour, but giving an 
 \footnotetext[\thefootnote]{The chef duck is based on an answer by CarLaTeX, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
 
 %\begin{marginlisting}
+%cake
+%\end{marginlisting}
+\begin{tcblisting}{title={Cake duck}}
+\begin{tikzpicture}
+  \duck[cake=red!50!violet!80!black]
+\end{tikzpicture}	
+\end{tcblisting}
+
+%\begin{marginlisting}
 %lightsaber
 %\end{marginlisting}
 \begin{tcblisting}{title={Lightsaber duck}}
@@ -533,7 +542,6 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
-\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -624,6 +632,14 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Party duck}}
+\begin{tikzpicture}
+  \duck[cake=violet,
+  			magichat=violet,
+  			magicstars=white!85!yellow]
+\end{tikzpicture}	
+\end{tcblisting}
+
 \begin{tcblisting}{title={Brazil duck}}
 \begin{tikzpicture}
 	\definecolor{brazilgreen}{RGB}{0,155,58}
@@ -650,6 +666,19 @@ For more examples (or to show your own creations) please visit \href{https://tex
 		glasses=brown!70!black,
 		book=\scalebox{0.2}{$E=mc^2$},
 		bookcolour=red!20!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Knuth duck}}
+\begin{tikzpicture}
+	\duck[body=yellow!50!red!20!white,
+		recedinghair=gray!50!white,
+		eyebrow,
+		tshirt=white!93!black,
+		jacket=red!50!black,
+		glasses=brown!70!lightgray,
+		book=\scalebox{0.5}{\TeX},
+		bookcolour=black!20!brown]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -699,18 +728,6 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Knuth duck}}
-\begin{tikzpicture}
-	\duck[body=yellow!50!red!20!white,
-		recedinghair=gray!50!white,
-		eyebrow,
-		tshirt=white!93!black,
-		jacket=red!50!black,
-		glasses=brown!70!lightgray,
-		book=\scalebox{0.5}{\TeX},
-		bookcolour=black!20!brown]
-\end{tikzpicture}
-\end{tcblisting}
 
 \begin{tcblisting}{title={Live long and prosper},label=starducks}
 %\usepackage{fontawesome}
@@ -749,6 +766,11 @@ For more examples (or to show your own creations) please visit \href{https://tex
 	\fill[skin,rounded corners=3] (0.44,1.70) -- (0.25,2) -- (0.6,1.95);
 	\fill[skin,rounded corners=3] (1.34,1.60) -- (1.53,1.9) -- (1.16,1.85);
 \end{tikzpicture}	
+
+\begin{tikzpicture}
+  \duck[grumpy,lightsaber=red,cape=black!70!white,
+  			body=black!85!white,bill=black!70!white]
+\end{tikzpicture}
 \end{tcblisting}
 
 \end{document}

@@ -60,6 +60,7 @@
 \newif\ifduck@witch
 \newif\ifduck@graduate
 \newif\ifduck@lightsaber
+\newif\ifduck@cake
 
 \tikzset{
 	/duck/.cd,
@@ -148,6 +149,7 @@
 	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
 	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
 	lightsaber/.code 	= \duck@lightsabertrue	\def\duck@lightsaber{#1},
+	cake/.code				= \duck@caketrue				\def\duck@cake{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -172,6 +174,7 @@
 	cricket/.default		= brown,
 	rollingpin/.default	= brown,
 	lightsaber/.default = green,
+	cake/.default				= violet,
 }
 
 \def\duck@draw{
@@ -462,6 +465,19 @@
 \ifduck@lightsaber
 	\fill[\duck@lightsaber, rounded corners=1, rotate=-30] (0.5,0.9) rectangle (0.6,2.5);
 	\fill[gray!80!black, rounded corners=1, rotate=-30] (0.47,0.7) rectangle (0.63,1.2);
+\fi
+%
+% cake %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cake
+	\fill[\duck@cake] (1.00,0.50) ellipse (0.4 and 0.2);
+	\fill[\duck@cake] (0.6,0.5) rectangle (1.4,0.7);
+	\fill[\duck@cake] (1.00,0.70) ellipse (0.4 and 0.2);
+	\fill[\duck@cake!50!white] (0.75,0.75) rectangle (0.8,0.95);
+	\fill[\duck@cake!50!white] (1.2,0.75) rectangle (1.25,0.95);
+	\fill[\duck@cake!50!white] (0.975,0.65) rectangle (1.025,0.85);
+	\fill[white!85!yellow] (1.0,0.93) ellipse (0.03 and 0.06);
+	\fill[white!85!yellow] (1.225,1.03) ellipse (0.03 and 0.06);
+	\fill[white!85!yellow] (0.775,1.03) ellipse (0.03 and 0.06);
 \fi
 %
 %
