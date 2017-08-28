@@ -316,10 +316,8 @@
     \ifdefined\duck@hair\let\duck@eyebrow=\duck@hair\fi
 \fi%
 \ifduck@eyebrow
-	\draw[line width=2,color=\duck@eyebrow,line cap=round] 
-		(0.96,1.70) -- (0.82,1.77);
-	\draw[line width=2,color=\duck@eyebrow,line cap=round] 
-		(0.50,1.81) -- (0.60,1.82);
+	\fill[\duck@eyebrow, rounded corners=1, rotate=60] (1.92,0.21) rectangle (1.98,-0.01);
+	\fill[\duck@eyebrow, rounded corners=1, rotate=100] (1.67,-0.77) rectangle (1.73,-0.95);
 \fi	
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,8 +408,8 @@
 %
 % unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@unicorn
-	\draw[\duck@unicorn,fill=\duck@body!100,line width=1,rotate=25]
-		(1.50,1.4375)--(1.60,1.8375)--(1.70,1.4375);
+	\fill[\duck@unicorn,rotate=25] (1.48,1.4375)--(1.60,1.9)--(1.72,1.4375);
+	\fill[\duck@body!100,rotate=25] (1.50,1.43)--(1.60,1.8375)--(1.70,1.43);	
 \fi
 %
 % icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
