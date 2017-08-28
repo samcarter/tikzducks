@@ -59,6 +59,7 @@
 \newif\ifduck@signpost
 \newif\ifduck@witch
 \newif\ifduck@graduate
+\newif\ifduck@lightsaber
 
 \tikzset{
 	/duck/.cd,
@@ -146,6 +147,7 @@
 	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
 	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
 	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
+	lightsaber/.code 	= \duck@lightsabertrue	\def\duck@lightsaber{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -169,6 +171,7 @@
 	witch/.default			= black,		
 	cricket/.default		= brown,
 	rollingpin/.default	= brown,
+	lightsaber/.default = green,
 }
 
 \def\duck@draw{
@@ -467,6 +470,12 @@
 \ifduck@rollingpin
 	\fill[\duck@rollingpin, rounded corners=2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
 	\fill[\duck@rollingpin, rounded corners=1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
+\fi
+%
+% lightsaber %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@lightsaber
+	\fill[\duck@lightsaber, rounded corners=1, rotate=-30] (0.5,0.9) rectangle (0.6,2.5);
+	\fill[gray!80!black, rounded corners=1, rotate=-30] (0.47,0.7) rectangle (0.63,1.2);
 \fi
 %
 %
