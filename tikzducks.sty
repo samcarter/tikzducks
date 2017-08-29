@@ -62,6 +62,7 @@
 \newif\ifduck@lightsaber
 \newif\ifduck@cake
 \newif\ifduck@pizza
+\newif\ifduck@hockey
 
 \tikzset{
 	/duck/.cd,
@@ -152,6 +153,7 @@
 	lightsaber/.code 	= \duck@lightsabertrue	\def\duck@lightsaber{#1},
 	cake/.code				= \duck@caketrue				\def\duck@cake{#1},
 	pizza/.code				= \duck@pizzatrue,
+	hockey/.code			= \duck@hockeytrue			\def\duck@hockey{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -177,6 +179,7 @@
 	rollingpin/.default	= brown,
 	lightsaber/.default = green,
 	cake/.default				= violet,
+	hockey/.default			=	brown,
 }
 
 \def\duck@draw{
@@ -484,16 +487,22 @@
 %
 % pizza %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@pizza
-	 	\fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
-	 	\fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
-	 	\fill[white!85!yellow] (1.15,0.65) ellipse (0.065 and 0.04);	
-	 	\fill[white!85!yellow] (0.81,0.57) ellipse (0.065 and 0.04);	
-	 	\fill[white!85!yellow] (0.95,0.68) ellipse (0.065 and 0.04);	
-	 	\fill[white!85!yellow] (1.02,0.54) ellipse (0.065 and 0.04);
-	 	\fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
-	 	\fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
-	 	\fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
-	 	\fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
+ 	\fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
+ 	\fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
+ 	\fill[white!85!yellow] (1.15,0.65) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (0.81,0.57) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (0.95,0.68) ellipse (0.065 and 0.04);	
+ 	\fill[white!85!yellow] (1.02,0.54) ellipse (0.065 and 0.04);
+ 	\fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
+ 	\fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
+\fi
+%
+% Hockey stick
+\ifduck@hockey
+	\fill[\duck@hockey, rounded corners=1, rotate=-30] (0.5,0.6) rectangle (0.6,2.1);
+	\fill[\duck@hockey, rounded corners=3] (0.2,0.2) rectangle (0.85,0.4);
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
