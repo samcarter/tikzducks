@@ -158,7 +158,7 @@ The head version of the source code can be found on \url{github.com/samcarter8/t
 
 Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
 
-First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{CarLaTeX} for pointing out the overwhelming need of having a \tikzducks package and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+First of all Carla Maggi for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{github.com/kjellmf/svg2tikz}).
 
@@ -334,7 +334,10 @@ A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|ts
 \end{tikzpicture}
 \end{tcblisting}
 
-\subsection{Accessoires}
+For more ways to customise the clothing also have a look at the \hyperref[sec:footballducks]{football ducks in Section \ref{sec:footballducks}}.
+
+\subsection{Accessories}
+\label{sec:accessories}
 
 There is a multitude of things a duck might need. 
 
@@ -531,7 +534,7 @@ The following examples all also work without specifying a colour, but giving an 
 			rollingpin=brown!80!black]
 \end{tikzpicture}
 \end{tcblisting}
-\footnotetext[\thefootnote]{The chef duck is based on an answer by CarLaTeX, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
+\footnotetext[\thefootnote]{The chef duck is based on an idea by Carla Maggi, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
 
 %\begin{marginlisting}
 %cake
@@ -608,7 +611,7 @@ In detail, the following paths are available:
 
 In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
 
-To ease the placement of further accessoires, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head| and \lstinline|bill|. 
+To ease the placement of further accessories, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head| and \lstinline|bill|. 
 
 %\begin{marginlisting}
 %wing
@@ -631,9 +634,171 @@ To ease the placement of further accessoires, some particular spots of the duck 
 }
 An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}.. 
 
-%\clearpage
-\section{Showcase}
+\clearpage
+\section{Football ducks -- contributed by Carla Maggi}
+\label{sec:footballducks}
+
+\tikzducks are huge sports fans! They do a lot of different sports themselves (see all the piece of sports equipment amongst the accessories), but to cheer their favourite teams, they need suitable fan clothing. In \href{https://tex.stackexchange.com/a/387126/36296}{The Duck Pond} Carla Maggi was so kind to contribute the necessary code to dress the ducks in their team's colours.
+
+\addtocounter{footnote}{1}
+A (non-representative) survey$^\thefootnote$\footnotetext[\thefootnote]{see the selection of jerseys in \url{https://tex.stackexchange.com/a/387126/36296}} showed that most sports jerseys can be emulated by drawing stripes of various colours, sizes and orientations -- and this is exactly what the \lstinline|stripes| macro does, drawing stripes across the shape of the duck's jacket. In order to preserve the whole flexibility of this powerful macro, it was integrated as an independent command into the \tikzducks package, this means it can simply be used on top of a drawn duck:
+
+\begin{tcblisting}{title={\texttt{stripes} macro}}
+\begin{tikzpicture}
+	\duck
+	\stripes
+\end{tikzpicture}
+\end{tcblisting}
+
+This may be impractical as the stripes are drawn on top of any accessories or hair the duck may have. Therefore the option \lstinline|stripes| let's you inject any code you would normally use to draw the stripes at the correct layer above the duck's clothing but beneath the hair and accessories:
+
+\begin{tcblisting}{title={Using \texttt{stripes} for \texttt{tikzducks}}}
+\begin{tikzpicture}
+	\duck[stripes={\stripes}]
+\end{tikzpicture}
+\end{tcblisting}
+
+Not all teams wear vertically stripped jerseys, therefore many parameters can be adjusted to best emulate your favourite teams jerseys. The available options are:
+
+\begin{tabular}{@{}ll@{}}
+	\lstinline|color|			& colour of the stripes, default: 		
+													\lstinline|black| \\
+  \lstinline|distance|	&	periodicity length of the stripes, default: 
+  												 \lstinline|0.3| \\
+  \lstinline|width|			&	stripe width, default: \lstinline|0.15| \\ 
+  \lstinline|height|		&	length of the stripes, default: 
+  												\lstinline|2.7| \\
+  \lstinline|initialx|	&	x coordinate of staring point, default: 
+  												\lstinline|0.1| \\
+  \lstinline|initialy|	&	y coordinate of staring point, default: 
+  												\lstinline|-0.3| \\
+  \lstinline|rotate|		&	rotation angle in degree for $[-90^{\circ};90^{\circ}]$, default: \lstinline|-10|\\
+  \lstinline|emblem|		& possibility to add logos etc.\\
+\end{tabular}
+
+Please note that the colour of the stripes only affects the stripes themselves, to influence the colour of the empty space between the stripes, clothe the duck with a \lstinline|tshirt| or \lstinline|jacket| of the desired colour underneath the stripes.
+
+\begin{tcblisting}{title={\texttt{stripes} options}}
+\begin{tikzpicture}
+	\duck[stripes]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[stripes={
+				\stripes[color=blue]}]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[distance=0.6]}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[width=0.03]}]
+\end{tikzpicture}
+
+\begin{tikzpicture} 
+\duck[stripes={\stripes[emblem={\includegraphics[width=0.3cm]{example-image-a}}]}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[height=1.0]}]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[initialx=1]}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[initialy=0.8]}]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[rotate=45]}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[stripes={
+			\stripes[rotate=-45]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+For more complicate or multicoloured designs the stripes can easily be stacked on top of each other:
+\begin{tcblisting}{title={multicoloured \texttt{stripes}}}
+\begin{tikzpicture} 
+\duck[tshirt=red, stripes={
+\stripes[color=yellow, width=0.1]
+\stripes[color=orange, width=0.1, initialx=0.0]}]
+\end{tikzpicture}
+\end{tcblisting}
+
 \tcbset{righthand width=3cm}
+A few examples to see \lstinline|stripes| in action:
+\begin{tcblisting}{title={Inter duck}}
+\definecolor{bluinter}{RGB}{0,102,170}
+\begin{tikzpicture}
+\duck[tshirt=black,stripes={\stripes[color=bluinter]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Juve duck}}
+\begin{tikzpicture} 
+\duck[tshirt=black,stripes={\stripes[color=white]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Milan duck}}
+\begin{tikzpicture}
+\duck[tshirt=black,stripes={\stripes[color=red]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={M\"{o}nchengladbach duck}}
+\begin{tikzpicture} 
+\duck[tshirt=green,stripes={\stripes}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Palmeiras duck}}
+\definecolor{verdep}{RGB}{0,100,55}
+\begin{tikzpicture} 
+\duck[tshirt=green,jacket=verdep] 
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Cagliari duck}}
+\definecolor{rossocagliari}{RGB}{149,20,38}
+\definecolor{blucagliari}{RGB}{23,52,84}
+\begin{tikzpicture} 
+\duck[tshirt=white, jacket=blucagliari,stripes={
+\stripes[color=rossocagliari, width=0.46, distance=3]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Sampdoria duck}}
+\begin{tikzpicture} 
+\duck[tshirt=blue, jacket=blue,stripes={
+\stripes[color=white,rotate=-90,width=0.6,distance=1] 
+\stripes[color=red,rotate=-90,width=0.2,distance=1.2] 
+\stripes[color=black,rotate=-90,width=0.1,distance=1.3]
+}]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Brescia duck}}
+\begin{tikzpicture} 
+\duck[tshirt=blue, jacket=blue,stripes={
+\stripes[color=white, rotate=-70, width=0.2, 
+	distance=1.1, initialy=0.1] 
+\stripes[color=white, rotate=40, width=0.2, 
+	distance=1.8, initialy=1.0,initialx=0.385]}]
+\end{tikzpicture}
+\end{tcblisting}
+
+In case your favourite team is missing from the above examples, feel free to create an example and share it with the community in \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond}. 
+
+\clearpage
+\section{Showcase}
 For more examples (or to show your own creations) please visit \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond}.
 
 \begin{tcblisting}{title={\texttt{samcarter} duck}}
@@ -698,6 +863,28 @@ For more examples (or to show your own creations) please visit \href{https://tex
 		book=\scalebox{0.5}{\TeX},
 		bookcolour=black!20!brown]
 \end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={May the Quack be with you}}
+\begin{tikzpicture}
+	\colorlet{skin}{white!45!gray!80!green}
+	\duck[lightsaber, body=skin, bill=gray!80!green,
+				tshirt=brown!50!black, jacket=brown!30!gray]
+	\fill[skin,rounded corners=3] (0.44,1.70) -- (0.25,2) -- (0.6,1.95);
+	\fill[skin,rounded corners=3] (1.34,1.60) -- (1.53,1.9) -- (1.16,1.85);
+\end{tikzpicture}	
+
+\begin{tikzpicture}
+  \duck[grumpy,lightsaber=red,cape=black!70!white,
+  			body=black!85!white]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\fill[brown!70!black] (0.5,1.65) circle (0.25);
+	\duck[jacket=white!95!brown, body=brown!50!white,
+				shorthair=brown!70!black, lightsaber=cyan]
+	\fill[brown!70!black] (1.3,1.6) circle (0.25);
+\end{tikzpicture}	
 \end{tcblisting}
 
 \addtocounter{footnote}{1}
@@ -774,28 +961,6 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \duck[tshirt=black!60!gray, jacket=unired, body=skinu, longhair=black!60!brown, bill=skinu!70!black]
 \insignia
 \end{tikzpicture}
-\end{tcblisting}
-
-\begin{tcblisting}{title={May the Quack be with you}}
-\begin{tikzpicture}
-	\colorlet{skin}{white!45!gray!80!green}
-	\duck[lightsaber, body=skin, bill=gray!80!green,
-				tshirt=brown!50!black, jacket=brown!30!gray]
-	\fill[skin,rounded corners=3] (0.44,1.70) -- (0.25,2) -- (0.6,1.95);
-	\fill[skin,rounded corners=3] (1.34,1.60) -- (1.53,1.9) -- (1.16,1.85);
-\end{tikzpicture}	
-
-\begin{tikzpicture}
-  \duck[grumpy,lightsaber=red,cape=black!70!white,
-  			body=black!85!white]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\fill[brown!70!black] (0.5,1.65) circle (0.25);
-	\duck[jacket=white!95!brown, body=brown!50!white,
-				shorthair=brown!70!black, lightsaber=cyan]
-	\fill[brown!70!black] (1.3,1.6) circle (0.25);
-\end{tikzpicture}	
 \end{tcblisting}
 
 \end{document}
