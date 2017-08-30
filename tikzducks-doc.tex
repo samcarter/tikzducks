@@ -60,7 +60,7 @@
 		texcsstyle=*\color{duckblue}\bfseries,
 		keywordstyle=\color{red!60!black}\bfseries,
 		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
+		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics},
 	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 	},
 	center lower,
@@ -81,7 +81,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics},
  	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
 
@@ -117,7 +117,11 @@
 					\ifnum\x=10
 						\duck[body=gray!50!white,head=gray!50!white]
 					\else
-						\duck
+						\ifnum\x=15
+							\duck[body=gray!50!white,head=gray!50!white]
+						\else
+							\duck
+						\fi
 					\fi
 				\fi
 			\end{tikzpicture}
