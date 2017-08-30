@@ -45,33 +45,7 @@
 \addtokomafont{author}{\normalsize}
 \setlength{\footnotemargin}{0.7em}
 
-\tcbset{%
-	colframe=duckblue,
-	arc=2mm,
-	fonttitle=\bfseries,
-	sidebyside,
-	listing options={%
-		language={[latex]TeX},
-		tabsize=2,
-		breaklines,
-		basicstyle=\footnotesize\ttfamily,
-		commentstyle={\color{green!50!black}\slshape}, 
-		columns=fullflexible,
-		texcsstyle=*\color{duckblue}\bfseries,
-		keywordstyle=\color{red!60!black}\bfseries,
-		morekeywords={tikzpicture,scope,patterns},
-		moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics},
-	  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
-	},
-	center lower,
-	righthand width=6.5cm,
-	before lower={%
-		\setlength{\parskip}{0.5cm}%
-		\spaceskip=5\fontdimen2\font%
-	}
-}
-
-\lstset{%
+\lstdefinestyle{duckstyle}{%
 	language={[latex]TeX},
 	tabsize=2,
 	breaklines,
@@ -82,8 +56,25 @@
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
 	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics},
- 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
+	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
 }
+
+\tcbset{%
+	colframe=duckblue,
+	arc=2mm,
+	fonttitle=\bfseries,
+	sidebyside,
+	listing options={style=duckstyle},
+	center lower,
+	righthand width=6.5cm,
+	bottom=0cm, top=0cm,
+	before lower={%
+		\setlength{\parskip}{0.5cm}%
+		\spaceskip=5\fontdimen2\font%
+	},
+}
+
+\lstset{style=duckstyle}
 
 %\newbox\marginlst
 %\lstnewenvironment{marginlisting}{%
@@ -306,6 +297,7 @@ Eyebrows are also part of the package. The colour choice is more tricky for them
 \end{tikzpicture}
 \end{tcblisting}
 
+\clearpage
 \subsection{Clothing}
 
 A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket| and a \lstinline|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
@@ -583,7 +575,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\clearpage
+%\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -675,7 +667,7 @@ This may be impractical as the stripes are drawn on top of any accessories or ha
 
 \begin{tcblisting}{title={Using \texttt{stripes} for \texttt{tikzducks}}}
 \begin{tikzpicture}
-	\duck[stripes={\stripes}]
+	\duck[longhair,stripes={\stripes}]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -744,7 +736,7 @@ Please note that the colour of the stripes only affects the stripes themselves, 
 \end{tikzpicture}
 \end{tcblisting}
 
-For more complicate or multicoloured designs the stripes can easily be stacked on top of each other:
+For more complex or multicoloured designs the stripes can easily be stacked on top of each other:
 \begin{tcblisting}{title={multicoloured \texttt{stripes}}}
 \begin{tikzpicture} 
 \duck[tshirt=red, stripes={
