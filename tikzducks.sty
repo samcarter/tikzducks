@@ -65,6 +65,8 @@
 \newif\ifduck@cake
 \newif\ifduck@pizza
 \newif\ifduck@hockey
+\newif\ifduck@beret
+\newif\ifduck@baguette
 
 \tikzset{
 	/duck/.cd,
@@ -138,6 +140,7 @@
  	chef/.code				= \duck@cheftrue				\def\duck@chef{#1},
  	graduate/.code		= \duck@graduatetrue		\def\duck@graduate{#1},
  	tassel/.code			=												\def\duck@tassel{#1},
+ 	beret/.code				= \duck@berettrue				\def\duck@beret{#1},
  	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
 	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
 	flavoura/.code 		= 											\def\duck@flavoura{#1},
@@ -158,6 +161,7 @@
 	cake/.code				= \duck@caketrue				\def\duck@cake{#1},
 	pizza/.code				= \duck@pizzatrue,
 	hockey/.code			= \duck@hockeytrue			\def\duck@hockey{#1},
+	baguette/.code		= \duck@baguettetrue		\def\duck@baguette{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -168,6 +172,7 @@
 	chef/.default				= gray!20!white,
 	graduate/.default		= black,
 	tassel							= red,
+	beret/.default			= black,			
 	unicorn/.default		= pink,
 	icecream/.default 	= brown!60!gray,
 	flavoura 						= brown!50!black,
@@ -184,6 +189,7 @@
 	lightsaber/.default = green,
 	cake/.default				= violet,
 	hockey/.default			=	brown,
+	baguette/.default		= brown,
 }
 
 \def\duck@draw{
@@ -406,13 +412,20 @@
 	\fill[\duck@chef] (1.39,2.20) circle (0.12);
 \fi
 %
-% graduate hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% graduate hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@graduate
 	\fill[\duck@graduate,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.1);	
 	\fill[\duck@graduate,rotate=-15] (0.07,2.1) rectangle (0.81,2.3);
 	\fill[\duck@graduate] (0.3,2.25) -- (1.05,2.35) -- (1.7,1.95) -- (0.92,1.85) -- cycle;
 	\fill[\duck@tassel,rounded corners=1] (1.12,1.89) -- (1.01,2.1) -- (1.09,2.11) -- (1.2,1.9) -- (1.2,1.3) -- (1.12,1.3) -- cycle;
 	\fill[\duck@tassel] (1.16,1.3) ellipse (0.06 and 0.12);
+\fi
+%
+% beret %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@beret
+	\fill[\duck@beret,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17);
+	\fill[\duck@beret,rotate=-25] (0.13,2.25) ellipse (0.55 and 0.17);
+	\fill[\duck@beret,rotate=-25] (0.13,2.4) circle (0.08);
 \fi
 %
 % unicorn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -508,10 +521,16 @@
  	\fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
 \fi
 %
-% Hockey stick
+% Hockey stick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@hockey
 	\fill[\duck@hockey, rounded corners=1, rotate=-30] (0.5,0.6) rectangle (0.6,2.1);
 	\fill[\duck@hockey, rounded corners=3] (0.2,0.2) rectangle (0.85,0.4);
+\fi
+%
+% baguette %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@baguette
+	\fill[\duck@baguette!70!white, rounded corners=4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
+	\fill[\duck@baguette!80!black, rotate=5] (1.44,1.1) ellipse (0.1 and 0.03) (1.30,0.9) ellipse (0.1 and 0.03) (1.16,0.7) ellipse (0.1 and 0.03) (1.02,0.5) ellipse (0.1 and 0.03);
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
@@ -695,11 +714,13 @@
 \def\stripes@draw{%
 	\path (0.1,0.1) rectangle (2.1,1.45);
 	\begin{pgfinterruptboundingbox}
-		\clip \duckpathjacket;
-    \foreach \shifta in {0,\stripes@distance,...,2.4}{%
-    	\fill[\stripes@color,rotate around={\stripes@rotate:(1.2,0.9)}] 
-			($(\stripes@initialx,\stripes@initialy)+(\shifta,0)$) rectangle ($(\stripes@initialx,\stripes@initialy)+(\shifta,0)+(\stripes@width,\stripes@height)$);
-		}
+		\begin{scope}
+			\clip \duckpathjacket;
+	    \foreach \shifta in {0,\stripes@distance,...,2.4}{%
+	    	\fill[\stripes@color,rotate around={\stripes@rotate:(1.2,0.9)}] 
+				($(\stripes@initialx,\stripes@initialy)+(\shifta,0)$) rectangle ($(\stripes@initialx,\stripes@initialy)+(\shifta,0)+(\stripes@width,\stripes@height)$);
+			}
+		\end{scope}
  	\end{pgfinterruptboundingbox}
  	\node at (wing) {\stripes@emblem };
 }

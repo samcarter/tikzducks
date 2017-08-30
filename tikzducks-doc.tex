@@ -343,9 +343,7 @@ For more ways to customise the clothing also have a look at the \hyperref[sec:fo
 \subsection{Accessories}
 \label{sec:accessories}
 
-There is a multitude of things a duck might need. 
-
-The following examples all also work without specifying a colour, but giving an examples with and one without explicit colour just makes this overview unnecessary long, so only one is given.
+There is a multitude of things a duck might need. The following examples all also work without specifying a colour, but giving an examples with and one without explicit colour just makes this overview unnecessary long, so only one is given.
 
 %\begin{marginlisting}
 %water
@@ -399,6 +397,15 @@ The following examples all also work without specifying a colour, but giving an 
 \begin{tcblisting}{title={Graduate Duck}}
 \begin{tikzpicture}
 	\duck[graduate=gray!20!black,tassel=red!70!black]
+\end{tikzpicture}	
+\end{tcblisting}
+
+%\begin{marginlisting}
+%beret
+%\end{marginlisting}
+\begin{tcblisting}{title={Beret Duck}}
+\begin{tikzpicture}
+	\duck[beret=red!70!black]
 \end{tikzpicture}	
 \end{tcblisting}
 
@@ -559,6 +566,15 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tcblisting}
 
 %\begin{marginlisting}
+%baguette
+%\end{marginlisting}
+\begin{tcblisting}{title={Baguette duck}}
+\begin{tikzpicture}
+  \duck[baguette=brown]
+\end{tikzpicture}	
+\end{tcblisting}
+
+%\begin{marginlisting}
 %lightsaber
 %\end{marginlisting}
 \begin{tcblisting}{title={Lightsaber duck}}
@@ -567,6 +583,7 @@ The following examples all also work without specifying a colour, but giving an 
 \end{tikzpicture}
 \end{tcblisting}
 
+\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -966,5 +983,12 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \insignia
 \end{tikzpicture}
 \end{tcblisting}
+
+\begin{tcblisting}{title={French duck}}
+\begin{tikzpicture} 
+\duck[body=yellow!60!red!30!white,tshirt=white!90!yellow,stripes={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},beret=blue!30!black,baguette=brown]
+\end{tikzpicture}
+\end{tcblisting}
+
 
 \end{document}
