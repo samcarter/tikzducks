@@ -67,6 +67,8 @@
 \newif\ifduck@hockey
 \newif\ifduck@beret
 \newif\ifduck@baguette
+\newif\ifduck@crown
+\newif\ifduck@football
 
 \tikzset{
 	/duck/.cd,
@@ -162,6 +164,8 @@
 	pizza/.code				= \duck@pizzatrue,
 	hockey/.code			= \duck@hockeytrue			\def\duck@hockey{#1},
 	baguette/.code		= \duck@baguettetrue		\def\duck@baguette{#1},
+	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
+	football/.code		= \duck@footballtrue		\def\duck@football{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -190,6 +194,8 @@
 	cake/.default				= violet,
 	hockey/.default			=	brown,
 	baguette/.default		= brown,
+	crown/.default			= yellow,
+	football/.default		= white,
 }
 
 \def\duck@draw{
@@ -531,6 +537,20 @@
 \ifduck@baguette
 	\fill[\duck@baguette!70!white, rounded corners=4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
 	\fill[\duck@baguette!80!black, rotate=5] (1.44,1.1) ellipse (0.1 and 0.03) (1.30,0.9) ellipse (0.1 and 0.03) (1.16,0.7) ellipse (0.1 and 0.03) (1.02,0.5) ellipse (0.1 and 0.03);
+\fi
+%
+% crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crown
+	\fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] (0.71,2.06) .. controls (0.71,2.06) and (0.73,2.18) .. (0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) -- (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) .. (1.20,2.06) .. controls (1.07,1.98) and (0.84,1.98) .. (0.71,2.06) -- cycle;
+\fi
+%
+% football %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@football
+	\fill[\duck@football] (1.2,0.33) circle (0.32);
+	\begin{scope}
+		\clip (1.2,0.33) circle (0.32);
+		\fill[black] (1.06,0.30) -- (1.01,0.17) -- (1.14,0.08) -- (1.26,0.14) -- (1.20,0.28) -- cycle (1.37,0.14) -- (1.46,0.27) -- (1.59,0.27) -- (1.41,0.04) -- cycle (1.28,0.38) -- (1.22,0.52) -- (1.33,0.61) -- (1.45,0.51) -- (1.43,0.37) -- cycle (0.87,0.44) -- (1.02,0.40) -- (1.10,0.53) -- (1.07,0.62) -- (0.94,0.57) -- cycle;
+	\end{scope}
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes

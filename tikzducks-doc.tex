@@ -52,6 +52,8 @@
 	basicstyle=\footnotesize\ttfamily,
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
+	emphstyle=\color{orange!70!black},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns},
@@ -75,18 +77,6 @@
 }
 
 \lstset{style=duckstyle}
-
-%\newbox\marginlst
-%\lstnewenvironment{marginlisting}{%
-%	\lstset{%
-%		linewidth=\marginparwidth,
-%		basicstyle=\footnotesize\ttfamily\color{duckblue}
-%	}%
-%  \setbox\marginlst\hbox\bgroup
-%}{%
-%	\egroup
-%  \marginpar{\vskip.7\baselineskip\unhbox\marginlst}%
-%}
 
 \setlength{\footheight}{27.21881pt}
 \newlength{\duckoffset}
@@ -401,6 +391,13 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}	
 \end{tcblisting}
 
+\begin{tcblisting}{title={Crown Duck}}
+\begin{tikzpicture}
+\duck[body=black!75!white,
+			crown=yellow!70!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
 %\begin{marginlisting}
 %unicorn
 %\end{marginlisting}
@@ -575,6 +572,15 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Football duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[football=white!85!yellow]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
+
+
 %\clearpage
 \section{Further customisation}
 
@@ -748,34 +754,34 @@ For more complex or multicoloured designs the stripes can easily be stacked on t
 \tcbset{righthand width=3cm}
 A few examples to see \lstinline|stripes| in action:
 \begin{tcblisting}{title={Inter duck}}
-\definecolor{bluinter}{RGB}{0,102,170}
+\definecolor{blueinter}{RGB}{0,102,170}
 \begin{tikzpicture}
-\duck[tshirt=black,stripes={\stripes[color=bluinter]}]
+\duck[tshirt=black,stripes={\stripes[color=blueinter]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Juve duck}}
 \begin{tikzpicture} 
-\duck[tshirt=black,stripes={\stripes[color=white]}]
+\duck[tshirt=black,stripes={\stripes[color=white]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Milan duck}}
 \begin{tikzpicture}
-\duck[tshirt=black,stripes={\stripes[color=red]}]
+\duck[tshirt=black,stripes={\stripes[color=red]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={M\"{o}nchengladbach duck}}
 \begin{tikzpicture} 
-\duck[tshirt=green,stripes={\stripes}]
+\duck[tshirt=green,stripes={\stripes},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Palmeiras duck}}
 \definecolor{verdep}{RGB}{0,100,55}
 \begin{tikzpicture} 
-\duck[tshirt=green,jacket=verdep] 
+\duck[tshirt=green,jacket=verdep,football] 
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -784,7 +790,7 @@ A few examples to see \lstinline|stripes| in action:
 \definecolor{blucagliari}{RGB}{23,52,84}
 \begin{tikzpicture} 
 \duck[tshirt=white, jacket=blucagliari,stripes={
-\stripes[color=rossocagliari, width=0.46, distance=3]}]
+\stripes[color=rossocagliari, width=0.46, distance=3]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -794,7 +800,7 @@ A few examples to see \lstinline|stripes| in action:
 \stripes[color=white,rotate=-90,width=0.6,distance=1] 
 \stripes[color=red,rotate=-90,width=0.2,distance=1.2] 
 \stripes[color=black,rotate=-90,width=0.1,distance=1.3]
-}]
+},football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -804,7 +810,7 @@ A few examples to see \lstinline|stripes| in action:
 \stripes[color=white, rotate=-70, width=0.2, 
 	distance=1.1, initialy=0.1] 
 \stripes[color=white, rotate=40, width=0.2, 
-	distance=1.8, initialy=1.0,initialx=0.385]}]
+	distance=1.8, initialy=1.0,initialx=0.385]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -982,5 +988,10 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Bee duck}}
+\begin{tikzpicture}
+	\duck[stripes={\stripes[distance=0.4,width=0.2,rotate=0,initialx=0.15]},alien=black]
+\end{tikzpicture}	
+\end{tcblisting}
 
 \end{document}
