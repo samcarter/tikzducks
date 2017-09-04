@@ -58,7 +58,8 @@
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
 	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap},
-	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}}
+	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
+	escapechar=@,
 }
 
 \tcbset{%
@@ -143,7 +144,7 @@ The head version of the source code can be found on \url{github.com/samcarter8/t
 
 Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
 
-First of all Carla Maggi for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{egreg} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{github.com/kjellmf/svg2tikz}).
 
@@ -167,9 +168,6 @@ The shown example ducks are purely fictional characters, any resemblance to real
 \section{Usage}
 
 The basic usage is fairly simple, to draw a duck:
-%\begin{marginlisting}
-%\duck 
-%\end{marginlisting}
 \begin{tcblisting}{title={Basic duck}}
 \begin{tikzpicture}
 	\duck
@@ -185,6 +183,7 @@ To customise this basic duck, the package uses \lstinline|pgf| keys. For almost 
 
 \clearpage
 If the size of the ducks should be changed or shifted:
+
 \begin{tcblisting}{title={Scaled duck and \emph{The Ugly Duckling}},	righthand width=3cm}
 \begin{tikzpicture}[scale=0.6]
 	\duck
@@ -202,14 +201,8 @@ If the size of the ducks should be changed or shifted:
 
 \subsection{Body parts}
 
-The various parts of the duck body can also be coloured independently, i.e. \lstinline|body|, \lstinline|head| or \lstinline|bill|:
+The various parts of the duck can also be coloured independently, i.e.\ \lstinline|body|, \lstinline|head| or \lstinline|bill|:
 
-%\begin{marginlisting}
-%body
-%head
-%bill
-%eye
-%\end{marginlisting}
 \begin{tcblisting}{title={Harlequin duck}}
 \begin{tikzpicture}
 	\duck[body=yellow,
@@ -221,9 +214,6 @@ The various parts of the duck body can also be coloured independently, i.e. \lst
 
 Furthermore using the keyword \lstinline|grumpy| the shape of the bill can be changed:
 
-%\begin{marginlisting}
-%grumpy
-%\end{marginlisting}
 \begin{tcblisting}{title={Grumpy duck}}
 \begin{tikzpicture}
 	\duck[grumpy]
@@ -237,13 +227,6 @@ Furthermore using the keyword \lstinline|grumpy| the shape of the bill can be ch
 \subsection{Hair styles}
 
 Some duck also like to have nice hair cuts, several different hair styles are available:
-
-%\begin{marginlisting}
-%longhair
-%shorthair
-%crazyhair
-%recedinghair
-%\end{marginlisting}
 \begin{tcblisting}{title={Hairy duck}}
 \begin{tikzpicture}
 	\duck[longhair]
@@ -269,9 +252,6 @@ And of course the colour of each hair style can be adjusted:
 
 Eyebrows are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified \lstinline|eyebrow=<colour name>| this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
 
-%\begin{marginlisting}
-%eyebrow
-%\end{marginlisting}
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
 	\duck[eyebrow]
@@ -292,11 +272,6 @@ Eyebrows are also part of the package. The colour choice is more tricky for them
 
 A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket| and a \lstinline|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
 
-%\begin{marginlisting}
-%tshirt
-%jacket
-%tie
-%\end{marginlisting}
 \begin{tcblisting}{title={Dressed duck}}
 \begin{tikzpicture}
 	\duck[tshirt]
@@ -327,64 +302,42 @@ For more ways to customise the clothing also have a look at the \hyperref[sec:fo
 
 There is a multitude of things a duck might need. The following examples all also work without specifying a colour, but giving an examples with and one without explicit colour just makes this overview unnecessary long, so only one is given.
 
-%\begin{marginlisting}
-%water
-%\end{marginlisting}
 \begin{tcblisting}{title={Swimming duck}}
 \begin{tikzpicture}
 	\duck[water=cyan!50!blue]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%alien
-%\end{marginlisting}
 \begin{tcblisting}{title={Alien duck}}
 \begin{tikzpicture}
 	\duck[alien=green!50!brown]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%hat
-%\end{marginlisting}
 \begin{tcblisting}{title={Hat duck}}
 \begin{tikzpicture}
 	\duck[hat=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%cap
-%\end{marginlisting}
 \begin{tcblisting}{title={Basecap duck}}
 \begin{tikzpicture}
 	\duck[cap=red!80!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%santa
-%\end{marginlisting}
 \begin{tcblisting}{title={Santa Clause}}
 \begin{tikzpicture}
 	\duck[santa=red!80!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%graduate
-%tassel
-%\end{marginlisting}
 \begin{tcblisting}{title={Graduate Duck}}
 \begin{tikzpicture}
 	\duck[graduate=gray!20!black,tassel=red!70!black]
 \end{tikzpicture}	
 \end{tcblisting}
 
-%\begin{marginlisting}
-%beret
-%\end{marginlisting}
 \begin{tcblisting}{title={Beret Duck}}
 \begin{tikzpicture}
 	\duck[beret=red!70!black]
@@ -398,9 +351,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%unicorn
-%\end{marginlisting}
 \begin{tcblisting}{title={Unicorn duck}}
 \begin{tikzpicture}
 	\duck[body=pink,
@@ -409,28 +359,18 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%glasses
-%\end{marginlisting}
 \begin{tcblisting}{title={Glasses duck}}
 \begin{tikzpicture}
 	\duck[glasses=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%sunglasses
-%\end{marginlisting}
 \begin{tcblisting}{title={Sunglasses duck}}
 \begin{tikzpicture}
 	\duck[sunglasses=blue]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%book
-%bookcolour
-%\end{marginlisting}
 \begin{tcblisting}{title={Book duck}}
 \begin{tikzpicture}
 	\duck[book=\scalebox{0.5}{\TeX}]
@@ -440,11 +380,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%signpost
-%signcolour
-%signback
-%\end{marginlisting}
 \begin{tcblisting}{title={Signpost duck}}
 \begin{tikzpicture} 
     \duck[signpost=42]
@@ -458,11 +393,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%magichat
-%magicwand
-%magicstars
-%\end{marginlisting}
 \begin{tcblisting}{title={Magic duck}}
 \begin{tikzpicture}
 	\duck[magichat,
@@ -475,9 +405,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%witch
-%\end{marginlisting}
 \begin{tcblisting}{title={Witch duck}}
 \begin{tikzpicture}
 	\duck[witch=black!50!gray,
@@ -487,30 +414,18 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%cricket
-%\end{marginlisting}
 \begin{tcblisting}{title={Cricket duck}}
 \begin{tikzpicture}
 	\duck[cricket=red!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%hockey
-%\end{marginlisting}
 \begin{tcblisting}{title={Hockey duck}}
 \begin{tikzpicture}
 	\duck[hockey=brown!70!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%icecream
-%flavoura
-%flavourb
-%flavourc
-%\end{marginlisting}
 \begin{tcblisting}{title={Icecream duck}}
 \begin{tikzpicture}
 	\duck[icecream]
@@ -523,10 +438,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\begin{marginlisting}
-%chef
-%rollingpin
-%\end{marginlisting}
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Chef duck$^\thefootnote$}}
 \begin{tikzpicture}
@@ -536,36 +447,24 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{The chef duck is based on an idea by Carla Maggi, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
 
-%\begin{marginlisting}
-%cake
-%\end{marginlisting}
 \begin{tcblisting}{title={Cake duck}}
 \begin{tikzpicture}
   \duck[cake=red!50!violet!80!black]
 \end{tikzpicture}	
 \end{tcblisting}
 
-%\begin{marginlisting}
-%pizza
-%\end{marginlisting}
 \begin{tcblisting}{title={Pizza duck}}
 \begin{tikzpicture}
   \duck[pizza]
 \end{tikzpicture}	
 \end{tcblisting}
 
-%\begin{marginlisting}
-%baguette
-%\end{marginlisting}
 \begin{tcblisting}{title={Baguette duck}}
 \begin{tikzpicture}
   \duck[baguette=brown]
 \end{tikzpicture}	
 \end{tcblisting}
 
-%\begin{marginlisting}
-%lightsaber
-%\end{marginlisting}
 \begin{tcblisting}{title={Lightsaber duck}}
 \begin{tikzpicture}
 \duck[lightsaber=red]
@@ -579,7 +478,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
-
 
 %\clearpage
 \section{Further customisation}
@@ -602,17 +500,6 @@ This package will never be able to do everything every potential user might want
 
 For convenience the more complex paths of this package are stored in macros, which can easily be reused:
 
-%\begin{marginlisting}
-%\duckpathbody
-%\duckpathgrumpybill
-%\duckpathbill
-%\duckpathtshirt
-%\duckpathjacket
-%\duckpathshorthair
-%\duckpathlonghair
-%\duckpathcrazyhair
-%\duckpathrecedinghair
-%\end{marginlisting}
 \begin{tcblisting}{title={Redraw parts}}
 \begin{tikzpicture}
 	\duck
@@ -632,11 +519,6 @@ In case one of the other shapes is needed, please have a look at the package sou
 
 To ease the placement of further accessories, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head| and \lstinline|bill|. 
 
-%\begin{marginlisting}
-%wing
-%head
-%bill
-%\end{marginlisting}
 {
 \footnotesize\ttfamily
 \begin{tcblisting}{title={\normalfont\normalsize\bfseries Coordinates}}
@@ -691,8 +573,9 @@ Not all teams wear vertically stripped jerseys, therefore many parameters can be
   												\lstinline|0.1| \\
   \lstinline|initialy|	&	y coordinate of staring point, default: 
   												\lstinline|-0.3| \\
-  \lstinline|rotate|		&	rotation angle in degree for $[-90^{\circ};90^{\circ}]$, default: \lstinline|-10|\\
-  \lstinline|emblem|		& possibility to add logos etc.\\
+  \lstinline|rotate|		&	rotation angle in degree, default:
+  												\lstinline|-10|\\
+  \lstinline|emblem|		& possibility to add logos etc., default: empty\\
 \end{tabular}
 
 Please note that the colour of the stripes only affects the stripes themselves, to influence the colour of the empty space between the stripes, clothe the duck with a \lstinline|tshirt| or \lstinline|jacket| of the desired colour underneath the stripes.
@@ -807,10 +690,9 @@ A few examples to see \lstinline|stripes| in action:
 \begin{tcblisting}{title={Brescia duck}}
 \begin{tikzpicture} 
 \duck[tshirt=blue, jacket=blue,stripes={
-\stripes[color=white, rotate=-70, width=0.2, 
-	distance=1.1, initialy=0.1] 
-\stripes[color=white, rotate=40, width=0.2, 
-	distance=1.8, initialy=1.0,initialx=0.385]},football]
+	\stripes[color=white, rotate=-70, width=0.22,distance=1.1, initialy=0.01]
+	\stripes[color=white, rotate=40, width=0.2, distance=1.8, initialy=1.0,initialx=0.285]
+},football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -994,7 +876,7 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \end{tikzpicture}	
 \end{tcblisting}
 
-\begin{tcblisting}{title={Videogame duck}}
+\begin{tcblisting}{title={Super duck brothers}}
 \newcommand{\mcap}[2]{\fill[#1,rotate=-15] (0.35,2.05) ellipse (0.5 and 0.15);
 \fill[#1,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17) (0.13,2.25) ellipse (0.55 and 0.17);
 \fill[white] (0.8,2) circle (0.13);
