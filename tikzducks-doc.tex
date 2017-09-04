@@ -59,7 +59,7 @@
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
 	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
-	escapechar=@,
+	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 }
 
 \tcbset{%
@@ -78,6 +78,7 @@
 }
 
 \lstset{style=duckstyle}
+\pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
 
 \setlength{\footheight}{27.21881pt}
 \newlength{\duckoffset}
@@ -144,7 +145,7 @@ The head version of the source code can be found on \url{github.com/samcarter8/t
 
 Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
 
-First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and came to rescue for the keyword highlighting in the documentation and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{github.com/kjellmf/svg2tikz}).
 
@@ -555,7 +556,7 @@ This may be impractical as the stripes are drawn on top of any accessories or ha
 
 \begin{tcblisting}{title={Using \texttt{stripes} for \texttt{tikzducks}}}
 \begin{tikzpicture}
-	\duck[longhair,stripes={\stripes}]
+	\duck[longhair,|stripes|={\stripes}]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -585,42 +586,42 @@ Please note that the colour of the stripes only affects the stripes themselves, 
 	\duck[stripes]
 \end{tikzpicture}
 \begin{tikzpicture}
-	\duck[stripes={
+	\duck[|stripes|={
 				\stripes[color=blue]}]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[distance=0.6]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[width=0.03]}]
 \end{tikzpicture}
 
 \begin{tikzpicture} 
-\duck[stripes={\stripes[emblem={\includegraphics[width=0.3cm]{example-image-a}}]}]
+\duck[|stripes|={\stripes[emblem={\includegraphics[width=0.3cm]{example-image-a}}]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[height=1.0]}]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[initialx=1]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[initialy=0.8]}]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[rotate=45]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[stripes={
+\duck[|stripes|={
 			\stripes[rotate=-45]}]
 \end{tikzpicture}
 \end{tcblisting}
@@ -628,7 +629,7 @@ Please note that the colour of the stripes only affects the stripes themselves, 
 For more complex or multicoloured designs the stripes can easily be stacked on top of each other:
 \begin{tcblisting}{title={multicoloured \texttt{stripes}}}
 \begin{tikzpicture} 
-\duck[tshirt=red, stripes={
+\duck[tshirt=red, |stripes|={
 \stripes[color=yellow, width=0.1]
 \stripes[color=orange, width=0.1, initialx=0.0]}]
 \end{tikzpicture}
@@ -639,25 +640,25 @@ A few examples to see \lstinline|stripes| in action:
 \begin{tcblisting}{title={Inter duck}}
 \definecolor{blueinter}{RGB}{0,102,170}%
 \begin{tikzpicture}
-\duck[tshirt=black,stripes={\stripes[color=blueinter]},football]
+\duck[tshirt=black,|stripes|={\stripes[color=blueinter]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Juve duck}}
 \begin{tikzpicture} 
-\duck[tshirt=black,stripes={\stripes[color=white]},football]
+\duck[tshirt=black,|stripes|={\stripes[color=white]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Milan duck}}
 \begin{tikzpicture}
-\duck[tshirt=black,stripes={\stripes[color=red]},football]
+\duck[tshirt=black,|stripes|={\stripes[color=red]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={M\"{o}nchengladbach duck}}
 \begin{tikzpicture} 
-\duck[tshirt=green,stripes={\stripes},football]
+\duck[tshirt=green,|stripes|={\stripes},football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -672,14 +673,14 @@ A few examples to see \lstinline|stripes| in action:
 \definecolor{rossocagliari}{RGB}{149,20,38}%
 \definecolor{blucagliari}{RGB}{23,52,84}%
 \begin{tikzpicture} 
-\duck[tshirt=white, jacket=blucagliari,stripes={
+\duck[tshirt=white, jacket=blucagliari,|stripes|={
 \stripes[color=rossocagliari, width=0.46, distance=3]},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Sampdoria duck}}
 \begin{tikzpicture} 
-\duck[tshirt=blue, jacket=blue,stripes={
+\duck[tshirt=blue, jacket=blue,|stripes|={
 \stripes[color=white,rotate=-90,width=0.6,distance=1] 
 \stripes[color=red,rotate=-90,width=0.2,distance=1.2] 
 \stripes[color=black,rotate=-90,width=0.1,distance=1.3]
@@ -689,7 +690,7 @@ A few examples to see \lstinline|stripes| in action:
 
 \begin{tcblisting}{title={Brescia duck}}
 \begin{tikzpicture} 
-\duck[tshirt=blue, jacket=blue,stripes={
+\duck[tshirt=blue, jacket=blue,|stripes|={
 	\stripes[color=white, rotate=-70, width=0.22,distance=1.1, initialy=0.01]
 	\stripes[color=white, rotate=40, width=0.2, distance=1.8, initialy=1.0,initialx=0.285]
 },football]
@@ -866,13 +867,13 @@ For more examples (or to show your own creations) please visit \href{https://tex
 
 \begin{tcblisting}{title={French duck}}
 \begin{tikzpicture} 
-\duck[body=yellow!60!red!30!white,tshirt=white!90!yellow,stripes={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},beret=blue!30!black,baguette=brown]
+\duck[body=yellow!60!red!30!white,tshirt=white!90!yellow,|stripes|={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},beret=blue!30!black,baguette=brown]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Bee duck}}
 \begin{tikzpicture}
-	\duck[stripes={\stripes[distance=0.4,width=0.2,rotate=0,initialx=0.15]},alien=black]
+	\duck[|stripes|={\stripes[distance=0.4,width=0.2,rotate=0,initialx=0.15]},alien=black]
 \end{tikzpicture}	
 \end{tcblisting}
 
@@ -883,11 +884,11 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \node[#1,rotate=-15] at (0.8,2) {\scalebox{0.6}{\textsf{#2}}};
 }
 \begin{tikzpicture}
-\duck[tshirt=red!80!black, stripes={\stripes[color=blue!80!black,width=3,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
+\duck[tshirt=red!80!black, |stripes|={\stripes[color=blue!80!black,width=3,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
 \mcap{red!80!black}{M}
 \end{tikzpicture}	
 \begin{tikzpicture}
-\duck[tshirt=green!70!black, stripes={\stripes[color=blue!80!black,width=4,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
+\duck[tshirt=green!70!black, |stripes|={\stripes[color=blue!80!black,width=4,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
 \mcap{green!70!black}{L}
 \end{tikzpicture}	
 \end{tcblisting}
