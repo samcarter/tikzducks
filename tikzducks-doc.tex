@@ -53,7 +53,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -139,7 +139,7 @@ Rubber ducks can be made of latex, but can they also be made with \LaTeX? Yes! T
 This project is a continuation of an answer at TeX.Stackexchange: \href{tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
 This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. 
-The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker --  please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest using the \href{https://tex.stackexchange.com/questions/tagged/tikzducks}{\texttt{\{tikzducks\}}-tag} on TeX.Stackexchange.
+The head version of the source code can be found on \url{github.com/samcarter8/tikzducks}, including a bug tracker -- please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest using the \href{https://tex.stackexchange.com/questions/tagged/tikzducks}{\texttt{\{tikzducks\}}-tag} on TeX.Stackexchange.
 
 \subsection{Acknowledgements}
 
@@ -479,6 +479,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
+
+\begin{tcblisting}{title={Superhero duck}}
+\begin{tikzpicture}
+	\duck[mask=teal,cape=teal]
+\end{tikzpicture}
+\end{tcblisting}
 
 %\clearpage
 \section{Further customisation}
