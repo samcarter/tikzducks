@@ -43,31 +43,32 @@
 \newif\ifduck@tie
 \newif\ifduck@cape
 \newif\ifduck@stripes
-% Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@glasses
-\newif\ifduck@sunglasses
+% Headgear %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@alien
 \newif\ifduck@hat
 \newif\ifduck@cap
 \newif\ifduck@santa
 \newif\ifduck@unicorn
+\newif\ifduck@magichat
+\newif\ifduck@chef
+\newif\ifduck@witch
+\newif\ifduck@graduate
+\newif\ifduck@beret
+\newif\ifduck@crown
+% Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@glasses
+\newif\ifduck@sunglasses
 \newif\ifduck@icecream
 \newif\ifduck@book
-\newif\ifduck@magichat
 \newif\ifduck@magicwand
 \newif\ifduck@cricket
 \newif\ifduck@rollingpin
-\newif\ifduck@chef
 \newif\ifduck@signpost
-\newif\ifduck@witch
-\newif\ifduck@graduate
 \newif\ifduck@lightsaber
 \newif\ifduck@cake
 \newif\ifduck@pizza
 \newif\ifduck@hockey
-\newif\ifduck@beret
 \newif\ifduck@baguette
-\newif\ifduck@crown
 \newif\ifduck@football
 \newif\ifduck@mask
 
@@ -130,12 +131,10 @@
 	recedinghair/.default	= brown,
 	eyebrow/.default			= brown,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	%
- 	% Accessories
- 	%
- 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 	glasses/.code			= \duck@glassestrue			\def\duck@glasses{#1},
- 	sunglasses/.code	= \duck@sunglassestrue	\def\duck@sunglasses{#1},
+	%
+	% Headgear
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	alien/.code				= \duck@alientrue 			\def\duck@alien{#1},
  	hat/.code					= \duck@hattrue 				\def\duck@hat{#1},
  	cap/.code					= \duck@captrue					\def\duck@cap{#1},
@@ -145,6 +144,31 @@
  	tassel/.code			=												\def\duck@tassel{#1},
  	beret/.code				= \duck@berettrue				\def\duck@beret{#1},
  	unicorn/.code			= \duck@unicorntrue 		\def\duck@unicorn{#1},
+	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
+	magicstars/.code	= 											\def\duck@magicstars{#1},
+	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
+	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
+	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	alien/.default		= green,		
+	hat/.default			= brown,
+	cap/.default			= blue,
+	santa/.default		= red!80!black,
+	chef/.default			= gray!20!white,
+	graduate/.default	= black,
+	tassel						= red,
+	beret/.default		= black,			
+	unicorn/.default	= pink,
+	magichat/.default	= violet,
+	magicstars        = yellow!80!brown,
+	witch/.default		= black,		
+	crown/.default		= yellow,
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	%
+ 	% Accessories
+ 	%
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	glasses/.code			= \duck@glassestrue			\def\duck@glasses{#1},
+ 	sunglasses/.code	= \duck@sunglassestrue	\def\duck@sunglasses{#1},
 	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
 	flavoura/.code 		= 											\def\duck@flavoura{#1},
 	flavourb/.code 		= 											\def\duck@flavourb{#1},
@@ -154,10 +178,7 @@
 	signpost/.code		= \duck@signposttrue		\def\duck@signpost{#1},
 	signcolour/.code  = 											\def\duck@signcolour{#1},
 	signback/.code		= 											\def\duck@signback{#1},
-	magichat/.code		= \duck@magichattrue		\def\duck@magichat{#1},
-	magicstars/.code	= 											\def\duck@magicstars{#1},
 	magicwand/.code		= \duck@magicwandtrue,
-	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
 	cricket/.code			= \duck@crickettrue			\def\duck@cricket{#1},
 	rollingpin/.code	= \duck@rollingpintrue	\def\duck@rollingpin{#1},
 	lightsaber/.code 	= \duck@lightsabertrue	\def\duck@lightsaber{#1},
@@ -165,21 +186,11 @@
 	pizza/.code				= \duck@pizzatrue,
 	hockey/.code			= \duck@hockeytrue			\def\duck@hockey{#1},
 	baguette/.code		= \duck@baguettetrue		\def\duck@baguette{#1},
-	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
 	football/.code		= \duck@footballtrue		\def\duck@football{#1},
 	mask/.code				= \duck@masktrue				\def\duck@mask{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
-	alien/.default			= green,		
-	hat/.default				= brown,
-	cap/.default				= blue,
-	santa/.default			= red!80!black,
-	chef/.default				= gray!20!white,
-	graduate/.default		= black,
-	tassel							= red,
-	beret/.default			= black,			
-	unicorn/.default		= pink,
 	icecream/.default 	= brown!60!gray,
 	flavoura 						= brown!50!black,
 	flavourb 						= white!70!brown,
@@ -187,16 +198,12 @@
 	bookcolour					= brown,
 	signcolour					= brown!50!black,
 	signback						= green!40!black,	
-	magichat/.default		= violet,
-	magicstars          = yellow!80!brown,
-	witch/.default			= black,		
 	cricket/.default		= brown,
 	rollingpin/.default	= brown,
 	lightsaber/.default = green,
 	cake/.default				= violet,
 	hockey/.default			=	brown,
 	baguette/.default		= brown,
-	crown/.default			= yellow,
 	football/.default		= white,
 	mask/.default				= black,
 }
@@ -255,7 +262,8 @@
 	\fill[\duck@bill] \duckpathbill;
 \fi
 %
-% Superhero mask, has to be behind the eyes
+% Superhero mask %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% has to be behind the eyes
 \ifduck@mask
 	\begin{scope}
 		\clip (0.90,1.50) ellipse (0.50 and 0.625);
@@ -362,26 +370,10 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Accessories
+% Headgear
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
-% sunglasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifduck@sunglasses
-  \fill[\duck@sunglasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
-	\fill[\duck@sunglasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
-	\fill[\duck@sunglasses,rotate=-20] (0.23,1.7675) circle (0.14);
-	\fill[\duck@sunglasses,rotate=-20] (-0.06,1.74) circle (0.13);				
-\fi
-%
-% glasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifduck@glasses
-  \fill[\duck@glasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
-	\fill[\duck@glasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
-	\fill[\duck@glasses,rotate=-20,even odd rule] (0.23,1.7675) circle (0.14) (0.23,1.7675) circle (0.11);
-	\fill[\duck@glasses,rotate=-20,even odd rule] (-0.06,1.74) circle (0.13) (-0.06,1.74) circle (0.095);		
-\fi
-%
 % alien %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@alien
 	\fill[\duck@alien,rotate=-25] (0.09,2.1) rectangle (0.16,2.6);
@@ -451,6 +443,49 @@
 	\fill[\duck@body!100,rotate=25] (1.50,1.43)--(1.60,1.8375)--(1.70,1.43);	
 \fi
 %
+% magic hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@magichat
+	\path[preaction={fill, \duck@magichat!100},rotate=-5,
+				pattern=fivepointed stars, pattern color=\duck@magicstars!100] 
+		(0.36,1.95)--(0.86,2.95)--(1.20,1.85);
+\fi
+%
+% witch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@witch
+	\fill[\duck@witch,rotate=-15] (0.44,2.13) ellipse (0.75 and 0.17);	
+	\fill[\duck@witch,rotate=-15] (0.05,2.2)--(0.45,3.2)--(0.82,2.2);
+\fi
+%
+% crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crown
+	\path (0.7,1.95) rectangle (1.4,2.45);
+	\begin{pgfinterruptboundingbox}	
+		\fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] \duckpathcrown;
+	\end{pgfinterruptboundingbox}	
+\fi
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Accessories
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% sunglasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@sunglasses
+  \fill[\duck@sunglasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
+	\fill[\duck@sunglasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
+	\fill[\duck@sunglasses,rotate=-20] (0.23,1.7675) circle (0.14);
+	\fill[\duck@sunglasses,rotate=-20] (-0.06,1.74) circle (0.13);				
+\fi
+%
+% glasses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@glasses
+  \fill[\duck@glasses,rotate=-17] (0.42,1.8) rectangle (0.8,1.84);
+	\fill[\duck@glasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
+	\fill[\duck@glasses,rotate=-20,even odd rule] (0.23,1.7675) circle (0.14) (0.23,1.7675) circle (0.11);
+	\fill[\duck@glasses,rotate=-20,even odd rule] (-0.06,1.74) circle (0.13) (-0.06,1.74) circle (0.095);		
+\fi
+%
 % icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@icecream
 	\fill[\duck@cone,rotate=-20] (0.35,1.20)--(0.50,0.60)--(0.75,1.20);
@@ -474,23 +509,10 @@
  	\node[rotate=-20, color=white] at (1.5,1.65) {\duck@signpost};
 \fi
 %
-% magic hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifduck@magichat
-	\path[preaction={fill, \duck@magichat!100},rotate=-5,
-				pattern=fivepointed stars, pattern color=\duck@magicstars!100] 
-		(0.36,1.95)--(0.86,2.95)--(1.20,1.85);
-\fi
-%
 % magic wand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@magicwand
 	\fill[black,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
 	\fill[white,rotate=-30] (0.27,1.13) rectangle (0.37,1.03);
-\fi
-%
-% witch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifduck@witch
-	\fill[\duck@witch,rotate=-15] (0.44,2.13) ellipse (0.75 and 0.17);	
-	\fill[\duck@witch,rotate=-15] (0.05,2.2)--(0.45,3.2)--(0.82,2.2);
 \fi
 %
 % cricket bat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -548,14 +570,6 @@
 \ifduck@baguette
 	\fill[\duck@baguette!70!white, rounded corners=4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
 	\fill[\duck@baguette!80!black, rotate=5] (1.44,1.1) ellipse (0.1 and 0.03) (1.30,0.9) ellipse (0.1 and 0.03) (1.16,0.7) ellipse (0.1 and 0.03) (1.02,0.5) ellipse (0.1 and 0.03);
-\fi
-%
-% crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifduck@crown
-	\path (0.7,1.95) rectangle (1.4,2.45);
-	\begin{pgfinterruptboundingbox}	
-		\fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] \duckpathcrown;
-	\end{pgfinterruptboundingbox}	
 \fi
 %
 % football %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

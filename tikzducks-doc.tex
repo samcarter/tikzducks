@@ -104,7 +104,11 @@
 						\ifnum\x=15
 							\duck[body=gray!50!white,head=gray!50!white]
 						\else
-							\duck
+							\ifnum\x=20
+								\duck[body=gray!50!white,head=gray!50!white]
+							\else
+								\duck
+							\fi
 						\fi
 					\fi
 				\fi
@@ -301,7 +305,7 @@ For more ways to customise the clothing also have a look at the \hyperref[sec:fo
 \subsection{Accessories}
 \label{sec:accessories}
 
-There is a multitude of things a duck might need. The following examples all also work without specifying a colour, but giving an examples with and one without explicit colour just makes this overview unnecessary long, so only one is given.
+There is a multitude of things a duck might need. The following examples all also work without specifying a colour, but giving both an example with and one without explicit colour just makes this overview unnecessary long, so only one is given.
 
 \begin{tcblisting}{title={Swimming duck}}
 \begin{tikzpicture}
@@ -486,7 +490,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-%\clearpage
+\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
