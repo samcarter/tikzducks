@@ -20,8 +20,15 @@
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
 \usetikzlibrary{patterns} % for the wizard hat
-%\usetikzlibrary{intersections} % for named paths
 \usetikzlibrary{calc} % for the sports jerseys
+
+%\pgfdeclarelayer{backgroundlayer} 
+%\pgfdeclarelayer{bodylayer}
+%\pgfdeclarelayer{clothinglayer}
+%\pgfdeclarelayer{hairlayer}
+%\pgfdeclarelayer{hatlayer}
+%
+%\pgfsetlayers{backgroundlayer,bodylayer,clothinglayer,hairlayer,hatlayer,main}
 
 \newcommand*{\duck}[1][]{\tikzset{%
 	/duck/.cd,#1}\duck@draw%
@@ -230,6 +237,7 @@
 % Environment
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{backgroundlayer}
 %
 % water %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@water
@@ -239,11 +247,13 @@
 	\fill[\duck@water, even odd rule] (1.00,0.40) ellipse (1.42 and 0.77) (1.00,0.40) ellipse (1.38 and 0.73);		
 \fi
 %
+%\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % body parts
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{bodylayer}
 %
 % body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pgfinterruptboundingbox}
@@ -283,11 +293,13 @@
 \fill[\duck@pupil, rotate=-20] 
 	(-0.03,1.73) ellipse (0.0286 and 0.0643);
 %
+%\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % clothing
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{clothinglayer}
 %
 % tshirt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@tshirt
@@ -320,11 +332,13 @@
 	\end{pgfinterruptboundingbox}
 \fi
 %
+%\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % hair styles
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{hairlayer}
 %
 % short hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@shorthair
@@ -368,11 +382,13 @@
 	\fill[\duck@eyebrow, rounded corners=1, rotate=100] (1.67,-0.77) rectangle (1.73,-0.95);
 \fi	
 %
+%\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Headgear
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{pgfonlayer}{hatlayer}
 % 
 % alien %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@alien
@@ -464,6 +480,7 @@
 	\end{pgfinterruptboundingbox}	
 \fi
 %
+%\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Accessories
