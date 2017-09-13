@@ -53,7 +53,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -497,6 +497,17 @@ There is a multitude of things a duck might need. The following examples all als
 	\duck[mask=teal,cape=teal]
 \end{tikzpicture}
 \end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Bunny duck$^\thefootnote$}}
+\begin{tikzpicture}
+\duck[body=white!65!brown, bill=white!50!brown, bunny]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[bunny=red,inear=blue]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
 
 \clearpage
 \section{Further customisation}

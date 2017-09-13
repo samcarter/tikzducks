@@ -78,6 +78,7 @@
 \newif\ifduck@baguette
 \newif\ifduck@football
 \newif\ifduck@mask
+\newif\ifduck@bunny
 
 \tikzset{
 	/duck/.cd,
@@ -155,6 +156,8 @@
 	magicstars/.code	= 											\def\duck@magicstars{#1},
 	witch/.code				=	\duck@witchtrue				\def\duck@witch{#1},
 	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
+	bunny/.code				= \duck@bunnytrue				\def\duck@bunny{#1},
+	inear/.code				=												\def\duck@inear{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	alien/.default		= green,		
 	hat/.default			= brown,
@@ -169,6 +172,8 @@
 	magicstars        = yellow!80!brown,
 	witch/.default		= black,		
 	crown/.default		= yellow,
+	bunny/.default		= \duck@body,
+	inear							= \duck@bunny!50!white,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	%
  	% Accessories
@@ -478,6 +483,22 @@
 	\begin{pgfinterruptboundingbox}	
 		\fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] \duckpathcrown;
 	\end{pgfinterruptboundingbox}	
+\fi
+%
+% Bunny ears %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@bunny
+	\path (0.55,1.9) rectangle (1.2,2.55);
+	\begin{pgfinterruptboundingbox}
+	\begin{scope}
+	  \clip[rotate=-5] (0.68,2.38) ellipse (0.3 and 0.4);
+		\fill[\duck@bunny,rotate=-5] (1.06,2.2) ellipse (0.3 and 0.4) (0.28,2.26) ellipse (0.3 and 0.4);
+	\end{scope}
+	
+	\begin{scope}
+	  \clip[rotate=-5] (0.68,2.38) ellipse (0.25 and 0.35);
+		\fill[\duck@inear,rotate=-5] (1.06,2.2) ellipse (0.25 and 0.35) (0.28,2.26) ellipse (0.25 and 0.35);
+	\end{scope}
+	\end{pgfinterruptboundingbox}
 \fi
 %
 %\end{pgfonlayer}
