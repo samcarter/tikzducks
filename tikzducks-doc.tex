@@ -17,10 +17,11 @@
 \documentclass[parskip=half]{scrartcl}
 
 % packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[T1]{fontenc}	
+\usepackage[LSBC5,T1]{fontenc}	
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
+\usepackage{chessfss}
 \usepackage{tikzducks}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm]{geometry}
@@ -57,7 +58,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	aboveskip=1.2em,
@@ -968,7 +969,24 @@ For more examples (or to show your own creations) please visit \href{https://tex
 \duck[body=red!20!white,bill=red!30!white,shorthair=red!30!white,bunny=red!30!white,inear=red!30!white]
 \node[red!20!white,rotate=25,scale=3] at (1.7,1.51) {\textsf{s}};
 \end{tikzpicture}       
+\end{tcblisting}
 
+\begin{tcblisting}{title={Duck Queen}}
+%\usepackage[LSBC5,T1]{fontenc}
+%\usepackage{chessfss}
+\definecolor{qskin}{RGB}{225,219,206}%
+\definecolor{qbill}{RGB}{170,123,154}%
+\definecolor{qdress}{RGB}{184,209,206}%
+\definecolor{qcrown}{RGB}{90,76,183}%
+\setboardfontencoding{LSBC5}
+\setboardfontcolors{whiteonwhitepiecemask=qcrown,whitepiece=gray!60!white}  
+\begin{tikzpicture}
+\duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white]  
+\node[rotate=-10] at (1.03,2.42) {\scalebox{1.9}{\WhiteKingOnWhite}}; 
+\fill[gray!60!white,rotate=-10] (0.6,2.18) ellipse (0.38 and 0.1);
+\fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
+\node[rotate=-30] at (0.94,0.98) {\scalebox{0.4}{\WhiteQueenOnWhite}}; 
+\end{tikzpicture}
 \end{tcblisting}
 
 \end{document}
