@@ -79,6 +79,7 @@
 \newif\ifduck@football
 \newif\ifduck@mask
 \newif\ifduck@bunny
+\newif\ifduck@necklace
 
 \tikzset{
 	/duck/.cd,
@@ -200,6 +201,7 @@
 	baguette/.code		= \duck@baguettetrue		\def\duck@baguette{#1},
 	football/.code		= \duck@footballtrue		\def\duck@football{#1},
 	mask/.code				= \duck@masktrue				\def\duck@mask{#1},
+	necklace/.code		= \duck@necklacetrue		\def\duck@necklace{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -218,6 +220,7 @@
 	baguette/.default		= brown,
 	football/.default		= white,
 	mask/.default				= black,
+	necklace/.default		= white!80!gray,
 }
 
 \def\duck@draw{
@@ -335,6 +338,11 @@
 	\begin{pgfinterruptboundingbox}
 		\fill[\duck@cape] \duckpathcape;
 	\end{pgfinterruptboundingbox}
+\fi
+%
+% necklace (not really clothing, but needs to be below the hair) %%%%%
+\ifduck@necklace
+	\fill[\duck@necklace] (0.5000,1.112) circle (0.032) (0.5100,1.050) circle (0.032) (0.5200,0.990) circle (0.032) (0.5400,0.931) circle (0.032) (0.5825,0.885) circle (0.032) (0.6450,0.885) circle (0.032) (0.7000,0.910) circle (0.032) (0.7500,0.945) circle (0.032) (0.8000,0.980) circle (0.032) (0.8500,1.020) circle (0.032) (0.9000,1.050) circle (0.032) (0.9500,1.080) circle (0.032) (1.0000,1.110) circle (0.032) (1.0550,1.130) circle (0.032) (1.1100,1.150) circle (0.032) (1.1650,1.165) circle (0.032) (1.2200,1.180) circle (0.032) (1.2750,1.195) circle (0.032) (1.3300,1.210) circle (0.032);
 \fi
 %
 %\end{pgfonlayer}
