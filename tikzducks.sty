@@ -80,6 +80,7 @@
 \newif\ifduck@mask
 \newif\ifduck@bunny
 \newif\ifduck@necklace
+\newif\ifduck@milkshake
 
 \tikzset{
 	/duck/.cd,
@@ -202,6 +203,7 @@
 	football/.code		= \duck@footballtrue		\def\duck@football{#1},
 	mask/.code				= \duck@masktrue				\def\duck@mask{#1},
 	necklace/.code		= \duck@necklacetrue		\def\duck@necklace{#1},
+	milkshake/.code		= \duck@milkshaketrue		\def\duck@milkshake{#1},	
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -221,6 +223,7 @@
 	football/.default		= white,
 	mask/.default				= black,
 	necklace/.default		= white!80!gray,
+	milkshake/.default 	= red!20!white,
 }
 
 \def\duck@draw{
@@ -625,6 +628,22 @@
 		\clip (1.2,0.33) circle (0.32);
 		\fill[black] (1.06,0.30) -- (1.01,0.17) -- (1.14,0.08) -- (1.26,0.14) -- (1.20,0.28) -- cycle (1.37,0.14) -- (1.46,0.27) -- (1.59,0.27) -- (1.41,0.04) -- cycle (1.28,0.38) -- (1.22,0.52) -- (1.33,0.61) -- (1.45,0.51) -- (1.43,0.37) -- cycle (0.87,0.44) -- (1.02,0.40) -- (1.10,0.53) -- (1.07,0.62) -- (0.94,0.57) -- cycle;
 	\end{scope}
+\fi
+%
+% milkshake %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@milkshake
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.55) ellipse (0.12 and 0.03);
+	\begin{scope}
+		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,1.03); 
+		\fill[cyan!10!white, rotate=-10] (0.8,0.94) ellipse (0.18 and 0.4);
+		\fill[\duck@milkshake, rotate=-10] (0.8,0.94) ellipse (0.15 and 0.36);
+	\end{scope}
+	\fill[white!85!yellow] (0.83,0.92) circle (0.05) (0.88,0.9) circle (0.05) (0.93,0.92) circle (0.05) (0.99,0.91) circle (0.05) (1.06,0.86) circle (0.05) (1.13,0.87) circle (0.05) (0.85,0.99) circle (0.05) (0.9,0.98) circle (0.07) (1.0,0.98) circle (0.07) (1.1,0.95) circle (0.07);
+	\fill[red!90!black] (1.0,1.1) circle (0.05);
+	\fill[white!85!yellow] (0.94,1.05) circle (0.05) (1.03,1.03) circle (0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[red!90!black,rotate=20] (1.2,0.58) rectangle (1.22,0.85); 
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
