@@ -62,6 +62,7 @@
 \newif\ifduck@graduate
 \newif\ifduck@beret
 \newif\ifduck@crown
+\newif\ifduck@peakedcap
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -161,6 +162,7 @@
 	crown/.code				= \duck@crowntrue				\def\duck@crown{#1},
 	bunny/.code				= \duck@bunnytrue				\def\duck@bunny{#1},
 	inear/.code				=												\def\duck@inear{#1},
+	peakedcap/.code		= \duck@peakedcaptrue		\def\duck@peakedcap{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	alien/.default		= green,		
 	hat/.default			= brown,
@@ -177,6 +179,7 @@
 	crown/.default		= yellow,
 	bunny/.default		= \duck@body,
 	inear							= \duck@bunny!50!white,
+	peakedcap/.default= blue,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	%
  	% Accessories
@@ -513,6 +516,14 @@
 		\fill[\duck@inear,rotate=-5] (1.06,2.2) ellipse (0.25 and 0.35) (0.28,2.26) ellipse (0.25 and 0.35);
 	\end{scope}
 	\end{pgfinterruptboundingbox}
+\fi
+%
+%
+% peaked cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@peakedcap
+	\fill[\duck@peakedcap,rotate=-15] (0.35,2.05) ellipse (0.5 and 0.15);
+	\fill[\duck@peakedcap,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17);
+	\fill[\duck@peakedcap,rotate=-35] (-0.25,2.2) ellipse (0.55 and 0.17);
 \fi
 %
 %\end{pgfonlayer}
