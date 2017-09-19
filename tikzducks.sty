@@ -81,6 +81,7 @@
 \newif\ifduck@bunny
 \newif\ifduck@necklace
 \newif\ifduck@milkshake
+\newif\ifduck@wine
 
 \tikzset{
 	/duck/.cd,
@@ -203,7 +204,8 @@
 	football/.code		= \duck@footballtrue		\def\duck@football{#1},
 	mask/.code				= \duck@masktrue				\def\duck@mask{#1},
 	necklace/.code		= \duck@necklacetrue		\def\duck@necklace{#1},
-	milkshake/.code		= \duck@milkshaketrue		\def\duck@milkshake{#1},	
+	milkshake/.code		= \duck@milkshaketrue		\def\duck@milkshake{#1},
+	wine/.code				= \duck@winetrue				\def\duck@wine{#1},	
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -224,6 +226,7 @@
 	mask/.default				= black,
 	necklace/.default		= white!80!gray,
 	milkshake/.default 	= red!20!white,
+	wine/.default				= red!70!black,
 }
 
 \def\duck@draw{
@@ -644,6 +647,21 @@
 	\fill[white!85!yellow] (0.94,1.05) circle (0.05) (1.03,1.03) circle (0.05);
 	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
 	\fill[red!90!black,rotate=20] (1.2,0.58) rectangle (1.22,0.85); 
+\fi
+% 
+% wine %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@wine
+	\fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.55) ellipse (0.12 and 0.03);
+	\fill[cyan!10!white, rotate=-10] (0.8,0.7) ellipse (0.03 and 0.2);
+	\begin{scope}
+		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,1.03); 
+		\fill[cyan!10!white, rotate=-10] (0.8,1.1) ellipse (0.18 and 0.4);
+	\end{scope}
+	\begin{scope}
+			\clip[rotate=-10] (0.58,0.5) rectangle (1.02,0.87); 
+			\fill[\duck@wine, rotate=-10] (0.8,1.1) ellipse (0.15 and 0.36);
+	\end{scope}
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
