@@ -59,7 +59,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	aboveskip=1.2em,
@@ -937,18 +937,16 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tcblisting}
 
 \begin{tcblisting}{title={Super duck brothers}}
-\newcommand{\mcap}[2]{\fill[#1,rotate=-15] (0.35,2.05) ellipse (0.5 and 0.15);
-\fill[#1,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17) (0.13,2.25) ellipse (0.55 and 0.17);
-\fill[white] (0.8,2) circle (0.13);
-\node[#1,rotate=-15] at (0.8,2) {\scalebox{0.6}{\textsf{#2}}};
-}
+\newcommand{\superstripes}{\stripes[color=blue!80!black,width=3,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}
 \begin{tikzpicture}
-\duck[tshirt=red!80!black, |stripes|={\stripes[color=blue!80!black,width=3,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
-\mcap{red!80!black}{M}
+\duck[tshirt=red!80!black,peakedcap=red!80!black,|stripes|={\superstripes}]
+\fill[white] (0.8,2) circle (0.13);
+\node[red!80!black,rotate=-25] at (0.8,2) {\scalebox{0.6}{\textsf{M}}};
 \end{tikzpicture}	
 \begin{tikzpicture}
-\duck[tshirt=green!70!black, |stripes|={\stripes[color=blue!80!black,width=4,height=1.0,rotate=5] \stripes[color=blue!80!black,width=0.1,rotate=0,distance=0.7,initialx=-1.1,height=2]}]
-\mcap{green!70!black}{L}
+\duck[tshirt=green!70!black,peakedcap=green!70!black, |stripes|={\superstripes}]
+\fill[white] (0.8,2) circle (0.13);
+\node[green!70!black,rotate=-25] at (0.8,2) {\scalebox{0.6}{\textsf{L}}};
 \end{tikzpicture}	
 \end{tcblisting}
 
@@ -956,7 +954,7 @@ In the following a few examples of possible duck customisations, some of which w
 \definecolor{pskin}{RGB}{255,200,184}%
 \definecolor{phair}{RGB}{249,249,139}%
 \begin{tikzpicture}
-\duck[body=pskin!80!white,longhair=phair,tshirt=magenta!60!white,jacket=magenta!40!white]
+\duck[body=pskin!80!white,longhair=phair,tshirt=magenta!60!white,jacket=magenta!40!white,necklace=white!85!yellow]
 \path (0.7,2) rectangle (1.4,2.55);
 \begin{pgfinterruptboundingbox}	
 	\fill[yellow!80!orange,rotate=-10,xshift=-11,yshift=5] \duckpathcrown;
