@@ -83,6 +83,7 @@
 \newif\ifduck@necklace
 \newif\ifduck@milkshake
 \newif\ifduck@wine
+\newif\ifduck@prison
 
 \tikzset{
 	/duck/.cd,
@@ -209,6 +210,7 @@
 	necklace/.code		= \duck@necklacetrue		\def\duck@necklace{#1},
 	milkshake/.code		= \duck@milkshaketrue		\def\duck@milkshake{#1},
 	wine/.code				= \duck@winetrue				\def\duck@wine{#1},	
+	prison/.code			= \duck@prisontrue			\def\duck@prison{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -230,6 +232,7 @@
 	necklace/.default		= white!80!gray,
 	milkshake/.default 	= red!20!white,
 	wine/.default				= red!70!black,
+	prison/.default			= gray,
 }
 
 \def\duck@draw{
@@ -672,6 +675,19 @@
 	\begin{scope}
 		\clip[rotate=-10] (0.58,0.5) rectangle (1.02,0.87); 
 		\fill[\duck@wine, rotate=-10] (0.8,1.1) ellipse (0.15 and 0.36);
+	\end{scope}
+\fi
+%
+% prison duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@prison
+	\fill[\duck@prison] (1.5,0.25) circle (0.3);
+	\fill[\duck@prison, even odd rule] (1.2,0.1) ellipse (0.10 and 0.07) (1.2,0.1) ellipse (0.06 and 0.04) (1.05,-0.05) ellipse (0.10 and 0.07) (1.05,-0.05) ellipse (0.06 and 0.04) (0.87,-0.2) ellipse (0.10 and 0.07) (0.87,-0.2) ellipse (0.06 and 0.04);
+	\fill[\duck@prison, even odd rule] (0.72,-0.2) ellipse (0.10 and 0.07) (0.72,-0.2) ellipse (0.06 and 0.04);	
+	\fill[\duck@prison,even odd rule,rotate=70](0.4,-1.05) ellipse (0.1 and 0.07) (0.4,-1.05) ellipse (0.06 and 0.04) (0.2,-0.95) ellipse (0.1 and 0.07) (0.2,-0.95) ellipse (0.06 and 0.04) (0.22,-0.58) ellipse (0.1 and 0.07) (0.22,-0.58) ellipse (0.06 and 0.04);
+	\fill[\duck@prison,even odd rule,rotate=110](-0.33,-0.55) ellipse (0.1 and 0.07) (-0.33,-0.55) ellipse (0.06 and 0.04);	
+	\begin{scope}
+		\clip[rotate=-12] (0.45,0.15) rectangle (0.63,0.25);	
+		\fill[\duck@prison,even odd rule,rotate=110](-0.07,-0.6) ellipse (0.1 and 0.07) (-0.07,-0.6) ellipse (0.06 and 0.04);	
 	\end{scope}
 \fi
 %

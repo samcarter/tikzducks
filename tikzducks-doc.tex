@@ -55,14 +55,13 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
 	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
-	aboveskip=1.2em,
 }
 
 \tcbset{%
@@ -73,7 +72,8 @@
 	listing options={style=duckstyle},
 	center lower,
 	righthand width=6.5cm,
-	bottom=0cm, top=0cm,
+	bottom=0pt, 
+	top=0pt,
 	before lower={%
 		\setlength{\parskip}{0.5cm}%
 		\spaceskip=5\fontdimen2\font%
@@ -168,7 +168,7 @@ The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the m
 
 The \tikzducks package loads the packages \lstinline|xcolor| and \TikZ, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
 
-\begin{lstlisting}[morekeywords={xcolor,svgnames}]
+\begin{lstlisting}[aboveskip=1.2em,morekeywords={xcolor,svgnames}]
 	\PassOptionsToPackage{svgnames}{xcolor}
 \end{lstlisting}
 It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|.
@@ -414,6 +414,15 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Witch duck}}
+\begin{tikzpicture}
+	\duck[witch=black!50!gray,
+				longhair=red!80!black,
+				jacket=black!50!gray,
+				magicwand]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Magic duck}}
 \begin{tikzpicture}
 	\duck[magichat,
@@ -422,15 +431,6 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tikzpicture}
 	\duck[magichat=teal,
 				magicstars=blue!30!cyan,
-				magicwand]
-\end{tikzpicture}
-\end{tcblisting}
-
-\begin{tcblisting}{title={Witch duck}}
-\begin{tikzpicture}
-	\duck[witch=black!50!gray,
-				longhair=red!80!black,
-				jacket=black!50!gray,
 				magicwand]
 \end{tikzpicture}
 \end{tcblisting}
@@ -537,7 +537,13 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
-%\clearpage
+\begin{tcblisting}{title={Prison duck}}
+\begin{tikzpicture}
+\duck[prison=gray]
+\end{tikzpicture}
+\end{tcblisting}
+
+\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -568,7 +574,7 @@ For convenience the more complex paths of this package are stored in macros, whi
 
 In detail, the following paths are available:
 
-\begin{lstlisting}[breakindent=0pt]
+\begin{lstlisting}[aboveskip=1.2em,breakindent=0pt]
 \duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown
 \end{lstlisting}
 
@@ -934,6 +940,13 @@ In the following a few examples of possible duck customisations, some of which w
 \begin{tikzpicture}
 	\duck[|stripes|={\stripes[distance=0.4,width=0.2,rotate=0,initialx=0.15]},alien=black]
 \end{tikzpicture}	
+\end{tcblisting}
+
+\begin{tcblisting}{title={Jailbird duck}}
+\begin{tikzpicture}
+\duck[peakedcap=gray!40!black,tshirt=white,stripes={
+\stripes[rotate=100,color=gray!40!black]},prison=gray]
+\end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Super duck brothers}}
