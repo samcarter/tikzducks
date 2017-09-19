@@ -25,6 +25,7 @@
 \usepackage{tikzducks}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm]{geometry}
+\usepackage{url}
 \usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
 \usepackage{xspace}
 \usepackage{scrlayer-scrpage} 
@@ -522,11 +523,13 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}	
 \end{tcblisting}
 
-\begin{tcblisting}{title={Wine duck}}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Wine duck$^\thefootnote$}}
 \begin{tikzpicture}
 \duck[wine=red!70!black]
 \end{tikzpicture}
 \end{tcblisting}
+\footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
 %\clearpage
 \section{Further customisation}
