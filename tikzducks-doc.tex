@@ -380,6 +380,37 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Bunny duck$^\thefootnote$}}
+\begin{tikzpicture}
+\duck[body=white!65!brown, bill=white!50!brown, bunny]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[bunny=red,inear=blue]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
+
+\begin{tcblisting}{title={Witch duck}}
+\begin{tikzpicture}
+	\duck[witch=black!50!gray,
+				longhair=red!80!black,
+				jacket=black!50!gray,
+				magicwand]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Magic duck}}
+\begin{tikzpicture}
+	\duck[magichat,magicwand]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[magichat=teal,
+				magicstars=blue!30!cyan,
+				magicwand]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Glasses duck}}
 \begin{tikzpicture}
 	\duck[glasses=red!50!black]
@@ -389,6 +420,12 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Sunglasses duck}}
 \begin{tikzpicture}
 	\duck[sunglasses=blue]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Superhero duck}}
+\begin{tikzpicture}
+	\duck[mask=teal,cape=teal]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -414,27 +451,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Witch duck}}
-\begin{tikzpicture}
-	\duck[witch=black!50!gray,
-				longhair=red!80!black,
-				jacket=black!50!gray,
-				magicwand]
-\end{tikzpicture}
-\end{tcblisting}
-
-\begin{tcblisting}{title={Magic duck}}
-\begin{tikzpicture}
-	\duck[magichat,
-				magicwand]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[magichat=teal,
-				magicstars=blue!30!cyan,
-				magicwand]
-\end{tikzpicture}
-\end{tcblisting}
-
 \begin{tcblisting}{title={Cricket duck}}
 \begin{tikzpicture}
 	\duck[cricket=red!50!black]
@@ -445,6 +461,32 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tikzpicture}
 	\duck[hockey=brown!70!black]
 \end{tikzpicture}
+\end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Football duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[football=white!85!yellow]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
+
+\begin{tcblisting}{title={Lightsaber duck}}
+\begin{tikzpicture}
+\duck[lightsaber=red]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Prison duck}}
+\begin{tikzpicture}
+\duck[prison=gray]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Necklace duck}}
+\begin{tikzpicture}
+	\duck[necklace=gray!20!white]
+\end{tikzpicture}	
 \end{tcblisting}
 
 \begin{tcblisting}{title={Icecream duck}}
@@ -486,43 +528,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}	
 \end{tcblisting}
 
-\begin{tcblisting}{title={Lightsaber duck}}
-\begin{tikzpicture}
-\duck[lightsaber=red]
-\end{tikzpicture}
-\end{tcblisting}
-
-\addtocounter{footnote}{1}
-\begin{tcblisting}{title={Football duck$^\thefootnote$}}
-\begin{tikzpicture}
-	\duck[football=white!85!yellow]
-\end{tikzpicture}
-\end{tcblisting}
-\footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
-
-\begin{tcblisting}{title={Superhero duck}}
-\begin{tikzpicture}
-	\duck[mask=teal,cape=teal]
-\end{tikzpicture}
-\end{tcblisting}
-
-\addtocounter{footnote}{1}
-\begin{tcblisting}{title={Bunny duck$^\thefootnote$}}
-\begin{tikzpicture}
-\duck[body=white!65!brown, bill=white!50!brown, bunny]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[bunny=red,inear=blue]
-\end{tikzpicture}
-\end{tcblisting}
-\footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
-
-\begin{tcblisting}{title={Necklace duck}}
-\begin{tikzpicture}
-	\duck[necklace=gray!20!white]
-\end{tikzpicture}	
-\end{tcblisting}
-
 \begin{tcblisting}{title={Milkshake duck}}
 \begin{tikzpicture}
 \duck[milkshake=red!20!white]
@@ -536,12 +541,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
-
-\begin{tcblisting}{title={Prison duck}}
-\begin{tikzpicture}
-\duck[prison=gray]
-\end{tikzpicture}
-\end{tcblisting}
 
 \clearpage
 \section{Further customisation}
