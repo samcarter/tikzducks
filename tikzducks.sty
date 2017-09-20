@@ -63,6 +63,8 @@
 \newif\ifduck@beret
 \newif\ifduck@crown
 \newif\ifduck@peakedcap
+\newif\ifduck@bunny
+\newif\ifduck@tophat
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -79,7 +81,6 @@
 \newif\ifduck@baguette
 \newif\ifduck@football
 \newif\ifduck@mask
-\newif\ifduck@bunny
 \newif\ifduck@necklace
 \newif\ifduck@milkshake
 \newif\ifduck@wine
@@ -164,6 +165,7 @@
 	bunny/.code				= \duck@bunnytrue				\def\duck@bunny{#1},
 	inear/.code				=												\def\duck@inear{#1},
 	peakedcap/.code		= \duck@peakedcaptrue		\def\duck@peakedcap{#1},
+	tophat/.code			= \duck@tophattrue			\def\duck@tophat{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	alien/.default		= green,		
 	hat/.default			= brown,
@@ -181,6 +183,7 @@
 	bunny/.default		= \duck@body,
 	inear							= \duck@bunny!50!white,
 	peakedcap/.default= blue,
+	tophat/.default		= black,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	%
  	% Accessories
@@ -521,12 +524,18 @@
 	\end{pgfinterruptboundingbox}
 \fi
 %
-%
 % peaked cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@peakedcap
 	\fill[\duck@peakedcap,rotate=-15] (0.35,2.05) ellipse (0.5 and 0.15);
 	\fill[\duck@peakedcap,rotate=-25] (0.13,2.15) ellipse (0.5 and 0.17);
 	\fill[\duck@peakedcap,rotate=-35] (-0.25,2.2) ellipse (0.55 and 0.17);
+\fi
+%
+% tophat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@tophat
+	\fill[\duck@tophat,rotate=-15] (0.44,2.1) ellipse (0.48 and 0.1);
+	\fill[\duck@tophat,rotate=-15]  (0.12,2.1) -- (0.75,2.1) -- (0.81,2.55) -- (0.07,2.55) -- cycle;
+	\fill[\duck@tophat,rotate=-15] (0.44,2.55) ellipse (0.37 and 0.08);	
 \fi
 %
 %\end{pgfonlayer}

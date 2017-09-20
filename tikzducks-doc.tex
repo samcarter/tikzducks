@@ -55,7 +55,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -86,40 +86,9 @@
 \setlength{\footheight}{35pt}
 \newlength{\duckoffset}
 \cfoot{%
-\begin{tikzpicture}[scale=0.5] 
-    \duck[signpost=\scalebox{0.6}{\thepage}]
-\end{tikzpicture}
-%	\begin{tikzpicture}[scale=0.3,baseline=-5pt]
-%		\duck
-%	\end{tikzpicture}%
-%	\ifnum\thepage>1%
-%		\foreach \x in{2,...,\thepage}{%
-%			\ifodd\x
-%				\setlength{\duckoffset}{-12pt}
-%			\else%
-%				\setlength{\duckoffset}{-5pt}
-%			\fi%
-%			\begin{tikzpicture}[scale=0.15,baseline=\duckoffset]
-%				\ifnum\x=5
-%					\duck[body=gray!50!white,head=gray!50!white]
-%				\else
-%					\ifnum\x=10
-%						\duck[body=gray!50!white,head=gray!50!white]
-%					\else
-%						\ifnum\x=15
-%							\duck[body=gray!50!white,head=gray!50!white]
-%						\else
-%							\ifnum\x=20
-%								\duck[body=gray!50!white,head=gray!50!white]
-%							\else
-%								\duck
-%							\fi
-%						\fi
-%					\fi
-%				\fi
-%			\end{tikzpicture}
-%		}%
-%	\fi%
+	\begin{tikzpicture}[scale=0.5] 
+	    \duck[signpost=\scalebox{0.6}{\thepage}]
+	\end{tikzpicture}
 } 
 \pagestyle{scrheadings}
 
@@ -335,6 +304,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Tophat duck}}
+\begin{tikzpicture}
+	\duck[tophat=blue!20!black]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Basecap duck}}
 \begin{tikzpicture}
 	\duck[cap=red!80!black]
@@ -473,13 +448,13 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Lightsaber duck}}
 \begin{tikzpicture}
-\duck[lightsaber=red]
+	\duck[lightsaber=red]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Prison duck}}
 \begin{tikzpicture}
-\duck[prison=gray]
+	\duck[prison=gray]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -504,7 +479,7 @@ There is a multitude of things a duck might need. The following examples all als
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Chef duck$^\thefootnote$}}
 \begin{tikzpicture}
-\duck[chef=white!95!yellow,
+	\duck[chef=white!95!yellow,
 			rollingpin=brown!80!black]
 \end{tikzpicture}
 \end{tcblisting}
@@ -530,14 +505,14 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Milkshake duck}}
 \begin{tikzpicture}
-\duck[milkshake=red!20!white]
+	\duck[milkshake=red!20!white]
 \end{tikzpicture}	
 \end{tcblisting}
 
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Wine duck$^\thefootnote$}}
 \begin{tikzpicture}
-\duck[wine=red!70!black]
+	\duck[wine=red!70!black]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
