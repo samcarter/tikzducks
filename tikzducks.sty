@@ -706,6 +706,28 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Random ducks
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfmathsetseed{\number\pdfrandomseed}
+
+\pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}}
+\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}}
+
+\newcommand{\shuffleducks}{%
+ \pgfmathrandomitem{\head}{head}%
+ \edef\randomhead{\head}%
+ \pgfmathrandomitem{\accessories}{accessories}%
+ \edef\randomaccessories{\accessories}%
+}
+
+\newcommand{\randuck}{%
+	\shuffleducks%
+	\duck[\randomhead, \randomaccessories]%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 % Defining some of the more complicate paths for easy reuse
 %
 % naming scheme is \duckpath<name>

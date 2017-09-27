@@ -59,7 +59,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 }
@@ -83,20 +83,17 @@
 \lstset{style=duckstyle}
 \pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
 
+\pgfmathsetseed{11}
 \setlength{\footheight}{45pt}
 \newlength{\duckoffset}
+
 \cfoot{%
-	\pgfmathrandomitem{\head}{head}%
-	\edef\randomhead{\head}%
+	\shuffleducks
 	\begin{tikzpicture}[scale=0.5] 
 	    \duck[signpost=\scalebox{0.6}{\thepage},\randomhead]
 	\end{tikzpicture}
 } 
 \pagestyle{scrheadings}
-
-\pgfmathsetseed{12}
-\pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}}
-\pgfmathrandomitem{\randomhead}{head}
 
 %\ifnum\pdfshellescape=1
 %	\usetikzlibrary{external}
@@ -524,6 +521,30 @@ There is a multitude of things a duck might need. The following examples all als
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
 \clearpage
+\section{Random ducks}
+With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
+
+\begin{tcblisting}{title={Random duck}}
+\begin{tikzpicture}
+\randuck
+\end{tikzpicture}
+\end{tcblisting}
+
+In case the duck should not completely random, but only some of the random elements are desired, these can be acceded independently by using \lstinline|\randomhead| and \lstinline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: when using \lstinline|\randomhead| or \lstinline|\randomaccessories| more then once, \lstinline|\shuffleducks| has to be used in between (for \lstinline|\randuck| this is done automatically).     
+
+\begin{tcblisting}{title={Random head gear and accessories}}
+\begin{tikzpicture}
+\shuffleducks
+\duck[\randomhead, \randomaccessories]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\shuffleducks
+\duck[\randomhead, \randomaccessories]
+\end{tikzpicture}
+\end{tcblisting}
+
+%\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
