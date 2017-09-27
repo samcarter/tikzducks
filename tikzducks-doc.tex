@@ -55,7 +55,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -407,15 +407,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Book duck}}
-\begin{tikzpicture}
-	\duck[book=\scalebox{0.5}{\TeX}]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[book=\scalebox{0.6}{$\pi$}, bookcolour=blue!50!black]
-\end{tikzpicture}
-\end{tcblisting}
-
 \begin{tcblisting}{title={Signpost duck}}
 \begin{tikzpicture} 
     \duck[signpost=42]
@@ -426,6 +417,29 @@ There is a multitude of things a duck might need. The following examples all als
 	\centering Science\\ first}},
 	signcolour=brown!70!gray,
 	signback=white!80!brown]
+\end{tikzpicture}
+\end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Speaking duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[speech={Bla},bubblecolour=white!95!gray]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Thinking duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[think={Blub},bubblecolour=white!95!yellow]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{Both the speech and thought bubble are inspired by the wonderful \href{https://www.ctan.org/pkg/ducksay}{ducksay package}}
+
+\begin{tcblisting}{title={Book duck}}
+\begin{tikzpicture}
+	\duck[book=\scalebox{0.5}{\TeX}]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[book=\scalebox{0.6}{$\pi$}, bookcolour=blue!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -520,7 +534,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
-\clearpage
+%\clearpage
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
 
