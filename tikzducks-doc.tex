@@ -526,21 +526,16 @@ With all these available accessories it might be hard to decide which one to cho
 
 \begin{tcblisting}{title={Random duck}}
 \begin{tikzpicture}
-\randuck
+	\randuck
 \end{tikzpicture}
 \end{tcblisting}
 
-In case the duck should not completely random, but only some of the random elements are desired, these can be acceded independently by using \lstinline|\randomhead| and \lstinline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: when using \lstinline|\randomhead| or \lstinline|\randomaccessories| more then once, \lstinline|\shuffleducks| has to be used in between (for \lstinline|\randuck| this is done automatically).     
+In case the duck should not be completely random, but only some of the random elements are desired, these can be accessed independently by using \lstinline|\randomhead| and \lstinline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: Before using \lstinline|\randomhead| or \lstinline|\randomaccessories|, \lstinline|\shuffleducks| has to be used to provide the random items (for \lstinline|\randuck| this is done automatically).     
 
 \begin{tcblisting}{title={Random head gear and accessories}}
 \begin{tikzpicture}
-\shuffleducks
-\duck[\randomhead, \randomaccessories]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-\shuffleducks
-\duck[\randomhead, \randomaccessories]
+	\shuffleducks
+	\duck[\randomhead, \randomaccessories]
 \end{tikzpicture}
 \end{tcblisting}
 
