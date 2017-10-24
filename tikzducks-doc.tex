@@ -32,6 +32,7 @@
 \usepackage{marvosym}
 \usepackage{fontawesome}
 \usepackage[hang,flushmargin,bottom]{footmisc}
+\usepackage{imakeidx}
 
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
@@ -59,9 +60,10 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
+	index=[1][emph]
 }
 
 \tcbset{%
@@ -99,6 +101,8 @@
 %	\usetikzlibrary{external}
 %	\tikzexternalize[prefix=tikzducks-doc-figures/]
 %\fi
+
+\makeindex
 
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The \texorpdfstring{\tikzducks}{tikzducks} package}
@@ -423,7 +427,7 @@ There is a multitude of things a duck might need. The following examples all als
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Speaking duck$^\thefootnote$}}
 \begin{tikzpicture}
-	\duck[speech={Bla},bubblecolour=white!95!gray]
+	\duck[speech={Bla},bubblecolour=cyan!20!white]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -606,7 +610,20 @@ To ease the placement of further accessories, some particular spots of the duck 
 \end{tikzpicture}
 \end{tcblisting}
 }
-An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}.. 
+An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}. 
+
+To distinguish coordinates from multiple ducks in the same \lstinline|tikzpicture|, one can name the ducks using the option \lstinline[emph={name}]|name|. If this option is used, the coordinates are prefixed with the respective name and a dash: \lstinline|<name>-<coordinate>|.
+
+\begin{tcblisting}{title={Named coordinates},listing options={style={duckstyle}, emph={name,wing}}}
+\begin{tikzpicture}
+	\duck[name=foo]
+	\begin{scope}[xshift=90pt,
+			scale=.3, yshift=150pt]
+	 	\duck[name=bar]
+	\end{scope}
+	\draw (foo-wing) -- (bar-wing);
+\end{tikzpicture}	
+\end{tcblisting}
 
 \clearpage
 \section{Football ducks -- contributed by Carla Maggi}
@@ -1040,5 +1057,8 @@ In the following a few examples of possible duck customisations, some of which w
 \node[rotate=-30] at (0.94,0.98) {\scalebox{0.4}{\WhiteQueenOnWhite}}; 
 \end{tikzpicture}
 \end{tcblisting}
+
+\clearpage
+\printindex
 
 \end{document}
