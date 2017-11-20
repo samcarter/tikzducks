@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -96,6 +96,7 @@
 	\end{tikzpicture}
 } 
 \pagestyle{scrheadings}
+\indexsetup{firstpagestyle=scrheadings}
 
 %\ifnum\pdfshellescape=1
 %	\usetikzlibrary{external}
@@ -136,7 +137,7 @@ The head version of the source code can be found on \url{github.com/samcarter8/t
 
 Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
 
-First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and came to rescue for the keyword highlighting in the documentation and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+First of all \href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks} and \href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}). Many other users contributed to this package (in random order): \href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs, \href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values, \href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} gave valuable \TikZ advices and came to rescue for the keyword highlighting in the documentation, \href{https://tex.stackexchange.com/users/148434/mihikma}{Mihikma} created the duck's beard and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
 
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{https://inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{https://github.com/kjellmf/svg2tikz}).
 
@@ -241,7 +242,7 @@ And of course the colour of each hair style can be adjusted:
 \end{tikzpicture}
 \end{tcblisting}
 
-Eyebrows are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified \lstinline|eyebrow=<colour name>| this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
+Eyebrows and a beard are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified (\lstinline|eyebrow=<colour name>| or \lstinline|beard=<colour name>|) this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
 
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
@@ -258,7 +259,17 @@ Eyebrows are also part of the package. The colour choice is more tricky for them
 \end{tikzpicture}
 \end{tcblisting}
 
-\clearpage
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Beard duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[beard=white!80!brown]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[recedinghair=white,beard]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The beard is based on an answer by Mihikma, see \url{https://tex.stackexchange.com/a/401777/36296}}
+
 \subsection{Clothing}
 
 A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket| and a \lstinline|tie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
@@ -288,6 +299,7 @@ A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|ts
 
 For more ways to customise the clothing also have a look at the \hyperref[sec:footballducks]{football ducks in Section \ref{sec:footballducks}}.
 
+\clearpage
 \subsection{Accessories}
 \label{sec:accessories}
 
