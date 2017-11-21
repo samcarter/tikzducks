@@ -89,6 +89,7 @@
 \newif\ifduck@prison
 \newif\ifduck@speech
 \newif\ifduck@think
+\newif\ifduck@torch
 
 \tikzset{
 	/duck/.cd,
@@ -224,6 +225,7 @@
 	speech/.code 			= \duck@speechtrue 			\def\duck@speech{#1},
 	think/.code 			= \duck@thinktrue 			\def\duck@think{#1},
 	bubblecolour/.code = 										\def\duck@bubblecolour{#1},
+	torch/.code				= \duck@torchtrue				\def\duck@torch{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -247,6 +249,7 @@
 	wine/.default				= red!70!black,
 	prison/.default			= gray,
 	bubblecolour				= gray!30!white,
+	torch/.default			= gray,
 }
 
 \def\duck@draw{
@@ -740,6 +743,18 @@
 	\end{scope}
 \fi
 %
+% torch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@torch
+		\fill[red!50!yellow, xscale=0.015, yscale=-0.015,xshift=130,yshift=-5600] \duckpathtorch;
+		\fill[red!25!yellow, xscale=0.01, yscale=-0.01,xshift=1300,yshift=-6600] \duckpathtorch;
+		\fill[white!50!yellow, xscale=0.006, yscale=-0.006,xshift=3700,yshift=-8600] \duckpathtorch;
+		\fill[\duck@torch,rounded corners=1] 
+			(1.1,0.96) -- (0.77,0.25) -- (0.83,0.25) -- (1.3,0.86) -- cycle;
+		\fill[\duck@torch,rotate=-28] 
+			(0.62,1.32) ellipse (0.2 and 0.08);
+\fi%
+%
+%
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
 }% from `\def\duck@draw{` at the very beginning 
@@ -873,6 +888,14 @@
 	(0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) -- (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) .. 
 	(1.20,2.06) .. controls (1.07,1.98) and (0.84,1.98) .. 
 	(0.71,2.06) -- cycle
+}
+
+\newcommand{\duckpathtorch}{%
+	(90.5,127.8) .. controls (90.3,137.0) and (84.7,136.2) ..
+	(77.9,146.3) .. controls (71.1,136.3) and (66.4,136.9) ..
+	(65.9,127.9) .. controls (65.2,118.1) and (79.2,118.5) ..
+	(78.2,103.8) .. controls (82.2,108.8) and (90.8,111.5) ..
+	(90.5,127.8) -- cycle;	
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
