@@ -7,106 +7,89 @@
 \begin{document}
 
 \begin{tikzpicture}
-	\duck
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[body=blue!60!white]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[grumpy, bill=cyan]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[longhair=teal]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\duck[shorthair]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[crazyhair=green!50!blue]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[recedinghair=gray]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[eyebrow]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-	\duck[tshirt=violet]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[jacket=blue!70!black]
-\end{tikzpicture}
-\begin{tikzpicture}
 	\duck[tshirt=lightgray, 
 			jacket=blue!50!black, 
 			tie=blue!80!black, 
 			shorthair]
 \end{tikzpicture}
+%
 \begin{tikzpicture}
-	\duck[water=cyan!50!blue]
+	\duck[santa=red!80!black, 
+	      beard=white!80!brown]
 \end{tikzpicture}
-
+%
 \begin{tikzpicture}
-	\duck[alien=green!50!brown]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[hat=red!50!black]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[cap=red!80!black]
-\end{tikzpicture}
+	\duck[graduate=gray!20!black,tassel=red!70!black]
+\end{tikzpicture}	
+%
 \begin{tikzpicture}
 	\duck[body=pink,
 		unicorn=magenta!60!violet,
 		longhair=magenta!60!violet]
 \end{tikzpicture}
-
+%
+\definecolor{fskin}{RGB}{161,140,126}%
+\definecolor{fbill}{RGB}{238,212,191}%
+\definecolor{fhair}{RGB}{89,72,72}%
 \begin{tikzpicture}
-	\duck[glasses=red!50!black]
+\duck[body=white!80!brown, bill=white!60!brown, bunny, longhair=white!60!brown]
+\fill[white!60!brown] (1.85,1.42) circle (0.2);
 \end{tikzpicture}
+%
 \begin{tikzpicture}
-	\duck[sunglasses=blue]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[book=\scalebox{0.6}{$\pi$}, bookcolour=blue!50!black]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[magichat,
+	\duck[witch=black!50!gray,
+				longhair=red!80!black,
+				jacket=black!50!gray,
 				magicwand]
 \end{tikzpicture}
 
 \begin{tikzpicture}
+	\duck[magichat,magicwand]
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+	\duck[mask=teal,cape=teal]
+\end{tikzpicture}
+%
+\begin{tikzpicture} 
+    \duck[signpost=42]
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+	\duck[lightsaber=red]
+\end{tikzpicture}
+%
+\definecolor{qskin}{RGB}{225,219,206}%
+\definecolor{qbill}{RGB}{170,123,154}%
+\definecolor{qdress}{RGB}{184,209,206}%
+\definecolor{qcrown}{RGB}{90,76,183}%
+\begin{tikzpicture}
+\duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white,crown]  
+\end{tikzpicture}
+%
+\begin{tikzpicture}
 	\duck[icecream]
 \end{tikzpicture}
+
 \begin{tikzpicture}
-\duck
-\path[preaction={fill, red!50!black},pattern=fivepointed stars, pattern color=yellow]  
-\duckpathlonghair;
+	\duck[chef=white!85!gray,
+			rollingpin=brown!80!black]
 \end{tikzpicture}
+%
+\begin{tikzpicture}
+\duck[tshirt=black,stripes={\stripes[color=red]},football]
+\end{tikzpicture}
+%
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!50!white, 
 		longhair=red!50!brown, 
 		jacket=blue!50!black]
 \end{tikzpicture}
+%
 \begin{tikzpicture}
 	\duck[cap,cricket]
 \end{tikzpicture}
-
-
-\begin{tikzpicture}
-\definecolor{brazilgreen}{RGB}{0,155,58}
-\definecolor{brazilyellow}{RGB}{254,223,0}
-\definecolor{brazilblue}{RGB}{0,39,118}
-	\duck[body=brazilyellow,
-				shorthair=brazilgreen]
-	\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] 
-	\duckpathjacket;
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[grumpy, body=yellow!50!brown!50!white, tshirt=white, jacket=black, tie=black, hat=black, sunglasses=black]
-\end{tikzpicture}
+%
 \begin{tikzpicture}
 	\duck[body=yellow!50!brown!40!white,
 		crazyhair=gray!50!white,
@@ -115,6 +98,7 @@
 		book=\scalebox{0.2}{$E=mc^2$},
 		bookcolour=red!20!brown]
 \end{tikzpicture}
+%
 \begin{tikzpicture}
 	\duck[body=yellow!50!red!20!white,
 		recedinghair=gray!50!white,
@@ -126,20 +110,38 @@
 		bookcolour=black!20!brown]
 \end{tikzpicture}
 
-\begin{tikzpicture}[path image/.style={path picture={\foreach \j in {0,...,2}{\node at (0,\j) {\foreach \i in {1,...,5}{\includegraphics[height=1cm]{#1}}};}}}]
-\path [path image=crinklepaper] 
-	(0.90,1.50) ellipse (0.50 and 0.625);
-\path [path image=crinklepaper] \duckpathbody;
-\fill [orange!40!gray!80!white]  \duckpathbill;
-\fill[white!70!gray, rotate=-20]
-	(0.23,1.7675) ellipse (0.0893 and 0.125);
-\fill[black, rotate=-20]
-	(0.26,1.7575) ellipse (0.0357 and 0.0714);
-\fill[white!70!gray, rotate=-20]
-	(-0.06,1.74) ellipse (0.0786 and 0.1143);
-\fill[black, rotate=-20]
-	(-0.03,1.73) ellipse (0.0286 and 0.0643);
+\begin{tikzpicture} 
+\duck[body=yellow!60!red!30!white,tshirt=white!90!yellow,stripes={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},beret=blue!30!black,baguette=brown]
 \end{tikzpicture}
+%
+\definecolor{fskin}{RGB}{161,140,126}%
+\definecolor{fbill}{RGB}{238,212,191}%
+\definecolor{fhair}{RGB}{89,72,72}%
+\begin{tikzpicture}
+\duck[body=fskin,bill=fbill,shorthair=fhair,bunny,inear=fbill]
+\node[fskin,rotate=45,scale=3] at (1.7,1.55) {\textsf{s}};
+\fill[fhair,rotate=45] (2.4,0.13) ellipse (0.15 and 0.07); 
+\end{tikzpicture}   
+%
+\begin{tikzpicture}
+  \duck[cake=red!50!violet!80!black]
+\end{tikzpicture}	
+%
+\begin{tikzpicture} 
+\duck[tshirt=blue, jacket=blue,stripes={
+	\stripes[color=white, rotate=-70, width=0.22,distance=1.1, initialy=0.01]
+	\stripes[color=white, rotate=40, width=0.2, distance=1.8, initialy=1.0,initialx=0.285]
+},football]
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+	\duck[hockey=brown!70!black]
+\end{tikzpicture}
+%
+\begin{tikzpicture}
+	\duck[torch=black!30!gray]
+\end{tikzpicture}
+
 
 \end{document}
 

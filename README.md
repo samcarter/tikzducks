@@ -10,4 +10,4 @@ The project repository, including a bug tracker, can be found at https://github.
 
 ### A few examples:
 
-![tikz ducks](https://user-images.githubusercontent.com/8226363/29253620-1c4ea2de-8082-11e7-800b-64df42ce6a66.png)
+![tikz ducks](https://user-images.githubusercontent.com/8226363/33049537-e71e9dd0-ce60-11e7-8b4c-7e1de0177f14.png)
