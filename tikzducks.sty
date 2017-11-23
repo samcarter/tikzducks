@@ -767,7 +767,7 @@
 % Random ducks
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\pgfmathsetseed{42}
+\pgfmathsetseed{\time}
 \ifpdf % filters pdflatex and lualatex
 	\ifluatex
 		\pgfmathsetseed{\number\randomseed}
