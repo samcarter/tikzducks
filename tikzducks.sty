@@ -22,8 +22,8 @@
 \usetikzlibrary{patterns} % for the wizard hat
 \usetikzlibrary{calc} % for the sports jerseys
 
-\RequirePackage{ifpdf}
 \RequirePackage{ifluatex}
+\RequirePackage{ifxetex}
 
 %\pgfdeclarelayer{backgroundlayer} 
 %\pgfdeclarelayer{bodylayer}
@@ -767,13 +767,14 @@
 % Random ducks
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfmathsetseed{\time}
-\ifpdf % filters pdflatex and lualatex
-	\ifluatex
-		\pgfmathsetseed{\number\randomseed}
-	\else % filters only pdflatex
-		\pgfmathsetseed{\number\pdfrandomseed}
-	\fi
+\ifluatex
+	\let\pdfrandomseed\randomseed
+\fi
+
+\ifxetex
+	\pgfmathsetseed{\time}
+\else
+	\pgfmathsetseed{\number\pdfrandomseed}
 \fi
 
 \pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}}
