@@ -22,6 +22,9 @@
 \usetikzlibrary{patterns} % for the wizard hat
 \usetikzlibrary{calc} % for the sports jerseys
 
+\RequirePackage{ifpdf}
+\RequirePackage{ifluatex}
+
 %\pgfdeclarelayer{backgroundlayer} 
 %\pgfdeclarelayer{bodylayer}
 %\pgfdeclarelayer{clothinglayer}
@@ -764,7 +767,14 @@
 % Random ducks
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfmathsetseed{\number\pdfrandomseed}
+%\pgfmathsetseed{42}
+\ifpdf % filters pdflatex and lualatex
+	\ifluatex
+		\pgfmathsetseed{\number\randomseed}
+	\else % filters only pdflatex
+		\pgfmathsetseed{\number\pdfrandomseed}
+	\fi
+\fi
 
 \pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}}
 \pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}}

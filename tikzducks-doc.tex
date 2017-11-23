@@ -148,7 +148,7 @@ The \tikzducks package loads the packages \lstinline|xcolor| and \TikZ, both wit
 \begin{lstlisting}[aboveskip=1.2em,morekeywords={xcolor,svgnames}]
 	\PassOptionsToPackage{svgnames}{xcolor}
 \end{lstlisting}
-It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|.
+It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|. Furthermore the packages \lstinline|ifpdf| and \lstinline|ifluatex| are necassary starting with version 0.5 of this package.
 
 \subsection{License}
 
@@ -575,6 +575,8 @@ In case the duck should not be completely random, but only some of the random el
 	\duck[\randomhead, \randomaccessories]
 \end{tikzpicture}
 \end{tcblisting}
+
+\textcolor{red!60!black}{Note for \lstinline|XeLaTeX|:} Due to technical limitations, the random seed is fixed for xelatex, this means that  \lstinline|\randuck| will still print another duck on each call, however the sequence is always the same. 
 
 %\clearpage
 \section{Further customisation}
