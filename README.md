@@ -11,3 +11,9 @@ The project repository, including a bug tracker, can be found at https://github.
 ### A few examples:
 
 ![tikz ducks](https://user-images.githubusercontent.com/8226363/33049537-e71e9dd0-ce60-11e7-8b4c-7e1de0177f14.png)
+
+### Video showcase
+
+[![Watch a video showcase of this package](https://i.stack.imgur.com/iwZPt.png)](https://vimeo.com/246256860)
+
+The source code for the video showcase is available in [this repository](https://github.com/cereda/duck-extravaganza).
