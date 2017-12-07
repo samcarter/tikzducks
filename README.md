@@ -16,4 +16,6 @@ The project repository, including a bug tracker, can be found at https://github.
 
 [![Watch a video showcase of this package](https://i.stack.imgur.com/iwZPt.png)](https://vimeo.com/246256860)
 
+(Kindly contributed by Ulrike and Gerd Fischer, Carla Maggi, Paulo Cereda and Prof. van Duck - many thanks to you all!)
+
 The source code for the video showcase is available in [this repository](https://github.com/cereda/duck-extravaganza).
