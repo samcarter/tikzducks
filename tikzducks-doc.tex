@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -468,6 +468,17 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{Both the speech and thought bubble are inspired by the wonderful \href{https://www.ctan.org/pkg/ducksay}{ducksay package}}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Buttons duck$^\thefootnote$}}
+\begin{tikzpicture}
+	\duck[buttons=brown!50!black]
+\end{tikzpicture}	
+\begin{tikzpicture}
+	\duck[jacket=red,buttons]
+\end{tikzpicture}	
+\end{tcblisting}
+\footnotetext[\thefootnote]{In case the duck is wearing a jacket, the buttons are positions a bit lower}
 
 \begin{tcblisting}{title={Book duck}}
 \begin{tikzpicture}
