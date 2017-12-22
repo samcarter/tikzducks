@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,pgfinterruptboundingbox},
@@ -405,6 +405,14 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
 
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Sheep duck$^\thefootnote$}}
+\begin{tikzpicture}
+\duck[body=white!80!brown, bill=white!60!brown,sheep]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The in-ear colour of the sheep chosen to be the same as the bill}
+
 \begin{tcblisting}{title={Witch duck}}
 \begin{tikzpicture}
 	\duck[witch=black!50!gray,
@@ -587,7 +595,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
-\clearpage
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
 
@@ -606,7 +613,7 @@ In case the duck should not be completely random, but only some of the random el
 \end{tikzpicture}
 \end{tcblisting}
 
-%\clearpage
+\clearpage
 \section{Further customisation}
 
 This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
@@ -841,7 +848,8 @@ In case your favourite team is missing from the above examples, feel free to cre
 \clearpage
 \section{Showcase}
 
-In the following a few examples of possible duck customisations, some of which will require additional packages (which are stated as a comment at the start of the code). For more examples (or to show your own creations) please visit \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond} or have a look at \href{https://vimeo.com/246256860}{The Great Christmas Extravaganza}\footnote{the source code is available at \url{https://github.com/cereda/duck-extravaganza}}.
+\addtocounter{footnote}{1}
+In the following a few examples of possible duck customisations, some of which will require additional packages (which are stated as a comment at the start of the code). For more examples (or to show your own creations) please visit \href{https://tex.stackexchange.com/q/387047/36296}{The Duck Pond} or have a look at \href{https://vimeo.com/246256860}{The Great Christmas Extravaganza}$^\thefootnote$\footnotetext[\thefootnote]{the source code is available at \url{https://github.com/cereda/duck-extravaganza}}.
 
 \begin{tcblisting}{title={\texttt{samcarter} duck}}
 \begin{tikzpicture}
@@ -1086,7 +1094,11 @@ In the following a few examples of possible duck customisations, some of which w
 \begin{tikzpicture}
 \duck[body=red!20!white,bill=red!30!white,shorthair=red!30!white,bunny=red!30!white,inear=red!30!white]
 \node[red!20!white,rotate=25,scale=3] at (1.7,1.51) {\textsf{s}};
-\end{tikzpicture}       
+\end{tikzpicture}   
+
+\begin{tikzpicture}
+\duck[body=white!80!brown, bill=white!60!brown, sheep]
+\end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Duck Queen}}
