@@ -73,6 +73,7 @@
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
+\newif\ifduck@squareglasses
 \newif\ifduck@icecream
 \newif\ifduck@book
 \newif\ifduck@magicwand
@@ -204,6 +205,7 @@
  	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	glasses/.code			= \duck@glassestrue			\def\duck@glasses{#1},
  	sunglasses/.code	= \duck@sunglassestrue	\def\duck@sunglasses{#1},
+ 	squareglasses/.code = \duck@squareglassestrue \def\duck@squareglasses{#1},
 	icecream/.code 		= \duck@icecreamtrue 		\def\duck@cone{#1},
 	flavoura/.code 		= 											\def\duck@flavoura{#1},
 	flavourb/.code 		= 											\def\duck@flavourb{#1},
@@ -236,6 +238,7 @@
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
+	squareglasses/.default = black,
 	icecream/.default 	= brown!60!gray,
 	flavoura 						= brown!50!black,
 	flavourb 						= white!70!brown,
@@ -611,6 +614,14 @@
 	\fill[\duck@glasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
 	\fill[\duck@glasses,rotate=-20,even odd rule] (0.23,1.7675) circle (0.14) (0.23,1.7675) circle (0.11);
 	\fill[\duck@glasses,rotate=-20,even odd rule] (-0.06,1.74) circle (0.13) (-0.06,1.74) circle (0.095);		
+\fi
+%
+% square glasses
+\ifduck@squareglasses
+	\fill[\duck@squareglasses,rotate=-17] (0.43,1.8) rectangle (0.8,1.84);
+	\fill[\duck@squareglasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
+	\fill[\duck@squareglasses,rotate=-20,rounded corners=2,even odd rule] (-0.16,1.62) -- (-0.18,1.85) -- (0.05,1.87) -- (0.04,1.62) -- cycle (-0.14,1.64) -- (-0.16,1.83) -- (0.03,1.85) -- (0.02,1.64) -- cycle;
+	\fill[\duck@squareglasses,rotate=-20,rounded corners=2,even odd rule] (0.12,1.63) -- (0.10,1.88) -- (0.36,1.90) -- (0.35,1.65) -- cycle (0.14,1.65) -- (0.12,1.86) -- (0.34,1.88) -- (0.33,1.67) -- cycle;
 \fi
 %
 % icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
