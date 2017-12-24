@@ -94,6 +94,7 @@
 \newif\ifduck@speech
 \newif\ifduck@think
 \newif\ifduck@torch
+\newif\ifduck@easterbasket
 \newif\ifduck@buttons
 \newif\ifduck@sheep
 
@@ -233,6 +234,7 @@
 	think/.code 			= \duck@thinktrue 			\def\duck@think{#1},
 	bubblecolour/.code = 									 	 \def\duck@bubblecolour{#1},
 	torch/.code				= \duck@torchtrue				\def\duck@torch{#1},
+	easterbasket/.code				= \duck@easterbaskettrue	\def\duck@easterbasket{#1},
 	buttons/.code			= \duck@buttonstrue			\def\duck@buttons{#1},
 	sheep/.code				= \duck@sheeptrue				\def\duck@sheep{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,6 +262,7 @@
 	prison/.default			= gray,
 	bubblecolour				= gray!30!white,
 	torch/.default			= gray,
+	easterbasket/.default = brown!70!gray,
 	buttons/.default		= black,
 	sheep/.default 			= \duck@body,
 }
@@ -797,6 +800,22 @@
 		\fill[\duck@bill,rotate=-5] (0.8,1.5) ellipse (0.3 and 0.4);
 	\end{scope}
 \fi
+%
+% easter basket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@easterbasket
+		\fill[\duck@easterbasket!70!black]
+			(0.91,0.66) .. controls (1.04,0.73) and (1.27,0.73) .. (1.40,0.66) --
+			(0.91,0.66) .. controls (1.04,0.58) and (1.27,0.58) .. (1.40,0.66) --
+			cycle;
+		\fill[red] (1.24,0.66) ellipse (0.06 and 0.09);
+		\fill[blue] (1.05,0.66) ellipse (0.06 and 0.09);
+		\fill[green] (1.14,0.62) ellipse (0.06 and 0.09);
+		\fill[\duck@easterbasket]
+			(0.91,0.66) .. controls (1.04,0.58) and (1.27,0.58) .. (1.40,0.66) --
+			(1.40,0.26) .. controls (1.27,0.18) and (1.04,0.18) .. (0.91,0.26) --
+			cycle
+		;
+\fi%
 %
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
