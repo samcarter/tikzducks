@@ -95,6 +95,7 @@
 \newif\ifduck@think
 \newif\ifduck@torch
 \newif\ifduck@easter
+\newif\ifduck@basket
 \newif\ifduck@buttons
 \newif\ifduck@sheep
 
@@ -234,7 +235,9 @@
 	think/.code 			= \duck@thinktrue 			\def\duck@think{#1},
 	bubblecolour/.code = 									 	 \def\duck@bubblecolour{#1},
 	torch/.code				= \duck@torchtrue				\def\duck@torch{#1},
-	easter/.code			= \duck@eastertrue			\def\duck@easter{#1},
+	basket/.code			= \duck@baskettrue			\def\duck@basket{#1},
+	easter/.code			= \duck@eastertrue
+											\duck@baskettrue 			\def\duck@basket{#1},
 	egga/.code 				= 											\def\duck@egga{#1},
 	eggb/.code 				= 											\def\duck@eggb{#1},
 	eggc/.code 				= 											\def\duck@eggc{#1},
@@ -265,6 +268,7 @@
 	prison/.default			= gray,
 	bubblecolour				= gray!30!white,
 	torch/.default			= gray,
+	basket/.default 		= brown!70!gray,
 	easter/.default 		= brown!70!gray,
 	egga 								= blue,
 	eggb 								= green,
@@ -807,13 +811,22 @@
 	\end{scope}
 \fi
 %
+% basket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@basket
+	\fill[\duck@basket, start angle=180, end angle=360, x radius=0.35, y radius=0.35] (0.65,0.61) arc  -- cycle;
+	\fill[\duck@basket, start angle=180, end angle=0, even odd rule] [x radius=0.35, y radius=0.5] (0.65,0.6) arc  -- cycle [x radius=0.3, y radius=0.45] (0.7,0.6) arc  -- cycle;
+	\fill[\duck@basket, even odd rule] (1,0.6) ellipse (0.35 and 0.1) (1,0.6) ellipse (0.3 and 0.07);	
+	\fill[\duck@basket!75!black] (1,0.6) ellipse (0.3 and 0.07);	
+\fi%	
+%
 % easter basket %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@easter
-		\fill[\duck@easter!70!black] (0.91,0.66) .. controls (1.04,0.73) and (1.27,0.73) .. (1.40,0.66) -- (0.91,0.66) .. controls (1.04,0.58) and (1.27,0.58) .. (1.40,0.66) -- cycle;
-		\fill[\duck@egga] (1.05,0.66) ellipse (0.06 and 0.09);
-		\fill[\duck@eggb] (1.14,0.62) ellipse (0.06 and 0.09);	
-		\fill[\duck@eggc] (1.24,0.66) ellipse (0.06 and 0.09);
-		\fill[\duck@easter] (0.91,0.66) .. controls (1.04,0.58) and (1.27,0.58) .. (1.40,0.66) -- (1.40,0.26) .. controls (1.27,0.18) and (1.04,0.18) .. (0.91,0.26) -- cycle;
+	\begin{scope}
+		\clip [start angle=180, end angle=0, x radius=0.3, y radius=0.45] (0.7,0.6) arc  -- cycle [start angle=180, end angle=360, x radius=0.3, y radius=0.07] (0.7,0.6) arc  -- cycle;	
+		\fill[\duck@eggb, rotate=-5]  (0.95,0.75) ellipse (0.09 and 0.13);
+		\fill[\duck@egga, rotate=10]  (0.94,0.45) ellipse (0.09 and 0.13);
+		\fill[\duck@eggc, rotate=-30] (0.7,1.1) ellipse (0.09 and 0.13);
+	\end{scope}	
 \fi%
 %
 %
