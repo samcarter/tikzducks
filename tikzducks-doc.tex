@@ -600,9 +600,11 @@ There is a multitude of things a duck might need. The following examples all als
 
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Easter duck$^\thefootnote$}}
-	\duck[bunny,easter]
 \begin{tikzpicture}
-	\duck[bunny,easterbasket]
+	\duck[bunny,easter]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[bunny,easter,egga=orange,eggb=cyan,eggc=teal]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The easter basket was kindly contributed by Benito van der Zander}
