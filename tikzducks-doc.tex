@@ -490,7 +490,7 @@ There is a multitude of things a duck might need. The following examples all als
 	\duck[jacket=red,buttons]
 \end{tikzpicture}	
 \end{tcblisting}
-\footnotetext[\thefootnote]{In case the duck is wearing a jacket, the buttons are positions a bit lower}
+\footnotetext[\thefootnote]{In case the duck is wearing a jacket, the buttons are positioned a bit lower}
 
 \begin{tcblisting}{title={Book duck}}
 \begin{tikzpicture}
@@ -598,12 +598,14 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
 
-\begin{tcblisting}{title={Easter duck}}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Easter duck$^\thefootnote$}}
 	\duck[bunny,easter]
 \begin{tikzpicture}
 	\duck[bunny,easterbasket]
 \end{tikzpicture}
 \end{tcblisting}
+\footnotetext[\thefootnote]{The easter basket was kindly contributed by Benito van der Zander}
 
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
