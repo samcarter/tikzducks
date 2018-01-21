@@ -278,6 +278,7 @@
 }
 
 \def\duck@draw{
+\begin{scope}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % minimal bounding box size
@@ -832,6 +833,7 @@
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
+\end{scope}
 }% from `\def\duck@draw{` at the very beginning 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
