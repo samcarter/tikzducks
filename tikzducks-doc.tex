@@ -1138,6 +1138,18 @@ In the following a few examples of possible duck customisations, some of which w
 \begin{tikzpicture}
 \duck[body=white!80!brown, bill=white!60!brown, sheep]
 \end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{scope}[yshift=-6]
+\clip[rotate=-5] (0.68,2.38) ellipse (0.3 and 0.4);
+\fill[brown,rotate=-5](0.28,2.26)ellipse (0.3 and 0.4);
+\end{scope}
+\duck[body=brown,mohican=brown!50!black,horsetail]
+\begin{scope}[yshift=-5,xshift=1]
+\clip[rotate=-5] (0.68,2.38) ellipse (0.3 and 0.4);
+\fill[brown,rotate=-5](1.06,2.2) ellipse (0.3 and 0.4);
+\end{scope}
+\end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Duck Queen}}
