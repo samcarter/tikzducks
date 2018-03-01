@@ -49,6 +49,8 @@
 \newif\ifduck@recedinghair
 \newif\ifduck@eyebrow
 \newif\ifduck@beard
+\newif\ifduck@mohican
+\newif\ifduck@mullet
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@tshirt
 \newif\ifduck@jacket
@@ -98,8 +100,7 @@
 \newif\ifduck@basket
 \newif\ifduck@buttons
 \newif\ifduck@sheep
-\newif\ifduck@mohican
-\newif\ifduck@mullet
+\newif\ifduck@horsetail
 
 \tikzset{
 	/duck/.cd,
@@ -249,6 +250,7 @@
 	eggc/.code 				= 											\def\duck@eggc{#1},
 	buttons/.code			= \duck@buttonstrue			\def\duck@buttons{#1},
 	sheep/.code				= \duck@sheeptrue				\def\duck@sheep{#1},
+	horsetail/.code		= \duck@horsetailtrue		\def\duck@horsetail{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	glasses/.default		= black,	
 	sunglasses/.default	= black,	
@@ -281,6 +283,7 @@
 	eggc		 						= red,
 	buttons/.default		= black,
 	sheep/.default 			= \duck@body,
+	horsetail/.default	= brown,
 }
 
 \def\duck@draw{
@@ -861,6 +864,18 @@
 	\end{scope}	
 \fi%
 %
+% horse tail %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfkeys{/duck/horsetail/.@def/.get=\duck@test}
+\ifx\duck@horsetail\duck@test
+	\ifdefined\duck@hair\let\duck@horsetail=\duck@hair\fi
+\fi%
+\ifduck@horsetail
+	\fill[\duck@horsetail] (1.7248,1.3553) .. controls (2.0530,1.3369) and (2.1427,1.1604) .. (2.2915,0.9970) .. controls (2.4759,0.7946) and (2.9531,0.8890) .. (2.7668,0.9003) .. controls (2.4670,0.9184) and (2.5158,1.1488) .. (2.3907,1.3152) .. controls (2.2788,1.4641) and (1.9414,1.5945) .. (1.7248,1.3553) -- cycle;
+\fi	
+%
+
+
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
