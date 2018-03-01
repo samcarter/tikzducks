@@ -98,6 +98,8 @@
 \newif\ifduck@basket
 \newif\ifduck@buttons
 \newif\ifduck@sheep
+\newif\ifduck@mohican
+\newif\ifduck@mullet
 
 \tikzset{
 	/duck/.cd,
@@ -153,6 +155,8 @@
  	recedinghair/.code	= \duck@recedinghairtrue	\def\duck@hair{#1},
  	eyebrow/.code				= \duck@eyebrowtrue				\def\duck@eyebrow{#1},
  	beard/.code					= \duck@beardtrue					\def\duck@beard{#1},
+ 	mohican/.code				=	\duck@mohicantrue				\def\duck@hair{#1},
+ 	mullet/.code				= \duck@mullettrue				\def\duck@hair{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	shorthair/.default 		= brown,
 	longhair/.default			= brown,
@@ -160,6 +164,8 @@
 	recedinghair/.default	= brown,
 	eyebrow/.default			= brown,
 	beard/.default				= brown,
+	mohican/.default			= brown,
+	mullet/.default				= brown,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%
 	% Headgear
@@ -467,6 +473,22 @@
 	\path (0.1,0.1) rectangle (2.1,2.18);
 	\begin{pgfinterruptboundingbox}
 		\fill[\duck@hair] \duckpathrecedinghair;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% mohican hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@mohican
+	\path (0.1,0.1) rectangle (2.1,2.24);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] (0.7632,1.7935) .. controls (0.9223,2.3084) and (1.3870,1.8580) .. (1.3920,1.5854) .. controls (1.4233,2.1466) and (0.6812,2.5808) .. (0.6725,1.8166) .. controls (0.6725,1.8166) and (0.7615,1.7926) .. (0.7632,1.7935) -- cycle;
+	\end{pgfinterruptboundingbox}
+\fi
+%
+% mullet hair %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@mullet
+	\path (0.1,0.1) rectangle (2.1,2.17);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair]  (1.3723,1.2684) .. controls (1.3723,1.2684) and (1.5129,1.5571) .. (1.4435,1.7815) .. controls (1.2652,2.3572) and (0.3342,2.2633) .. (0.4106,1.5424) .. controls (0.4204,1.6825) and (0.5692,1.9195) .. (0.5692,1.9195) .. controls (0.5692,1.9195) and (0.8475,1.8402) .. (1.1031,1.7844) .. controls (1.0808,1.6260) and (1.1130,1.4754) .. (1.1130,1.4754) .. controls (1.1956,1.4198) and (1.3001,1.3369) .. (1.3723,1.2684) -- cycle;
 	\end{pgfinterruptboundingbox}
 \fi
 %
