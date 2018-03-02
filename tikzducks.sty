@@ -72,6 +72,7 @@
 \newif\ifduck@peakedcap
 \newif\ifduck@bunny
 \newif\ifduck@tophat
+\newif\ifduck@darthvader
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -189,6 +190,7 @@
 	inear/.code				=												\def\duck@inear{#1},
 	peakedcap/.code		= \duck@peakedcaptrue		\def\duck@peakedcap{#1},
 	tophat/.code			= \duck@tophattrue			\def\duck@tophat{#1},
+	darthvader/.code	= \duck@darthvadertrue	\def\duck@darthvader{#1},
 	% setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	alien/.default		= green,		
 	hat/.default			= brown,
@@ -207,6 +209,7 @@
 	inear							= \duck@bunny!50!white,
 	peakedcap/.default= blue,
 	tophat/.default		= black,
+	darthvader/.default = black,
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  	%
  	% Accessories
@@ -641,6 +644,14 @@
 	\fill[\duck@tophat,rotate=-15] (0.44,2.1) ellipse (0.48 and 0.1);
 	\fill[\duck@tophat,rotate=-15] (0.12,2.1) -- (0.75,2.1) -- (0.81,2.55) -- (0.07,2.55) -- cycle;
 	\fill[\duck@tophat,rotate=-15] (0.44,2.55) ellipse (0.37 and 0.08);	
+\fi
+%
+% darth vader %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@darthvader
+	\path (0.1,0.1) rectangle (2.1,2.22);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@darthvader] (0.4264,1.9092) .. controls (0.4347,1.9248) and (0.4612,1.9186) .. (0.4969,1.9783) .. controls (0.5499,2.0670) and (0.7559,2.2377) .. (0.9889,2.2057) .. controls (1.2691,2.1668) and (1.4075,1.8829) .. (1.4176,1.7421) .. controls (1.4279,1.5955) and (1.5246,1.3484) .. (1.5246,1.3484) -- (0.9846,1.2036) .. controls (1.0898,1.2735) and (1.0667,1.5598) .. (1.0555,1.6034) .. controls (0.9758,1.9147) and (0.8121,1.8681) .. (0.7174,1.7694) .. controls (0.5671,2.0370) and (0.4103,1.7556) .. (0.4132,1.472) -- (0.3529,1.415) .. controls (0.3529,1.43938) and (0.3893,1.8379) .. (0.4264,1.9092) -- cycle;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 %\end{pgfonlayer}
