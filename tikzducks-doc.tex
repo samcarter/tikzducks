@@ -17,11 +17,10 @@
 \documentclass[parskip=half]{scrartcl}
 
 % packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[LSBC5,T1]{fontenc}	
+\usepackage[T1]{fontenc}	
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
-\usepackage{chessfss}
 \usepackage{tikzducks}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm]{geometry}
@@ -56,11 +55,11 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,duckpathcrozier},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	index=[1][emph]
@@ -393,6 +392,13 @@ There is a multitude of things a duck might need. The following examples all als
 \duck[body=black!75!white,
 			crown=yellow!70!brown]
 \end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[queencrown=gray]
+\end{tikzpicture}
+\begin{tikzpicture}
+\duck[kingcrown=brown!70!red]
+\end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Unicorn duck}}
@@ -558,6 +564,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Shepherd duck}}
+\begin{tikzpicture}
+	\duck[crozier=brown!80!black]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Necklace duck}}
 \begin{tikzpicture}
 	\duck[necklace=gray!20!white]
@@ -684,8 +696,9 @@ For convenience the more complex paths of this package are stored in macros, whi
 In detail, the following paths are available:
 
 \begin{lstlisting}[aboveskip=1.2em,breakindent=0pt]
-\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown
+\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown,  \duckpathmohican,  \duckpathmullet,  \duckpathqueencrown,  \duckpathkingcrown,  \duckpathdarthvader,  \duckpathhorsetail,  \duckpathcrozier
 \end{lstlisting}
+\enlargethispage*{\baselineskip}
 
 In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
 
@@ -1164,20 +1177,19 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tcblisting}
 
 \begin{tcblisting}{title={Duck Queen}}
-%\usepackage[LSBC5,T1]{fontenc}
-%\usepackage{chessfss}
 \definecolor{qskin}{RGB}{225,219,206}%
 \definecolor{qbill}{RGB}{170,123,154}%
 \definecolor{qdress}{RGB}{184,209,206}%
 \definecolor{qcrown}{RGB}{90,76,183}%
-\setboardfontencoding{LSBC5}
-\setboardfontcolors{whiteonwhitepiecemask=qcrown,whitepiece=gray!60!white}  
 \begin{tikzpicture}
 \duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white]  
-\node[rotate=-10] at (1.03,2.42) {\scalebox{1.9}{\WhiteKingOnWhite}}; 
-\fill[gray!60!white,rotate=-10] (0.6,2.18) ellipse (0.38 and 0.1);
 \fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
-\node[rotate=-30] at (0.94,0.98) {\scalebox{0.4}{\WhiteQueenOnWhite}}; 
+\begin{scope}[scale=0.23,rotate=-20,yshift=82,xshift=38]
+	\fill[qcrown] \duckpathqueencrown;
+\end{scope}
+\begin{scope}[yshift=3]
+	\fill[qcrown] \duckpathkingcrown;
+\end{scope}
 \end{tikzpicture}
 \end{tcblisting}
 
