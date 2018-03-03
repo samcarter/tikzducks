@@ -139,39 +139,39 @@
   % clothing
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  tshirt/.code  = \duck@tshirttrue   \def\duck@tshirt{#1},
-  jacket/.code  = \duck@jackettrue   \def\duck@jacket{#1},
-  tie/.code     = \duck@tietrue      \def\duck@tie{#1},
-  cape/.code    = \duck@capetrue     \def\duck@cape{#1},
-  stripes/.code = \duck@stripestrue  \def\duck@stripes{#1},
+  tshirt/.code       = \duck@tshirttrue      \def\duck@tshirt{#1},
+  jacket/.code       = \duck@jackettrue      \def\duck@jacket{#1},
+  tie/.code          = \duck@tietrue         \def\duck@tie{#1},
+  cape/.code         = \duck@capetrue        \def\duck@cape{#1},
+  stripes/.code      = \duck@stripestrue     \def\duck@stripes{#1},
   % setting default %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  tshirt/.default  = white,
-  jacket/.default  = blue,
-  tie/.default     = blue,  
-  cape/.default    = red,
-  stripes/.default = \stripes ,
+  tshirt/.default    = white,
+  jacket/.default    = blue,
+  tie/.default       = blue,
+  cape/.default      = red,
+  stripes/.default   = \stripes ,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % hair styles
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  shorthair/.code      = \duck@shorthairtrue    \def\duck@hair{#1},
-  longhair/.code       = \duck@longhairtrue     \def\duck@hair{#1},
-  crazyhair/.code      = \duck@crazyhairtrue    \def\duck@hair{#1},
-  recedinghair/.code   = \duck@recedinghairtrue \def\duck@hair{#1},
-  eyebrow/.code        = \duck@eyebrowtrue      \def\duck@eyebrow{#1},
-  beard/.code          = \duck@beardtrue        \def\duck@beard{#1},
-  mohican/.code        =  \duck@mohicantrue     \def\duck@hair{#1},
-  mullet/.code         = \duck@mullettrue       \def\duck@hair{#1},
+  shorthair/.code    = \duck@shorthairtrue    \def\duck@hair{#1},
+  longhair/.code     = \duck@longhairtrue     \def\duck@hair{#1},
+  crazyhair/.code    = \duck@crazyhairtrue    \def\duck@hair{#1},
+  recedinghair/.code = \duck@recedinghairtrue \def\duck@hair{#1},
+  eyebrow/.code      = \duck@eyebrowtrue      \def\duck@eyebrow{#1},
+  beard/.code        = \duck@beardtrue        \def\duck@beard{#1},
+  mohican/.code      =  \duck@mohicantrue     \def\duck@hair{#1},
+  mullet/.code       = \duck@mullettrue       \def\duck@hair{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  shorthair/.default   = brown,
-  longhair/.default    = brown,
-  crazyhair/.default   = brown,
+  shorthair/.default = brown,
+  longhair/.default  = brown,
+  crazyhair/.default = brown,
   recedinghair/.default= brown,
-  eyebrow/.default     = brown,
-  beard/.default       = brown,
-  mohican/.default     = brown,
-  mullet/.default      = brown,
+  eyebrow/.default   = brown,
+  beard/.default     = brown,
+  mohican/.default   = brown,
+  mullet/.default    = brown,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Headgear
@@ -255,7 +255,7 @@
   torch/.code        = \duck@torchtrue       \def\duck@torch{#1},
   basket/.code       = \duck@baskettrue      \def\duck@basket{#1},
   easter/.code       = \duck@eastertrue
-                      \duck@baskettrue       \def\duck@basket{#1},
+                       \duck@baskettrue      \def\duck@basket{#1},
   egga/.code         =                       \def\duck@egga{#1},
   eggb/.code         =                       \def\duck@eggb{#1},
   eggc/.code         =                       \def\duck@eggc{#1},
@@ -1045,40 +1045,119 @@
 }
 
 \newcommand{\duckpathmohican}{%
-  (0.7632,1.7935) .. controls (0.9223,2.3084) and (1.3870,1.8580) .. (1.3920,1.5854) .. controls (1.4233,2.1466) and (0.6812,2.5808) .. (0.6725,1.8166) .. controls (0.6725,1.8166) and (0.7615,1.7926) .. (0.7632,1.7935) -- cycle
+  (0.7632,1.7935) .. controls (0.9223,2.3084) and (1.3870,1.8580) ..
+  (1.3920,1.5854) .. controls (1.4233,2.1466) and (0.6812,2.5808) ..
+  (0.6725,1.8166) .. controls (0.6725,1.8166) and (0.7615,1.7926) ..
+  (0.7632,1.7935) -- cycle
 }
 
 \newcommand{\duckpathmullet}{%
-  (1.3723,1.2684) .. controls (1.3723,1.2684) and (1.5129,1.5571) .. (1.4435,1.7815) .. controls (1.2652,2.3572) and (0.3342,2.2633) .. (0.4106,1.5424) .. controls (0.4204,1.6825) and (0.5692,1.9195) .. (0.5692,1.9195) .. controls (0.5692,1.9195) and (0.8475,1.8402) .. (1.1031,1.7844) .. controls (1.0808,1.6260) and (1.1130,1.4754) .. (1.1130,1.4754) .. controls (1.1956,1.4198) and (1.3001,1.3369) .. (1.3723,1.2684) -- cycle
+  (1.3723,1.2684) .. controls (1.3723,1.2684) and (1.5129,1.5571) ..
+  (1.4435,1.7815) .. controls (1.2652,2.3572) and (0.3342,2.2633) ..
+  (0.4106,1.5424) .. controls (0.4204,1.6825) and (0.5692,1.9195) ..
+  (0.5692,1.9195) .. controls (0.5692,1.9195) and (0.8475,1.8402) ..
+  (1.1031,1.7844) .. controls (1.0808,1.6260) and (1.1130,1.4754) ..
+  (1.1130,1.4754) .. controls (1.1956,1.4198) and (1.3001,1.3369) ..
+  (1.3723,1.2684) -- cycle
 }
 
 \newcommand{\duckpathqueencrown}{%
-  (0.7370,2.0732) .. controls (0.6966,2.2091) and (0.6769,2.3503) .. (0.6354,2.4859) .. controls (0.6149,2.5164) and (0.5958,2.5732) .. (0.6498,2.5808) .. controls (0.6973,2.5907) and (0.7091,2.5350) .. (0.6926,2.5016) .. controls (0.6967,2.4544) and (0.7188,2.4109) .. (0.7340,2.3665) .. controls (0.7415,2.3472) and (0.7619,2.2862) .. (0.7676,2.3381) .. controls (0.7755,2.3852) and (0.7871,2.4329) .. (0.7833,2.4808) .. controls (0.7597,2.5148) and (0.7834,2.5720) .. (0.8294,2.5570) .. controls (0.8775,2.5457) and (0.8536,2.4937) .. (0.8436,2.4638) .. controls (0.8502,2.3973) and (0.8640,2.3313) .. (0.8798,2.2664) .. controls (0.9047,2.2750) and (0.9168,2.3261) .. (0.9342,2.3514) .. controls (0.9492,2.3853) and (0.9714,2.4171) .. (0.9773,2.4540) .. controls (0.9645,2.4873) and (0.9766,2.5358) .. (1.0204,2.5303) .. controls (1.0646,2.5298) and (1.0691,2.4725) .. (1.0443,2.4460) .. controls (1.0440,2.3935) and (1.0580,2.3419) .. (1.0671,2.2905) .. controls (1.0706,2.2719) and (1.0788,2.2126) .. (1.0985,2.2554) .. controls (1.1269,2.3087) and (1.1558,2.3623) .. (1.1772,2.4187) .. controls (1.1697,2.4515) and (1.1716,2.5081) .. (1.2210,2.5018) .. controls (1.2706,2.4969) and (1.2686,2.4403) .. (1.2406,2.4126) .. controls (1.2279,2.3600) and (1.2211,2.3057) .. (1.2172,2.2518) .. controls (1.2296,2.2439) and (1.2538,2.2943) .. (1.2693,2.3112) .. controls (1.2908,2.3467) and (1.3228,2.3784) .. (1.3316,2.4200) .. controls (1.3203,2.4624) and (1.3708,2.5014) .. (1.4051,2.4678) .. controls (1.4448,2.4342) and (1.3945,2.3994) .. (1.3765,2.3710) .. controls (1.3022,2.2536) and (1.2440,2.1265) .. (1.1686,2.0097) .. controls (0.9649,1.9465) and (0.8367,1.9955) .. (0.7370,2.0732) -- cycle
+  (0.7370,2.0732) .. controls (0.6966,2.2091) and (0.6769,2.3503) ..
+  (0.6354,2.4859) .. controls (0.6149,2.5164) and (0.5958,2.5732) ..
+  (0.6498,2.5808) .. controls (0.6973,2.5907) and (0.7091,2.5350) ..
+  (0.6926,2.5016) .. controls (0.6967,2.4544) and (0.7188,2.4109) ..
+  (0.7340,2.3665) .. controls (0.7415,2.3472) and (0.7619,2.2862) ..
+  (0.7676,2.3381) .. controls (0.7755,2.3852) and (0.7871,2.4329) ..
+  (0.7833,2.4808) .. controls (0.7597,2.5148) and (0.7834,2.5720) ..
+  (0.8294,2.5570) .. controls (0.8775,2.5457) and (0.8536,2.4937) ..
+  (0.8436,2.4638) .. controls (0.8502,2.3973) and (0.8640,2.3313) ..
+  (0.8798,2.2664) .. controls (0.9047,2.2750) and (0.9168,2.3261) ..
+  (0.9342,2.3514) .. controls (0.9492,2.3853) and (0.9714,2.4171) ..
+  (0.9773,2.4540) .. controls (0.9645,2.4873) and (0.9766,2.5358) ..
+  (1.0204,2.5303) .. controls (1.0646,2.5298) and (1.0691,2.4725) ..
+  (1.0443,2.4460) .. controls (1.0440,2.3935) and (1.0580,2.3419) ..
+  (1.0671,2.2905) .. controls (1.0706,2.2719) and (1.0788,2.2126) ..
+  (1.0985,2.2554) .. controls (1.1269,2.3087) and (1.1558,2.3623) ..
+  (1.1772,2.4187) .. controls (1.1697,2.4515) and (1.1716,2.5081) ..
+  (1.2210,2.5018) .. controls (1.2706,2.4969) and (1.2686,2.4403) ..
+  (1.2406,2.4126) .. controls (1.2279,2.3600) and (1.2211,2.3057) ..
+  (1.2172,2.2518) .. controls (1.2296,2.2439) and (1.2538,2.2943) ..
+  (1.2693,2.3112) .. controls (1.2908,2.3467) and (1.3228,2.3784) ..
+  (1.3316,2.4200) .. controls (1.3203,2.4624) and (1.3708,2.5014) ..
+  (1.4051,2.4678) .. controls (1.4448,2.4342) and (1.3945,2.3994) ..
+  (1.3765,2.3710) .. controls (1.3022,2.2536) and (1.2440,2.1265) ..
+  (1.1686,2.0097) .. controls (0.9649,1.9465) and (0.8367,1.9955) ..
+  (0.7370,2.0732) -- cycle
 }
 
 \newcommand{\duckpathkingcrown}{%
-  (0.6572,2.0396) .. controls (0.6637,2.0838) and (0.6716,2.1289) .. (0.6684,2.1735) .. controls (0.6481,2.2496) and (0.5923,2.3131) .. (0.5818,2.3921) .. controls (0.5738,2.4607) and (0.6167,2.5343) .. (0.6862,2.5502) .. controls (0.7548,2.5703) and (0.8210,2.5304) .. (0.8720,2.4881) .. controls (0.8984,2.4712) and (0.9239,2.4324) .. (0.9486,2.4249) .. controls (0.9524,2.4691) and (0.9566,2.5158) .. (0.9844,2.5527) .. controls (1.0052,2.5845) and (1.0390,2.6282) .. (1.0820,2.6127) .. controls (1.1212,2.5899) and (1.1378,2.5421) .. (1.1478,2.5003) .. controls (1.1576,2.4639) and (1.1336,2.4180) .. (1.1349,2.3906) .. controls (1.2050,2.4269) and (1.2847,2.4629) .. (1.3654,2.4429) .. controls (1.4292,2.4285) and (1.4864,2.3679) .. (1.4793,2.2998) .. controls (1.4859,2.2404) and (1.4407,2.1925) .. (1.4006,2.1551) .. controls (1.3681,2.1232) and (1.3290,2.0951) .. (1.3072,2.0544) .. controls (1.2904,2.0121) and (1.2805,1.9674) .. (1.2738,1.9225) .. controls (1.1221,1.8892) and (0.9586,1.8836) .. (0.8112,1.9386) .. controls (0.7535,1.9608) and (0.6999,1.9945) .. (0.6572,2.0396) -- cycle
+  (0.6572,2.0396) .. controls (0.6637,2.0838) and (0.6716,2.1289) ..
+  (0.6684,2.1735) .. controls (0.6481,2.2496) and (0.5923,2.3131) ..
+  (0.5818,2.3921) .. controls (0.5738,2.4607) and (0.6167,2.5343) ..
+  (0.6862,2.5502) .. controls (0.7548,2.5703) and (0.8210,2.5304) ..
+  (0.8720,2.4881) .. controls (0.8984,2.4712) and (0.9239,2.4324) ..
+  (0.9486,2.4249) .. controls (0.9524,2.4691) and (0.9566,2.5158) ..
+  (0.9844,2.5527) .. controls (1.0052,2.5845) and (1.0390,2.6282) ..
+  (1.0820,2.6127) .. controls (1.1212,2.5899) and (1.1378,2.5421) ..
+  (1.1478,2.5003) .. controls (1.1576,2.4639) and (1.1336,2.4180) ..
+  (1.1349,2.3906) .. controls (1.2050,2.4269) and (1.2847,2.4629) ..
+  (1.3654,2.4429) .. controls (1.4292,2.4285) and (1.4864,2.3679) ..
+  (1.4793,2.2998) .. controls (1.4859,2.2404) and (1.4407,2.1925) ..
+  (1.4006,2.1551) .. controls (1.3681,2.1232) and (1.3290,2.0951) ..
+  (1.3072,2.0544) .. controls (1.2904,2.0121) and (1.2805,1.9674) ..
+  (1.2738,1.9225) .. controls (1.1221,1.8892) and (0.9586,1.8836) ..
+  (0.8112,1.9386) .. controls (0.7535,1.9608) and (0.6999,1.9945) ..
+  (0.6572,2.0396) -- cycle
 }
 
 \newcommand{\duckpathdarthvader}{%
-  (0.4264,1.9092) .. controls (0.4347,1.9248) and (0.4612,1.9186) .. (0.4969,1.9783) .. controls (0.5499,2.0670) and (0.7559,2.2377) .. (0.9889,2.2057) .. controls (1.2691,2.1668) and (1.4075,1.8829) .. (1.4176,1.7421) .. controls (1.4279,1.5955) and (1.5246,1.3484) .. (1.5246,1.3484) -- (0.9846,1.2036) .. controls (1.0898,1.2735) and (1.0667,1.5598) .. (1.0555,1.6034) .. controls (0.9758,1.9147) and (0.8121,1.8681) .. (0.7174,1.7694) .. controls (0.5671,2.0370) and (0.4103,1.7556) .. (0.4132,1.472) -- (0.3529,1.415) .. controls (0.3529,1.43938) and (0.3893,1.8379) .. (0.4264,1.9092) -- cycle
+  (0.4264,1.9092) .. controls (0.4347,1.9248) and (0.4612,1.9186) ..
+  (0.4969,1.9783) .. controls (0.5499,2.0670) and (0.7559,2.2377) ..
+  (0.9889,2.2057) .. controls (1.2691,2.1668) and (1.4075,1.8829) ..
+  (1.4176,1.7421) .. controls (1.4279,1.5955) and (1.5246,1.3484) ..
+  (1.5246,1.3484) --
+  (0.9846,1.2036) .. controls (1.0898,1.2735) and (1.0667,1.5598) ..
+  (1.0555,1.6034) .. controls (0.9758,1.9147) and (0.8121,1.8681) ..
+  (0.7174,1.7694) .. controls (0.5671,2.0370) and (0.4103,1.7556) ..
+  (0.4132,1.472) --
+  (0.3529,1.415) .. controls (0.3529,1.43938) and (0.3893,1.8379)..
+  (0.4264,1.9092) -- cycle
 }
 
 \newcommand{\duckpathhorsetail}{%
-  (1.7248,1.3553) .. controls (2.0530,1.3369) and (2.1427,1.1604) .. (2.2915,0.9970) .. controls (2.4759,0.7946) and (2.9531,0.8890) .. (2.7668,0.9003) .. controls (2.4670,0.9184) and (2.5158,1.1488) .. (2.3907,1.3152) .. controls (2.2788,1.4641) and (1.9414,1.5945) .. (1.7248,1.3553) -- cycle
+  (1.7248,1.3553) .. controls (2.0530,1.3369) and (2.1427,1.1604) ..
+  (2.2915,0.9970) .. controls (2.4759,0.7946) and (2.9531,0.8890) ..
+  (2.7668,0.9003) .. controls (2.4670,0.9184) and (2.5158,1.1488) ..
+  (2.3907,1.3152) .. controls (2.2788,1.4641) and (1.9414,1.5945) ..
+  (1.7248,1.3553) -- cycle
 }
 
 \newcommand{\duckpathcrozier}{%
-	(0.90,0.19) .. controls (0.86,0.20) and (0.83,0.21) .. (0.79,0.22) .. controls (0.96,0.71) and (1.12,1.20) .. (1.29,1.70) .. controls (1.32,1.80) and (1.43,1.89) .. (1.54,1.85) .. controls (1.64,1.83) and (1.70,1.71) .. (1.68,1.61) .. controls (1.68,1.56) and (1.66,1.54) .. (1.62,1.55) .. controls (1.59,1.56) and (1.54,1.55) .. (1.57,1.59) .. controls (1.58,1.65) and (1.56,1.74) .. (1.49,1.75) .. controls (1.42,1.74) and (1.38,1.66) .. (1.36,1.60) .. controls (1.21,1.13) and (1.05,0.66) .. (0.90,0.19) -- cycle
+  (0.90,0.19) .. controls (0.86,0.20) and (0.83,0.21) ..
+  (0.79,0.22) .. controls (0.96,0.71) and (1.12,1.20) ..
+  (1.29,1.70) .. controls (1.32,1.80) and (1.43,1.89) ..
+  (1.54,1.85) .. controls (1.64,1.83) and (1.70,1.71) ..
+  (1.68,1.61) .. controls (1.68,1.56) and (1.66,1.54) ..
+  (1.62,1.55) .. controls (1.59,1.56) and (1.54,1.55) ..
+  (1.57,1.59) .. controls (1.58,1.65) and (1.56,1.74) ..
+  (1.49,1.75) .. controls (1.42,1.74) and (1.38,1.66) ..
+  (1.36,1.60) .. controls (1.21,1.13) and (1.05,0.66) ..
+  (0.90,0.19) -- cycle
 }
 
 \newcommand{\duckpathcape}{%
-  (0.225,0.966) .. controls (1.314,0.961) and (2.070,0.650) .. (2.042,1.245) .. controls (1.863,1.164) and (1.844,1.173) .. (1.792,1.340) .. controls (1.635,1.235) and (1.620,1.268) .. (1.567,1.393) .. controls (1.358,1.086) and (0.664,1.096) .. (0.460,1.110) .. controls (0.461,1.133) and (0.305,1.077) .. (0.235,0.966) -- cycle
+  (0.225,0.966) .. controls (1.314,0.961) and (2.070,0.650) ..
+  (2.042,1.245) .. controls (1.863,1.164) and (1.844,1.173) ..
+  (1.792,1.340) .. controls (1.635,1.235) and (1.620,1.268) ..
+  (1.567,1.393) .. controls (1.358,1.086) and (0.664,1.096) ..
+  (0.460,1.110) .. controls (0.461,1.133) and (0.305,1.077) ..
+  (0.235,0.966) -- cycle
 }
 
 \newcommand{\duckpathcrown}{%
   (0.71,2.06) .. controls (0.71,2.06) and (0.73,2.18) .. 
-  (0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) -- (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) .. 
+  (0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) --
+  (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) ..
   (1.20,2.06) .. controls (1.07,1.98) and (0.84,1.98) .. 
   (0.71,2.06) -- cycle
 }
@@ -1144,9 +1223,9 @@
 
 \tikzset{
   /stripes/.cd,
-  color/.code      = \def\stripes@color{#1},
+  color/.code     = \def\stripes@color{#1},
   distance/.code  = \def\stripes@distance{#1},
-  width/.code      = \def\stripes@width{#1},
+  width/.code     = \def\stripes@width{#1},
   height/.code    = \def\stripes@height{#1},
   initialx/.code  = \def\stripes@initialx{#1},
   initialy/.code  = \def\stripes@initialy{#1},
@@ -1154,13 +1233,13 @@
   emblem/.code    = \def\stripes@emblem{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   color      = black,
-  distance  = 0.3,
+  distance   = 0.3,
   width      = 0.15,
-  height    = 2.7,
-  initialx  = 0.1,
-  initialy  = -0.3,
-  rotate    = -10,
-  emblem    = \empty
+  height     = 2.7,
+  initialx   = 0.1,
+  initialy   = -0.3,
+  rotate     = -10,
+  emblem     = \empty
 }
 
 \def\stripes@draw{%
