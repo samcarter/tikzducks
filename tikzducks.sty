@@ -908,7 +908,11 @@
 %
 % crozier %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@crozier
-  \fill[\duck@crozier] \duckpathcrozier;
+	\begin{scope}
+		\clip [rotate=-20] (0.6,2.3) rectangle (1.1,1.999);
+		\fill[even odd rule,\duck@crozier] (1.5,1.6) circle (0.2) (1.5,1.6) circle (0.1);
+	\end{scope}
+	\fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);	
 \fi
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
@@ -1061,6 +1065,8 @@
   (1.3723,1.2684) -- cycle
 }
 
+% Acessoires %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\duckpathqueencrown}{%
   (0.7370,2.0732) .. controls (0.6966,2.2091) and (0.6769,2.3503) ..
   (0.6354,2.4859) .. controls (0.6149,2.5164) and (0.5958,2.5732) ..
@@ -1130,19 +1136,6 @@
   (2.7668,0.9003) .. controls (2.4670,0.9184) and (2.5158,1.1488) ..
   (2.3907,1.3152) .. controls (2.2788,1.4641) and (1.9414,1.5945) ..
   (1.7248,1.3553) -- cycle
-}
-
-\newcommand{\duckpathcrozier}{%
-  (0.90,0.19) .. controls (0.86,0.20) and (0.83,0.21) ..
-  (0.79,0.22) .. controls (0.96,0.71) and (1.12,1.20) ..
-  (1.29,1.70) .. controls (1.32,1.80) and (1.43,1.89) ..
-  (1.54,1.85) .. controls (1.64,1.83) and (1.70,1.71) ..
-  (1.68,1.61) .. controls (1.68,1.56) and (1.66,1.54) ..
-  (1.62,1.55) .. controls (1.59,1.56) and (1.54,1.55) ..
-  (1.57,1.59) .. controls (1.58,1.65) and (1.56,1.74) ..
-  (1.49,1.75) .. controls (1.42,1.74) and (1.38,1.66) ..
-  (1.36,1.60) .. controls (1.21,1.13) and (1.05,0.66) ..
-  (0.90,0.19) -- cycle
 }
 
 \newcommand{\duckpathcape}{%
