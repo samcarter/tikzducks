@@ -622,7 +622,7 @@
 \ifduck@crown
   \path (0.7,1.95) rectangle (1.4,2.45);
   \begin{pgfinterruptboundingbox}  
-    \fill[\duck@crown,rotate=-10,xshift=-10,yshift=3] \duckpathcrown;
+    \fill[\duck@crown] \duckpathcrown;
   \end{pgfinterruptboundingbox}  
 \fi
 %
@@ -859,12 +859,12 @@
 %
 % torch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@torch
-    \fill[red!50!yellow, xscale=0.015, yscale=-0.015,xshift=130,yshift=-5600] \duckpathtorch;
-    \fill[red!25!yellow, xscale=0.01, yscale=-0.01,xshift=1300,yshift=-6600] \duckpathtorch;
-    \fill[white!50!yellow, xscale=0.006, yscale=-0.006,xshift=3700,yshift=-8600] \duckpathtorch;
-    \fill[\duck@torch,rounded corners=\scalefactor*1] 
+  \fill[red!50!yellow] \duckpathtorch;
+  \fill[red!25!yellow, scale=0.67, xshift=17, yshift=15] \duckpathtorch;
+  \fill[white!50!yellow, scale=0.4, xshift=53.5, yshift=45.3] \duckpathtorch;
+  \fill[\duck@torch,rounded corners=\scalefactor*1] 
       (1.1,0.96) -- (0.77,0.25) -- (0.83,0.25) -- (1.3,0.86) -- cycle;
-    \fill[\duck@torch,rotate=-28] 
+  \fill[\duck@torch,rotate=-28] 
       (0.62,1.32) ellipse (0.2 and 0.08);
 \fi%
 % 
@@ -1155,19 +1155,20 @@
 }
 
 \newcommand{\duckpathcrown}{%
-  (0.71,2.06) .. controls (0.71,2.06) and (0.73,2.18) .. 
-  (0.60,2.45) -- (0.83,2.26) -- (0.95,2.44) -- (1.07,2.26) --
-  (1.31,2.44) .. controls (1.15,2.19) and (1.20,2.06) ..
-  (1.20,2.06) .. controls (1.07,1.98) and (0.84,1.98) .. 
-  (0.71,2.06) -- cycle
+  (0.7365,2.0616) .. controls (0.7365,2.0616) and (0.7771,2.1763) ..
+  (0.6959,2.4650) -- (0.8895,2.2378) -- (1.0391,2.3943) --
+  (1.1260,2.1961) -- 
+  (1.3938,2.3318) .. controls (1.1927,2.1132) and (1.2194,1.9764) .. 
+  (1.2194,1.9764) .. controls (1.0774,1.9202) and (0.8507,1.9601) .. 
+  (0.7365,2.0616) -- cycle;
 }
 
 \newcommand{\duckpathtorch}{%
-  (90.5,127.8) .. controls (90.3,137.0) and (84.7,136.2) ..
-  (77.9,146.3) .. controls (71.1,136.3) and (66.4,136.9) ..
-  (65.9,127.9) .. controls (65.2,118.1) and (79.2,118.5) ..
-  (78.2,103.8) .. controls (82.2,108.8) and (90.8,111.5) ..
-  (90.5,127.8) -- cycle;  
+  (1.4338,1.0258) .. controls (1.4308,0.8877) and (1.3468,0.8997) .. 
+  (1.2447,0.7481) .. controls (1.1427,0.8982) and (1.0721,0.8892) .. 
+  (1.0646,1.0243) .. controls (1.0541,1.1714) and (1.2642,1.1654) .. 
+  (1.2492,1.3860) .. controls (1.3093,1.3110) and (1.4383,1.2705) .. 
+  (1.4338,1.0258) -- cycle;
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
