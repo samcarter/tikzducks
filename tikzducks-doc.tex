@@ -84,11 +84,12 @@
 \lstset{style=duckstyle}
 \pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
 
-\pgfmathsetseed{11}
+\pgfmathsetseed{10}
 \setlength{\footheight}{45pt}
 \newlength{\duckoffset}
 
 \cfoot{%
+	\tikzset{external/export=false}%
 	\shuffleducks
 	\begin{tikzpicture}[scale=0.5] 
 	    \duck[signpost=\scalebox{0.6}{\thepage},\randomhead]
@@ -96,19 +97,19 @@
 } 
 \pagestyle{scrheadings}
 \indexsetup{firstpagestyle=scrheadings}
-
-%\ifnum\pdfshellescape=1
-%	\usetikzlibrary{external}
-%	\tikzexternalize[prefix=./tikzducks-doc-figures/]
-%\fi
-
 \makeindex
+
+\usetikzlibrary{external}
+\ifnum\pdfshellescape=1
+	\tikzexternalize[prefix=./tikzducks-doc-figures/]
+\fi
 
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The \texorpdfstring{\tikzducks}{tikzducks} package}
 \subtitle{using ducks in \TikZ}
 \author{%
 	\texorpdfstring{\texttt{samcarter} (alias 
+		\tikzset{external/export=false}%
 		\begin{tikzpicture}[scale=0.3,baseline=3pt]
 			\duck[body=yellow!50!brown!50!white,
 					longhair=red!50!brown, 
