@@ -107,6 +107,7 @@
 \newif\ifduck@sheep
 \newif\ifduck@horsetail
 \newif\ifduck@crozier
+\newif\ifduck@davidlikespineapplepizza
 
 \tikzset{
   /duck/.cd,
@@ -264,6 +265,8 @@
   sheep/.code        = \duck@sheeptrue       \def\duck@sheep{#1},
   horsetail/.code    = \duck@horsetailtrue   \def\duck@horsetail{#1},
   crozier/.code      = \duck@croziertrue     \def\duck@crozier{#1},
+  davidlikespineapplepizza/.code = \duck@davidlikespineapplepizzatrue
+  										 \duck@speechtrue \def\duck@speech{\scalebox{\scalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -781,17 +784,36 @@
 %
 % pizza %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@pizza
-   \fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
-   \fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
-   \fill[white!85!yellow] (1.15,0.65) ellipse (0.065 and 0.04);  
-   \fill[white!85!yellow] (0.81,0.57) ellipse (0.065 and 0.04);  
-   \fill[white!85!yellow] (0.95,0.68) ellipse (0.065 and 0.04);  
-   \fill[white!85!yellow] (1.02,0.54) ellipse (0.065 and 0.04);
-   \fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
-   \fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
-   \fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
-   \fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
+  \fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
+  \fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
+  \fill[white!85!yellow] (1.15,0.65) ellipse (0.065 and 0.04);  
+  \fill[white!85!yellow] (0.81,0.57) ellipse (0.065 and 0.04);  
+  \fill[white!85!yellow] (0.95,0.68) ellipse (0.065 and 0.04);  
+  \fill[white!85!yellow] (1.02,0.54) ellipse (0.065 and 0.04);
+  \fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
+  \fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
+  \fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
+  \fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);
 \fi
+% no pizza %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@davidlikespineapplepizza
+  \fill[brown] (1.00,0.60) ellipse (0.4 and 0.2);
+  \fill[red!70!black] (1.00,0.60) ellipse (0.34 and 0.16);
+  \fill[yellow!70!brown] (1.15,0.65) ellipse (0.08 and 0.06);  
+  \fill[red!70!black] (1.15,0.65) ellipse (0.04 and 0.03); 
+  \fill[yellow!70!brown] (0.81,0.57) ellipse (0.08 and 0.06);  
+  \fill[red!70!black] (0.81,0.57) ellipse (0.04 and 0.03); 
+  \fill[yellow!70!brown] (0.95,0.68) ellipse (0.08 and 0.06);  
+  \fill[red!70!black] (0.95,0.68) ellipse (0.04 and 0.03); 
+  \fill[yellow!70!brown] (1.02,0.54) ellipse (0.08 and 0.06);
+  \fill[red!70!black] (1.02,0.54) ellipse (0.04 and 0.03); 
+  \fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
+  \fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
+  \fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
+  \fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);	
+\fi
+%
+%
 %
 % Hockey stick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@hockey
