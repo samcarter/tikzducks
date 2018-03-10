@@ -266,7 +266,7 @@
   horsetail/.code    = \duck@horsetailtrue   \def\duck@horsetail{#1},
   crozier/.code      = \duck@croziertrue     \def\duck@crozier{#1},
   davidlikespineapplepizza/.code = \duck@davidlikespineapplepizzatrue
-  										 \duck@speechtrue \def\duck@speech{\scalebox{\scalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
+  										 \duck@speechtrue \def\duck@speech{\scalebox{\yscalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -335,7 +335,8 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pgfgettransformentries{\myxscale}{\@tempa}{\@tempa}{\myyscale}{\@tempa}{\@tempa}
-\gdef\scalefactor{\myyscale}
+\gdef\yscalefactor{\myyscale}
+\gdef\xscalefactor{\myxscale}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -518,8 +519,8 @@
   \ifdefined\duck@hair\let\duck@eyebrow=\duck@hair\fi
 \fi%
 \ifduck@eyebrow
-  \fill[\duck@eyebrow, rounded corners=\scalefactor*1, rotate=60] (1.92,0.21) rectangle (1.98,-0.01);
-  \fill[\duck@eyebrow, rounded corners=\scalefactor*1, rotate=100] (1.67,-0.77) rectangle (1.73,-0.95);
+  \fill[\duck@eyebrow, rounded corners=\yscalefactor*1, rotate=60] (1.92,0.21) rectangle (1.98,-0.01);
+  \fill[\duck@eyebrow, rounded corners=\yscalefactor*1, rotate=100] (1.67,-0.77) rectangle (1.73,-0.95);
 \fi  
 %
 % beard %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -592,7 +593,7 @@
   \fill[\duck@graduate,rotate=-15] (0.44,2.1) ellipse (0.37 and 0.1);  
   \fill[\duck@graduate,rotate=-15] (0.07,2.1) rectangle (0.81,2.3);
   \fill[\duck@graduate] (0.3,2.25) -- (1.05,2.35) -- (1.7,1.95) -- (0.92,1.85) -- cycle;
-  \fill[\duck@tassel,rounded corners=\scalefactor*1] (1.12,1.89) -- (1.01,2.1) -- (1.09,2.11) -- (1.2,1.9) -- (1.2,1.3) -- (1.12,1.3) -- cycle;
+  \fill[\duck@tassel,rounded corners=\yscalefactor*1] (1.12,1.89) -- (1.01,2.1) -- (1.09,2.11) -- (1.2,1.9) -- (1.2,1.3) -- (1.12,1.3) -- cycle;
   \fill[\duck@tassel] (1.16,1.3) ellipse (0.06 and 0.12);
 \fi
 %
@@ -704,8 +705,8 @@
 \ifduck@squareglasses
   \fill[\duck@squareglasses,rotate=-17] (0.43,1.8) rectangle (0.8,1.84);
   \fill[\duck@squareglasses,rotate=-17] (0.12,1.8) rectangle (0.22,1.84);
-  \fill[\duck@squareglasses,rotate=-20,rounded corners=\scalefactor*2,even odd rule] (-0.16,1.62) -- (-0.18,1.85) -- (0.05,1.87) -- (0.04,1.62) -- cycle [rounded corners=\scalefactor*1.5] (-0.14,1.64) -- (-0.16,1.83) -- (0.03,1.85) -- (0.02,1.64) -- cycle;
-  \fill[\duck@squareglasses,rotate=-20,rounded corners=\scalefactor*2,even odd rule] (0.12,1.63) -- (0.10,1.88) -- (0.36,1.90) -- (0.35,1.65) -- cycle  [rounded corners=\scalefactor*1.5] (0.14,1.65) -- (0.12,1.86) -- (0.34,1.88) -- (0.33,1.67) -- cycle;
+  \fill[\duck@squareglasses,rotate=-20,rounded corners=\yscalefactor*2,even odd rule] (-0.16,1.62) -- (-0.18,1.85) -- (0.05,1.87) -- (0.04,1.62) -- cycle [rounded corners=\yscalefactor*1.5] (-0.14,1.64) -- (-0.16,1.83) -- (0.03,1.85) -- (0.02,1.64) -- cycle;
+  \fill[\duck@squareglasses,rotate=-20,rounded corners=\yscalefactor*2,even odd rule] (0.12,1.63) -- (0.10,1.88) -- (0.36,1.90) -- (0.35,1.65) -- cycle  [rounded corners=\yscalefactor*1.5] (0.14,1.65) -- (0.12,1.86) -- (0.34,1.88) -- (0.33,1.67) -- cycle;
 \fi
 %
 % icecream %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -720,15 +721,15 @@
 \ifduck@book
   \fill[\duck@bookcolour,rotate=-20] 
     (0.40,1.20) rectangle (0.80,0.60);
-  \node[rotate=-20, color=white] at (0.88,0.70) {\duck@book};%
+  \node[rotate=-20*\yscalefactor/\xscalefactor, color=white] at (0.88,0.70) {\duck@book};%
 \fi
 %
 % signpost %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@signpost
-  \fill[\duck@signcolour, rounded corners=\scalefactor*1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
-  \fill[\duck@signcolour, rounded corners=\scalefactor*1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
-  \fill[\duck@signback, rounded corners=\scalefactor*1, rotate=-20] (0.45,1.75) rectangle (1.25,2.35);
-   \node[rotate=-20, color=white] at (1.5,1.65) {\duck@signpost};
+  \fill[\duck@signcolour, rounded corners=\yscalefactor*1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
+  \fill[\duck@signcolour, rounded corners=\yscalefactor*1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
+  \fill[\duck@signback, rounded corners=\yscalefactor*1, rotate=-20] (0.45,1.75) rectangle (1.25,2.35);
+   \node[rotate=-20*\yscalefactor/\xscalefactor, color=white] at (1.5,1.65) {\duck@signpost};
 \fi
 %
 % speech bubble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -753,20 +754,20 @@
 %
 % cricket bat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@cricket
-  \fill[\duck@cricket, rounded corners=\scalefactor*2, rotate=-30] (0.4,1.2) rectangle (0.7,2.2);
-  \fill[\duck@cricket, rounded corners=\scalefactor*1, rotate=-30] (0.5,0.8) rectangle (0.6,1.3);
+  \fill[\duck@cricket, rounded corners=\yscalefactor*2, rotate=-30] (0.4,1.2) rectangle (0.7,2.2);
+  \fill[\duck@cricket, rounded corners=\yscalefactor*1, rotate=-30] (0.5,0.8) rectangle (0.6,1.3);
 \fi
 %
 % rollingpin %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@rollingpin
-  \fill[\duck@rollingpin, rounded corners=\scalefactor*2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
-  \fill[\duck@rollingpin, rounded corners=\scalefactor*1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
+  \fill[\duck@rollingpin, rounded corners=\yscalefactor*2, rotate=-60] (-0.18,0.85) rectangle (0.08,1.75);
+  \fill[\duck@rollingpin, rounded corners=\yscalefactor*1, rotate=-60] (-0.1,0.65) rectangle (0.0,1.95);
 \fi
 %
 % lightsaber %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@lightsaber
-  \fill[\duck@lightsaber, rounded corners=\scalefactor*1, rotate=-30] (0.5,0.9) rectangle (0.6,2.5);
-  \fill[gray!80!black, rounded corners=\scalefactor*1, rotate=-30] (0.47,0.7) rectangle (0.63,1.2);
+  \fill[\duck@lightsaber, rounded corners=\yscalefactor*1, rotate=-30] (0.5,0.9) rectangle (0.6,2.5);
+  \fill[gray!80!black, rounded corners=\yscalefactor*1, rotate=-30] (0.47,0.7) rectangle (0.63,1.2);
 \fi
 %
 % cake %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -817,13 +818,13 @@
 %
 % Hockey stick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@hockey
-  \fill[\duck@hockey, rounded corners=\scalefactor*1, rotate=-30] (0.5,0.6) rectangle (0.6,2.1);
-  \fill[\duck@hockey, rounded corners=\scalefactor*3] (0.2,0.2) rectangle (0.85,0.4);
+  \fill[\duck@hockey, rounded corners=\yscalefactor*1, rotate=-30] (0.5,0.6) rectangle (0.6,2.1);
+  \fill[\duck@hockey, rounded corners=\yscalefactor*3] (0.2,0.2) rectangle (0.85,0.4);
 \fi
 %
 % baguette %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@baguette
-  \fill[\duck@baguette!70!white, rounded corners=\scalefactor*4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
+  \fill[\duck@baguette!70!white, rounded corners=\yscalefactor*4, rotate=-30] (0.4,0.72) rectangle (0.7,2.0);
   \fill[\duck@baguette!80!black, rotate=5] (1.44,1.1) ellipse (0.1 and 0.03) (1.30,0.9) ellipse (0.1 and 0.03) (1.16,0.7) ellipse (0.1 and 0.03) (1.02,0.5) ellipse (0.1 and 0.03);
 \fi
 %
@@ -885,7 +886,7 @@
   \fill[red!50!yellow] \duckpathtorch;
   \fill[red!25!yellow, scale=0.67, xshift=17, yshift=15] \duckpathtorch;
   \fill[white!50!yellow, scale=0.4, xshift=53.5, yshift=45.3] \duckpathtorch;
-  \fill[\duck@torch,rounded corners=\scalefactor*1] 
+  \fill[\duck@torch,rounded corners=\yscalefactor*1] 
       (1.1,0.96) -- (0.77,0.25) -- (0.83,0.25) -- (1.3,0.86) -- cycle;
   \fill[\duck@torch,rotate=-28] 
       (0.62,1.32) ellipse (0.2 and 0.08);
