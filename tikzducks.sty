@@ -109,9 +109,13 @@
 \newif\ifduck@crozier
 \newif\ifduck@davidlikespineapplepizza
 
-\tikzset{
-  /duck/.cd,
-  name/.code = \duck@nametrue \def\duck@name{#1},
+ \tikzset{
+   %
+   % Pass unknown keys on to tikz
+   %
+   /duck/.search also={/tikz,/pgf},
+   /duck/.cd,
+   name/.code= \duck@nametrue \def\duck@name{#1},
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Environment
@@ -304,7 +308,7 @@
 }
 
 \def\duck@draw{
-\begin{scope}
+%\begin{scope}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % minimal bounding box size
@@ -721,7 +725,7 @@
 \ifduck@book
   \fill[\duck@bookcolour,rotate=-20] 
     (0.40,1.20) rectangle (0.80,0.60);
-  \node[rotate=-20*\yscalefactor/\xscalefactor, color=white] at (0.88,0.70) {\duck@book};%
+  \node[transform shape, rotate=-20*\yscalefactor/\xscalefactor, color=white] at (0.88,0.70) {\duck@book};%
 \fi
 %
 % signpost %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -729,21 +733,21 @@
   \fill[\duck@signcolour, rounded corners=\yscalefactor*1, rotate=-20] (0.8,0.75) rectangle (0.9,1.75);
   \fill[\duck@signcolour, rounded corners=\yscalefactor*1, rotate=-20] (0.4,1.7) rectangle (1.3,2.4);
   \fill[\duck@signback, rounded corners=\yscalefactor*1, rotate=-20] (0.45,1.75) rectangle (1.25,2.35);
-   \node[rotate=-20*\yscalefactor/\xscalefactor, color=white] at (1.5,1.65) {\duck@signpost};
+   \node[transform shape, rotate=-20*\yscalefactor/\xscalefactor, color=white] at (1.5,1.65) {\duck@signpost};
 \fi
 %
 % speech bubble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@speech
   \fill[\duck@bubblecolour] (-0.5,1.8) ellipse (0.7 and 0.3);
   \fill[\duck@bubblecolour] (-0.2,1.54) -- (0.2,1.35) -- (0.0,1.6) -- cycle;
-  \node at (-0.5,1.8) {\duck@speech};
+  \node[transform shape] at (-0.5,1.8) {\duck@speech};
 \fi
 %
 % think bubble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@think
   \fill[\duck@bubblecolour] (2,2.4) ellipse (0.7 and 0.35); 
   \fill[\duck@bubblecolour] (1.55,2.35) circle (0.25) (2.0,2.15) circle (0.25) (2.4,2.25) circle (0.25) (1.6,2.55) circle (0.25) (2.0,2.6) circle (0.25) (2.35,2.5) circle (0.25) (1.65,1.95) circle (0.1) (1.55,1.80) circle (0.06) (1.47,1.70) circle (0.03);
-  \node at (2,2.4) {\duck@think};
+  \node[transform shape] at (2,2.4) {\duck@think};
 \fi
 %
 % magic wand %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -941,7 +945,7 @@
 %
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
-\end{scope}
+%\end{scope}
 }% from `\def\duck@draw{` at the very beginning 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1271,7 +1275,7 @@
       }
     \end{scope}
    \end{pgfinterruptboundingbox}
-   \node at (wing) {\stripes@emblem };
+   \node[transform shape] at (wing) {\stripes@emblem };
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %.........................%%%%%%%%%%%%%%%%%%%.........................

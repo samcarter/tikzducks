@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{ducks}
+
+%\usepackage{trace-pgfkeys}
+
+%\pgfkeystracelevel{trace}
+%\tikzset{duck/water=blue}
+%\pgfkeystracelevel{silent}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw (0,0) pic[duck/super duck] {duck};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+%\draw (4,0) pic[duck/water=blue] {duck};
+\draw (0,0) pic[
+    duck/water=blue,
+    duck/book={Animal Farm},
+  ] {duck};
+\draw (0,4) pic[
+    duck/water=blue,
+    scale=2,
+    duck/book={Animal Farm},
+  ] {duck};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[book={Animal Farm}]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\duck[xscale=-1]
+\end{tikzpicture}
+
+\end{document}
