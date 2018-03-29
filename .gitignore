@@ -1,4 +1,8 @@
-*~
-*.aux
-*.log
-*.pdf
+test.tex
+tikzducks-doc.idx
+tikzducks-doc.ilg
+tikzducks-doc.ind
+test.idx
+test.ilg
+test.ind
+test.dvi
