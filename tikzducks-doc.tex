@@ -162,7 +162,7 @@ The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the m
 
 \subsection{Dependencies}
 
-The \tikzducks package loads the packages \lstinline|xcolor| and \TikZ, both without any options. If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
+The \tikzducks package loads \TikZ, which in turn loads the \lstinline|xcolor| package (amongst others). If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
 
 \begin{lstlisting}[aboveskip=1.2em,morekeywords={xcolor,svgnames}]
 	\PassOptionsToPackage{svgnames}{xcolor}
