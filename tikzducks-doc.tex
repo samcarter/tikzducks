@@ -22,6 +22,7 @@
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
 \usepackage{tikzducks}
+\usetikzlibrary{ducks}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm]{geometry}
 \usepackage{url}
@@ -59,7 +60,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	index=[1][emph]
@@ -148,8 +149,10 @@ First of all
 Many other users contributed to this package (in random order):
 %
 \href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
+% 
+Andrew Stacey contributed the \TikZ Library ``ducks'',
 %
-\href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol 1}  solved a few problems with default key values,
+\href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol~1}  solved a few problems with default key values,
 %
 \href{https://tex.stackexchange.com/users/148434/mihikma}{Mihikma} created the duck's beard,
 %
@@ -212,6 +215,43 @@ If the size of the ducks should be changed or shifted:
 
 Please note that a negative \lstinline|yscale| will result in awkward rounded corners and text placements for some of the accessories. If an upside-down duck is necessary, e.g. to illustrate the German nursery rhyme  \href{https://de.wikipedia.org/wiki/Alle_meine_Entchen}{``Alle meine Entchen''}, please rotate the duck instead.
 
+To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a \TikZ library. It can be loaded with \lstinline|\usetikzlibrary{ducks}|. In addition to the normal functionality of the \tikzducks package, the ducks are now also available as \lstinline|pic|. A short example:
+
+\begin{tcolorbox}[title={\TikZ library ``ducks''}]
+\begin{lstlisting}[morekeywords={ducks,standalone,tikz,document}]
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{ducks}
+
+\begin{document}
+
+\begin{tikzpicture}
+\draw (0,0) pic[
+    duck/water=green,
+    duck/alien,
+  ] {duck};
+\draw (4,0) pic[
+    scale=1.4,
+  ] {duck};
+\end{tikzpicture}
+
+\end{document}
+\end{lstlisting} 
+
+\tcblower
+\begin{tikzpicture}
+\draw (0,0) pic[
+    duck/water=green,
+    duck/alien,
+  ] {duck};
+\draw (2,1) pic[
+    scale=1.4,
+  ] {duck};
+\end{tikzpicture}
+\end{tcolorbox}
+
+\clearpage
 \subsection{Body parts}
 
 The various parts of the duck can also be coloured independently, i.e.\ \lstinline|body|, \lstinline|head| or \lstinline|bill|:

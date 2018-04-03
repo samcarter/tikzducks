@@ -1,0 +1,22 @@
+# Specific files #
+##################
+test.tex
+
+# LaTeX stuff #
+###############
+*.pdf
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.txss
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.listing
+*.dvi
+*.ind
+*ilg
+*idx
