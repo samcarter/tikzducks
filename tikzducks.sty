@@ -35,8 +35,11 @@
 %
 %\pgfsetlayers{backgroundlayer,bodylayer,clothinglayer,hairlayer,hatlayer,main}
 
-\newcommand*{\duck}[1][]{\tikzset{%
-  /duck/.cd,#1}\duck@draw%
+\newcommand*{\duck}[1][]{%
+	\begin{scope}%
+		\tikzset{/duck/.cd,#1}%
+		\duck@draw%
+	\end{scope}%
 }
 
 \newif\ifduck@name
