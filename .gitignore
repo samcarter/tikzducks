@@ -1,8 +1,22 @@
+# Specific files #
+##################
 test.tex
-tikzducks-doc.idx
-tikzducks-doc.ilg
-tikzducks-doc.ind
-test.idx
-test.ilg
-test.ind
-test.dvi
+
+# LaTeX stuff #
+###############
+*.pdf
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.txss
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.listing
+*.dvi
+*.ind
+*ilg
+*idx
