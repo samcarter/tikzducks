@@ -195,6 +195,8 @@ To customise this basic duck, the package uses \lstinline|pgf| keys. For almost 
 \end{tikzpicture}
 \end{tcblisting}
 
+If the keyword consists of multiples words, it works both with and without spaces. In the following usually the version without spaces is given. 
+
 \clearpage
 If the size of the ducks should be changed or shifted:
 
@@ -218,7 +220,7 @@ Please note that a negative \lstinline|yscale| will result in awkward rounded co
 To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a \TikZ library. It can be loaded with \lstinline|\usetikzlibrary{ducks}|. In addition to the normal functionality of the \tikzducks package, the ducks are now also available as \lstinline|pic|. A short example:
 
 \begin{tcolorbox}[title={\TikZ library ``ducks''}]
-\begin{lstlisting}[morekeywords={ducks,standalone,tikz,document}]
+\begin{lstlisting}[morekeywords={ducks,duck,standalone,tikz,document}]
 \documentclass{standalone}
 
 \usepackage{tikz}
