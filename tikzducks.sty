@@ -109,6 +109,7 @@
 \newif\ifduck@horsetail
 \newif\ifduck@crozier
 \newif\ifduck@davidlikespineapplepizza
+\newif\ifduck@wing
 
  \tikzset{
    %
@@ -137,10 +138,10 @@
   bill/.code    = \def\duck@bill{#1},
   grumpy/.code  = \duck@grumpytrue,
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  body  = yellow!70!brown,
-  eye   = white!85!yellow,
-  pupil = black,
-  bill  = orange!50!brown, 
+  body          = yellow!70!brown,
+  eye           = white!85!yellow,
+  pupil         = black,
+  bill          = orange!50!brown, 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % clothing
@@ -301,6 +302,7 @@
   davidlikespineapplepizza/.code = \duck@davidlikespineapplepizzatrue
   \duck@speechtrue \def\duck@speech{\scalebox{\yscalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
   david likes pineapple pizza/.forward to=/duck/davidlikespineapplepizza,
+  wing/.code    = \duck@wingtrue      \def\duck@wing{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -335,6 +337,7 @@
   sheep/.default     = \duck@body,
   horsetail/.default = brown,
   crozier/.default   = brown,
+  wing/.default      = yellow!50!brown,
 }
 
 \def\duck@draw{
@@ -973,6 +976,12 @@
 	\fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);	
 \fi
 %
+% wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@wing
+	\fill[\duck@wing] \duckpathwing;
+\fi
+%
+%
 %\draw (current bounding box.north west) rectangle (current bounding box.south east);% For debugging bounding boxes
 %
 %\end{scope}
@@ -1035,6 +1044,17 @@
   (0.406,1.472) .. controls (0.643,1.530) and (0.541,1.303) ..
   (0.910,1.370) .. controls (0.083,0.850) and (0.269,1.369) ..
   (0.406,1.472) -- cycle
+}
+
+\newcommand{\duckpathwing}{%
+	(1.47,0.56) .. controls (1.51,0.59) and (1.57,0.62) .. 
+	(1.60,0.66) .. controls (1.61,0.70) and (1.51,0.69) .. 
+	(1.47,0.69) .. controls (1.48,0.72) and (1.41,0.76) .. 
+	(1.37,0.74) .. controls (1.35,0.79) and (1.33,0.81) .. 
+	(1.25,0.80) .. controls (1.25,0.86) and (1.18,0.88) .. 
+	(1.15,0.88) .. controls (1.20,1.01) and (0.40,0.79) .. 
+	(0.52,0.57) .. controls (0.63,0.26) and (1.22,0.43) .. 
+	(1.47,0.56) -- cycle;
 }
 
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
