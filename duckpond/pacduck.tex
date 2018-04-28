@@ -1,0 +1,110 @@
+%modified from https://tex.stackexchange.com/a/429006/36296
+\documentclass[tikz]{standalone}
+
+\usepackage{xcolor-material}
+\usepackage{tikzducks}
+
+\usetikzlibrary{ducks}
+
+% from https://tex.stackexchange.com/questions/413389/how-to-make-a-simple-drawing-of-an-apple-using-only-the-tikz-library
+\usetikzlibrary{fit}
+\tikzset{%
+  apple/.pic={
+    \fill [MaterialBrown] (-1/8,0) 
+    arc (180:120:1 and 3/2) coordinate [pos=3/5] (@)-- ++(1/6,-1/7) 
+    arc (120:180:5/4 and 3/2) -- cycle;
+    \fill [MaterialLightGreen500] (0,-9/10) 
+    .. controls ++(180:1/8) and ++(  0:1/4) .. (-1/3,  -1)
+    .. controls ++(180:1/3) and ++(270:1/2) .. (  -1,   0)
+    .. controls ++( 90:1/3) and ++(180:1/3) .. (-1/2, 3/4)
+    .. controls ++(  0:1/8) and ++(135:1/8) .. (   0, 4/7)
+    .. controls ++( 45:1/8) and ++(180:1/8) .. ( 1/2, 3/4)
+    .. controls ++(  0:1/3) and ++( 90:1/3) .. (   1,   0)
+    .. controls ++(270:1/2) and ++(  0:1/3) .. ( 1/3,  -1)
+    .. controls ++(180:1/4) and ++(  0:1/8) .. cycle;
+    \fill [MaterialLightGreen600] (0, 4/7)
+    .. controls ++( 45:1/8) and ++(180:1/8) .. ( 1/2, 3/4)
+    .. controls ++(  0:1/3) and ++( 90:1/3) .. (   1,   0)
+    .. controls ++(270:1/2) and ++(  0:1/3) .. ( 1/3,  -1)
+    .. controls ++(180:1/4) and ++(  0:1/8) .. (   0,-9/10);
+    \fill [MaterialGreen500, shift={(@)}, rotate=-30] 
+    (0,0) arc (45:135:3/4 and 3/5) arc (225:315:3/4 and 3/5);
+    \fill [MaterialGreen700, shift={(@)}, rotate=-30] 
+    (0,0) arc (315:225:3/4 and 3/5) -- cycle;
+  },  
+  cherry/.pic={
+    \foreach \i in {1,2}{
+      \tikzset{shift={(-1+\i*3/4, -3/5+\i/5)},scale=1/2, rotate=15-\i*10}
+      \fill [MaterialRed700] (0,19/20) 
+      .. controls ++(180:1/8) and ++(  0:1/4) .. (-1/3,  1)
+      .. controls ++(180:1/3) and ++( 90:1/2) .. (  -1,  0)
+      .. controls ++(270:1/2) and ++(180:1/2) .. (   0, -1)
+      .. controls ++(  0:1/2) and ++(270:1/2) .. (   1,  0)
+      .. controls ++( 90:1/2) and ++(  0:1/3) .. ( 1/3,  1)
+      .. controls ++(180:1/4) and ++(  0:1/8) .. cycle;
+      \fill [MaterialRed800] (0, -1)
+      .. controls ++(  0:1/2) and ++(270:1/2) .. (   1,  0)
+      .. controls ++( 90:1/2) and ++(  0:1/3) .. ( 1/3,  1)
+      .. controls ++(180:1/4) and ++(  0:1/8) .. (   0,19/20) -- cycle;
+      \fill [MaterialRed900] (0,3/4) coordinate (@\i) 
+      ellipse [x radius=1/4, y radius=1/8];
+    }
+    \fill [MaterialBrown]
+    (1/4,11/8) -- (3/8,11/8) coordinate (@)
+    .. controls ++(270:1/2) and ++(135:1/3) .. (@1)
+    .. controls ++(135:1/2) and ++(270:1/2) .. cycle;
+    \fill [MaterialBrown]
+    (1/4,11/8) -- (3/8,11/8)
+    .. controls ++(315:1/2) and ++(45:1/2) .. (@2)
+    .. controls ++(60:1/2) and ++(315:1/2) .. cycle;
+    \fill [MaterialGreen500, shift={(@)}, rotate=20] 
+    (0,0) arc (45:135:3/4 and 3/5) arc (225:315:3/4 and 3/5);
+    \fill [MaterialGreen700, shift={(@)}, rotate=20] 
+    (0,0) arc (315:225:3/4 and 3/5) -- cycle;
+  }}
+
+\newcount\nframes
+\nframes=80
+
+\begin{document}
+
+\foreach \n in {0,...,\nframes}{
+
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\x}{10.0 * \n / \nframes}
+    \pgfmathsetmacro{\bill}{int Mod(\n,5)}
+    \pgfmathsetmacro{\angle}{5 + 25 * abs(sin(3 * 360 * (\n / \nframes)))}
+    \clip (-1, -1.2) rectangle (10, 1.2);
+
+    % food
+    \begin{scope}
+      \clip (\x, -1.2)++(-1,0) rectangle (10, 1.2);
+      \foreach \i in {0,...,10} {
+
+        \ifnum\i=2 
+        	\draw[fill = yellow,xscale=-1] (-2,0) -- ++ (45:0.2cm) arc (45:360-45:0.2cm) -- cycle;
+        	\fill (2,0.1) circle (0.2mm);
+        \else 
+        	\ifnum\i=5 
+        		\path (8, 0) pic[scale = 0.4] {apple};
+        	\else 
+        		\ifnum\i=8  
+        			\path (5, 0) pic[scale = 0.4] {cherry};
+        		\else 
+        			\fill[gray, opacity = 0.3] (\i, 0) circle (0.2); 
+        \fi \fi \fi
+      }
+    \end{scope}
+
+    % pacman
+    \begin{scope}[yshift=-30,xscale=-1,xshift = -\x cm]
+    	\ifnum\bill<4
+    		\duck
+    	\else
+    		\duck[laughing]
+    	\fi
+    \end{scope}    
+
+  \end{tikzpicture}    
+}
+\end{document}
