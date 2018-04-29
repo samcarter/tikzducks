@@ -112,6 +112,7 @@
 \newif\ifduck@crozier
 \newif\ifduck@davidlikespineapplepizza
 \newif\ifduck@wing
+\newif\ifduck@stethoscope
 
  \tikzset{
    %
@@ -307,6 +308,7 @@
   \duck@speechtrue \def\duck@speech{\scalebox{\yscalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
   david likes pineapple pizza/.forward to=/duck/davidlikespineapplepizza,
   wing/.code    = \duck@wingtrue      \def\duck@wing{#1},
+  stethoscope/.code = \duck@stethoscopetrue \def\duck@stethoscope{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -342,6 +344,7 @@
   horsetail/.default = brown,
   crozier/.default   = brown,
   wing/.default      = yellow!50!brown,
+  stethoscope/.default = gray,
 }
 
 \def\duck@draw{
@@ -995,6 +998,17 @@
 	\fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);	
 \fi
 %
+% stethoscope
+\ifduck@stethoscope
+	\fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-20] (0.03,0.7) rectangle (0.08,1.24);
+	\fill[\duck@stethoscope] (0.31,0.7) circle (0.1); 
+	\begin{scope}
+		\fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-30] (0.53,1.3) rectangle (0.58,1.72);
+		\clip[rotate=-30] (0.36,0.89) -- (0.36,1.36) -- (0.79,1.36) -- (0.79,0.89) -- (0.65,0.89) -- (0.65,0.96) -- (0.5,0.96) -- (0.5,0.89) -- cycle ;
+		\fill [\duck@stethoscope,rounded corners=\yscalefactor*3,rotate=-30,even odd rule] (0.775,1.35) rectangle (0.375,0.9) [rounded corners=\yscalefactor*2] (0.725,1.3) rectangle (0.425,0.95);
+	\end{scope}
+\fi
+%
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@wing
 	\fill[\duck@wing] \duckpathwing;
@@ -1086,9 +1100,9 @@
 }
 
 \newcommand{\duckpathjacket}{%
-  (0.500,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
+  (0.490,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. 
   (0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. 
-  (1.818,1.419) .. controls (0.938, 0.946) and ( 1.240,1.378) .. 
+  (1.818,1.419) .. controls (0.880, 0.946) and ( 1.240,1.378) .. 
   (0.513,0.700) -- cycle
 }
 
