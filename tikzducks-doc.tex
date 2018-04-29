@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -267,7 +267,7 @@ The various parts of the duck can also be coloured independently, i.e.\ \lstinli
 \end{tikzpicture}
 \end{tcblisting}
 
-Furthermore using the keywords \lstinline|grumpy| or \lstinline|laughing| the shape of the bill can be changed:
+Furthermore using the keywords \lstinline|grumpy|, \lstinline|laughing| or \lstinline|parrot| the shape of the bill can be changed:
 
 \begin{tcblisting}{title={Grumpy duck}}
 \begin{tikzpicture}
@@ -284,6 +284,15 @@ Furthermore using the keywords \lstinline|grumpy| or \lstinline|laughing| the sh
 \end{tikzpicture}
 \begin{tikzpicture}
 	\duck[laughing, bill=red]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Parrot duck}}
+\begin{tikzpicture}
+	\duck[parrot]
+\end{tikzpicture}
+\begin{tikzpicture}
+	\duck[parrot, bill=blue]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1250,6 +1259,16 @@ In the following a few examples of possible duck customisations, some of which w
 \end{scope}
 \end{tikzpicture}
 \end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Arara duck$^{\thefootnote}$}}
+\begin{tikzpicture}
+\duck[parrot,bill=gray!80!black]
+\shade[left color=cyan!90!blue,right color=blue!70!black] \duckpathwing;
+\shade[bottom color=yellow!70!brown, top color=green!40!teal] \duckpathcrazyhair;
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{In honour of the cool TeX automation tool arara, \url{https://github.com/cereda/arara}}
 
 \clearpage
 \printindex
