@@ -80,6 +80,7 @@
 \newif\ifduck@bunny
 \newif\ifduck@tophat
 \newif\ifduck@darthvader
+\newif\ifduck@harlequin
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -222,6 +223,8 @@
   top hat/.forward to=/duck/tophat,
   darthvader/.code   = \duck@darthvadertrue  \def\duck@darthvader{#1},
   darth vader/.forward to=/duck/darthvader,
+  harlequin/.code    = \duck@harlequintrue   \def\duck@harlequin{#1},
+  niuqelrah/.code	   =                       \def\duck@niuqelrah{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   alien/.default     = green,    
   hat/.default       = brown,
@@ -243,6 +246,8 @@
   peakedcap/.default = blue,
   tophat/.default    = black,
   darthvader/.default= black,
+  harlequin/.default = blue,
+  niuqelrah          = red,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -735,6 +740,17 @@
   \begin{pgfinterruptboundingbox}
     \fill[\duck@darthvader] \duckpathdarthvader;
   \end{pgfinterruptboundingbox}
+\fi
+%
+% Harlequin duck
+\ifduck@harlequin
+	\path (0.19,1.85) rectangle (1.85,2.67);
+	\begin{pgfinterruptboundingbox}
+	\fill[\duck@harlequin] (0.6006,1.9719) .. controls (0.7432,1.8954) and (0.9320,1.8698) .. (0.9320,1.8698) -- (1.0404,2.3839) .. controls (0.9223,2.8873) and (0.1755,2.5634) .. (0.3019,2.2958) .. controls (0.5807,2.5024) and (0.7251,2.3376) .. (0.6006,1.9719) -- cycle;
+	\fill[\duck@niuqelrah] (1.2853,1.8902) .. controls (1.1177,1.8507) and (0.9278,1.8703) .. (0.9278,1.8703) -- (1.0404,2.3839) .. controls (1.3637,2.8347) and (1.9373,2.3532) .. (1.7049,2.1284) .. controls (1.5267,2.3895) and (1.3204,2.2666) .. (1.2853,1.8902) -- cycle;
+	\end{pgfinterruptboundingbox}
+	\fill[\duck@harlequin] (1.7,2.07) circle (0.1);
+	\fill[\duck@niuqelrah] (0.3,2.23) circle (0.1);
 \fi
 %
 %\end{pgfonlayer}
