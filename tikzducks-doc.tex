@@ -56,11 +56,11 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
-	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset,duckpathwing},
+	moretexcs={duck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset,duckpathwing,shade},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	index=[1][emph]
@@ -85,7 +85,7 @@
 \lstset{style=duckstyle}
 \pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
 
-\pgfmathsetseed{10}
+\pgfmathsetseed{1}
 \setlength{\footheight}{45pt}
 \newlength{\duckoffset}
 
@@ -717,7 +717,8 @@ There is a multitude of things a duck might need. The following examples all als
 	\duck[bunny,easter]
 \end{tikzpicture}
 \begin{tikzpicture}
-	\duck[bunny,easter=brown,egga=cyan,eggb=orange,eggc=teal]
+	\duck[bunny,easter=brown,
+	egga=cyan,eggb=orange,eggc=teal]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The basket and Easter basket was kindly contributed by Benito van der Zander}
@@ -725,6 +726,13 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Ducktor}}
 \begin{tikzpicture}
 	\duck[stethoscope=gray!80!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Neckerchief duck}}
+\begin{tikzpicture}
+	\duck[neckerchief=red!70!black,
+		woggle=blue!60!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1285,17 +1293,25 @@ In the following a few examples of possible duck customisations, some of which w
 
 \begin{tcblisting}{title={Duck, MD}}
 \begin{tikzpicture}
-\duck[
-body=yellow!70!brown!70!white,
-shorthair=brown!70!black,
-squareglasses,
-tshirt=teal!50!white,
-jacket=white,
-buttons=gray!50!white,
-stethoscope
-]
+\duck[shorthair=brown!70!black, 
+	squareglasses,
+	tshirt=teal!50!white, jacket=white,
+	buttons=gray!50!white, stethoscope]
 \end{tikzpicture}
 \end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Duck scout$^{\thefootnote}$}}
+\begin{tikzpicture}
+\duck[head=yellow!60!brown!50!white,
+	tshirt=brown!80!gray!40!white,
+	cap=orange!50!yellow,
+	neckerchief=orange!50!yellow,
+	woggle=brown, bookcolour=brown!80!black,
+	book={\tiny\sffamily\scalebox{0.3}{\parbox{1.1cm}{\centering Scouting\\for\\Ducklings}}}]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{'yo won the scout duck in the contest \href{https://tex.meta.stackexchange.com/q/7493/36296}{When will @egreg reach 654321}. In Czech, the neckerchief is called ``šátek'' and the woggle ``turbánek'', which means ``little turban''.}
 
 \clearpage
 \printindex

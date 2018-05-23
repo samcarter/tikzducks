@@ -114,6 +114,7 @@
 \newif\ifduck@davidlikespineapplepizza
 \newif\ifduck@wing
 \newif\ifduck@stethoscope
+\newif\ifduck@neckerchief
 
  \tikzset{
    %
@@ -320,6 +321,8 @@
   david likes pineapple pizza/.forward to=/duck/davidlikespineapplepizza,
   wing/.code    = \duck@wingtrue      \def\duck@wing{#1},
   stethoscope/.code = \duck@stethoscopetrue \def\duck@stethoscope{#1},
+  neckerchief/.code = \duck@neckerchieftrue \def\duck@neckerchief{#1},
+  woggle/.code			=												\def\duck@woggle{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -356,6 +359,8 @@
   crozier/.default   = brown,
   wing/.default      = yellow!50!brown,
   stethoscope/.default = gray,
+  neckerchief/.default = brown,
+  woggle 						   = brown!50!black,
 }
 
 \def\duck@draw{
@@ -516,6 +521,13 @@
 % necklace (not really clothing, but needs to be below the hair) %%%%%
 \ifduck@necklace
   \fill[\duck@necklace] (0.5000,1.112) circle (0.032) (0.5100,1.050) circle (0.032) (0.5200,0.990) circle (0.032) (0.5400,0.931) circle (0.032) (0.5825,0.885) circle (0.032) (0.6450,0.885) circle (0.032) (0.7000,0.910) circle (0.032) (0.7500,0.945) circle (0.032) (0.8000,0.980) circle (0.032) (0.8500,1.020) circle (0.032) (0.9000,1.050) circle (0.032) (0.9500,1.080) circle (0.032) (1.0000,1.110) circle (0.032) (1.0550,1.130) circle (0.032) (1.1100,1.150) circle (0.032) (1.1650,1.165) circle (0.032) (1.2200,1.180) circle (0.032) (1.2750,1.195) circle (0.032) (1.3300,1.210) circle (0.032);
+\fi
+%
+% Scout neckerchief %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@neckerchief
+	\fill[\duck@neckerchief] 
+	(0.3650,1.0892) .. controls (0.4127,1.1589) and (0.4900,1.1450) .. (0.4900,1.1450) .. controls (0.6500,0.9300) and (1.1366,1.2400) .. (1.3675,1.2649) .. controls (1.4131,1.2533) and (1.4052,1.2446) .. (1.4099,1.2124) .. controls (1.3028,1.0810) and (0.7415,0.8930) .. (0.6807,0.9076) .. controls (0.8257,0.7387) and (0.6347,0.7168) .. (0.7151,0.4426) .. controls (0.6059,0.5672) and (0.5513,0.6588) .. (0.5938,0.8388) .. controls (0.5871,0.6953) and (0.4493,0.7565) .. (0.4716,0.4967) .. controls (0.3682,0.6697) and (0.3820,0.7984) .. (0.5321,0.9351) .. controls (0.4635,0.9699) and (0.4115,1.0215) .. (0.3650,1.0892) -- cycle;
+	\fill[\duck@woggle, rounded corners=\yscalefactor*1, rotate=-10] (0.33,1.05) rectangle (0.55,0.98);
 \fi
 %
 % buttons (same argument as for the necklace)
@@ -1057,8 +1069,8 @@
   \pgfmathsetseed{\number\pdfrandomseed}
 \fi
 
-\pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{mohican}{mullet}{beard}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}{queencrown}{kingcrown}}
-\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}}
+\pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{mohican}{mullet}{beard}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}{queencrown}{kingcrown}{harlequin}}
+\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}{stethoscope}{neckerchief}}
 
 \newcommand{\shuffleducks}{%
  \pgfmathrandomitem{\head}{head}%
