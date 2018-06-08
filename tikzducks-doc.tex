@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -736,6 +736,14 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Snow Duck$^{\thefootnote}$}}
+\begin{tikzpicture}
+	\duck[snowduck=white]
+\end{tikzpicture}   
+\end{tcblisting}
+\footnotetext[\thefootnote]{The snowduck is dedicated to all Japanese \TeX\ users}
+
 \clearpage
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
@@ -1257,12 +1265,15 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Frosty Duck}}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Arara duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-\duck[body=white,eye=white,tophat=black,buttons=black]
-\draw[very thick] (0.9,0.3) -- (1.2,1) (1.2,1) -- (1,1.3) (1.2,1) -- (1.3,1.3) (1.2,1) -- (1.5,1.4) (1.32,1.15) -- (1.6,1.3);
-\end{tikzpicture}   
+\duck[parrot,bill=gray!80!black]
+\shade[left color=cyan!90!blue,right color=blue!70!black] \duckpathwing;
+\shade[bottom color=yellow!70!brown, top color=green!40!teal] \duckpathcrazyhair;
+\end{tikzpicture}
 \end{tcblisting}
+\footnotetext[\thefootnote]{In honour of the cool TeX automation tool arara, \url{https://github.com/cereda/arara}}
 
 \begin{tcblisting}{title={Duck Queen}}
 \definecolor{qskin}{RGB}{225,219,206}%
@@ -1280,16 +1291,6 @@ In the following a few examples of possible duck customisations, some of which w
 \end{scope}
 \end{tikzpicture}
 \end{tcblisting}
-
-\addtocounter{footnote}{1}
-\begin{tcblisting}{title={Arara duck$^{\thefootnote}$}}
-\begin{tikzpicture}
-\duck[parrot,bill=gray!80!black]
-\shade[left color=cyan!90!blue,right color=blue!70!black] \duckpathwing;
-\shade[bottom color=yellow!70!brown, top color=green!40!teal] \duckpathcrazyhair;
-\end{tikzpicture}
-\end{tcblisting}
-\footnotetext[\thefootnote]{In honour of the cool TeX automation tool arara, \url{https://github.com/cereda/arara}}
 
 \begin{tcblisting}{title={Duck, MD}}
 \begin{tikzpicture}

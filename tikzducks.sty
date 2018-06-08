@@ -115,6 +115,7 @@
 \newif\ifduck@wing
 \newif\ifduck@stethoscope
 \newif\ifduck@neckerchief
+\newif\ifduck@snowduck
 
  \tikzset{
    %
@@ -323,6 +324,11 @@
   stethoscope/.code = \duck@stethoscopetrue \def\duck@stethoscope{#1},
   neckerchief/.code = \duck@neckerchieftrue \def\duck@neckerchief{#1},
   woggle/.code			=												\def\duck@woggle{#1},
+  snowduck/.code 		= \duck@snowducktrue \def\duck@snowduck{#1}
+  										\def\duck@eye{#1}  \def\duck@body{#1}
+										  \duck@tophattrue   \def\duck@tophat{black}
+  										\duck@buttonstrue  \def\duck@buttons{black},
+  snow duck/.forward to=/duck/snowduck,
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -361,6 +367,7 @@
   stethoscope/.default = gray,
   neckerchief/.default = brown,
   woggle 						   = brown!50!black,
+  snowduck/.default  = gray!15!white,
 }
 
 \def\duck@draw{
@@ -1041,6 +1048,14 @@
 		\clip[rotate=-30] (0.36,0.89) -- (0.36,1.36) -- (0.79,1.36) -- (0.79,0.89) -- (0.65,0.89) -- (0.65,0.96) -- (0.5,0.96) -- (0.5,0.89) -- cycle ;
 		\fill [\duck@stethoscope,rounded corners=\yscalefactor*3,rotate=-30,even odd rule] (0.775,1.35) rectangle (0.375,0.9) [rounded corners=\yscalefactor*2] (0.725,1.3) rectangle (0.425,0.95);
 	\end{scope}
+\fi
+%
+% snow duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@snowduck
+	\fill[black, rotate=-25] (0.65,0.65) rectangle (0.7,1.8);
+	\fill[black, rotate=35] (1.55,0.15) rectangle (1.6,0.5);
+	\fill[black, rotate=-35] (0.4,1.7) rectangle (0.45,2.0);
+	\fill[black, rotate=-60] (-0.3,2.0) rectangle (-0.35,1.65);
 \fi
 %
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
