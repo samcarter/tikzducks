@@ -41,6 +41,7 @@
 }
 
 \newif\ifduck@name
+\newif\ifduck@noduck
 % Environment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@water
 % body parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,13 +118,15 @@
 \newif\ifduck@neckerchief
 \newif\ifduck@snowduck
 
- \tikzset{
-   %
-   % Pass unknown keys on to tikz
-   %
-   /duck/.search also={/tikz,/pgf},
-   /duck/.cd,
-   name/.code= \duck@nametrue \def\duck@name{#1},
+\tikzset{
+  %
+  % Pass unknown keys on to tikz
+  %
+  /duck/.search also={/tikz,/pgf},
+  /duck/.cd,
+  name/.code= \duck@nametrue \def\duck@name{#1},
+  noduck/.code  = \duck@noducktrue,
+  no duck/.forward to=/duck/noduck,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Environment
@@ -432,6 +435,8 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{pgfonlayer}{bodylayer}
+\ifduck@noduck
+\else
 %
 % body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{pgfinterruptboundingbox}
@@ -486,6 +491,7 @@
 \fill[\duck@pupil, rotate=-20] 
   (-0.03,1.73) ellipse (0.0286 and 0.0643);
 %
+\fi % from no duck
 %\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
