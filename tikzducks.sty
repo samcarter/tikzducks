@@ -41,7 +41,7 @@
 }
 
 \newif\ifduck@name
-\newif\ifduck@noduck
+\newif\ifduck@invisible
 % Environment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@water
 % body parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,8 +125,8 @@
   /duck/.search also={/tikz,/pgf},
   /duck/.cd,
   name/.code= \duck@nametrue \def\duck@name{#1},
-  noduck/.code  = \duck@noducktrue,
-  no duck/.forward to=/duck/noduck,
+  invisible/.code  = \duck@invisibletrue,
+  no duck/.forward to=/duck/invisible,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Environment
@@ -435,7 +435,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{pgfonlayer}{bodylayer}
-\ifduck@noduck
+\ifduck@invisible
 \else
 %
 % body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
