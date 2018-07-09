@@ -82,6 +82,7 @@
 \newif\ifduck@tophat
 \newif\ifduck@darthvader
 \newif\ifduck@harlequin
+\newif\ifduck@strawhat
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -230,6 +231,9 @@
   darth vader/.forward to=/duck/darthvader,
   harlequin/.code    = \duck@harlequintrue   \def\duck@harlequin{#1},
   niuqelrah/.code	   =                       \def\duck@niuqelrah{#1},
+  strawhat/.code     = \duck@strawhattrue    \def\duck@strawhat{#1},
+  straw hat/.forward to=/duck/strawhat,
+  ribbon/.code       =                       \def\duck@ribbon{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   alien/.default     = green,    
   hat/.default       = brown,
@@ -253,6 +257,8 @@
   darthvader/.default= black,
   harlequin/.default = blue,
   niuqelrah          = red,
+  strawhat/.default  = gray!30!white,
+  ribbon             = black,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -726,11 +732,12 @@
   \end{pgfinterruptboundingbox}  
 \fi
 %
-% Queen crown
+% Queen crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@queencrown
   \fill[\duck@queencrown] \duckpathqueencrown;
 \fi
-% King crown
+%
+% King crown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@kingcrown
   \fill[\duck@kingcrown] \duckpathkingcrown;
 \fi
@@ -773,7 +780,7 @@
   \end{pgfinterruptboundingbox}
 \fi
 %
-% Harlequin duck
+% Harlequin duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@harlequin
 	\path (0.19,1.85) rectangle (1.85,2.67);
 	\begin{pgfinterruptboundingbox}
@@ -782,6 +789,17 @@
 	\end{pgfinterruptboundingbox}
 	\fill[\duck@harlequin] (1.7,2.07) circle (0.1);
 	\fill[\duck@niuqelrah] (0.3,2.23) circle (0.1);
+\fi
+%
+% Straw hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@strawhat
+  \fill[\duck@strawhat,rotate=-15] (0.44,2.0) ellipse (0.75 and 0.1);  
+  \fill[\duck@strawhat,rotate=-15] (0.1,2.05) rectangle (0.78,2.5);
+  \fill[\duck@strawhat,rotate=-15] (0.44,2.5) ellipse (0.34 and 0.08);  
+  \fill[\duck@strawhat,rotate=-15] (-0.3,2.02) -- (1.18,2.02) -- (0.78,2.2) -- (0.1,2.2) -- cycle;
+  \fill[\duck@ribbon,rotate=-15] (0.44,2.2) ellipse (0.34 and 0.08);   
+  \fill[\duck@ribbon,rotate=-15] (0.1,2.2) rectangle (0.78,2.3);
+	\fill[\duck@strawhat,rotate=-15] (0.44,2.3) ellipse (0.34 and 0.08);  
 \fi
 %
 %\end{pgfonlayer}
