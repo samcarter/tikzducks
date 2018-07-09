@@ -118,6 +118,7 @@
 \newif\ifduck@stethoscope
 \newif\ifduck@neckerchief
 \newif\ifduck@snowduck
+\newif\ifduck@vampire
 
 \tikzset{
   %
@@ -338,6 +339,7 @@
 										  \duck@tophattrue   \def\duck@tophat{black}
   										\duck@buttonstrue  \def\duck@buttons{black},
   snow duck/.forward to=/duck/snowduck,
+  vampire/.code     = \duck@vampiretrue  \def\duck@vampire{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -377,6 +379,7 @@
   neckerchief/.default = brown,
   woggle 						   = brown!50!black,
   snowduck/.default  = gray!15!white,
+  vampire/.default   = white!85!yellow,
 }
 
 \def\duck@draw{
@@ -1082,6 +1085,14 @@
 	\fill[black, rotate=-60] (-0.3,2.0) rectangle (-0.35,1.65);
 \fi
 %
+% vampire
+\ifduck@vampire
+	\ifduck@laughing
+		\fill[\duck@vampire] (0.55,1.28) -- (0.575,1.22) -- (0.6,1.29) -- cycle;
+	\else
+		\fill[\duck@vampire] (0.6,1.20) -- (0.625,1.16) -- (0.65,1.223) -- cycle;
+	\fi
+\fi
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@wing
 	\fill[\duck@wing] \duckpathwing;
