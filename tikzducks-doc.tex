@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -309,26 +309,29 @@ This can also be useful to recycle some of the accessories presented in \ref{sec
 \subsection{Hair styles}
 
 Some duck also like to have nice hair cuts, several different hair styles are available:
-\begin{tcblisting}{title={Hairy duck}}
+\begin{tcblisting}{title={Hairy duck},righthand width=9cm}
 \begin{tikzpicture}
 	\duck[longhair]
 \end{tikzpicture}
 \begin{tikzpicture}
 	\duck[shorthair]
 \end{tikzpicture}
-
 \begin{tikzpicture}
 	\duck[crazyhair]
 \end{tikzpicture}
+
 \begin{tikzpicture}
 	\duck[recedinghair]
 \end{tikzpicture}
-
 \begin{tikzpicture}
 	\duck[mohican]
 \end{tikzpicture}
 \begin{tikzpicture}
 	\duck[mullet]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+	\duck[parting]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -341,18 +344,18 @@ And of course the colour of each hair style can be adjusted:
 
 Eyebrows and a beard are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified (\lstinline|eyebrow=<colour name>| or \lstinline|beard=<colour name>|) this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
 
+\enlargethispage{2\baselineskip}
+
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
 	\duck[eyebrow]
 \end{tikzpicture}
 \begin{tikzpicture}
-	\duck[longhair=blue, 
-		eyebrow]
+	\duck[longhair=blue,eyebrow]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\duck[crazyhair=red, 
-		eyebrow=blue]
+	\duck[crazyhair=red,eyebrow=blue]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1160,7 +1163,7 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\duck[body=sgskin,bill=sgbill,tshirt=sgshirt,jacket=sggreen,shorthair=brown!70!black,glasses=brown!30!gray, book={\AA}, bookcolour=brown!50!black]
+	\duck[body=sgskin,bill=sgbill,tshirt=sgshirt,jacket=sggreen,parting=brown!70!black,glasses=brown!30!gray, book={\AA}, bookcolour=brown!50!black]
 \end{tikzpicture}
 
 \begin{tikzpicture}
@@ -1319,7 +1322,7 @@ In the following a few examples of possible duck customisations, some of which w
 
 \begin{tcblisting}{title={Duck, MD}}
 \begin{tikzpicture}
-\duck[shorthair=brown!70!black, squareglasses,
+\duck[parting=brown!70!black, squareglasses,
 	tshirt=teal!50!white, jacket=white,
 	buttons=gray!50!white, stethoscope]
 \end{tikzpicture}

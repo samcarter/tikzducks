@@ -57,6 +57,7 @@
 \newif\ifduck@beard
 \newif\ifduck@mohican
 \newif\ifduck@mullet
+\newif\ifduck@parting
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@tshirt
 \newif\ifduck@jacket
@@ -186,8 +187,9 @@
   receding hair/.forward to=/duck/recedinghair,
   eyebrow/.code      = \duck@eyebrowtrue      \def\duck@eyebrow{#1},
   beard/.code        = \duck@beardtrue        \def\duck@beard{#1},
-  mohican/.code      =  \duck@mohicantrue     \def\duck@hair{#1},
+  mohican/.code      = \duck@mohicantrue      \def\duck@hair{#1},
   mullet/.code       = \duck@mullettrue       \def\duck@hair{#1},
+  parting/.code      = \duck@partingtrue      \def\duck@hair{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   shorthair/.default = brown,
   longhair/.default  = brown,
@@ -197,6 +199,7 @@
   beard/.default     = brown,
   mohican/.default   = brown,
   mullet/.default    = brown,
+  parting/.default  = brown,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Headgear
@@ -615,6 +618,14 @@
   \begin{pgfinterruptboundingbox}
     \fill[\duck@hair] \duckpathmullet;
   \end{pgfinterruptboundingbox}
+\fi
+%
+% middle parting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@parting
+	\path (0.1,0.1) rectangle (2.1,2.22);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@hair] 	(1.4053,1.5403) .. controls (1.5524,2.2939) and (0.3739,2.5180) .. (0.4084,1.6117) .. controls (0.4248,1.8921) and (0.7860,1.9734) .. (0.7860,1.9734) .. controls (1.1125,1.5754) and (1.3375,1.4715) .. (1.4053,1.5403) -- cycle;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
