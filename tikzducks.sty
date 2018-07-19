@@ -120,6 +120,7 @@
 \newif\ifduck@neckerchief
 \newif\ifduck@snowduck
 \newif\ifduck@vampire
+\newif\ifduck@crystalball
 
 \tikzset{
   %
@@ -343,6 +344,8 @@
   										\duck@buttonstrue  \def\duck@buttons{black},
   snow duck/.forward to=/duck/snowduck,
   vampire/.code     = \duck@vampiretrue  \def\duck@vampire{#1},
+  crystalball/.code = \duck@crystalballtrue \def\duck@crystalball{#1},
+  crystal ball/.forward to=/duck/crystalball,
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -383,6 +386,7 @@
   woggle 						   = brown!50!black,
   snowduck/.default  = gray!15!white,
   vampire/.default   = white!85!yellow,
+  crystalball/.default = cyan,
 }
 
 \def\duck@draw{
@@ -1096,7 +1100,7 @@
 	\fill[black, rotate=-60] (-0.3,2.0) rectangle (-0.35,1.65);
 \fi
 %
-% vampire
+% vampire %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@vampire
 	\ifduck@laughing
 		\fill[\duck@vampire] (0.55,1.28) -- (0.575,1.22) -- (0.6,1.29) -- cycle;
@@ -1104,6 +1108,12 @@
 		\fill[\duck@vampire] (0.6,1.20) -- (0.625,1.16) -- (0.65,1.223) -- cycle;
 	\fi
 \fi
+%
+% crystal ball %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@crystalball
+	\shade[ball color=\duck@crystalball,opacity=0.7] (0.93,0.6) circle (0.33);
+\fi
+%
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@wing
 	\fill[\duck@wing] \duckpathwing;
