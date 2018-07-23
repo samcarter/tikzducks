@@ -21,3 +21,9 @@ test.tex
 *ilg
 *idx
 *.gif
+
+# add example from duckpond #
+#############################
+
+!/duckpond/*.pdf
+!/duckpond/*.png
