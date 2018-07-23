@@ -27,3 +27,4 @@ test.tex
 
 !/duckpond/*.pdf
 !/duckpond/*.png
+!documentation.pdf
