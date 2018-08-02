@@ -1,0 +1,37 @@
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+
+\pgfdeclareradialshading{ballshading}{\pgfpoint{-10.5bp}{22bp}}{
+	color(0bp)=(yellow!50!brown!15!white);
+	color(6bp)=(yellow!50!brown!70!white);
+	color(20bp)=(yellow!50!brown!90!white); 
+	color(50bp)=(yellow!50!brown)
+}
+
+
+\usetikzlibrary{fadings}
+\tikzfading[name=fade out,
+inner color=transparent!25,
+outer color=transparent!100]
+
+\begin{document}
+	
+\begin{tikzpicture}
+\begin{scope}[yscale=-1,scale=0.745,yshift=-83,xshift=-7.2]
+\shade[shading=ballshading] (1.4575,0.0899) .. controls (1.0891,0.0899) and (0.7904,0.4633) .. (0.7904,0.9238) .. controls (0.7904,1.1027) and (0.8359,1.2680) .. (0.9126,1.4038) .. controls (0.5839,1.4888) and (0.1057,2.0636) .. (0.6423,2.5769) .. controls (1.1960,3.1052) and (4.0765,2.7516) .. (2.6823,1.0319) .. controls (2.3860,1.1911) and (2.1904,1.2733) .. (2.0476,1.3123) .. controls (2.0966,1.1963) and (2.1246,1.0642) .. (2.1246,0.9238) .. controls (2.1246,0.4633) and (1.8260,0.0899) .. (1.4575,0.0899) -- cycle;
+\fill[white,path fading=fade out, fading transform={xshift=-14,yshift=-5}] (1.4575,0.0899) .. controls (1.0891,0.0899) and (0.7904,0.4633) .. (0.7904,0.9238) .. controls (0.7904,1.1027) and (0.8359,1.2680) .. (0.9126,1.4038) .. controls (0.5839,1.4888) and (0.1057,2.0636) .. (0.6423,2.5769) .. controls (1.1960,3.1052) and (4.0765,2.7516) .. (2.6823,1.0319) .. controls (2.3860,1.1911) and (2.1904,1.2733) .. (2.0476,1.3123) .. controls (2.0966,1.1963) and (2.1246,1.0642) .. (2.1246,0.9238) .. controls (2.1246,0.4633) and (1.8260,0.0899) .. (1.4575,0.0899) -- cycle;
+\end{scope}
+\shade[top color=orange!50!brown!30!white, bottom color=orange!50!brown] \duckpathbill;
+\shade[inner color=white, outer color=white!85!yellow!70!gray, rotate=-20] (0.23,1.7675) ellipse (0.0893 and 0.125);
+\fill[black, rotate=-20] (0.26,1.7575) ellipse (0.0357 and 0.0714);
+\shade[ball color=black,rotate=-20] (0.26,1.7575) circle (0.035);
+\shade[inner color=white, outer color=white!85!yellow!70!gray, rotate=-20] (-0.06,1.74) ellipse (0.0786 and 0.1143);
+\fill[black,rotate=-20] (-0.03,1.73) ellipse (0.0286 and 0.0643);
+\shade[ball color=black, rotate=-20] (-0.03,1.73) circle (0.0286);
+
+
+\end{tikzpicture}	
+
+	
+\end{document}
