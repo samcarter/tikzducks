@@ -8,19 +8,18 @@ The project repository, including a bug tracker, can be found at https://github.
 
 ![This repository has an official duck seal of approval](https://i.stack.imgur.com/mSAtL.png)
 
-### A few examples:
+## A few examples:
 
 ![tikz ducks](https://user-images.githubusercontent.com/8226363/33049537-e71e9dd0-ce60-11e7-8b4c-7e1de0177f14.png)
 
-### Video showcase
+## Video showcases
 
-[![Watch a video showcase of this package](https://i.stack.imgur.com/iwZPt.png)](https://vimeo.com/246256860)
+There are several videos featuring the TikZducks, kindly contributed by Ulrike and Gert Fischer, Carla Maggi, Paulo Cereda and Prof. van Duck - many thanks to you all!
 
-(Kindly contributed by Ulrike and Gert Fischer, Carla Maggi, Paulo Cereda and Prof. van Duck - many thanks to you all!)
+[![The great TikZducks Christmas Extravaganza](https://user-images.githubusercontent.com/8226363/43651585-1281b074-9743-11e8-97f5-bf70617738a5.png)](https://vimeo.com/246256860)
+[![International Pizza Day](https://user-images.githubusercontent.com/8226363/43651587-12c92daa-9743-11e8-83b5-7fd3a3ac19a3.png)](https://vimeo.com/254643482)
 
-The source code for the video showcase is available in [this repository](https://github.com/cereda/duck-extravaganza).
+[![Happy Groundhog Day](https://user-images.githubusercontent.com/8226363/43651589-12e84334-9743-11e8-9621-d5e6e53a0ca8.png)](https://vimeo.com/252719006)
+[![Aquarela with TikZducks](https://user-images.githubusercontent.com/8226363/43651586-12a6c008-9743-11e8-99d2-5a66e7f5f1ee.png)](https://vimeo.com/270727100)
 
-More video showcases:
-
-- [Happy Groundhog day, 2018](https://vimeo.com/252719006)
-- [International pizza day, 2018](https://vimeo.com/254643482)
+The source code for the "The great TikZducks Christmas Extravaganza" is available in [this repository](https://github.com/cereda/duck-extravaganza).
