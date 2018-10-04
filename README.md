@@ -4,7 +4,7 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 
 This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt
 
-The project repository, including a bug tracker, can be found at https://github.com/samcarter8/tikzducks/issues
+The project repository, including a bug tracker, can be found at https://github.com/samcarter/tikzducks/issues
 
 ![This repository has an official duck seal of approval](https://i.stack.imgur.com/mSAtL.png)
 
