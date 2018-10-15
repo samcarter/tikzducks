@@ -167,7 +167,7 @@ The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the m
 
 The \tikzducks package loads \TikZ, which in turn loads the \lstinline|xcolor| package (amongst others). If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
 
-\begin{lstlisting}[aboveskip=1.2em,morekeywords={xcolor,svgnames}]
+\begin{lstlisting}[aboveskip=0em,morekeywords={xcolor,svgnames}]
 	\PassOptionsToPackage{svgnames}{xcolor}
 \end{lstlisting}
 It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|. Furthermore the packages \lstinline|ifpdf| and \lstinline|ifluatex| are necassary starting with version 0.5 of this package.
@@ -198,20 +198,15 @@ To customise this basic duck, the package uses \lstinline|pgf| keys. For almost 
 If the keyword consists of multiples words, it works both with and without spaces. In the following usually the version without spaces is given. 
 
 \clearpage
-If the size of the ducks should be changed or shifted:
+In addition to the keys defined in this package, all usual \TikZ and \lstinline|pgf| keys can also be used. For example if the size of the ducks should be changed or shifted:
 
 \begin{tcblisting}{title={Scaled duck and \emph{The Ugly Duckling}},	righthand width=3cm}
 \begin{tikzpicture}[scale=0.6]
 	\duck
-	\begin{scope}[xshift=90pt, scale=.3, yshift=150pt]
-		\duck
-	\end{scope}
-	\begin{scope}[xshift=60pt, scale=.3, yshift=100pt]
-		\duck
-	\end{scope}
-	\begin{scope}[xshift=80pt, scale=.3, yshift=50pt]
-		\duck[body=gray!50!white,head=gray!50!white]
-	\end{scope}		
+	\duck[xshift=90pt, scale=.3, yshift=150pt]
+	\duck[xshift=60pt, scale=.3, yshift=100pt]
+	\duck[body=gray!50!white,head=gray!50!white,
+		xshift=80pt, scale=.3, yshift=50pt]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -861,10 +856,8 @@ To distinguish coordinates from multiple ducks in the same \lstinline|tikzpictur
 \begin{tcblisting}{title={Named coordinates},listing options={style={duckstyle}, emph={name,wing}}}
 \begin{tikzpicture}
 	\duck[name=foo]
-	\begin{scope}[xshift=90pt,
-			scale=.3, yshift=150pt]
-	 	\duck[name=bar]
-	\end{scope}
+ 	\duck[name=bar,xshift=90pt,
+ 				scale=.3,yshift=150pt]
 	\draw (foo-wing) -- (bar-wing);
 \end{tikzpicture}	
 \end{tcblisting}
@@ -1319,12 +1312,8 @@ In the following a few examples of possible duck customisations, some of which w
 \begin{tikzpicture}
 \duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white]  
 \fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
-\begin{scope}[scale=0.23,rotate=-20,yshift=82,xshift=38]
-	\fill[qcrown] \duckpathqueencrown;
-\end{scope}
-\begin{scope}[yshift=3]
-	\fill[qcrown] \duckpathkingcrown;
-\end{scope}
+\fill[qcrown,scale=0.23,rotate=-20,yshift=82,xshift=38] \duckpathqueencrown;
+\fill[qcrown,yshift=3] \duckpathkingcrown;
 \end{tikzpicture}
 \end{tcblisting}
 
