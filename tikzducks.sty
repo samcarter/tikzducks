@@ -121,6 +121,7 @@
 \newif\ifduck@snowduck
 \newif\ifduck@vampire
 \newif\ifduck@crystalball
+\newif\ifduck@cheese
 
 \tikzset{
   %
@@ -345,6 +346,7 @@
   vampire/.code     = \duck@vampiretrue  \def\duck@vampire{#1},
   crystalball/.code = \duck@crystalballtrue \def\duck@crystalball{#1},
   crystal ball/.forward to=/duck/crystalball,
+  cheese/.code      = \duck@cheesetrue   \def\duck@cheese{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   glasses/.default   = black,  
   sunglasses/.default= black,  
@@ -386,6 +388,7 @@
   snowduck/.default  = gray!15!white,
   vampire/.default   = white!85!yellow,
   crystalball/.default = cyan,
+  cheese/.default      = orange,  
 }
 
 \def\duck@draw{
@@ -1114,6 +1117,15 @@
 % crystal ball %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@crystalball
 	\shade[ball color=\duck@crystalball,opacity=0.7] (0.93,0.5) circle (0.33);
+\fi
+%
+% Cheese %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cheese
+	\begin{scope}[xshift=26,yshift=-2]
+		\fill[\duck@cheese] (-0.3200,0.8058) -- (0.0608,0.7220) -- (0.0608,0.6366) -- (-0.3200,0.5410) -- (0.2143,0.4236) .. controls (0.3395,0.4810) and (0.4241,0.5627) .. (0.4117,0.6253) -- (0.4117,0.7634) .. controls (0.4261,0.8618) and (0.2607,0.8954) .. (0.1907,0.8962) -- cycle;
+		\fill[\duck@cheese!35!white] (-0.3200,0.8057) -- (-0.3200,0.5410) -- (0.2143,0.4236) -- (0.2143,0.7381) -- cycle;
+		\fill[\duck@cheese] (-0.23,0.71) circle (0.04) (0.0,0.55) circle (0.04) (-0.23,0.58) circle (0.02) (-0.15,0.6) circle (0.02) (-0.1,0.7) circle (0.02) (0.1,0.65) circle (0.02) (0,0.65) circle (0.02) (0.1,0.5) circle (0.02) (0.07,0.55) circle (0.01) (0.12,0.6) circle (0.01) (-0.08,0.54) circle (0.01);
+	\end{scope}
 \fi
 %
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
