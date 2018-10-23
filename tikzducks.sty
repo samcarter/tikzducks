@@ -84,6 +84,7 @@
 \newif\ifduck@darthvader
 \newif\ifduck@harlequin
 \newif\ifduck@strawhat
+\newif\ifduck@helmet
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -239,6 +240,7 @@
   strawhat/.code     = \duck@strawhattrue    \def\duck@strawhat{#1},
   straw hat/.forward to=/duck/strawhat,
   ribbon/.code       =                       \def\duck@ribbon{#1},
+  helmet/.code       = \duck@helmettrue      \def\duck@helmet{#1},
   % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   alien/.default     = green,    
   hat/.default       = brown,
@@ -264,6 +266,7 @@
   niuqelrah          = red,
   strawhat/.default  = gray!30!white,
   ribbon             = black,
+  helmet/.default    = gray,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -823,6 +826,13 @@
   \fill[\duck@ribbon,rotate=-15] (0.44,2.2) ellipse (0.34 and 0.08);   
   \fill[\duck@ribbon,rotate=-15] (0.1,2.2) rectangle (0.78,2.3);
 	\fill[\duck@strawhat,rotate=-15] (0.44,2.3) ellipse (0.34 and 0.08);  
+\fi
+%
+% helmet %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@helmet
+	\fill[\duck@helmet] (1.4331,1.5155) .. controls (1.4365,1.7226) and (1.3866,2.0493) .. (1.0429,2.1279) .. controls (0.7050,2.2052) and (0.4794,1.9294) .. (0.4481,1.8183) .. controls (0.6062,1.8381) and (1.1506,1.7480) .. (1.4331,1.5155) -- cycle;
+	\fill[\duck@helmet!70!black] (1.0282,2.1360) .. controls (0.9395,2.1312) and (0.8696,2.0652) .. (0.8152,2.0010) .. controls (0.7824,1.9609) and (0.7546,1.9169) .. (0.7309,1.8709) .. controls (0.6510,1.8859) and (0.5703,1.8971) .. (0.4892,1.9024) .. controls (0.4595,1.8831) and (0.4114,1.7962) .. (0.4743,1.7961) .. controls (0.5446,1.7868) and (0.6149,1.7767) .. (0.6845,1.7629) .. controls (0.6647,1.7052) and (0.6469,1.6454) .. (0.6401,1.5851) -- (0.6583,1.5355) -- (0.7069,1.5673) .. controls (0.7193,1.6285) and (0.7363,1.6889) .. (0.7590,1.7471) .. controls (0.9991,1.6922) and (1.2114,1.6182) .. (1.4111,1.4722) .. controls (1.4369,1.4960) and (1.4536,1.5229) .. (1.4475,1.5553) .. controls (1.4417,1.5927) and (1.4030,1.6066) .. (1.3766,1.6276) .. controls (1.2054,1.7408) and (1.0085,1.8089) .. (0.8095,1.8546) .. controls (0.8733,1.9674) and (0.9684,2.0703) .. (1.0932,2.1138) .. controls (1.0751,2.1288) and (1.0515,2.1362) .. (1.0282,2.1360) -- cycle;
+	\fill[\duck@helmet!50!white] (0.502,1.845) circle (0.015) (0.586,1.835) circle (0.015) (0.684,1.822) circle (0.015) (0.791,1.799) circle (0.015)  (0.899,1.770) circle (0.015) (1.003,1.741) circle (0.015)  (1.099,1.706) circle (0.015) (1.185,1.673) circle (0.015)  (1.276,1.629) circle (0.015) (1.360,1.581) circle (0.015)  (0.676,1.606) circle (0.015) (0.695,1.666) circle (0.015)  (0.714,1.729) circle (0.015) (0.784,1.889) circle (0.015)  (0.835,1.968) circle (0.015) (0.896,2.034) circle (0.015)  (0.957,2.081) circle (0.015) (1.020,2.115) circle (0.015)  (1.422,1.535) circle (0.015) (0.502,1.845) circle (0.015);
 \fi
 %
 %\end{pgfonlayer}
