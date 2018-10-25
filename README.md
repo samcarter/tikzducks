@@ -18,8 +18,11 @@ There are several videos featuring the TikZducks, kindly contributed by Ulrike a
 
 [![The great TikZducks Christmas Extravaganza](https://user-images.githubusercontent.com/8226363/43651585-1281b074-9743-11e8-97f5-bf70617738a5.png)](https://vimeo.com/246256860)
 [![International Pizza Day](https://user-images.githubusercontent.com/8226363/43651587-12c92daa-9743-11e8-83b5-7fd3a3ac19a3.png)](https://vimeo.com/254643482)
-
 [![Happy Groundhog Day](https://user-images.githubusercontent.com/8226363/43651589-12e84334-9743-11e8-9621-d5e6e53a0ca8.png)](https://vimeo.com/252719006)
 [![Aquarela with TikZducks](https://user-images.githubusercontent.com/8226363/43651586-12a6c008-9743-11e8-99d2-5a66e7f5f1ee.png)](https://vimeo.com/270727100)
+[![Saint Crispin's Day](https://user-images.githubusercontent.com/43832342/47496794-37d18600-d858-11e8-9e6e-777ffee1acdc.png)](https://vimeo.com/295353434)
+[![James Bond](https://user-images.githubusercontent.com/43832342/47496795-37d18600-d858-11e8-8c0c-20ea2d0a23cd.png)](https://vimeo.com/284348495)
+
+
 
 The source code for the "The great TikZducks Christmas Extravaganza" is available in [this repository](https://github.com/cereda/duck-extravaganza).
