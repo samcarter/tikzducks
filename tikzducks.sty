@@ -34,10 +34,10 @@
 %\pgfsetlayers{backgroundlayer,bodylayer,clothinglayer,hairlayer,hatlayer,main}
 
 \newcommand*{\duck}[1][]{%
-	\begin{scope}%
-		\tikzset{/duck/.cd,#1}%
-		\duck@draw%
-	\end{scope}%
+  \begin{scope}%
+    \tikzset{/duck/.cd,#1}%
+    \duck@draw%
+  \end{scope}%
 }
 
 \newif\ifduck@name
@@ -125,9 +125,11 @@
 \newif\ifduck@cheese
 
 \tikzset{
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Pass unknown keys on to tikz
   %
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   /duck/.search also={/tikz,/pgf},
   /duck/.cd,
   name/.code= \duck@nametrue \def\duck@name{#1},
@@ -137,261 +139,328 @@
   % Environment
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  water/.code = \duck@watertrue \def\duck@water{#1},
-  % setting default
-  water/.default = blue,  
+  water/.code               = \duck@watertrue
+                              \def\duck@water{#1},
+  water/.default            = blue,  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % body parts
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  body/.code    = \def\duck@body{#1},
-  head/.code    = \def\duck@head{#1},
-  eye/.code     = \def\duck@eye{#1},
-  pupil/.code   = \def\duck@pupil{#1},
-  bill/.code    = \def\duck@bill{#1},
-  grumpy/.code  = \duck@grumpytrue,
-  laughing/.code   = \duck@laughingtrue,
-  parrot/.code  = \duck@parrottrue,
-  % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  body          = yellow!70!brown,
-  eye           = white!85!yellow,
-  pupil         = black,
-  bill          = orange!50!brown, 
+  body/.code                = \def\duck@body{#1},
+  body                      = yellow!70!brown,
+  head/.code                = \def\duck@head{#1},
+  eye/.code                 = \def\duck@eye{#1},
+  eye                       = white!85!yellow,
+  pupil/.code               = \def\duck@pupil{#1},
+  pupil                     = black,
+  bill/.code                = \def\duck@bill{#1},
+  bill                      = orange!50!brown, 
+  grumpy/.code              = \duck@grumpytrue,
+  laughing/.code            = \duck@laughingtrue,
+  parrot/.code              = \duck@parrottrue,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % clothing
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  tshirt/.code       = \duck@tshirttrue      \def\duck@tshirt{#1},
-  jacket/.code       = \duck@jackettrue      \def\duck@jacket{#1},
-  tie/.code          = \duck@tietrue         \def\duck@tie{#1},
-  cape/.code         = \duck@capetrue        \def\duck@cape{#1},
-  stripes/.code      = \duck@stripestrue     \def\duck@stripes{#1},
-  % setting default %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  tshirt/.default    = white,
-  jacket/.default    = blue,
-  tie/.default       = blue,
-  cape/.default      = red,
-  stripes/.default   = \stripes ,
+  tshirt/.code              = \duck@tshirttrue      
+                              \def\duck@tshirt{#1},
+  tshirt/.default           = white,                            
+  jacket/.code              = \duck@jackettrue      
+                              \def\duck@jacket{#1},
+  jacket/.default           = blue,                              
+  tie/.code                 = \duck@tietrue         
+                              \def\duck@tie{#1},
+  tie/.default              = blue,                              
+  cape/.code                = \duck@capetrue        
+                              \def\duck@cape{#1},
+  cape/.default             = red,                            
+  stripes/.code             = \duck@stripestrue
+                              \def\duck@stripes{#1},
+  stripes/.default          = \stripes ,                           
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % hair styles
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  shorthair/.code    = \duck@shorthairtrue    \def\duck@hair{#1},
-  short hair/.forward to=/duck/shorthair,
-  longhair/.code     = \duck@longhairtrue     \def\duck@hair{#1},
-  long hair/.forward to=/duck/longhair,
-  crazyhair/.code    = \duck@crazyhairtrue    \def\duck@hair{#1},
-  crazy hair/.forward to=/duck/crazyhair,
-  recedinghair/.code = \duck@recedinghairtrue \def\duck@hair{#1},
-  receding hair/.forward to=/duck/recedinghair,
-  eyebrow/.code      = \duck@eyebrowtrue      \def\duck@eyebrow{#1},
-  beard/.code        = \duck@beardtrue        \def\duck@beard{#1},
-  mohican/.code      = \duck@mohicantrue      \def\duck@hair{#1},
-  mullet/.code       = \duck@mullettrue       \def\duck@hair{#1},
-  parting/.code      = \duck@partingtrue      \def\duck@hair{#1},
-  % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  shorthair/.default = brown,
-  longhair/.default  = brown,
-  crazyhair/.default = brown,
-  recedinghair/.default= brown,
-  eyebrow/.default   = brown,
-  beard/.default     = brown,
-  mohican/.default   = brown,
-  mullet/.default    = brown,
-  parting/.default  = brown,
+  shorthair/.code           = \duck@shorthairtrue    
+                              \def\duck@hair{#1},
+  short hair/.forward to    = /duck/shorthair,
+  shorthair/.default        = brown,
+  longhair/.code            = \duck@longhairtrue     
+                              \def\duck@hair{#1},
+  long hair/.forward to     = /duck/longhair,
+  longhair/.default         = brown,
+  crazyhair/.code           = \duck@crazyhairtrue    
+                              \def\duck@hair{#1},
+  crazy hair/.forward to    = /duck/crazyhair,
+  crazyhair/.default        = brown,
+  recedinghair/.code        = \duck@recedinghairtrue 
+                              \def\duck@hair{#1},
+  receding hair/.forward to = /duck/recedinghair,
+  recedinghair/.default     = brown,
+  eyebrow/.code             = \duck@eyebrowtrue      
+                              \def\duck@eyebrow{#1},
+  eyebrow/.default          = brown,
+  beard/.code               = \duck@beardtrue        
+                              \def\duck@beard{#1},
+  beard/.default            = brown,
+  mohican/.code             = \duck@mohicantrue      
+                              \def\duck@hair{#1},
+  mohican/.default          = brown,
+  mullet/.code              = \duck@mullettrue       
+                              \def\duck@hair{#1},
+  mullet/.default           = brown,
+  parting/.code             = \duck@partingtrue      
+                              \def\duck@hair{#1},
+  parting/.default          = brown,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Headgear
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  alien/.code        = \duck@alientrue       \def\duck@alien{#1},
-  hat/.code          = \duck@hattrue         \def\duck@hat{#1},
-  cap/.code          = \duck@captrue         \def\duck@cap{#1},
-  santa/.code        = \duck@santatrue       \def\duck@santa{#1},
-  chef/.code         = \duck@cheftrue        \def\duck@chef{#1},
-  graduate/.code     = \duck@graduatetrue    \def\duck@graduate{#1},
-  tassel/.code       =                       \def\duck@tassel{#1},
-  beret/.code        = \duck@berettrue       \def\duck@beret{#1},
-  unicorn/.code      = \duck@unicorntrue     \def\duck@unicorn{#1},
-  magichat/.code     = \duck@magichattrue    \def\duck@magichat{#1},
-  magic hat/.forward to=/duck/magichat,
-  magicstars/.code   =                       \def\duck@magicstars{#1},
-  magic stars/.forward to=/duck/magicstars,
-  witch/.code        = \duck@witchtrue       \def\duck@witch{#1},
-  crown/.code        = \duck@crowntrue       \def\duck@crown{#1},
-  queencrown/.code   = \duck@queencrowntrue  \def\duck@queencrown{#1},
-  queen crown/.forward to=/duck/queencrown,
-  kingcrown/.code    = \duck@kingcrowntrue   \def\duck@kingcrown{#1},
-  king crown/.forward to=/duck/kingcrown,
-  bunny/.code        = \duck@bunnytrue       \def\duck@bunny{#1},
-  inear/.code        =                       \def\duck@inear{#1},
-  in ear/.forward to=/duck/inear,
-  peakedcap/.code    = \duck@peakedcaptrue   \def\duck@peakedcap{#1},
-  peaked cap/.forward to=/duck/peakedcap,
-  tophat/.code       = \duck@tophattrue      \def\duck@tophat{#1},
-  top hat/.forward to=/duck/tophat,
-  darthvader/.code   = \duck@darthvadertrue  \def\duck@darthvader{#1},
-  darth vader/.forward to=/duck/darthvader,
-  harlequin/.code    = \duck@harlequintrue   \def\duck@harlequin{#1},
-  niuqelrah/.code	   =                       \def\duck@niuqelrah{#1},
-  strawhat/.code     = \duck@strawhattrue    \def\duck@strawhat{#1},
-  straw hat/.forward to=/duck/strawhat,
-  ribbon/.code       =                       \def\duck@ribbon{#1},
-  helmet/.code       = \duck@helmettrue      \def\duck@helmet{#1},
-  % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  alien/.default     = green,    
-  hat/.default       = brown,
-  cap/.default       = blue,
-  santa/.default     = red!80!black,
-  chef/.default      = gray!20!white,
-  graduate/.default  = black,
-  tassel             = red,
-  beret/.default     = black,      
-  unicorn/.default   = pink,
-  magichat/.default  = violet,
-  magicstars         = yellow!80!brown,
-  witch/.default     = black,    
-  crown/.default     = yellow,
-  queencrown/.default= yellow,
-  kingcrown/.default = gray,
-  bunny/.default     = \duck@body,
-  inear              = \duck@bunny!50!white,
-  peakedcap/.default = blue,
-  tophat/.default    = black,
-  darthvader/.default= black,
-  harlequin/.default = blue,
-  niuqelrah          = red,
-  strawhat/.default  = gray!30!white,
-  ribbon             = black,
-  helmet/.default    = gray,
+  alien/.code               = \duck@alientrue       
+                              \def\duck@alien{#1},
+  alien/.default            = green, 
+  hat/.code                 = \duck@hattrue
+                              \def\duck@hat{#1},
+  hat/.default              = brown,
+  cap/.code                 = \duck@captrue         
+                              \def\duck@cap{#1},
+  cap/.default              = blue,
+  santa/.code               = \duck@santatrue       
+                              \def\duck@santa{#1},
+  santa/.default            = red!80!black,
+  chef/.code                = \duck@cheftrue        
+                              \def\duck@chef{#1},
+  chef/.default             = gray!20!white,
+  graduate/.code            = \duck@graduatetrue    
+                              \def\duck@graduate{#1},
+  graduate/.default         = black,
+  tassel/.code              = \def\duck@tassel{#1},
+  tassel                    = red,
+  beret/.code               = \duck@berettrue       
+                              \def\duck@beret{#1},
+  beret/.default            = black,
+  unicorn/.code             = \duck@unicorntrue     
+                              \def\duck@unicorn{#1},
+  unicorn/.default          = pink,
+  magichat/.code            = \duck@magichattrue    
+                              \def\duck@magichat{#1},
+  magic hat/.forward to     = /duck/magichat,
+  magichat/.default         = violet,
+  magicstars/.code          = \def\duck@magicstars{#1},
+  magic stars/.forward to   = /duck/magicstars,
+  magicstars                = yellow!80!brown,
+  witch/.code               = \duck@witchtrue       
+                              \def\duck@witch{#1},
+  witch/.default            = black,
+  crown/.code               = \duck@crowntrue       
+                              \def\duck@crown{#1},
+  crown/.default            = yellow,
+  queencrown/.code          = \duck@queencrowntrue  
+                              \def\duck@queencrown{#1},
+  queen crown/.forward to   = /duck/queencrown,
+  queencrown/.default       = yellow,
+  kingcrown/.code           = \duck@kingcrowntrue   
+                              \def\duck@kingcrown{#1},
+  king crown/.forward to    = /duck/kingcrown,
+  kingcrown/.default        = gray,
+  bunny/.code               = \duck@bunnytrue       
+                              \def\duck@bunny{#1},
+  bunny/.default            = \duck@body,
+  inear/.code               = \def\duck@inear{#1},
+  in ear/.forward to        = /duck/inear,
+  inear                     = \duck@bunny!50!white,
+  peakedcap/.code           = \duck@peakedcaptrue   
+                              \def\duck@peakedcap{#1},
+  peaked cap/.forward to    = /duck/peakedcap,
+  peakedcap/.default        = blue,
+  tophat/.code              = \duck@tophattrue      
+                              \def\duck@tophat{#1},
+  top hat/.forward to       = /duck/tophat,
+  tophat/.default           = black,
+  darthvader/.code          = \duck@darthvadertrue  
+                              \def\duck@darthvader{#1},
+  darth vader/.forward to   = /duck/darthvader,
+  darthvader/.default       = black,
+  harlequin/.code           = \duck@harlequintrue   
+                              \def\duck@harlequin{#1},
+  harlequin/.default        = blue,
+  niuqelrah/.code           = \def\duck@niuqelrah{#1},
+  niuqelrah                 = red,
+  strawhat/.code            = \duck@strawhattrue    
+                              \def\duck@strawhat{#1},
+  straw hat/.forward to     = /duck/strawhat,
+  strawhat/.default         = gray!30!white,
+  ribbon/.code              = \def\duck@ribbon{#1},
+  ribbon                    = black,
+  helmet/.code              = \duck@helmettrue      
+                              \def\duck@helmet{#1},
+  helmet/.default           = gray,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  glasses/.code      = \duck@glassestrue     \def\duck@glasses{#1},
-  sunglasses/.code   = \duck@sunglassestrue  \def\duck@sunglasses{#1},
-  squareglasses/.code = \duck@squareglassestrue \def\duck@squareglasses{#1},
-  square glasses/.forward to=/duck/squareglasses,
-  icecream/.code     = \duck@icecreamtrue    \def\duck@cone{#1},
-  ice cream/.forward to=/duck/icecream,
-  flavoura/.code     =                       \def\duck@flavoura{#1},
-  flavour a/.forward to=/duck/flavoura,
-  flavourb/.code     =                       \def\duck@flavourb{#1},
-  flavour b/.forward to=/duck/flavourb,
-  flavourc/.code     =                       \def\duck@flavourc{#1},
-  flavour c/.forward to=/duck/flavourc,
-  book/.code         = \duck@booktrue        \def\duck@book{#1},
-  bookcolour/.code   =                       \def\duck@bookcolour{#1},
-  book colour/.forward to=/duck/bookcolour,
-  book color/.forward to=/duck/bookcolour,
-  bookcolor/.forward to=/duck/bookcolour,
-  signpost/.code     = \duck@signposttrue    \def\duck@signpost{#1},
-  sign post/.forward to=/duck/signpost,
-  signcolour/.code   =                       \def\duck@signcolour{#1},
-  sign colour/.forward to=/duck/signcolour,
-  sign color/.forward to=/duck/signcolour,
-  signcolor/.forward to=/duck/signcolour,  
-  signback/.code     =                       \def\duck@signback{#1},
-  sign back/.forward to=/duck/signback,
-  magicwand/.code    = \duck@magicwandtrue,
-  magic want/.forward to=/duck/magicwand,
-  cricket/.code      = \duck@crickettrue     \def\duck@cricket{#1},
-  rollingpin/.code   = \duck@rollingpintrue  \def\duck@rollingpin{#1},
-  rolling pin/.forward to=/duck/rollingpin,
-  lightsaber/.code   = \duck@lightsabertrue  \def\duck@lightsaber{#1},
-  light saber/.forward to=/duck/lightsaber,
-  cake/.code         = \duck@caketrue        \def\duck@cake{#1},
-  pizza/.code        = \duck@pizzatrue,
-  hockey/.code       = \duck@hockeytrue      \def\duck@hockey{#1},
-  baguette/.code     = \duck@baguettetrue    \def\duck@baguette{#1},
-  football/.code     = \duck@footballtrue    \def\duck@football{#1},
-  mask/.code         = \duck@masktrue        \def\duck@mask{#1},
-  necklace/.code     = \duck@necklacetrue    \def\duck@necklace{#1},
-  milkshake/.code    = \duck@milkshaketrue   \def\duck@milkshake{#1},
-  wine/.code         = \duck@winetrue        \def\duck@wine{#1},  
-  prison/.code       = \duck@prisontrue      \def\duck@prison{#1},
-  speech/.code       = \duck@speechtrue      \def\duck@speech{#1},
-  think/.code        = \duck@thinktrue       \def\duck@think{#1},
-  bubblecolour/.code =                     \def\duck@bubblecolour{#1},
-  bubble colour/.forward to=/duck/bubblecolour,
-  bubble color/.forward to=/duck/bubblecolour,
-  bubblecolor/.forward to=/duck/bubblecolour,  
-  torch/.code        = \duck@torchtrue       \def\duck@torch{#1},
-  basket/.code       = \duck@baskettrue      \def\duck@basket{#1},
-  easter/.code       = \duck@eastertrue
-                       \duck@baskettrue      \def\duck@basket{#1},
-  egga/.code         =                       \def\duck@egga{#1},
-  egg a/.forward to=/duck/egga,
-  eggb/.code         =                       \def\duck@eggb{#1},
-  egg b/.forward to=/duck/eggb,
-  eggc/.code         =                       \def\duck@eggc{#1},
-  egg c/.forward to=/duck/eggc,
-  buttons/.code      = \duck@buttonstrue     \def\duck@buttons{#1},
-  sheep/.code        = \duck@sheeptrue       \def\duck@sheep{#1},
-  horsetail/.code    = \duck@horsetailtrue   \def\duck@horsetail{#1},
-  crozier/.code      = \duck@croziertrue     \def\duck@crozier{#1},
+  glasses/.code             = \duck@glassestrue     
+                              \def\duck@glasses{#1},
+  glasses/.default          = black,
+  sunglasses/.code          = \duck@sunglassestrue  
+                              \def\duck@sunglasses{#1},
+  sunglasses/.default       = black, 
+  squareglasses/.code       = \duck@squareglassestrue 
+                              \def\duck@squareglasses{#1},
+  square glasses/.forward to = /duck/squareglasses,
+  squareglasses/.default    = black,
+  icecream/.code            = \duck@icecreamtrue    
+                              \def\duck@cone{#1},
+  ice cream/.forward to     = /duck/icecream,
+  icecream/.default         = brown!60!gray,
+  flavoura/.code            = \def\duck@flavoura{#1},
+  flavour a/.forward to     = /duck/flavoura,
+  flavoura                  = brown!50!black,
+  flavourb/.code            = \def\duck@flavourb{#1},
+  flavour b/.forward to     = /duck/flavourb,
+  flavourb                  = white!70!brown,
+  flavourc/.code            = \def\duck@flavourc{#1},
+  flavour c/.forward to     = /duck/flavourc,
+  flavourc                  = red!50!white,
+  book/.code                = \duck@booktrue        
+                              \def\duck@book{#1},
+  bookcolour/.code          = \def\duck@bookcolour{#1},
+  book colour/.forward to   = /duck/bookcolour,
+  book color/.forward to    = /duck/bookcolour,
+  bookcolor/.forward to     = /duck/bookcolour,
+  bookcolour                = brown,
+  signpost/.code            = \duck@signposttrue    
+                              \def\duck@signpost{#1},
+  sign post/.forward to     = /duck/signpost,
+  signcolour/.code          = \def\duck@signcolour{#1},
+  sign colour/.forward to   = /duck/signcolour,
+  sign color/.forward to    = /duck/signcolour,
+  signcolor/.forward to     = /duck/signcolour,  
+  signcolour                = brown!50!black,
+  signback/.code            = \def\duck@signback{#1},
+  sign back/.forward to     = /duck/signback,
+  signback                  = green!40!black,
+  magicwand/.code           = \duck@magicwandtrue,
+  magic want/.forward to    = /duck/magicwand,
+  cricket/.code             = \duck@crickettrue     
+                              \def\duck@cricket{#1},
+  cricket/.default          = brown,
+  rollingpin/.code          = \duck@rollingpintrue  
+                              \def\duck@rollingpin{#1},
+  rolling pin/.forward to   = /duck/rollingpin,
+  rollingpin/.default       = brown,
+  lightsaber/.code          = \duck@lightsabertrue  
+                              \def\duck@lightsaber{#1},
+  light saber/.forward to   = /duck/lightsaber,
+  lightsaber/.default       = green,
+  cake/.code                = \duck@caketrue        
+                              \def\duck@cake{#1},
+  cake/.default             = violet,
+  pizza/.code               = \duck@pizzatrue,
+  hockey/.code              = \duck@hockeytrue      
+                              \def\duck@hockey{#1},
+  hockey/.default           = brown,
+  baguette/.code            = \duck@baguettetrue    
+                              \def\duck@baguette{#1},
+  baguette/.default         = brown,
+  football/.code            = \duck@footballtrue    
+                              \def\duck@football{#1},
+  football/.default         = white,
+  mask/.code                = \duck@masktrue        
+                              \def\duck@mask{#1},
+  mask/.default             = black,
+  necklace/.code            = \duck@necklacetrue    
+                              \def\duck@necklace{#1},
+  necklace/.default         = white!80!gray,
+  milkshake/.code           = \duck@milkshaketrue   
+                              \def\duck@milkshake{#1},
+  milkshake/.default        = red!20!white,
+  wine/.code                = \duck@winetrue        
+                              \def\duck@wine{#1},  
+  wine/.default             = red!70!black,
+  prison/.code              = \duck@prisontrue      
+                              \def\duck@prison{#1},
+  prison/.default           = gray,
+  speech/.code              = \duck@speechtrue      
+                              \def\duck@speech{#1},
+  think/.code               = \duck@thinktrue       
+                              \def\duck@think{#1},
+  bubblecolour/.code        = \def\duck@bubblecolour{#1},
+  bubble colour/.forward to = /duck/bubblecolour,
+  bubble color/.forward to  = /duck/bubblecolour,
+  bubblecolor/.forward to   = /duck/bubblecolour,  
+  bubblecolour              = gray!30!white,
+  torch/.code               = \duck@torchtrue       
+                              \def\duck@torch{#1},
+  torch/.default            = gray,
+  basket/.code              = \duck@baskettrue      
+                              \def\duck@basket{#1},
+  basket/.default           = brown!70!gray,
+  easter/.code              = \duck@eastertrue
+                              \duck@baskettrue      
+                              \def\duck@basket{#1},
+  easter/.default           = brown!70!gray,                       
+  egga/.code                = \def\duck@egga{#1},
+  egg a/.forward to         = /duck/egga,
+  egga                      = blue,
+  eggb/.code                = \def\duck@eggb{#1},
+  egg b/.forward to         = /duck/eggb,
+  eggb                      = green,
+  eggc/.code                = \def\duck@eggc{#1},
+  egg c/.forward to         = /duck/eggc,
+  eggc                      = red,
+  buttons/.code             = \duck@buttonstrue     
+                              \def\duck@buttons{#1},
+  buttons/.default          = black,
+  sheep/.code               = \duck@sheeptrue       
+                              \def\duck@sheep{#1},
+  sheep/.default            = \duck@body,
+  horsetail/.code           = \duck@horsetailtrue   
+                              \def\duck@horsetail{#1},
+  horsetail/.default        = brown,
+  crozier/.code             = \duck@croziertrue     
+                              \def\duck@crozier{#1},
+  crozier/.default          = brown,
   davidlikespineapplepizza/.code = \duck@davidlikespineapplepizzatrue
-  \duck@speechtrue \def\duck@speech{\scalebox{\yscalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
-  david likes pineapple pizza/.forward to=/duck/davidlikespineapplepizza,
-  wing/.code    = \duck@wingtrue      \def\duck@wing{#1},
-  stethoscope/.code = \duck@stethoscopetrue \def\duck@stethoscope{#1},
-  neckerchief/.code = \duck@neckerchieftrue \def\duck@neckerchief{#1},
-  woggle/.code			=												\def\duck@woggle{#1},
-  snowduck/.code 		= \duck@snowducktrue \def\duck@snowduck{#1}
-  										\def\duck@eye{#1}  \def\duck@body{#1}
-										  \duck@tophattrue   \def\duck@tophat{black}
-  										\duck@buttonstrue  \def\duck@buttons{black},
-  snow duck/.forward to=/duck/snowduck,
-  vampire/.code     = \duck@vampiretrue  \def\duck@vampire{#1},
-  crystalball/.code = \duck@crystalballtrue \def\duck@crystalball{#1},
-  crystal ball/.forward to=/duck/crystalball,
-  cheese/.code      = \duck@cheesetrue   \def\duck@cheese{#1},
-  % setting defaults %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  glasses/.default   = black,  
-  sunglasses/.default= black,  
-  squareglasses/.default = black,
-  icecream/.default  = brown!60!gray,
-  flavoura           = brown!50!black,
-  flavourb           = white!70!brown,
-  flavourc           = red!50!white,
-  bookcolour         = brown,
-  signcolour         = brown!50!black,
-  signback           = green!40!black,  
-  cricket/.default   = brown,
-  rollingpin/.default= brown,
-  lightsaber/.default= green,
-  cake/.default      = violet,
-  hockey/.default    = brown,
-  baguette/.default  = brown,
-  football/.default  = white,
-  mask/.default      = black,
-  necklace/.default  = white!80!gray,
-  milkshake/.default = red!20!white,
-  wine/.default      = red!70!black,
-  prison/.default    = gray,
-  bubblecolour       = gray!30!white,
-  torch/.default     = gray,
-  basket/.default    = brown!70!gray,
-  easter/.default    = brown!70!gray,
-  egga               = blue,
-  eggb               = green,
-  eggc               = red,
-  buttons/.default   = black,
-  sheep/.default     = \duck@body,
-  horsetail/.default = brown,
-  crozier/.default   = brown,
-  wing/.default      = yellow!50!brown,
-  stethoscope/.default = gray,
-  neckerchief/.default = brown,
-  woggle 						   = brown!50!black,
-  snowduck/.default  = gray!15!white,
-  vampire/.default   = white!85!yellow,
-  crystalball/.default = cyan,
-  cheese/.default      = orange,  
+                              \duck@speechtrue 
+  \def\duck@speech{\scalebox{\yscalefactor}{\scalebox{0.9}{\tiny ih, che schifo!}}},
+  david likes pineapple pizza/.forward to = /duck/davidlikespineapplepizza,
+  wing/.code                = \duck@wingtrue      
+                              \def\duck@wing{#1},
+  wing/.default             = yellow!50!brown,
+  stethoscope/.code         = \duck@stethoscopetrue 
+                              \def\duck@stethoscope{#1},
+  stethoscope/.default      = gray,
+  neckerchief/.code         = \duck@neckerchieftrue 
+                              \def\duck@neckerchief{#1},
+  neckerchief/.default      = brown,
+  woggle/.code              = \def\duck@woggle{#1},
+  woggle                    = brown!50!black,
+  snowduck/.code            = \duck@snowducktrue 
+                              \def\duck@snowduck{#1}
+                              \def\duck@eye{#1}
+                              \def\duck@body{#1}
+                              \duck@tophattrue
+                              \def\duck@tophat{black}
+                              \duck@buttonstrue  
+                              \def\duck@buttons{black},
+  snow duck/.forward to     = /duck/snowduck,
+  snowduck/.default         = gray!15!white,
+  vampire/.code             = \duck@vampiretrue  
+                              \def\duck@vampire{#1},
+  vampire/.default          = white!85!yellow,
+  crystalball/.code         = \duck@crystalballtrue 
+                              \def\duck@crystalball{#1},
+  crystal ball/.forward to  = /duck/crystalball,
+  crystalball/.default      = cyan,
+  cheese/.code              = \duck@cheesetrue
+                              \def\duck@cheese{#1},
+  cheese/.default           = orange,  
 }
 
 \def\duck@draw{
@@ -403,7 +472,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@invisible
 \else
-	\path (0.1,0.1) rectangle (2.1,2.12);
+  \path (0.1,0.1) rectangle (2.1,2.12);
 \fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -476,22 +545,22 @@
 \ifduck@grumpy
    \fill[\duck@bill] \duckpathgrumpybill;
 \else
-	\ifduck@laughing
-		\fill[\duck@bill!80!black] (0.40,1.20) .. controls (0.54,1.36) and (0.65,1.31) .. (0.91,1.37) .. controls (0.45,1.06) and (0.36,1.18) .. (0.40,1.20) -- cycle;
-		\fill[\duck@bill] 
-		(0.41,1.47) .. controls (0.64,1.53) and (0.54,1.30) ..
-		(0.91,1.37) .. controls (-0.02,1.10) and (0.28,1.37) ..
-		(0.41,1.47) -- cycle;
-	\else
-		\ifduck@parrot
-			\fill[\duck@bill!80!black] 
-			(0.40,1.45) .. controls (0.51,1.48) and (0.54,1.44) .. (0.59,1.39) .. controls (0.63,1.34) and (0.69,1.34) .. (0.86,1.35) .. controls (0.43,1.15) and (0.37,1.13) .. (0.34,1.20) .. controls (0.52,1.27) and (0.34,1.40) .. (0.40,1.45) -- cycle;
-			\fill[\duck@bill] 
-			(0.39,1.49) .. controls (0.50,1.52) and (0.54,1.44) .. (0.59,1.39) .. controls (0.63,1.34) and (0.68,1.34) .. (0.86,1.35) .. controls (0.43,1.15) and (0.54,1.40) .. (0.22,1.20) .. controls (0.24,1.52) and (0.39,1.49) .. (0.39,1.49) -- cycle;
-		\else
-			\fill[\duck@bill] \duckpathbill;
-		\fi
-	\fi
+  \ifduck@laughing
+    \fill[\duck@bill!80!black] (0.40,1.20) .. controls (0.54,1.36) and (0.65,1.31) .. (0.91,1.37) .. controls (0.45,1.06) and (0.36,1.18) .. (0.40,1.20) -- cycle;
+    \fill[\duck@bill] 
+    (0.41,1.47) .. controls (0.64,1.53) and (0.54,1.30) ..
+    (0.91,1.37) .. controls (-0.02,1.10) and (0.28,1.37) ..
+    (0.41,1.47) -- cycle;
+  \else
+    \ifduck@parrot
+      \fill[\duck@bill!80!black] 
+      (0.40,1.45) .. controls (0.51,1.48) and (0.54,1.44) .. (0.59,1.39) .. controls (0.63,1.34) and (0.69,1.34) .. (0.86,1.35) .. controls (0.43,1.15) and (0.37,1.13) .. (0.34,1.20) .. controls (0.52,1.27) and (0.34,1.40) .. (0.40,1.45) -- cycle;
+      \fill[\duck@bill] 
+      (0.39,1.49) .. controls (0.50,1.52) and (0.54,1.44) .. (0.59,1.39) .. controls (0.63,1.34) and (0.68,1.34) .. (0.86,1.35) .. controls (0.43,1.15) and (0.54,1.40) .. (0.22,1.20) .. controls (0.24,1.52) and (0.39,1.49) .. (0.39,1.49) -- cycle;
+    \else
+      \fill[\duck@bill] \duckpathbill;
+    \fi
+  \fi
 \fi
 %
 % Superhero mask %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -562,9 +631,9 @@
 %
 % Scout neckerchief %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@neckerchief
-	\fill[\duck@neckerchief] 
-	(0.3650,1.0892) .. controls (0.4127,1.1589) and (0.4900,1.1450) .. (0.4900,1.1450) .. controls (0.6500,0.9300) and (1.1366,1.2400) .. (1.3675,1.2649) .. controls (1.4131,1.2533) and (1.4052,1.2446) .. (1.4099,1.2124) .. controls (1.3028,1.0810) and (0.7415,0.8930) .. (0.6807,0.9076) .. controls (0.8257,0.7387) and (0.6347,0.7168) .. (0.7151,0.4426) .. controls (0.6059,0.5672) and (0.5513,0.6588) .. (0.5938,0.8388) .. controls (0.5871,0.6953) and (0.4493,0.7565) .. (0.4716,0.4967) .. controls (0.3682,0.6697) and (0.3820,0.7984) .. (0.5321,0.9351) .. controls (0.4635,0.9699) and (0.4115,1.0215) .. (0.3650,1.0892) -- cycle;
-	\fill[\duck@woggle, rounded corners=\yscalefactor*1, rotate=-10] (0.33,1.05) rectangle (0.55,0.98);
+  \fill[\duck@neckerchief] 
+  (0.3650,1.0892) .. controls (0.4127,1.1589) and (0.4900,1.1450) .. (0.4900,1.1450) .. controls (0.6500,0.9300) and (1.1366,1.2400) .. (1.3675,1.2649) .. controls (1.4131,1.2533) and (1.4052,1.2446) .. (1.4099,1.2124) .. controls (1.3028,1.0810) and (0.7415,0.8930) .. (0.6807,0.9076) .. controls (0.8257,0.7387) and (0.6347,0.7168) .. (0.7151,0.4426) .. controls (0.6059,0.5672) and (0.5513,0.6588) .. (0.5938,0.8388) .. controls (0.5871,0.6953) and (0.4493,0.7565) .. (0.4716,0.4967) .. controls (0.3682,0.6697) and (0.3820,0.7984) .. (0.5321,0.9351) .. controls (0.4635,0.9699) and (0.4115,1.0215) .. (0.3650,1.0892) -- cycle;
+  \fill[\duck@woggle, rounded corners=\yscalefactor*1, rotate=-10] (0.33,1.05) rectangle (0.55,0.98);
 \fi
 %
 % buttons (same argument as for the necklace)
@@ -634,10 +703,10 @@
 %
 % middle parting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@parting
-	\path (0.1,0.1) rectangle (2.1,2.22);
-	\begin{pgfinterruptboundingbox}
-		\fill[\duck@hair] 	(1.4053,1.5403) .. controls (1.5524,2.2939) and (0.3739,2.5180) .. (0.4084,1.6117) .. controls (0.4248,1.8921) and (0.7860,1.9734) .. (0.7860,1.9734) .. controls (1.1125,1.5754) and (1.3375,1.4715) .. (1.4053,1.5403) -- cycle;
-	\end{pgfinterruptboundingbox}
+  \path (0.1,0.1) rectangle (2.1,2.22);
+  \begin{pgfinterruptboundingbox}
+    \fill[\duck@hair]   (1.4053,1.5403) .. controls (1.5524,2.2939) and (0.3739,2.5180) .. (0.4084,1.6117) .. controls (0.4248,1.8921) and (0.7860,1.9734) .. (0.7860,1.9734) .. controls (1.1125,1.5754) and (1.3375,1.4715) .. (1.4053,1.5403) -- cycle;
+  \end{pgfinterruptboundingbox}
 \fi
 %
 % eye brow %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -808,13 +877,13 @@
 %
 % Harlequin duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@harlequin
-	\path (0.19,1.85) rectangle (1.85,2.67);
-	\begin{pgfinterruptboundingbox}
-	\fill[\duck@harlequin] (0.6006,1.9719) .. controls (0.7432,1.8954) and (0.9320,1.8698) .. (0.9320,1.8698) -- (1.0404,2.3839) .. controls (0.9223,2.8873) and (0.1755,2.5634) .. (0.3019,2.2958) .. controls (0.5807,2.5024) and (0.7251,2.3376) .. (0.6006,1.9719) -- cycle;
-	\fill[\duck@niuqelrah] (1.2853,1.8902) .. controls (1.1177,1.8507) and (0.9278,1.8703) .. (0.9278,1.8703) -- (1.0404,2.3839) .. controls (1.3637,2.8347) and (1.9373,2.3532) .. (1.7049,2.1284) .. controls (1.5267,2.3895) and (1.3204,2.2666) .. (1.2853,1.8902) -- cycle;
-	\end{pgfinterruptboundingbox}
-	\fill[\duck@harlequin] (1.7,2.07) circle (0.1);
-	\fill[\duck@niuqelrah] (0.3,2.23) circle (0.1);
+  \path (0.19,1.85) rectangle (1.85,2.67);
+  \begin{pgfinterruptboundingbox}
+  \fill[\duck@harlequin] (0.6006,1.9719) .. controls (0.7432,1.8954) and (0.9320,1.8698) .. (0.9320,1.8698) -- (1.0404,2.3839) .. controls (0.9223,2.8873) and (0.1755,2.5634) .. (0.3019,2.2958) .. controls (0.5807,2.5024) and (0.7251,2.3376) .. (0.6006,1.9719) -- cycle;
+  \fill[\duck@niuqelrah] (1.2853,1.8902) .. controls (1.1177,1.8507) and (0.9278,1.8703) .. (0.9278,1.8703) -- (1.0404,2.3839) .. controls (1.3637,2.8347) and (1.9373,2.3532) .. (1.7049,2.1284) .. controls (1.5267,2.3895) and (1.3204,2.2666) .. (1.2853,1.8902) -- cycle;
+  \end{pgfinterruptboundingbox}
+  \fill[\duck@harlequin] (1.7,2.07) circle (0.1);
+  \fill[\duck@niuqelrah] (0.3,2.23) circle (0.1);
 \fi
 %
 % Straw hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -825,14 +894,14 @@
   \fill[\duck@strawhat,rotate=-15] (-0.3,2.02) -- (1.18,2.02) -- (0.78,2.2) -- (0.1,2.2) -- cycle;
   \fill[\duck@ribbon,rotate=-15] (0.44,2.2) ellipse (0.34 and 0.08);   
   \fill[\duck@ribbon,rotate=-15] (0.1,2.2) rectangle (0.78,2.3);
-	\fill[\duck@strawhat,rotate=-15] (0.44,2.3) ellipse (0.34 and 0.08);  
+  \fill[\duck@strawhat,rotate=-15] (0.44,2.3) ellipse (0.34 and 0.08);  
 \fi
 %
 % helmet %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@helmet
-	\fill[\duck@helmet] (1.4331,1.5155) .. controls (1.4365,1.7226) and (1.3866,2.0493) .. (1.0429,2.1279) .. controls (0.7050,2.2052) and (0.4794,1.9294) .. (0.4481,1.8183) .. controls (0.6062,1.8381) and (1.1506,1.7480) .. (1.4331,1.5155) -- cycle;
-	\fill[\duck@helmet!70!black] (1.0282,2.1360) .. controls (0.9395,2.1312) and (0.8696,2.0652) .. (0.8152,2.0010) .. controls (0.7824,1.9609) and (0.7546,1.9169) .. (0.7309,1.8709) .. controls (0.6510,1.8859) and (0.5703,1.8971) .. (0.4892,1.9024) .. controls (0.4595,1.8831) and (0.4114,1.7962) .. (0.4743,1.7961) .. controls (0.5446,1.7868) and (0.6149,1.7767) .. (0.6845,1.7629) .. controls (0.6647,1.7052) and (0.6469,1.6454) .. (0.6401,1.5851) -- (0.6583,1.5355) -- (0.7069,1.5673) .. controls (0.7193,1.6285) and (0.7363,1.6889) .. (0.7590,1.7471) .. controls (0.9991,1.6922) and (1.2114,1.6182) .. (1.4111,1.4722) .. controls (1.4369,1.4960) and (1.4536,1.5229) .. (1.4475,1.5553) .. controls (1.4417,1.5927) and (1.4030,1.6066) .. (1.3766,1.6276) .. controls (1.2054,1.7408) and (1.0085,1.8089) .. (0.8095,1.8546) .. controls (0.8733,1.9674) and (0.9684,2.0703) .. (1.0932,2.1138) .. controls (1.0751,2.1288) and (1.0515,2.1362) .. (1.0282,2.1360) -- cycle;
-	\fill[\duck@helmet!50!white] (0.502,1.845) circle (0.015) (0.586,1.835) circle (0.015) (0.684,1.822) circle (0.015) (0.791,1.799) circle (0.015)  (0.899,1.770) circle (0.015) (1.003,1.741) circle (0.015)  (1.099,1.706) circle (0.015) (1.185,1.673) circle (0.015)  (1.276,1.629) circle (0.015) (1.360,1.581) circle (0.015)  (0.676,1.606) circle (0.015) (0.695,1.666) circle (0.015)  (0.714,1.729) circle (0.015) (0.784,1.889) circle (0.015)  (0.835,1.968) circle (0.015) (0.896,2.034) circle (0.015)  (0.957,2.081) circle (0.015) (1.020,2.115) circle (0.015)  (1.422,1.535) circle (0.015) (0.502,1.845) circle (0.015);
+  \fill[\duck@helmet] (1.4331,1.5155) .. controls (1.4365,1.7226) and (1.3866,2.0493) .. (1.0429,2.1279) .. controls (0.7050,2.2052) and (0.4794,1.9294) .. (0.4481,1.8183) .. controls (0.6062,1.8381) and (1.1506,1.7480) .. (1.4331,1.5155) -- cycle;
+  \fill[\duck@helmet!70!black] (1.0282,2.1360) .. controls (0.9395,2.1312) and (0.8696,2.0652) .. (0.8152,2.0010) .. controls (0.7824,1.9609) and (0.7546,1.9169) .. (0.7309,1.8709) .. controls (0.6510,1.8859) and (0.5703,1.8971) .. (0.4892,1.9024) .. controls (0.4595,1.8831) and (0.4114,1.7962) .. (0.4743,1.7961) .. controls (0.5446,1.7868) and (0.6149,1.7767) .. (0.6845,1.7629) .. controls (0.6647,1.7052) and (0.6469,1.6454) .. (0.6401,1.5851) -- (0.6583,1.5355) -- (0.7069,1.5673) .. controls (0.7193,1.6285) and (0.7363,1.6889) .. (0.7590,1.7471) .. controls (0.9991,1.6922) and (1.2114,1.6182) .. (1.4111,1.4722) .. controls (1.4369,1.4960) and (1.4536,1.5229) .. (1.4475,1.5553) .. controls (1.4417,1.5927) and (1.4030,1.6066) .. (1.3766,1.6276) .. controls (1.2054,1.7408) and (1.0085,1.8089) .. (0.8095,1.8546) .. controls (0.8733,1.9674) and (0.9684,2.0703) .. (1.0932,2.1138) .. controls (1.0751,2.1288) and (1.0515,2.1362) .. (1.0282,2.1360) -- cycle;
+  \fill[\duck@helmet!50!white] (0.502,1.845) circle (0.015) (0.586,1.835) circle (0.015) (0.684,1.822) circle (0.015) (0.791,1.799) circle (0.015)  (0.899,1.770) circle (0.015) (1.003,1.741) circle (0.015)  (1.099,1.706) circle (0.015) (1.185,1.673) circle (0.015)  (1.276,1.629) circle (0.015) (1.360,1.581) circle (0.015)  (0.676,1.606) circle (0.015) (0.695,1.666) circle (0.015)  (0.714,1.729) circle (0.015) (0.784,1.889) circle (0.015)  (0.835,1.968) circle (0.015) (0.896,2.034) circle (0.015)  (0.957,2.081) circle (0.015) (1.020,2.115) circle (0.015)  (1.422,1.535) circle (0.015) (0.502,1.845) circle (0.015);
 \fi
 %
 %\end{pgfonlayer}
@@ -968,7 +1037,7 @@
   \fill[green!40!brown] (1.09,0.54) ellipse (0.07 and 0.02);
   \fill[green!40!brown,rotate=20] (1.0,0.34) ellipse (0.07 and 0.02);
   \fill[green!40!brown,rotate=-20] (0.9,1.05) ellipse (0.07 and 0.02);
-  \fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);	
+  \fill[green!40!brown] (1.00,0.60) ellipse (0.03 and 0.06);  
 \fi
 %
 %
@@ -1089,58 +1158,58 @@
 %
 % crozier %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@crozier
-	\begin{scope}
-		\clip [rotate=-20] (0.6,2.3) rectangle (1.1,1.999);
-		\fill[even odd rule,\duck@crozier] (1.5,1.6) circle (0.2) (1.5,1.6) circle (0.1);
-	\end{scope}
-	\fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);	
+  \begin{scope}
+    \clip [rotate=-20] (0.6,2.3) rectangle (1.1,1.999);
+    \fill[even odd rule,\duck@crozier] (1.5,1.6) circle (0.2) (1.5,1.6) circle (0.1);
+  \end{scope}
+  \fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);  
 \fi
 %
 % stethoscope
 \ifduck@stethoscope
-	\fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-18] (0.08,0.7) rectangle (0.13,1.24);
-	\fill[\duck@stethoscope] (0.35,0.7) circle (0.1); 
-	\begin{scope}
-		\fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-30] (0.53,1.3) rectangle (0.58,1.72);
-		\clip[rotate=-30] (0.36,0.89) -- (0.36,1.36) -- (0.79,1.36) -- (0.79,0.89) -- (0.65,0.89) -- (0.65,0.96) -- (0.5,0.96) -- (0.5,0.89) -- cycle ;
-		\fill [\duck@stethoscope,rounded corners=\yscalefactor*3,rotate=-30,even odd rule] (0.775,1.35) rectangle (0.375,0.9) [rounded corners=\yscalefactor*2] (0.725,1.3) rectangle (0.425,0.95);
-	\end{scope}
+  \fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-18] (0.08,0.7) rectangle (0.13,1.24);
+  \fill[\duck@stethoscope] (0.35,0.7) circle (0.1); 
+  \begin{scope}
+    \fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-30] (0.53,1.3) rectangle (0.58,1.72);
+    \clip[rotate=-30] (0.36,0.89) -- (0.36,1.36) -- (0.79,1.36) -- (0.79,0.89) -- (0.65,0.89) -- (0.65,0.96) -- (0.5,0.96) -- (0.5,0.89) -- cycle ;
+    \fill [\duck@stethoscope,rounded corners=\yscalefactor*3,rotate=-30,even odd rule] (0.775,1.35) rectangle (0.375,0.9) [rounded corners=\yscalefactor*2] (0.725,1.3) rectangle (0.425,0.95);
+  \end{scope}
 \fi
 %
 % snow duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@snowduck
-	\fill[black, rotate=-25] (0.65,0.65) rectangle (0.7,1.8);
-	\fill[black, rotate=35] (1.55,0.15) rectangle (1.6,0.5);
-	\fill[black, rotate=-35] (0.4,1.7) rectangle (0.45,2.0);
-	\fill[black, rotate=-60] (-0.3,2.0) rectangle (-0.35,1.65);
+  \fill[black, rotate=-25] (0.65,0.65) rectangle (0.7,1.8);
+  \fill[black, rotate=35] (1.55,0.15) rectangle (1.6,0.5);
+  \fill[black, rotate=-35] (0.4,1.7) rectangle (0.45,2.0);
+  \fill[black, rotate=-60] (-0.3,2.0) rectangle (-0.35,1.65);
 \fi
 %
 % vampire %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@vampire
-	\ifduck@laughing
-		\fill[\duck@vampire] (0.55,1.28) -- (0.575,1.22) -- (0.6,1.29) -- cycle;
-	\else
-		\fill[\duck@vampire] (0.6,1.20) -- (0.625,1.16) -- (0.65,1.223) -- cycle;
-	\fi
+  \ifduck@laughing
+    \fill[\duck@vampire] (0.55,1.28) -- (0.575,1.22) -- (0.6,1.29) -- cycle;
+  \else
+    \fill[\duck@vampire] (0.6,1.20) -- (0.625,1.16) -- (0.65,1.223) -- cycle;
+  \fi
 \fi
 %
 % crystal ball %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@crystalball
-	\shade[ball color=\duck@crystalball,opacity=0.7] (0.93,0.5) circle (0.33);
+  \shade[ball color=\duck@crystalball,opacity=0.7] (0.93,0.5) circle (0.33);
 \fi
 %
 % Cheese %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@cheese
-	\begin{scope}[xshift=26,yshift=-2]
-		\fill[\duck@cheese] (-0.3200,0.8058) -- (0.0608,0.7220) -- (0.0608,0.6366) -- (-0.3200,0.5410) -- (0.2143,0.4236) .. controls (0.3395,0.4810) and (0.4241,0.5627) .. (0.4117,0.6253) -- (0.4117,0.7634) .. controls (0.4261,0.8618) and (0.2607,0.8954) .. (0.1907,0.8962) -- cycle;
-		\fill[\duck@cheese!35!white] (-0.3200,0.8057) -- (-0.3200,0.5410) -- (0.2143,0.4236) -- (0.2143,0.7381) -- cycle;
-		\fill[\duck@cheese] (-0.23,0.71) circle (0.04) (0.0,0.55) circle (0.04) (-0.23,0.58) circle (0.02) (-0.15,0.6) circle (0.02) (-0.1,0.7) circle (0.02) (0.1,0.65) circle (0.02) (0,0.65) circle (0.02) (0.1,0.5) circle (0.02) (0.07,0.55) circle (0.01) (0.12,0.6) circle (0.01) (-0.08,0.54) circle (0.01);
-	\end{scope}
+  \begin{scope}[xshift=26,yshift=-2]
+    \fill[\duck@cheese] (-0.3200,0.8058) -- (0.0608,0.7220) -- (0.0608,0.6366) -- (-0.3200,0.5410) -- (0.2143,0.4236) .. controls (0.3395,0.4810) and (0.4241,0.5627) .. (0.4117,0.6253) -- (0.4117,0.7634) .. controls (0.4261,0.8618) and (0.2607,0.8954) .. (0.1907,0.8962) -- cycle;
+    \fill[\duck@cheese!35!white] (-0.3200,0.8057) -- (-0.3200,0.5410) -- (0.2143,0.4236) -- (0.2143,0.7381) -- cycle;
+    \fill[\duck@cheese] (-0.23,0.71) circle (0.04) (0.0,0.55) circle (0.04) (-0.23,0.58) circle (0.02) (-0.15,0.6) circle (0.02) (-0.1,0.7) circle (0.02) (0.1,0.65) circle (0.02) (0,0.65) circle (0.02) (0.1,0.5) circle (0.02) (0.07,0.55) circle (0.01) (0.12,0.6) circle (0.01) (-0.08,0.54) circle (0.01);
+  \end{scope}
 \fi
 %
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@wing
-	\fill[\duck@wing] \duckpathwing;
+  \fill[\duck@wing] \duckpathwing;
 \fi
 %
 %
@@ -1209,14 +1278,14 @@
 }
 
 \newcommand{\duckpathwing}{%
-	(1.47,0.56) .. controls (1.51,0.59) and (1.57,0.62) .. 
-	(1.60,0.66) .. controls (1.61,0.70) and (1.51,0.69) .. 
-	(1.47,0.69) .. controls (1.48,0.72) and (1.41,0.76) .. 
-	(1.37,0.74) .. controls (1.35,0.79) and (1.33,0.81) .. 
-	(1.25,0.80) .. controls (1.25,0.86) and (1.18,0.88) .. 
-	(1.15,0.88) .. controls (1.20,1.01) and (0.40,0.79) .. 
-	(0.52,0.57) .. controls (0.63,0.26) and (1.22,0.43) .. 
-	(1.47,0.56) -- cycle
+  (1.47,0.56) .. controls (1.51,0.59) and (1.57,0.62) .. 
+  (1.60,0.66) .. controls (1.61,0.70) and (1.51,0.69) .. 
+  (1.47,0.69) .. controls (1.48,0.72) and (1.41,0.76) .. 
+  (1.37,0.74) .. controls (1.35,0.79) and (1.33,0.81) .. 
+  (1.25,0.80) .. controls (1.25,0.86) and (1.18,0.88) .. 
+  (1.15,0.88) .. controls (1.20,1.01) and (0.40,0.79) .. 
+  (0.52,0.57) .. controls (0.63,0.26) and (1.22,0.43) .. 
+  (1.47,0.56) -- cycle
 }
 
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
