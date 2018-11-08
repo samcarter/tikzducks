@@ -123,6 +123,8 @@
 \newif\ifduck@vampire
 \newif\ifduck@crystalball
 \newif\ifduck@cheese
+\newif\ifduck@shovel
+\newif\ifduck@pickaxe
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -461,6 +463,12 @@
   cheese/.code              = \duck@cheesetrue
                               \def\duck@cheese{#1},
   cheese/.default           = orange,  
+  shovel/.code              = \duck@shoveltrue
+                              \def\duck@shovel{#1},
+  shovel/.default           = gray,    
+  pickaxe/.code             = \duck@pickaxetrue
+                              \def\duck@pickaxe{#1},
+  pickaxe/.default          = gray,                           
 }
 
 \def\duck@draw{
@@ -1165,7 +1173,7 @@
   \fill[\duck@crozier,rotate=-20] (0.663,0.5) rectangle (0.763,2.0);  
 \fi
 %
-% stethoscope
+% stethoscope %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@stethoscope
   \fill[\duck@stethoscope,rounded corners=\yscalefactor*0.5,rotate=-18] (0.08,0.7) rectangle (0.13,1.24);
   \fill[\duck@stethoscope] (0.35,0.7) circle (0.1); 
@@ -1207,6 +1215,18 @@
   \end{scope}
 \fi
 %
+% shovel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@shovel
+	\fill[brown!80!black,rotate around={-23:(0.91, 0.88)}] (0.87, 0.28) rectangle ++(0.1,1.4);
+	\fill[\duck@shovel]  (0.6133, 0.9536) .. controls (0.8388, 0.8117) and (0.9253, 0.7517) .. (1.1962, 0.6696) -- (0.8332, 0.1263) .. controls (0.6458, 0.11) and (0.5417, 0.1644) .. (0.4517, 0.3034) -- cycle;
+\fi
+%
+% pickaxe %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@pickaxe
+	\fill[brown!80!black,rotate around={-23:(0.91, 0.88)}] (0.87, 0.28) rectangle ++(0.1,1.4);
+	\fill[\duck@pickaxe]  (-0.0085, 0.6858) .. controls (0.6422, 0.3523) and (0.7609, 0.3068) .. (1.4114, 0.1108) .. controls (0.6589, 0.1246) and (0.5556, 0.1887) .. (-0.0085, 0.6858) -- cycle;
+\fi
+%
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@wing
   \fill[\duck@wing] \duckpathwing;
@@ -1234,7 +1254,7 @@
 \fi
 
 \pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{mohican}{mullet}{beard}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}{queencrown}{kingcrown}{harlequin}{strawhat}{parting}}
-\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}{stethoscope}{neckerchief}}
+\pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}{stethoscope}{neckerchief}{cheese}{shovel}{pickaxe}{crystalball}}
 
 \newcommand{\shuffleducks}{%
  \pgfmathrandomitem{\head}{head}%
