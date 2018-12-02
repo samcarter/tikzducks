@@ -787,9 +787,15 @@
 %
 % hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@hat
-  \fill[\duck@hat,rotate=-15] (0.44,2.1) ellipse (0.6 and 0.1);  
-  \fill[\duck@hat,rotate=-15] (0.07,2.1) rectangle (0.81,2.4);
-  \fill[\duck@hat,rotate=-15] (0.44,2.4) ellipse (0.37 and 0.08);  
+	\ifdefined\duck@hair % with hair
+	  \fill[\duck@hat,rotate=-15] (0.44,2.1) ellipse (0.7 and 0.1);  
+  	\fill[\duck@hat,rotate=-15] (0.0,2.1) rectangle (0.88,2.4);
+  	\fill[\duck@hat,rotate=-15] (0.44,2.4) ellipse (0.44 and 0.08);
+  \else % without hair
+	  \fill[\duck@hat,rotate=-15] (0.44,2.1) ellipse (0.6 and 0.1);  
+  	\fill[\duck@hat,rotate=-15] (0.07,2.1) rectangle (0.81,2.4);
+  	\fill[\duck@hat,rotate=-15] (0.44,2.4) ellipse (0.37 and 0.08);  	
+  \fi  
 \fi
 %
 % cap %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
