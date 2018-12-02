@@ -130,6 +130,7 @@
 \newif\ifduck@umbrella
 \newif\ifduck@umbrellaclosed
 \newif\ifduck@handbag
+\newif\ifduck@cocktail
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -491,6 +492,7 @@
 	handbag/.code             = \duck@handbagtrue
 	                            \def\duck@handbag{#1},
 	handbag/.default          = red!70!black,  
+	cocktail/.code             = \duck@cocktailtrue,
 }
 
 \def\duck@draw{
@@ -1283,6 +1285,16 @@
 \ifduck@handbag
 	\fill[\duck@handbag] (0.7811,0.1751) -- (1.4913,0.3097) -- (1.3315,0.7086) -- (0.7832,0.6152) -- cycle;
 	\fill[\duck@handbag!70!black] (0.8857,0.4354) .. controls (0.7861,0.9811) and (1.1796,1.0719) .. (1.2866,0.5155) -- (1.2043,0.4996) .. controls (1.1247,0.8952) and (0.9051,0.8883) .. (0.9676,0.4536) -- cycle;
+\fi
+% cocktail %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@cocktail
+  \fill[cyan!10!white, rotate=-10] (0.8,0.50) ellipse (0.17 and 0.05);
+  \fill[cyan!10!white, rotate=-10] (0.8,0.55) ellipse (0.12 and 0.03);
+  \fill[cyan!10!white, rotate=-10] (0.8,0.7) ellipse (0.03 and 0.2);
+  \fill[cyan!10!white] (0.92,0.6) -- (0.75,0.9) -- (1.18,0.83) -- cycle;
+  \fill[gray!60!white] (0.928,0.64) -- (0.85,0.77) -- (1.08,0.77) -- cycle;
+  \fill[green!40!brown!60!white] (0.94,0.71) circle (0.04);
+  \fill[red!80!black] (0.94,0.72) circle (0.01);
 \fi
 %
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
