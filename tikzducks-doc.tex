@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -607,6 +607,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}	
 \end{tcblisting}
 \footnotetext[\thefootnote]{In case the duck is wearing a jacket, the buttons are positioned a bit lower}
+
+\begin{tcblisting}{title={Dinner jacket duck}}
+\begin{tikzpicture}
+	\duck[jacket=gray,lapel=black,buttons]
+\end{tikzpicture}	
+\end{tcblisting}
 
 \begin{tcblisting}{title={Book duck}}
 \begin{tikzpicture}
@@ -1361,6 +1367,16 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{This is a very special duck, because yo' won the scout duck in the contest \href{https://tex.meta.stackexchange.com/q/7493/36296}{When will @egreg reach 654321}. In Czech, the neckerchief is called ``šátek'' and the woggle ``turbánek'', which means ``little turban''.}
+
+\begin{tcblisting}{title={My name is Duck, James Duck}}
+\begin{tikzpicture}
+\duck[tshirt,lapel,jacket=gray!50!black,
+	buttons,bowtie,parting=brown!50!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+
+
 
 \clearpage
 \printindex

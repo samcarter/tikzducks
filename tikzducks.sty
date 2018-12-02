@@ -65,6 +65,7 @@
 \newif\ifduck@cape
 \newif\ifduck@stripes
 \newif\ifduck@bowtie
+\newif\ifduck@lapel
 % Headgear %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@alien
 \newif\ifduck@hat
@@ -185,7 +186,10 @@
   bowtie/.code              = \duck@bowtietrue 
                               \def\duck@bowtie{#1},
   bow tie/.forward to       = /duck/bowtie,
-  bowtie/.default           = black,           
+  bowtie/.default           = black,     
+  lapel/.code               = \duck@lapeltrue   
+                              \def\duck@lapel{#1},
+  lapel/.default            = black,  
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % hair styles
@@ -628,6 +632,11 @@
 % bowtie %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@bowtie
 	\fill[\duck@bowtie] (0.4382, 1.1105) .. controls (0.3984, 1.0671) and (0.3911, 0.9535) .. (0.4116, 0.9176) .. controls (0.4958, 0.9064) and (0.565, 0.9487) .. (0.565, 0.9487) -- (0.6448, 0.9398) .. controls (0.6448, 0.9398) and (0.6777, 0.8844) .. (0.804, 0.8689) .. controls (0.8323, 0.9056) and (0.8422, 1.0026) .. (0.8284, 1.0551) .. controls (0.7881, 1.0942) and (0.6537, 1.0285) .. (0.6537, 1.0285) -- (0.5739, 1.0374) .. controls (0.5739, 1.0374) and (0.5436, 1.0956) .. (0.4382, 1.1105) -- cycle;
+\fi
+%
+% lapel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@lapel
+	\fill[\duck@lapel] (0.490,1.145) .. controls (0.3984,1.13) and (0.3515,1.08) .. (0.3515,1.08) -- (0.4265,1.0192) -- (0.35,0.98) -- (0.513,0.700) -- (1.0089,0.9162) -- (0.9547,0.9868) -- (1.1194,0.9782) -- (1.0822,1.135) .. controls (0.9616,1.1) and (0.8648,1.0300) .. (0.513,0.700) -- cycle;
 \fi
 %
 % stripes for football jersey %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
