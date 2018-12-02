@@ -129,6 +129,7 @@
 \newif\ifduck@pickaxe
 \newif\ifduck@umbrella
 \newif\ifduck@umbrellaclosed
+\newif\ifduck@handbag
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -487,6 +488,9 @@
 	                            \def\duck@umbrellaclosed{#1},
 	umbrellaclosed/.default   = cyan,    
 	umbrella closed/.forward to  = /duck/umbrellaclosed,
+	handbag/.code             = \duck@handbagtrue
+	                            \def\duck@handbag{#1},
+	handbag/.default          = red!70!black,  
 }
 
 \def\duck@draw{
@@ -1267,6 +1271,12 @@
 \ifduck@umbrellaclosed
   \fill[gray] (1.3401,0.6996) -- (1.2872,0.7019) .. controls (1.2840,0.9395) and (1.2076,0.8995) .. (1.0930,0.7264) -- (1.0929,0.7262) -- (1.0928,0.7261) .. controls (0.8555,0.3739) and (0.9223,0.4608) .. (0.9223,0.4608) -- (0.8795,0.4920) .. controls (0.8795,0.4920) and (0.8131,0.4057) .. (1.0488,0.7554) -- (1.0489,0.7556) .. controls (1.2022,0.9963) and (1.3414,0.9793) .. (1.3401,0.6996) -- cycle;
 	\fill[\duck@umbrellaclosed] (0.6827,0.1263) -- (0.8038,0.6188) -- (0.9548,0.6494) -- (0.9520,0.8231) -- (1.1945,0.6529) -- (1.0218,0.5885) -- (1.0465,0.4566) -- cycle;
+\fi
+%
+% handbag %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@handbag
+	\fill[\duck@handbag] (0.7811,0.1751) -- (1.4913,0.3097) -- (1.3315,0.7086) -- (0.7832,0.6152) -- cycle;
+	\fill[\duck@handbag!70!black] (0.8857,0.4354) .. controls (0.7861,0.9811) and (1.1796,1.0719) .. (1.2866,0.5155) -- (1.2043,0.4996) .. controls (1.1247,0.8952) and (0.9051,0.8883) .. (0.9676,0.4536) -- cycle;
 \fi
 %
 % wing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
