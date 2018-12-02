@@ -1361,7 +1361,7 @@ In the following a few examples of possible duck customisations, some of which w
 \definecolor{qdress}{RGB}{184,209,206}%
 \definecolor{qcrown}{RGB}{90,76,183}%
 \begin{tikzpicture}
-\duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white]  
+\duck[body=qskin,bill=qbill,jacket=qdress,tshirt=teal!30!qdress,shorthair=gray!60!white,necklace=gray!10!white,handbag=teal!30!qdress]  
 \fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
 \fill[qcrown,scale=0.23,rotate=-20,yshift=82,xshift=38] \duckpathqueencrown;
 \fill[qcrown,yshift=3] \duckpathkingcrown;
@@ -1396,11 +1396,13 @@ In the following a few examples of possible duck customisations, some of which w
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Mary Duckings}}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Mary Duckings$^{\thefootnote}$}}
 \begin{tikzpicture}
 \duck[tshirt,bowtie=red!70!black,jacket=blue!50!black,umbrellaclosed=cyan!50!green,longhair=brown!60!black,hat=black]
 \end{tikzpicture}
 \end{tcblisting}
+\footnotetext[\thefootnote]{following an idea from Paulo}
 
 \clearpage
 \printindex
