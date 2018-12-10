@@ -26,4 +26,4 @@ There are several videos featuring the TikZducks, kindly contributed by Ulrike a
 
 
 
-The source code for the "The great TikZducks Christmas Extravaganza 2017" is available in [this repository](https://github.com/cereda/duck-extravaganza).
+The source code for the "The great TikZducks Christmas Extravaganza 2017" is available in https://github.com/cereda/duck-extravaganza, for "The great TikZlings Christmas Extravaganza 2018" it can be found at https://github.com/samcarter/Extravanganza2018 .
