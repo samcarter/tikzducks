@@ -27,5 +27,6 @@ test.tex
 
 !/duckpond/*.pdf
 !/duckpond/*.png
+!/duckpond/*.svg
 !documentation.pdf
 storage
