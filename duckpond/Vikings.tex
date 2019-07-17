@@ -1,0 +1,44 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{tikzducks}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{tikzpicture}
+
+% background
+\path[fill=green!40!blue!30!white] (-4.3,2) rectangle (6.3,12);
+
+\begin{pgfinterruptboundingbox}
+
+	% mast
+	\duck[body=green!50!yellow,parrot,xscale=-1,scale=0.3,yshift=940,rotate=-15,crazyhair=teal,xshift=-50] 
+	\path[fill=brown!60!black] (0.0857,9.9673) -- (1.0226,3.8435) -- (1.6154,3.9597) -- (0.2873,10.0376) -- cycle;
+	\path[fill=brown!60!black,rotate=15] (2.73,9.6) ellipse (0.4 and 0.1);
+	
+	% vikings
+	\duck[viking,xscale=-1,rotate=-10,yshift=90,xshift=-80]
+	\duck[viking,xscale=-1,rotate=-30,yshift=50,xshift=-180]
+	\duck[viking,xscale=-1,rotate=20,yshift=85,xshift=50]
+	
+	% sail
+	\fill[red] (-1.4847,9.3216) .. controls (-0.1298,9.3362) and (0.3333,9.2219) .. (1.4669,8.6632) .. controls (2.1061,7.9422) and (2.4818,6.5239) .. (1.8402,5.8051) .. controls (1.5278,5.7129) and (1.3297,7.2643) .. (-0.5769,5.7317) .. controls (-0.5700,6.0865) and (0.4656,8.0283) .. (-1.4847,9.3216) -- cycle;;
+	\begin{scope}
+		\clip (-1.4847,9.3216) .. controls (-0.1298,9.3362) and (0.3333,9.2219) .. (1.4669,8.6632) .. controls (2.1061,7.9422) and (2.4818,6.5239) .. (1.8402,5.8051) .. controls (1.5278,5.7129) and (1.3297,7.2643) .. (-0.5769,5.7317) .. controls (-0.5700,6.0865) and (0.4656,8.0283) .. (-1.4847,9.3216) -- cycle;;
+			\foreach \shifta in {-1.5,-1,...,2.3}{%
+				\fill[white] 
+				($(0,5.5)+(\shifta,0)$) rectangle ($(0,5.5)+(\shifta,0)+(0.25,4)$);
+			}
+	\end{scope}
+	
+	% boat
+	\path[fill=brown!80!black] (-2.3957,5.8651) .. controls (-2.6637,3.1459) and (4.5256,3.2048) .. (4.3064,6.6244) .. controls (6.6473,1.3173) and (-3.7900,0.9272) .. (-2.3957,5.8651) -- cycle;
+	
+	% water
+	\path[fill=green!60!blue!50!white] (-4.2891,3.1257) .. controls (-4.3137,3.4742) and (-3.7244,3.9743) .. (-3.3880,3.7964) .. controls (-3.9762,3.2443) and (-3.7539,3.2425) .. (-3.5372,3.1164) .. controls (-3.1852,2.9117) and (-3.0491,4.0248) .. (-2.4082,3.6946) .. controls (-2.7948,3.2069) and (-2.6081,3.1905) .. (-2.3768,3.0249) .. controls (-2.0065,2.7598) and (-2.0491,3.9722) .. (-1.3783,3.7032) .. controls (-1.7223,3.3772) and (-1.4751,3.2329) .. (-1.2906,3.0481) .. controls (-0.9405,2.6974) and (-0.9588,3.9518) .. (-0.2021,3.6196) .. controls (-0.5232,3.3028) and (-0.3364,3.1138) .. (-0.1597,2.9124) .. controls (0.1198,2.5935) and (0.1999,3.9816) .. (0.8168,3.6507) .. controls (0.5074,3.3603) and (0.7730,3.0752) .. (0.9586,2.8950) .. controls (1.2695,2.5933) and (1.0226,3.8435) .. (1.8147,3.6503) .. controls (1.5901,3.4357) and (1.7102,3.1127) .. (1.8897,2.9697) .. controls (2.1998,2.7227) and (2.1749,3.8962) .. (2.8898,3.7299) .. controls (2.6783,3.4145) and (2.7316,3.1829) .. (2.9351,3.0104) .. controls (3.3036,2.6980) and (3.7341,4.0701) .. (4.1205,3.7756) .. controls (3.6541,3.1196) and (4.0195,3.0422) .. (4.0195,3.0422) .. controls (4.3705,2.8179) and (4.5151,4.0299) .. (5.1137,3.8400) .. controls (4.9154,3.4986) and (4.8256,3.3619) .. (5.0856,3.1999) .. controls (5.5309,2.9223) and (5.5427,4.1017) .. (5.9650,3.7967) .. controls (5.5063,3.1862) and (6.3001,3.1472) .. (6.3001,3.1472) -- (6.2888,1.7053) -- (-4.2612,1.6876) -- cycle;
+\end{pgfinterruptboundingbox}
+
+\end{tikzpicture}
+
+\end{document}
