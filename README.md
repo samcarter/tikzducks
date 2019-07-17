@@ -37,7 +37,7 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 <a href="./duckpond/Manooooh.tex"><img src="./duckpond/Manooooh.png" alt="Manooooh" height="64"></a>
 <a href="./duckpond/Samcarter.tex"><img src="./duckpond/Samcarter.png" alt="samcarter" height="64"></a>
 
-### Professions
+### Professions and Occupation
 
 <a href="./duckpond/AirDuck.tex"><img src="./duckpond/AirDuck.png" alt="AirDuck" height="64"></a>
 <a href="./duckpond/AstroDuck.tex"><img src="./duckpond/AstroDuck.png" alt="Astro Duck" height="64"></a>
@@ -46,6 +46,8 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 <a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.png" alt="Duck, MD" height="64"></a><a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.png" alt="Duck Scout" height="64"></a>
 <a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.png" alt="Queens Swan Upper" height="64"></a>
 <a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.png" alt="Surfer Duck" height="64"></a>
+<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" height="64"></a><a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" height="64"></a>
+<a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.png" alt="Jailbird" height="64"></a>
 
 ### Animals and Beings
 
@@ -61,8 +63,6 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 
 <a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck.png" alt="3D Duck" height="64"></a>
 <a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko.png" alt="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" height="64"></a><a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" height="64"></a>
-<a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.png" alt="Jailbird" height="64"></a>
 <a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" height="64"></a><a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" height="64"></a><a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.png" alt="French Duck" height="64"></a><a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" height="64"></a>
 <a href="./duckpond/Viking.tex"><img src="./duckpond/Viking.png" alt="Viking Duck" height="64"></a>
 
