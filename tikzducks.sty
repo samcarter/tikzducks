@@ -594,11 +594,13 @@
    \fill[\duck@bill] \duckpathgrumpybill;
 \else
   \ifduck@laughing
-    \fill[\duck@bill!80!black] (0.40,1.20) .. controls (0.54,1.36) and (0.65,1.31) .. (0.91,1.37) .. controls (0.45,1.06) and (0.36,1.18) .. (0.40,1.20) -- cycle;
-    \fill[\duck@bill] 
+  	\begin{pgfinterruptboundingbox}
+    	\fill[\duck@bill!80!black] (0.40,1.20) .. controls (0.54,1.36) and (0.65,1.31) .. (0.91,1.37) .. controls (0.45,1.06) and (0.36,1.18) .. (0.40,1.20) -- cycle;
+    	\fill[\duck@bill] 
     (0.41,1.47) .. controls (0.64,1.53) and (0.54,1.30) ..
     (0.91,1.37) .. controls (-0.02,1.10) and (0.28,1.37) ..
     (0.41,1.47) -- cycle;
+    \end{pgfinterruptboundingbox}
   \else
     \ifduck@parrot
       \fill[\duck@bill!80!black] 
