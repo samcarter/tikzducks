@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\definecolor{brazilgreen}{RGB}{0,155,58}%
+\definecolor{brazilyellow}{RGB}{254,223,0}%
+\definecolor{brazilblue}{RGB}{0,39,118}%
+
+\begin{document}
+	
+\begin{tikzpicture}
+	\duck[
+		body=brazilyellow,
+		shorthair=brazilgreen
+	]
+	
+	\begin{pgfinterruptboundingbox}
+		\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] \duckpathjacket;
+	\end{pgfinterruptboundingbox}
+\end{tikzpicture}
+	
+\end{document}

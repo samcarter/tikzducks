@@ -1,0 +1,22 @@
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\definecolor{fskin}{RGB}{161,140,126}
+\definecolor{fbill}{RGB}{238,212,191}
+\definecolor{fhair}{RGB}{89,72,72}
+
+\begin{document}
+	
+\begin{tikzpicture}
+	\duck[
+		body=fskin,
+		bill=fbill,
+		shorthair=fhair,
+		bunny,
+		inear=fbill
+	]
+	\node[fskin,rotate=45,scale=3] at (1.7,1.55) {\textsf{s}};
+	\fill[fhair,rotate=45] (2.4,0.13) ellipse (0.15 and 0.07); 
+\end{tikzpicture}   
+	
+\end{document}

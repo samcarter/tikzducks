@@ -1,0 +1,19 @@
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\colorlet{ghost}{white!98!gray}
+
+\begin{document}
+	
+\begin{tikzpicture}
+	\fill[gray!50!white] (0,-0.3) rectangle (2.2,2.2);
+	\duck[
+		body=ghost,
+		bill=ghost,
+		prison=gray
+	]
+	\fill[ghost,rotate=-17](-0.1,0.7) rectangle (0.15,1.3);
+	\fill[ghost,rotate=17] (1.6,0.7) rectangle (1.81,1.3);
+\end{tikzpicture}
+	
+\end{document}
