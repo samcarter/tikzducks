@@ -1,22 +1,75 @@
 # Tikzducks
 
-This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of https://tex.stackexchange.com/a/347458/36296
+[![GitHub](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](http://www.latex-project.org/lppl.txt)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version)](https://github.com/samcarter/tikzducks/releases/latest)
+[![CTAN](https://img.shields.io/ctan/v/tikzducks.svg)](https://ctan.org/pkg/tikzducks)
 
-This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt
+This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296)
 
-The project repository, including a bug tracker, can be found at https://github.com/samcarter/tikzducks/issues
+## Showcase:
 
-![This repository has an official duck seal of approval](https://i.stack.imgur.com/mSAtL.png)
+<!--
+<a href="./duckpond/.tex"><img src="./duckpond/.png" alt=" Duck" height="64"></a>
+-->
 
-## A few examples:
+### Duckifications
 
-![tikz ducks](https://user-images.githubusercontent.com/8226363/33049537-e71e9dd0-ce60-11e7-8b4c-7e1de0177f14.png)
+<a href="./duckpond/Arthur.tex"><img src="./duckpond/Arthur.png" alt="Arthur Quack" height="64"></a>
+<a href="./duckpond/Ceasar.tex"><img src="./duckpond/Ceasar.png" alt="Gajus Quackus Ceasar" height="64"></a>
+<a href="./duckpond/Hilbert.tex"><img src="./duckpond/Hilbert.png" alt="Hilbert" height="64"></a>
+<a href="./duckpond/Knuth.tex"><img src="./duckpond/Knuth.png" alt="Knuth" height="64"></a>
+<a href="./duckpond/PaulinoVanDuck.tex"><img src="./duckpond/PaulinoVanDuck.png" alt="Prof. Paulino van Duck" height="64"></a>
+<a href="./duckpond/QueenDuck.tex"><img src="./duckpond/QueenDuck.png" alt="Queen Duck" height="64"></a>
+<a href="./duckpond/DuckInBlack.tex"><img src="./duckpond/DuckInBlack.png" alt="Duck in Black" height="64"></a>
+<a href="./duckpond/JamesDuck.tex"><img src="./duckpond/JamesDuck.png" alt="JamesDuck Q(ack)" height="64"></a><a href="./duckpond/MaryDuckings.tex"><img src="./duckpond/MaryDuckings.png" alt="Mary Duckings" height="64"></a><a href="./duckpond/MayTheQuackBeWithYou.tex"><img src="./duckpond/MayTheQuackBeWithYou.png" alt="May the Quack be with you" height="64"></a><a href="./duckpond/Peppone.tex"><img src="./duckpond/Peppone.png" alt="Peppone" height="64"></a><a href="./duckpond/PrincessDuck.tex"><img src="./duckpond/PrincessDuck.png" alt="Princess Duck" height="64"></a><a href="./duckpond/SuperDuckBrothers.tex"><img src="./duckpond/SuperDuckBrothers.png" alt="Super Duck Brothers" height="64"></a>
+<a href="./duckpond/QuackLongAndProsper.tex"><img src="./duckpond/QuackLongAndProsper.png" alt="Quack long and prosper" height="64"></a>
+<a href="./duckpond/StarDucks.tex"><img src="./duckpond/StarDucks.png" alt="Star Ducks" height="64"></a>
+### Ducks in Art<a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" height="64"></a>
+
+### TeX.se users
+
+<a href="./duckpond/CarLaTeX.tex"><img src="./duckpond/CarLaTeX.png" alt="CarLaTeX" height="64"></a>
+<a href="./duckpond/Paulo.tex"><img src="./duckpond/Paulo.png" alt="Paulo" height="64"></a>
+<a href="./duckpond/Manooooh.tex"><img src="./duckpond/Manooooh.png" alt="Manooooh" height="64"></a>
+<a href="./duckpond/Samcarter.tex"><img src="./duckpond/Samcarter.png" alt="samcarter" height="64"></a>
+
+### Professions
+
+<a href="./duckpond/AirDuck.tex"><img src="./duckpond/AirDuck.png" alt="AirDuck" height="64"></a>
+<a href="./duckpond/AstroDuck.tex"><img src="./duckpond/AstroDuck.png" alt="Astro Duck" height="64"></a>
+<a href="./duckpond/ClergyDucks.tex"><img src="./duckpond/ClergyDucks.png" alt="Clergy Ducks" height="64"></a>
+<a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.png" alt="Duck, MD" height="64"></a><a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.png" alt="Duck Scout" height="64"></a>
+<a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.png" alt="Queens Swan Upper" height="64"></a>
+
+### Animals and Beings
+
+<a href="./duckpond/AraraDuck.tex"><img src="./duckpond/AraraDuck.png" alt="Arara Duck" height="64"></a>
+<a href="./duckpond/BeeDuck.tex"><img src="./duckpond/BeeDuck.png" alt="Bee Duck" height="64"></a>
+<a href="./duckpond/Bunny.tex"><img src="./duckpond/Bunny.png" alt="Bunny Duck" height="64"></a>
+<a href="./duckpond/Donkey.tex"><img src="./duckpond/Donkey.png" alt="Donkey Duck" height="64"></a>
+<a href="./duckpond/Horse.tex"><img src="./duckpond/Horse.png" alt="Horse Duck" height="64"></a>
+<a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.png" alt="Pig Duck" height="64"></a>
+<a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.png" alt="Sheep Duck" height="64"></a>
+
+### More ducks
+
+<a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck.png" alt="3D Duck" height="64"></a>
+<a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko.png" alt="67P/Churyumov–Gerasimenko" height="64"></a>
+<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" height="64"></a><a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" height="64"></a>
+<a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.png" alt="Jailbird" height="64"></a>
+<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" height="64"></a><a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" height="64"></a><a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.png" alt="French Duck" height="64"></a><a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" height="64"></a>
+
+<a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.png" alt="Chess" height="256"></a>
+
+<a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.gif" alt="Pacduck" height="64"></a>
+
+
 
 ## Video showcases
 
 There are several videos featuring the TikZducks, kindly contributed by Ulrike and Gert Fischer, Carla Maggi, Paulo Cereda and Prof. van Duck - many thanks to you all!
 
-[![The great TikZducks Christmas Extravaganza 2017](https://user-images.githubusercontent.com/8226363/43651585-1281b074-9743-11e8-97f5-bf70617738a5.png)](https://vimeo.com/246256860)
+[![The great TikZducks Christmas Extravaganza 2017](https://user-images.githubusercontent.com/8226363/43651585-641b074-9743-11e8-97f5-bf70617738a5.png)](https://vimeo.com/246256860)
 [![International Pizza Day](https://user-images.githubusercontent.com/8226363/43651587-12c92daa-9743-11e8-83b5-7fd3a3ac19a3.png)](https://vimeo.com/254643482)
 [![Happy Groundhog Day](https://user-images.githubusercontent.com/8226363/43651589-12e84334-9743-11e8-9621-d5e6e53a0ca8.png)](https://vimeo.com/252719006)
 [![Aquarela with TikZducks](https://user-images.githubusercontent.com/8226363/43651586-12a6c008-9743-11e8-99d2-5a66e7f5f1ee.png)](https://vimeo.com/270727100)
