@@ -18,8 +18,8 @@ test.tex
 *.listing
 *.dvi
 *.ind
-*ilg
-*idx
+*.ilg
+*.idx
 *.gif
 
 # add example from duckpond #
@@ -28,5 +28,6 @@ test.tex
 !/duckpond/*.pdf
 !/duckpond/*.png
 !/duckpond/*.svg
+!/duckpond/*.gif
 !documentation.pdf
 storage
