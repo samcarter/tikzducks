@@ -25,6 +25,7 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 <a href="./duckpond/QuackLongAndProsper.tex"><img src="./duckpond/QuackLongAndProsper.png" alt="Quack long and prosper" height="64"></a>
 <a href="./duckpond/StarDucks.tex"><img src="./duckpond/StarDucks.png" alt="Star Ducks" height="64"></a>
 <a href="./duckpond/DuckWho.svg"><img src="./duckpond/DuckWho.png" alt="Duck Who" height="64"></a>
+<a href="./duckpond/Phantom.svg"><img src="./duckpond/Phantom.png" alt="Phantom of the duckpond" height="64"></a>
 ### Ducks in Art<a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" height="64"></a>
 <a href="./duckpond/GirlWithPearlEarring.svg"><img src="./duckpond/GirlWithPearlEarring.png" alt="Duck with pearl earring" height="64"></a>
 <a href="./duckpond/PopArt.svg"><img src="./duckpond/PopArt.png" alt="Pop ArtArt" height="64"></a>
@@ -44,6 +45,7 @@ This is a little LaTeX package for ducks to be used in TikZ pictures. The projec
 <a href="./duckpond/ClergyDucks.tex"><img src="./duckpond/ClergyDucks.png" alt="Clergy Ducks" height="64"></a>
 <a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.png" alt="Duck, MD" height="64"></a><a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.png" alt="Duck Scout" height="64"></a>
 <a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.png" alt="Queens Swan Upper" height="64"></a>
+<a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.png" alt="Surfer Duck" height="64"></a>
 
 ### Animals and Beings
 
