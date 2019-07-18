@@ -42,9 +42,6 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Duckifications
 
-<b style='color:red'><a href="./duckpond/Arthur.tex"><img src="./duckpond/Arthur.png" alt="Arthur Quack" title="Arthur Quack" height="64"></a></b>
-
-
 <a href="./duckpond/Arthur.tex"><img src="./duckpond/Arthur.png" alt="Arthur Quack" title="Arthur Quack" height="64"></a>
 <a href="./duckpond/Ceasar.tex"><img src="./duckpond/Ceasar.png" alt="Gajus Quackus Ceasar" title="Gajus Quackus Ceasar" height="64"></a>
 <a href="./duckpond/Hilbert.tex"><img src="./duckpond/Hilbert.png" alt="Hilbert Duck" title="Hilbert Duck" height="64"></a>
