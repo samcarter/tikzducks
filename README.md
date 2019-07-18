@@ -32,7 +32,9 @@ An exhaustive list of possible options can be found in [package documentation](.
 
 ## Examples
 
-Below are some examples of ducks created with the TikZducks package. Click on the images to see their source code. 
+Below are some examples of ducks created with the TikZducks package. Click on the images to see their source code.
+
+In case you would like to share some of your ducks with the community, I would be happy to accept pull requests or simply open an issue in the bug tracking system.
 
 <!--
 <a href="./duckpond/.tex"><img src="./duckpond/.png" alt=" Duck" height="64"></a>
@@ -47,12 +49,20 @@ Below are some examples of ducks created with the TikZducks package. Click on th
 <a href="./duckpond/PaulinoVanDuck.tex"><img src="./duckpond/PaulinoVanDuck.png" alt="Prof. Paulino van Duck" title="Prof. Paulino van Duck" height="64"></a>
 <a href="./duckpond/QueenDuck.tex"><img src="./duckpond/QueenDuck.png" alt="Queen Duck" title="Queen duck" height="64"></a>
 <a href="./duckpond/DuckInBlack.tex"><img src="./duckpond/DuckInBlack.png" alt="Duck in Black" title="Duck in Black" height="64"></a>
-<a href="./duckpond/JamesDuck.tex"><img src="./duckpond/JamesDuck.png" alt="JamesDuck and Q(ack)" title="James Duck and Q(ack)" height="64"></a><a href="./duckpond/MaryDuckings.tex"><img src="./duckpond/MaryDuckings.png" alt="Mary Duckings" title="Mary Duckings" height="64"></a><a href="./duckpond/MayTheQuackBeWithYou.tex"><img src="./duckpond/MayTheQuackBeWithYou.png" alt="May the Quack be with you" title="May the Quack be with you" height="64"></a><a href="./duckpond/Peppone.tex"><img src="./duckpond/Peppone.png" alt="Peppone" title="Peppone" height="64"></a><a href="./duckpond/PrincessDuck.tex"><img src="./duckpond/PrincessDuck.png" alt="Princess Duck" title="Princess Duck" height="64"></a><a href="./duckpond/SuperDuckBrothers.tex"><img src="./duckpond/SuperDuckBrothers.png" alt="Super Duck Brothers" title="Super Duck Brothers" height="64"></a>
+<a href="./duckpond/JamesDuck.tex"><img src="./duckpond/JamesDuck.png" alt="JamesDuck and Q(ack)" title="James Duck and Q(ack)" height="64"></a>
+<a href="./duckpond/MaryDuckings.tex"><img src="./duckpond/MaryDuckings.png" alt="Mary Duckings" title="Mary Duckings" height="64"></a>
+<a href="./duckpond/MayTheQuackBeWithYou.tex"><img src="./duckpond/MayTheQuackBeWithYou.png" alt="May the Quack be with you" title="May the Quack be with you" height="64"></a>
+<a href="./duckpond/Peppone.tex"><img src="./duckpond/Peppone.png" alt="Peppone" title="Peppone" height="64"></a>
+<a href="./duckpond/PrincessDuck.tex"><img src="./duckpond/PrincessDuck.png" alt="Princess Duck" title="Princess Duck" height="64"></a>
+<a href="./duckpond/SuperDuckBrothers.tex"><img src="./duckpond/SuperDuckBrothers.png" alt="Super Duck Brothers" title="Super Duck Brothers" height="64"></a>
 <a href="./duckpond/QuackLongAndProsper.tex"><img src="./duckpond/QuackLongAndProsper.png" alt="Quack long and prosper" title="Quack long and prosper" height="64"></a>
 <a href="./duckpond/StarDucks.tex"><img src="./duckpond/StarDucks.png" alt="Star Ducks" title="Star Ducks" height="64"></a>
 <a href="./duckpond/DuckWho.svg"><img src="./duckpond/DuckWho.png" alt="Duck Who" title="Duck Who" height="64"></a>
 <a href="./duckpond/Phantom.svg"><img src="./duckpond/Phantom.png" alt="Phantom of the duckpond" title="Phantom of the duckpond" height="64"></a>
-### Ducks in Art<a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
+
+### Ducks in Art
+
+<a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
 <a href="./duckpond/GirlWithPearlEarring.svg"><img src="./duckpond/GirlWithPearlEarring.png" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
 <a href="./duckpond/PopArt.svg"><img src="./duckpond/PopArt.png" alt="Pop ArtArt" title="Pop Art" height="64"></a>
 
@@ -69,10 +79,12 @@ Below are some examples of ducks created with the TikZducks package. Click on th
 <a href="./duckpond/AstroDuck.tex"><img src="./duckpond/AstroDuck.png" alt="Astro Duck" title="Astro Duck" height="64"></a>
 <a href="./duckpond/Chef.tex"><img src="./duckpond/Chef.png" alt="Chef Duck" title="Chef Duck" height="64"></a>
 <a href="./duckpond/ClergyDucks.tex"><img src="./duckpond/ClergyDucks.png" alt="Clergy Ducks" title="Clergy Ducks" height="64"></a>
-<a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.png" alt="Duck, MD" title="Duck, MD" height="64"></a><a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.png" alt="Duck Scout" title="Duck Scout" height="64"></a>
+<a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.png" alt="Duck, MD" title="Duck, MD" height="64"></a>
+<a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.png" alt="Duck Scout" title="Duck Scout" height="64"></a>
 <a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.png" title="Queens Swan Upper" alt="Queens Swan Upper" height="64"></a>
 <a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.png" alt="Surfer Duck" title="Surfer Duck" height="64"></a>
-<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a><a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
+<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a>
+<a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
 <a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.png" alt="Jail Bird" title="Jail Bird" height="64"></a>
 
 ### Animals and Beings
@@ -89,7 +101,10 @@ Below are some examples of ducks created with the TikZducks package. Click on th
 
 <a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck.png" alt="3D Duck" title="" height="64"></a>
 <a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" title="Vampire Duck" height="64"></a><a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a><a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.png" alt="French Duck" title="French Duck" height="64"></a><a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
+<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
+<a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
+<a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.png" alt="French Duck" title="French Duck" height="64"></a>
+<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
 <a href="./duckpond/Viking.tex"><img src="./duckpond/Viking.png" alt="Viking Duck" title="Viking Duck" height="64"></a>
 
 <a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.png" alt="Chess" title="Chess" height="256"></a>
