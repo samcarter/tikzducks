@@ -74,6 +74,8 @@ In case you would like to share some of your ducks with the community, I would b
 ### TeX.SE users (and relatives)
 
 <a href="./duckpond/CarLaTeX.tex"><img src="./duckpond/CarLaTeX.png" alt="CarLaTeX" title="CarLaTeX" height="64"></a>
+<a href="./duckpond/Ulrike.tex"><img src="./duckpond/Ulrike.png" alt="Ulrike Fischer" title="Ulrike Fischer" height="64"></a>
+<a href="./duckpond/Gert.tex"><img src="./duckpond/Gert.png" alt="Gert Fischer" title="Gert Fischer" height="64"></a>
 <a href="./duckpond/Paulo.tex"><img src="./duckpond/Paulo.png" alt="Paulo" title="Paulo" height="64"></a>
 <a href="./duckpond/Manooooh.tex"><img src="./duckpond/Manooooh.png" alt="Manooooh" title="Manooooh" height="64"></a>
 <a href="./duckpond/Samcarter.tex"><img src="./duckpond/Samcarter.png" alt="samcarter" title="samcarter" height="64"></a>
@@ -91,6 +93,12 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.png" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a>
 <a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.png" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
 <a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.png" alt="Jail Bird" title="Jail Bird" height="64"></a>
+<a href="./duckpond/Chainsaw.tex"><img src="./duckpond/Chainsaw.png" alt="Chainsaw Duck" title="Chainsaw Duck" height="64"></a>
+<a href="./duckpond/Devil.tex"><img src="./duckpond/Devil.png" alt="Devil Duck" title="Devil Duck" height="64"></a>
+<a href="./duckpond/Ninja.tex"><img src="./duckpond/Ninja.png" alt="Ninja Ducks" title="Ninja Ducks" height="64"></a>
+<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
+<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
+<a href="./duckpond/Snowduck.tex"><img src="./duckpond/Snowduck.png" alt="Snowduck" title="Snowduck" height="64"></a>
 
 ### Animals and Beings
 
@@ -106,10 +114,8 @@ In case you would like to share some of your ducks with the community, I would b
 
 <a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck.png" alt="3D Duck" title="" height="64"></a>
 <a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
 <a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
 <a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.png" alt="French Duck" title="French Duck" height="64"></a>
-<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
 
 <a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.png" alt="Chess" title="Chess" height="128"></a>
 <a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.png" alt="Vikings" title="Vikings" height="128"></a>
