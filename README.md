@@ -120,6 +120,7 @@ In case you would like to share some of your ducks with the community, I would b
 
 <a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.png" alt="Chess" title="Chess" height="128"></a>
 <a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.png" alt="Vikings" title="Vikings" height="128"></a>
+<a href="./duckpond/GreatWall.tex"><img src="./duckpond/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
 
 <a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.gif" alt="Pacduck" title="Pacduck" height="64"></a>
 
