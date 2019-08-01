@@ -110,6 +110,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Horse.tex"><img src="./duckpond/Horse.png" alt="Horse Duck" title="Horse Duck" height="64"></a>
 <a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.png" alt="Pig Duck" title="Pig Duck" height="64"></a>
 <a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.png" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
+<a href="./duckpond/Zebra.tex"><img src="./duckpond/Zebra2.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
 
 ### More ducks
 
@@ -121,6 +122,8 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.png" alt="Chess" title="Chess" height="128"></a>
 <a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.png" alt="Vikings" title="Vikings" height="128"></a>
 <a href="./duckpond/GreatWall.tex"><img src="./duckpond/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
+<a href="./duckpond/Ferragosto.svg"><img src="./duckpond/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
+
 
 <a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.gif" alt="Pacduck" title="Pacduck" height="64"></a>
 
