@@ -100,6 +100,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
 <a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.png" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
 <a href="./duckpond/Snowduck.tex"><img src="./duckpond/Snowduck.png" alt="Snowduck" title="Snowduck" height="64"></a>
+<a href="./duckpond/OfficeDuck.tex"><img src="./duckpond/OfficeDuck.png" alt="Office Duck" title="Office Duck" height="64"></a>
 
 ### Animals and Beings
 
@@ -125,7 +126,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Ferragosto.svg"><img src="./duckpond/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
 
 
-<a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.gif" alt="Pacduck" title="Pacduck" height="64"></a>
+<a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>
 
 
 ## TikZducks movies
