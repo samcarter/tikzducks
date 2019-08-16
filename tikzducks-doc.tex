@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel,umbrella,umbrellaclosed,handbag,cocktail,viking,devil},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel,umbrella,umbrellaclosed,handbag,cocktail,viking,devil,aodai},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,picture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -380,37 +380,52 @@ Please note that not all of the accessories, especially hats, shown in the follo
 
 \subsection{Clothing}
 
-A respectable duck needs a suitable wardrobe. It can choose from a \lstinline|tshirt|, a \lstinline|jacket|, a \lstinline|tie| or a \lstinline|bowtie|. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
+A respectable duck needs a suitable wardrobe. It can choose from several different garments. In it's infinite wardrobe these items are available in all colours definable in the current colour model.
 
-\begin{tcblisting}{title={Dressed duck}}
+\begin{tcblisting}{title={T-shirt duck}}
 \begin{tikzpicture}
-	\duck[tshirt]
+	\duck[tshirt=red]
 \end{tikzpicture}
-\begin{tikzpicture}
-	\duck[jacket]
-\end{tikzpicture}
+\end{tcblisting}
 
+\begin{tcblisting}{title={Jacket duck}}
 \begin{tikzpicture}
-	\duck[tie]
+	\duck[jacket=blue]
 \end{tikzpicture}
-\begin{tikzpicture}
-	\duck[bowtie]
-\end{tikzpicture}
+\end{tcblisting}
 
+\begin{tcblisting}{title={Tie duck}}
+\begin{tikzpicture}
+	\duck[tshirt,
+			jacket=gray,
+			tie]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Bowtie duck}}
+\begin{tikzpicture}
+	\duck[tshirt,
+			jacket=gray,
+			bowtie]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Áo dài duck}}
+\begin{tikzpicture}
+	\duck[tshirt=cyan,
+				aodai=blue!50!black
+	]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Cape duck}}
 \begin{tikzpicture}
 	\duck[cape]
-\end{tikzpicture}
-\begin{tikzpicture}
-	\duck[tshirt=lightgray, 
-			jacket=blue!50!black, 
-			tie=blue!80!black, 
-			shorthair]
 \end{tikzpicture}
 \end{tcblisting}
 
 For more ways to customise the clothing also have a look at the \hyperref[sec:footballducks]{football ducks in Section \ref{sec:footballducks}}.
 
-\clearpage
 \subsection{Accessories}
 \label{sec:accessories}
 
@@ -922,7 +937,6 @@ To ease the placement of further accessories, some particular spots of the duck 
 \end{tikzpicture}
 \end{tcblisting}
 }
-An example making use this option are the \hyperref[starducks]{``Live long and prosper'' ducks}. 
 
 To distinguish coordinates from multiple ducks in the same \lstinline|tikzpicture|, one can name the ducks using the option \lstinline[emph={name}]|name|. If this option is used, the coordinates are prefixed with the respective name and a dash: \lstinline|<name>-<coordinate>|.
 
