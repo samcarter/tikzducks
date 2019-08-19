@@ -59,6 +59,7 @@
 \newif\ifduck@mullet
 \newif\ifduck@parting
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\ifduck@clothing
 \newif\ifduck@tshirt
 \newif\ifduck@jacket
 \newif\ifduck@tie
@@ -90,6 +91,7 @@
 \newif\ifduck@helmet
 \newif\ifduck@viking
 \newif\ifduck@devil 
+\newif\ifduck@conicalhat
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -175,19 +177,23 @@
   % clothing
   %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  tshirt/.code              = \duck@tshirttrue      
+  tshirt/.code              = \duck@tshirttrue    
+  														\duck@clothingtrue  
                               \def\duck@tshirt{#1},
   tshirt/.default           = white,                            
-  jacket/.code              = \duck@jackettrue      
+  jacket/.code              = \duck@jackettrue  
+														  \duck@clothingtrue    
                               \def\duck@jacket{#1},
   jacket/.default           = blue,                              
   tie/.code                 = \duck@tietrue         
                               \def\duck@tie{#1},
   tie/.default              = blue,                              
-  cape/.code                = \duck@capetrue        
+  cape/.code                = \duck@capetrue    
+														  \duck@clothingtrue    
                               \def\duck@cape{#1},
   cape/.default             = red,                            
   stripes/.code             = \duck@stripestrue
+														  \duck@clothingtrue
                               \def\duck@stripes{#1},
   stripes/.default          = \stripes ,                
   bowtie/.code              = \duck@bowtietrue 
@@ -198,9 +204,10 @@
                               \def\duck@lapel{#1},
   lapel/.default            = black,  
   aodai/.code               = \duck@aodaitrue
+														  \duck@clothingtrue
                               \def\duck@aodai{#1},
+  ao dai/.forward to        = /duck/aodai,                         
   aodai/.default            = blue!50!black,
-  ao dai/.forward to        = /duck/aodai,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % hair styles
@@ -329,6 +336,10 @@
                               \duck@deviltrue
                               \def\duck@devil{brown!20!white},
   viking/.default           = gray,  
+  conicalhat/.code          = \duck@conicalhattrue
+                              \def\duck@conicalhat{#1},
+  conical hat/.forward to   = /duck/conicalhat,                  
+  conicalhat/.default       = brown!90!orange!90!white,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -573,6 +584,11 @@
 \ifduck@devil
   \fill[\duck@devil] (0.7723,2.3756) .. controls (0.6369,2.1184) and (0.7916,2.0228) .. (0.8360,1.9897) .. controls (0.8744,1.9675) and (0.8774,1.9511) .. (0.8853,1.9173) .. controls (0.8853,1.8595) and (0.8407,1.8127) .. (0.7856,1.8127) .. controls (0.7535,1.8178) and (0.7240,1.8231) .. (0.6965,1.8545) .. controls (0.6965,1.8545) and (0.4451,2.2259) .. (0.7723,2.3756) -- cycle;
 \fi
+% Conical Hat (background) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@conicalhat
+	\fill[\duck@conicalhat!50!black,rotate=-21] (0.265,1.915) ellipse (0.79 and 0.1); 
+	\fill[\duck@conicalhat!30!black] (0.5501,0.9739) -- (0.2002,1.9676) -- (0.2946,2.0008) -- (0.6445,1.0072) -- cycle;
+\fi
 % 
 %\end{pgfonlayer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -647,6 +663,15 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{pgfonlayer}{clothinglayer}
+% 
+% Strap of the conical hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@conicalhat
+	\ifduck@clothing
+		\fill[\duck@conicalhat!30!black] (1.5943,1.5059) .. controls (1.4384,1.3576) and (1.2780,1.2120) .. (1.0987,1.0923) -- (1.0617,0.9549) .. controls (1.2151,1.0361) and (1.3476,1.1504) .. (1.4785,1.2630) .. controls (1.5417,1.3187) and (1.6038,1.3757) .. (1.6644,1.4344) -- cycle;
+	\else
+		\fill[\duck@conicalhat!30!black] (1.5943,1.5059) .. controls (1.4384,1.3576) and (1.2780,1.2120) .. (1.0987,1.0923) .. controls (0.9540,0.9995) and (0.7864,0.9875) .. (0.6358,1.0398) .. controls (0.6727,0.9043) and (0.9752,0.9113) .. (1.0617,0.9549) .. controls (1.2151,1.0361) and (1.3476,1.1504) .. (1.4785,1.2630) .. controls (1.5417,1.3187) and (1.6038,1.3757) .. (1.6644,1.4344) -- cycle;
+	\fi
+\fi
 %
 % tshirt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@tshirt
@@ -674,8 +699,9 @@
 %
 % Áo dài %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@aodai
-	\fill[\duck@aodai] 
-	(1.819,1.419) .. controls (2.871,0.120) and (0.711,-0.145) .. (0.296,0.251) .. controls (-0.118,0.647) and (0.232,1.073) .. (0.440,1.128) -- (0.567,0.927) .. controls (0.567,0.927) and (0.543,0.906) .. (0.509,0.882) -- (0.481,0.929) -- (0.458,0.915) -- (0.487,0.868) .. controls (0.473,0.859) and (0.457,0.850) .. (0.441,0.842) -- (0.422,0.894) -- (0.397,0.885) -- (0.417,0.831) .. controls (0.404,0.826) and (0.391,0.821) .. (0.378,0.818) -- (0.364,0.869) -- (0.338,0.862) -- (0.351,0.815) .. controls (0.334,0.814) and (0.318,0.817) .. (0.304,0.825) .. controls (0.303,0.774) and (0.329,0.759) .. (0.365,0.763) -- (0.376,0.722) -- (0.402,0.729) -- (0.391,0.768) .. controls (0.405,0.772) and (0.420,0.778) .. (0.435,0.784) -- (0.447,0.750) -- (0.472,0.759) -- (0.459,0.796) .. controls (0.477,0.805) and (0.496,0.815) .. (0.512,0.825) -- (0.533,0.791) -- (0.556,0.805) -- (0.535,0.840) .. controls (0.567,0.860) and (0.590,0.877) .. (0.590,0.877) .. controls (1.011,1.168) and (0.887,0.936) .. (1.819,1.419) -- cycle;
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@aodai] (1.819,1.419) .. controls (2.871,0.120) and (0.711,-0.145) .. (0.296,0.251) .. controls (-0.118,0.647) and (0.232,1.073) .. (0.440,1.128) -- (0.567,0.927) .. controls (0.567,0.927) and (0.543,0.906) .. (0.509,0.882) -- (0.481,0.929) -- (0.458,0.915) -- (0.487,0.868) .. controls (0.473,0.859) and (0.457,0.850) .. (0.441,0.842) -- (0.422,0.894) -- (0.397,0.885) -- (0.417,0.831) .. controls (0.404,0.826) and (0.391,0.821) .. (0.378,0.818) -- (0.364,0.869) -- (0.338,0.862) -- (0.351,0.815) .. controls (0.334,0.814) and (0.318,0.817) .. (0.304,0.825) .. controls (0.303,0.774) and (0.329,0.759) .. (0.365,0.763) -- (0.376,0.722) -- (0.402,0.729) -- (0.391,0.768) .. controls (0.405,0.772) and (0.420,0.778) .. (0.435,0.784) -- (0.447,0.750) -- (0.472,0.759) -- (0.459,0.796) .. controls (0.477,0.805) and (0.496,0.815) .. (0.512,0.825) -- (0.533,0.791) -- (0.556,0.805) -- (0.535,0.840) .. controls (0.567,0.860) and (0.590,0.877) .. (0.590,0.877) .. controls (1.011,1.168) and (0.887,0.936) .. (1.819,1.419) -- cycle;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 % lapel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -991,6 +1017,14 @@
 % devil (front horn) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@devil
   \fill[\duck@devil] (1.2185,2.3521) .. controls (1.3540,2.0950) and (1.1993,1.9994) .. (1.1548,1.9663) .. controls (1.1165,1.9441) and (1.1134,1.9277) .. (1.1056,1.8938) .. controls (1.1056,1.8361) and (1.1502,1.7893) .. (1.2052,1.7893) .. controls (1.2373,1.7944) and (1.2669,1.7996) .. (1.2944,1.8311) .. controls (1.2944,1.8311) and (1.5458,2.2025) .. (1.2185,2.3521) -- cycle;
+\fi
+%
+% Conical Hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@conicalhat
+	\path (0.19,1.4) rectangle (1.68,2.32);
+	\begin{pgfinterruptboundingbox}
+		\fill[\duck@conicalhat] (1.6722,1.4137) .. controls (1.6722,1.4337) and (1.3592,1.6230) .. (0.9513,1.7735) .. controls (0.5433,1.9239) and (0.1948,1.9784) .. (0.1948,1.9754) .. controls (0.2049,2.0230) and (1.1428,2.36) .. (1.1428,2.3) .. controls (1.1428,2.35) and (1.6821,1.4784) .. (1.6722,1.4137) -- cycle;
+	\end{pgfinterruptboundingbox}
 \fi
 %
 %\end{pgfonlayer}
