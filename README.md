@@ -65,6 +65,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Viking.tex"><img src="./duckpond/Viking.png" alt="Viking Duck" title="Viking Duck" height="64"></a>
 <a href="./duckpond/Pythagoras.tex"><img src="./duckpond/Pythagoras.png" alt="Pythagoras" title="Pythagoras" height="64"></a>
 <a href="./duckpond/Geisha.tex"><img src="./duckpond/Geisha.png" alt="Geisha Duck" title="Geisha Duck" height="64"></a>
+<a href="./duckpond/Vietnam.tex"><img src="./duckpond/Vietnam.png" alt="Vietnam Duck" title="Vietnam Duck" height="64"></a>
 
 ### Ducks in Art
 
