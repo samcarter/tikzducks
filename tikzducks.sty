@@ -30,6 +30,8 @@
 %
 %\pgfsetlayers{backgroundlayer,bodylayer,clothinglayer,hairlayer,hatlayer,main}
 
+\definecolor{duck@overleafcol}{RGB}{71,161,65}
+
 \newcommand*{\duck}[1][]{%
   \begin{scope}%
     \tikzset{/duck/.cd,#1}%
@@ -133,6 +135,7 @@
 \newif\ifduck@umbrellaclosed
 \newif\ifduck@handbag
 \newif\ifduck@cocktail
+\newif\ifduck@overleaf
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -516,6 +519,12 @@
 	                            \def\duck@handbag{#1},
 	handbag/.default          = red!70!black,  
 	cocktail/.code             = \duck@cocktailtrue,
+  overleaf/.code            = \duck@overleaftrue 
+                              \def\duck@body{duck@overleafcol}
+                              \duck@graduatetrue
+                              \def\duck@graduate{black}
+                              \duck@squareglassestrue
+                              \def\duck@squareglasses{black}	
 }
 
 \def\duck@draw{

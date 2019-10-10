@@ -56,7 +56,7 @@
 	commentstyle={\color{green!50!black}\slshape}, 
 	columns=fullflexible,
 	emphstyle=\color{orange!70!black},
-	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel,umbrella,umbrellaclosed,handbag,cocktail,viking,devil,aodai,conicalhat},
+	emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel,umbrella,umbrellaclosed,handbag,cocktail,viking,devil,aodai,conicalhat,overleaf},
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,picture,scope,patterns,calc,pgfinterruptboundingbox},
@@ -257,6 +257,7 @@ For everybody suffering from anatidaephobia, there is also a special option to n
 
 This can also be useful to recycle some of the accessories presented in \ref{sec:accessories}.
 
+\clearpage
 For the \TeX{} purists, there is also a picture mode variant:
 
 {
@@ -884,6 +885,14 @@ There is a multitude of things a duck might need. The following examples all als
 	\duck[handbag=red!70!black]
 \end{tikzpicture}   
 \end{tcblisting}
+
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Overleaf Duck$^{\thefootnote}$}}
+\begin{tikzpicture}
+	\duck[overleaf]
+\end{tikzpicture}   
+\end{tcblisting}
+\footnotetext[\thefootnote]{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}
 
 \clearpage
 \section{Random ducks}
