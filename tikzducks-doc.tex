@@ -248,6 +248,15 @@ To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a 
 \end{tikzpicture}
 \end{tcolorbox}
 
+For everybody suffering from anatidaephobia, there is also a special option to not draw the duck: 
+\begin{tcblisting}{title={Invisible duck}}
+\begin{tikzpicture}
+	\duck[invisible]
+\end{tikzpicture}
+\end{tcblisting}
+
+This can also be useful to recycle some of the accessories presented in \ref{sec:accessories}.
+
 For the \TeX{} purists, there is also a picture mode variant:
 
 {
@@ -259,7 +268,6 @@ For the \TeX{} purists, there is also a picture mode variant:
 \end{tcblisting}
 }
 
-\clearpage
 \subsection{Body parts}
 
 The various parts of the duck can also be coloured independently, i.e.\ \lstinline|body|, \lstinline|head| or \lstinline|bill|:
@@ -302,16 +310,7 @@ Furthermore using the keywords \lstinline|grumpy|, \lstinline|laughing| or \lsti
 \end{tikzpicture}
 \end{tcblisting}
 
-For everybody suffering from anatidaephobia, there is also a special option to not draw the duck: 
-\begin{tcblisting}{title={Invisible duck}}
-\begin{tikzpicture}
-	\duck[invisible]
-\end{tikzpicture}
-\end{tcblisting}
 
-This can also be useful to recycle some of the accessories presented in \ref{sec:accessories}.
-
-\clearpage
 \subsection{Hair styles}
 
 Some duck also like to have nice hair cuts, several different hair styles are available:
