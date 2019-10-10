@@ -22,9 +22,6 @@
 \usetikzlibrary{patterns} % for the wizard hat
 \usetikzlibrary{calc} % for the sports jerseys
 
-\RequirePackage{ifluatex}
-\RequirePackage{ifxetex}
-
 %\pgfdeclarelayer{backgroundlayer} 
 %\pgfdeclarelayer{bodylayer}
 %\pgfdeclarelayer{clothinglayer}
@@ -1390,15 +1387,15 @@
 % Random ducks
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifluatex
-  \let\pdfrandomseed\randomseed
-\fi
-
-\ifxetex
-  \pgfmathsetseed{\time}
+\ifdefined\pdfrandomseed % pdflatex
 \else
-  \pgfmathsetseed{\number\pdfrandomseed}
+    \ifdefined\randomseed 
+    	\let\pdfrandomseed\randomseed % post TL19 xelatex and lualatex
+    \else
+        \let\pdfrandomseed\time % pre TL19 xelatex
+    \fi
 \fi
+\pgfmathsetseed{\number\pdfrandomseed} 
 
 \pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{mohican}{mullet}{beard}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}{queencrown}{kingcrown}{harlequin}{strawhat}{parting}}
 \pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}{stethoscope}{neckerchief}{cheese}{shovel}{pickaxe}{crystalball}}

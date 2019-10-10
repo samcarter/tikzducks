@@ -169,10 +169,10 @@ The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the m
 
 The \tikzducks package loads \TikZ, which in turn loads the \lstinline|xcolor| package (amongst others). If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
 
-\begin{lstlisting}[aboveskip=0em,morekeywords={xcolor,svgnames}]
+\begin{lstlisting}[morekeywords={xcolor,svgnames}]
 	\PassOptionsToPackage{svgnames}{xcolor}
 \end{lstlisting}
-It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|. Furthermore the packages \lstinline|ifpdf| and \lstinline|ifluatex| are necassary starting with version 0.5 of this package.
+It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|. 
 
 \subsection{License}
 
