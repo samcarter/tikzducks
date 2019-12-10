@@ -72,6 +72,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
 <a href="./duckpond/GirlWithPearlEarring.svg"><img src="./duckpond/GirlWithPearlEarring.png" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
 <a href="./duckpond/PopArt.svg"><img src="./duckpond/PopArt.png" alt="Pop ArtArt" title="Pop Art" height="64"></a>
+<a href="./duckpond/Leonardo.svg"><img src="./duckpond/Leonardo.png" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
 
 ### TeX.SE users (and relatives)
 
