@@ -7,12 +7,15 @@
 \ExplSyntaxOn
 \draw_begin: 
 
+	\color_set:nnn {brown} {rgb} {0.75,0.50,0.25}
+	\color_set:nnn {orange} {rgb} {1.00,0.50,0.00}
+
 	% head
 	\draw_path_ellipse:nnn
 		{ 0.9cm, 1.5cm }
 		{ 0.5cm , 0cm } 
 		{ 0cm , 0.625cm }
-	\draw_color_fill:n { red!20!yellow!85!white!90!green }
+	\draw_color_fill:n { yellow!70!brown }
 	\draw_path_use_clear:n { fill }
 	
 	% body
@@ -31,7 +34,7 @@
 		{1.240cm,1.379cm}
 		{0.513cm,1.145cm}
 	\draw_path_close:
-	\draw_color_fill:n { red!20!yellow!85!white!90!green }
+	\draw_color_fill:n { yellow!70!brown }
 	\draw_path_use_clear:n { fill }
 	
 	% bill
@@ -46,7 +49,7 @@
 		{0.269cm,1.369cm}
 		{0.406cm,1.472cm}
 	\draw_path_close:
-	\draw_color_fill:n { yellow!50!red!90!black }
+	\draw_color_fill:n { orange!50!brown }
 	\draw_path_use_clear:n { fill }	
 	
 	% eyes
