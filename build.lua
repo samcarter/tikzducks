@@ -2,7 +2,6 @@
 -- Execute with "l3build tag"
 
 -- TODO -------------------------------------------------------------
--- get automatically current date
 -- ctan upload
 
 -- Settings ----------------------------------------------------------
@@ -20,7 +19,8 @@ print(packageversion)
 --packageversion="v1.3"
 
 -- Package date ------------------------------------------------------
-packagedate = "2020-01-02"
+packagedate = os.date("!%Y-%m-%d")
+--packagedate = "2020-01-02"
 
 -- Auto-versioning ---------------------------------------------------
 function git(...)
