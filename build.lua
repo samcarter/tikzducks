@@ -1,6 +1,11 @@
 #!/usr/bin/env texlua
 
--- setting up the name
+-- TODO -------------------------------------------------------------
+-- get automatically current date
+-- calculate tag based on last one
+-- ctan upload
+
+-- Settings ----------------------------------------------------------
 module = "tikzducks"
 packageversion="v1.3"
 packagedate = "2020-01-02"
@@ -14,7 +19,7 @@ function git(...)
     os.execute(cmd)
 end
 
-tagfiles = {"*.sty", "tikzducks-doc.tex"}
+tagfiles = {"*.sty", "*-doc.tex"}
 function update_tag (file,content,tagname,tagdate)
 	tagdate = string.gsub (packagedate,"-", "/")
 	if string.match (file, "%.sty$" ) then
@@ -39,7 +44,7 @@ function tag_hook(tagname)
 	git("add", "*.sty")
 	git("add", "*-doc.tex")
 	os.execute("latexmk " .. module .. "-doc")
-	os.execute("cp tikzducks-doc.pdf documentation.pdf")
+	os.execute("cp " .. module .. "-doc.pdf documentation.pdf")
 	git("add", "documentation.pdf")
 	git("commit -m 'step tag ", packageversion, "'" )
 	git("tag", packageversion)
