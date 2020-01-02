@@ -2,8 +2,8 @@
 
 -- setting up the name
 module = "tikzducks"
-packageversion="1.6"
-packagedate = "2020-01-06"
+packageversion="1.3"
+packagedate = "2020-01-02"
 
 -- Auto-versioning ---------------------------------------------------
 function git(...)
