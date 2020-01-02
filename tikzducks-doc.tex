@@ -10,9 +10,6 @@
 % Released under the LaTeX Project Public License v1.3c or later
 % See http://www.latex-project.org/lppl.txt
 %
-% Version 1.2
-% Nov 8, 2019
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[parskip=half]{scrartcl}
 
@@ -24,7 +21,7 @@
 \usepackage{tikzducks}
 \usetikzlibrary{ducks}
 \usepackage[most]{tcolorbox}
-\usepackage[paper=a4paper,margin=3cm]{geometry}
+\usepackage[paper=a4paper,margin=3cm,foot=2cm]{geometry}
 \usepackage{url}
 \usepackage{xspace}
 \usepackage{scrlayer-scrpage} 
@@ -86,7 +83,7 @@
 \pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
 
 \pgfmathsetseed{2}
-\setlength{\footheight}{45pt}
+\setlength{\footheight}{41pt}
 \newlength{\duckoffset}
 
 \cfoot{%
@@ -119,7 +116,7 @@
 		\url{https://github.com/samcarter/tikzducks}\\
 		\url{https://www.ctan.org/pkg/tikzducks}
 	}{samcarter}}
-\date{Version 1.2 -- \today}
+\date{Version v1.2 - \today}
 
 \begin{document}
 \maketitle
