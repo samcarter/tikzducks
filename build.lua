@@ -1,13 +1,25 @@
 #!/usr/bin/env texlua
+-- Execute with "l3build tag"
 
 -- TODO -------------------------------------------------------------
 -- get automatically current date
--- calculate tag based on last one
 -- ctan upload
 
 -- Settings ----------------------------------------------------------
 module = "tikzducks"
-packageversion="v1.3"
+
+-- Package version ---------------------------------------------------
+local handle = io.popen("git describe --tags $(git rev-list --tags --max-count=1)")
+local oldtag = handle:read("*a")
+handle:close()
+newsubtag = string.sub(oldtag, 4)
+newmajortag = string.sub(oldtag, 0, 3)
+newsubtag = newsubtag + 1
+packageversion = newmajortag .. math.floor(newsubtag)
+print(packageversion)
+--packageversion="v1.3"
+
+-- Package date ------------------------------------------------------
 packagedate = "2020-01-02"
 
 -- Auto-versioning ---------------------------------------------------
@@ -46,6 +58,7 @@ function tag_hook(tagname)
 	os.execute("latexmk " .. module .. "-doc")
 	os.execute("cp " .. module .. "-doc.pdf documentation.pdf")
 	git("add", "documentation.pdf")
-	git("commit -m 'step tag ", packageversion, "'" )
+	git("commit -m 'step version ", packageversion, "'" )
 	git("tag", packageversion)
+	print("tag" .. " " .. packageversion)
 end
