@@ -76,4 +76,20 @@ ctanreadme= "README_ctan.md"
 packtdszip   = false
 installfiles = {"*.sty", "*.code.tex"}
 sourcefiles = {"*.sty", "*.code.tex"}  
-excludefiles = {"documentation.pdf"}
+excludefiles = {"*/documentation.pdf"}
+
+-- configuring ctan upload ===========================================
+require('build-private.lua')
+
+uploadconfig = {
+  pkg          = ctanpkg,
+  version      = packageversion .. packagedate,
+  license      = "lppl1.3c",
+  summary      = "A little fun package for using rubber ducks in TikZ",
+  ctanPath     = "/macros/latex/contrib/" .. ctanpkg,
+  repository   = "https://github.com/samcarter/" .. module,
+  note         = [[Uploaded automatically by l3build...]],
+  bugtracker   = "https://github.com/samcarter/" .. module .. "/issues",
+  support      = "https://github.com/samcarter/" .. module .. "/issues",  
+  announcement_file = "announcement.txt"
+}
