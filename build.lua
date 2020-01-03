@@ -41,14 +41,14 @@ function update_tag (file,content,tagname,tagdate)
 	if string.match (file, "%.sty$" ) then
 		content = string.gsub (
 			content,
-			"\\ProvidesPackage{(.-)}%[%d%d%d%d%/%d%d%/%d%d version v%d%.%d",
+			"\\ProvidesPackage{(.-)}%[%d%d%d%d%/%d%d%/%d%d version v%d%.%d+",
 			"\\ProvidesPackage{%1}[" .. tagdate.." version "..packageversion
 		)
 		return content
 	elseif string.match (file, "*-doc.tex$" ) then
 		content = string.gsub (
 			content,
-			"\\date{Version v%d%.%d \\textendash{} %d%d%d%d%/%d%d%/%d%d",
+			"\\date{Version v%d%.%d+ \\textendash{} %d%d%d%d%/%d%d%/%d%d",
 			"\\date{Version " .. packageversion .. " \\textendash{} " .. tagdate
 		)
 		return content
