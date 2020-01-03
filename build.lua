@@ -3,13 +3,12 @@
 -- l3build tag
 -- l3build ctan
 -- l3build upload
-
--- TODO -------------------------------------------------------------
--- ctan upload
+-- l3build clean
 
 -- Settings ==========================================================
 module = "tikzducks"
 ctanpkg = "tikzducks"
+builddir = os.getenv("TMPDIR") 
 
 -- Package version ===================================================
 local handle = io.popen("git describe --tags $(git rev-list --tags --max-count=1)")
@@ -96,3 +95,6 @@ uploadconfig = {
   support      = "https://github.com/samcarter/" .. module .. "/issues",  
   announcement_file = "announcement.txt"
 }
+
+-- cleanup ===========================================================
+cleanfiles = {"tikzducks-ctan.curlopt", "tikzducks-ctan.zip"}
