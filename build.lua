@@ -82,8 +82,11 @@ excludefiles = {"*/documentation.pdf"}
 require('build-private.lua')
 
 uploadconfig = {
+	author       = uploadconfig.author,
+	uploader     = uploadconfig.uploader,
+	email        = uploadconfig.email,
   pkg          = ctanpkg,
-  version      = packageversion .. packagedate,
+  version      = packageversion .. " " .. packagedate,
   license      = "lppl1.3c",
   summary      = "A little fun package for using rubber ducks in TikZ",
   ctanPath     = "/macros/latex/contrib/" .. ctanpkg,
