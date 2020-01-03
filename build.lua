@@ -9,6 +9,7 @@
 
 -- Settings ==========================================================
 module = "tikzducks"
+ctanpkg = "tikzducks"
 
 -- Package version ===================================================
 local handle = io.popen("git describe --tags $(git rev-list --tags --max-count=1)")
@@ -21,8 +22,6 @@ if ( options["target"] == "tag") then
 end
 packageversion = newmajortag .. math.floor(newsubtag)
 --packageversion="v1.3"
-
-print(packageversion)
 
 -- Package date ======================================================
 packagedate = os.date("!%Y-%m-%d")
@@ -69,3 +68,12 @@ function tag_hook(tagname)
 	git("commit -m 'step version ", packageversion, "'" )
 	git("tag", packageversion)
 end
+
+-- collecting files for ctan =========================================
+docfiles = {"*-doc.tex"}
+textfiles= {"README_ctan.md"}
+ctanreadme= "README_ctan.md"
+packtdszip   = false
+installfiles = {"*.sty", "*.code.tex"}
+sourcefiles = {"*.sty", "*.code.tex"}  
+excludefiles = {"documentation.pdf"}
