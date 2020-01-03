@@ -6,6 +6,6 @@ This project is licensed under the LaTeX Project Public License v1.3c or later, 
 
 ## A few examples:
 
-![tikz ducks](https://user-images.githubusercontent.com/8226363/33049537-e71e9dd0-ce60-11e7-8b4c-7e1de0177f14.png)
+![tikz ducks](https://user-images.githubusercontent.com/43832342/71718547-d160d400-2e1b-11ea-8bae-39cc4b648771.png)
 
 More examples of TikZducks can be seen at https://github.com/samcarter/tikzducks/
