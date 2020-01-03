@@ -6,7 +6,6 @@
 
 -- TODO -------------------------------------------------------------
 -- ctan upload
--- only do newsubtag = newsubtag + 1 when tag option
 
 -- Settings ==========================================================
 module = "tikzducks"
@@ -17,9 +16,13 @@ local oldtag = handle:read("*a")
 handle:close()
 newsubtag = string.sub(oldtag, 4)
 newmajortag = string.sub(oldtag, 0, 3)
-newsubtag = newsubtag + 1
+if ( options["target"] == "tag") then
+	newsubtag = newsubtag + 1
+end
 packageversion = newmajortag .. math.floor(newsubtag)
 --packageversion="v1.3"
+
+print(packageversion)
 
 -- Package date ======================================================
 packagedate = os.date("!%Y-%m-%d")
