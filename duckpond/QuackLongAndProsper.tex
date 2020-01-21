@@ -1,4 +1,4 @@
-% !TeX TS-program = latexmk % | dvisvgm --pdf --exact --font-format=woff --zoom=-1 %.pdf | txs:///view-log | txs:///view-pdf 
+% !TeX TS-program = txs:///duck
 \documentclass{standalone}
 \usepackage{tikzducks}
 \usepackage{fontawesome}
@@ -12,7 +12,7 @@
 \definecolor{skinu}{RGB}{146,113,96}%
 
 \newcommand*{\insignia}{\node[rotate=15] at (wing) {\color{yellow!80!brown}\faLocationArrow};}
-\pagecolor{gray!20!white}
+
 \begin{document}
 	
 \begin{tikzpicture}

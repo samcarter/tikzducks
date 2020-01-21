@@ -1,9 +1,11 @@
+% !TeX TS-program = pdflatex "\AtBeginDocument{\pagecolor{gray!20!white}}\input{%}" % | /usr/bin/sips -s format png %.pdf --out %.png | pdflatex % | convert -delay 10 -loop 0 -density 100 -alpha remove %.pdf %.gif | txs:///view-log | txs:///view-pdf
+
 %modified from https://tex.stackexchange.com/a/429006/36296
 \documentclass[tikz]{standalone}
 
 \usepackage{xcolor-material}
 \usepackage{tikzducks}
-\pagecolor{gray!20!white}
+
 \usetikzlibrary{ducks}
 
 % from https://tex.stackexchange.com/questions/413389/how-to-make-a-simple-drawing-of-an-apple-using-only-the-tikz-library

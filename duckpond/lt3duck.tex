@@ -1,6 +1,7 @@
-% !TeX TS-program = latexmk % | dvisvgm --pdf --exact --font-format=woff --zoom=-1 %.pdf | txs:///view-log | txs:///view-pdf 
+% !TeX TS-program = pdflatex "\AtBeginDocument{\pagecolor{gray!20!white}}\input{%}" % | /usr/bin/sips -s format png %.pdf --out %.png | pdflatex % | txs:///view-log | txs:///view-pdf
 \documentclass{standalone}
 
+\usepackage[pdftex]{xcolor}
 \usepackage{l3draw}
 
 \begin{document}
