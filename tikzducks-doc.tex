@@ -126,38 +126,38 @@
 \label{intro}
 
 Rubber ducks can be made of latex, but can they also be made with \LaTeX? Yes! The \tikzducks package is a \LaTeX{} package for rubber ducks to be used in \TikZ pictures. 
-This project is a continuation of an answer at TeX.Stackexchange: \href{tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
+This project is a continuation of \href{tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
 This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package. 
-The head version of the source code can be found on \url{github.com/samcarter/tikzducks}, including a bug tracker -- please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest using the \href{https://tex.stackexchange.com/questions/tagged/tikzducks}{\texttt{\{tikzducks\}}-tag} on TeX.Stackexchange.
+The head version of the source code can be found on \url{github.com/samcarter/tikzducks}, including a bug tracker -- please make constructive use of it! A more stable package version can be found on \CTAN (\url{www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest asking a question at \url{topanswers.xyz/tex}.
 
 \subsection{Acknowledgements}
 
-Without the friendly and helpful community of \href{https://tex.stackexchange.com/}{TeX.Stackexchange} this package would not exist. I would like to thank a few fellow users in particular:
+Without the friendly and helpful community of \TeX{} users this package would not exist. I would like to thank a few fellow users in particular:
 
 First of all 
 %
-\href{https://tex.stackexchange.com/users/101651/carlatex}{Carla Maggi} for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks},
+Carla Maggi for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks},
 %
-\href{https://tex.stackexchange.com/users/3094/paulo-cereda}{Paulo Cereda} for his contagious enthusiasm for ducks (\emph{Quack!}) and
+Paulo Cereda for his contagious enthusiasm for ducks (\emph{Quack!}) and
 %
-\href{https://tex.stackexchange.com/users/2388/ulrike-fischer}{Ulrike Fischer} for her useful \TikZ advices and contributions to the package and coming to rescue for keyword highlighting in the package documentation.
+Ulrike Fischer for her useful \TikZ advices and contributions to the package and coming to rescue for keyword highlighting in the package documentation.
 
 Many other users contributed to this package (in random order):
 %
-\href{https://tex.stackexchange.com/users/4427/egreg}{Enrico Gregorio} helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
+Enrico Gregorio helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
 % 
 Andrew Stacey contributed the \TikZ Library ``ducks'',
 %
-\href{https://tex.stackexchange.com/users/51022/symbol-1}{Symbol~1}  solved a few problems with default key values,
+Symbol~1 solved a few problems with default key values,
 %
-\href{https://tex.stackexchange.com/users/148434/mihikma}{Mihikma} created the duck's beard,
+Mihikma created the duck's beard,
 %
-\href{https://github.com/yudai-nkt}{Yudai Nakata} helped with problems of \lstinline|\pdfrandomseed|,
+Yudai Nakata helped with problems of \lstinline|\pdfrandomseed|,
 %
-@marmot for his seemingly infinite knowledge of \TikZ which he shared with the world on TeX.SE    
+@marmot for his seemingly infinite knowledge of \TikZ which he shared with the world    
 %
-and last but not least my thanks go to \href{https://tex.stackexchange.com/users/5763/martin-schr%c3%b6der}{Martin Schr\"oder} for his feedback to the code review.
+and last but not least my thanks go to Martin Schr\"oder for his feedback to the code review.
 
 \pagebreak
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{https://inkscape.org}) and then exported to \TikZ paths using the \texttt{SVG to TikZ/PGF} extension (\url{https://github.com/kjellmf/svg2tikz}).
@@ -855,7 +855,7 @@ There is a multitude of things a duck might need. The following examples all als
 	\duck[crystalball=cyan]
 \end{tikzpicture}   
 \end{tcblisting}
-\footnotetext[\thefootnote]{The crystal ball is kindly contributed by \href{https://tex.stackexchange.com/users/121799/marmot}{@marmot}}
+\footnotetext[\thefootnote]{The crystal ball is kindly contributed by @marmot}
 
 \begin{tcblisting}{title={Shovelling Duck}}
 \begin{tikzpicture}
