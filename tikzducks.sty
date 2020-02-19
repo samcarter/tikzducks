@@ -87,6 +87,7 @@
 \newif\ifduck@viking
 \newif\ifduck@devil 
 \newif\ifduck@conicalhat
+\newif\ifduck@sailor
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -336,6 +337,9 @@
                               \def\duck@conicalhat{#1},
   conical hat/.forward to   = /duck/conicalhat,                  
   conicalhat/.default       = brown!90!orange!90!white,
+  sailor/.code              = \duck@sailortrue
+                              \def\duck@sailor{#1},
+  sailor/.default           = white!80!gray,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -1027,6 +1031,11 @@
 	\begin{pgfinterruptboundingbox}
 		\fill[\duck@conicalhat] (1.6722,1.4137) .. controls (1.6722,1.4337) and (1.3592,1.6230) .. (0.9513,1.7735) .. controls (0.5433,1.9239) and (0.1948,1.9784) .. (0.1948,1.9754) .. controls (0.2049,2.0230) and (1.1428,2.36) .. (1.1428,2.3) .. controls (1.1428,2.35) and (1.6821,1.4784) .. (1.6722,1.4137) -- cycle;
 	\end{pgfinterruptboundingbox}
+\fi
+%
+% Sailor hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@sailor
+	\fill[\duck@sailor]  (1.0390,2.2743) .. controls (0.9475,2.2748) and (0.8569,2.2355) .. (0.7943,2.1690) .. controls (0.7147,2.1872) and (0.6335,2.2098) .. (0.5512,2.2029) .. controls (0.5524,2.1164) and (0.5536,2.0299) .. (0.5547,1.9434) .. controls (0.6637,1.9348) and (0.7679,1.8974) .. (0.8716,1.8653) .. controls (1.0321,1.8101) and (1.1932,1.7522) .. (1.3420,1.6697) .. controls (1.3671,1.6622) and (1.3911,1.6147) .. (1.4083,1.6518) .. controls (1.4623,1.7160) and (1.5163,1.7802) .. (1.5702,1.8444) .. controls (1.5154,1.8979) and (1.4433,1.9287) .. (1.3757,1.9624) .. controls (1.3666,2.1156) and (1.2403,2.2511) .. (1.0881,2.2707) .. controls (1.0718,2.2731) and (1.0554,2.2743) .. (1.0390,2.2743) -- cycle;
 \fi
 %
 %\end{pgfonlayer}
