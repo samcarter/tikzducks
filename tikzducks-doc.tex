@@ -57,7 +57,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,picture,scope,patterns,calc,pgfinterruptboundingbox},
-	moretexcs={duck,picduck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset,duckpathwing,shade},
+	moretexcs={duck,picduck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset,duckpathwing,shade,duckhookbackground,duckhookbody,duckhookclothing,duckhookhair,duckhookhat,duckhookforeground},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	index=[1][emph]
@@ -977,6 +977,17 @@ To distinguish coordinates from multiple ducks in the same \lstinline|tikzpictur
  	\duck[name=bar,xshift=90pt,
  				scale=.3,yshift=150pt]
 	\draw (foo-wing) -- (bar-wing);
+\end{tikzpicture}	
+\end{tcblisting}
+
+Sometimes it might desirable to add things at specific z-positions, for example draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide some hooks that can be redefined as needed: \lstinline|\duckhookbackground|, \lstinline|\duckhookbody|, \lstinline|\duckhookclothing|, \lstinline|\duckhookhair|, \lstinline|\duckhookhat| and \lstinline|\duckhookforeground|. 
+
+\begin{tcblisting}{title={Hooks}}
+\begin{tikzpicture}
+	\begingroup
+		\newcommand{\duckhookclothing}{\path[pattern=fivepointed stars, pattern color=cyan] \duckpathtshirt;}
+ 		\duck[tshirt=blue,longhair=red,torch]
+ 	\endgroup
 \end{tikzpicture}	
 \end{tcblisting}
 
