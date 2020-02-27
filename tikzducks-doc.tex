@@ -19,7 +19,7 @@
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
 \usepackage{tikzducks}
-\usetikzlibrary{ducks}
+\usetikzlibrary{ducks,3d}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=3cm,foot=2cm]{geometry}
 \usepackage{url}
@@ -980,13 +980,71 @@ To distinguish coordinates from multiple ducks in the same \lstinline|tikzpictur
 \end{tikzpicture}	
 \end{tcblisting}
 
-Sometimes it might desirable to add things at specific z-positions, for example draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide some hooks that can be redefined as needed: \lstinline|\duckhookbackground|, \lstinline|\duckhookbody|, \lstinline|\duckhookclothing|, \lstinline|\duckhookhair|, \lstinline|\duckhookhat| and \lstinline|\duckhookforeground|. 
+Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks: \lstinline|\duckhookbackground|, \lstinline|\duckhookbody|, \lstinline|\duckhookclothing|, \lstinline|\duckhookhair|, \lstinline|\duckhookhat| and \lstinline|\duckhookforeground|. 
+
+\begin{center}
+\footnotesize\ttfamily \textbackslash duckhook\dots
+
+	\begin{tikzpicture}
+		\newcommand{\planes}{\fill[gray!20!white,opacity=0.9] (-0.1,-0.1) rectangle (2.4,2.4);}
+		\newcommand{\hooks}{\draw[duckblue, rounded corners=3pt, line width=1pt] (-0.1,-0.1) rectangle (2.4,2.4);}
+		\node[font=\footnotesize\ttfamily] at (-0.8,-1.4) {\strut background};
+		\begin{scope}[canvas is zy plane at x=0]
+			\hooks
+		\end{scope}
+		\begin{scope}[canvas is zy plane at x=0.8]
+			\planes
+			\duck
+		\end{scope}
+		\node[font=\footnotesize\ttfamily] at (0.8,-1.4) {\strut body};
+		\begin{scope}[canvas is zy plane at x=1.6]
+			\hooks
+		\end{scope}
+		\begin{scope}[canvas is zy plane at x=2.4]
+			\planes
+			\duck[invisible,jacket=black!50!gray] 
+		\end{scope}
+		\node[font=\footnotesize\ttfamily] at (2.4,-1.4) {\strut clothing};
+		\begin{scope}[canvas is zy plane at x=3.2]
+			\hooks
+		\end{scope}
+		\begin{scope}[canvas is zy plane at x=4.0]
+			\planes
+			\duck[invisible,longhair=red!80!black]
+		\end{scope}
+		\node[font=\footnotesize\ttfamily] at (4.0,-1.4) {\strut hair};
+		\begin{scope}[canvas is zy plane at x=4.8]
+			\hooks
+		\end{scope}
+		\begin{scope}[canvas is zy plane at x=5.6]
+			\planes
+			\duck[invisible,witch=black!50!gray];
+		\end{scope}
+		\node[font=\footnotesize\ttfamily] at (5.6,-1.4) {\strut hat};
+		\begin{scope}[canvas is zy plane at x=6.4]
+			\hooks
+		\end{scope}
+		\begin{scope}[canvas is zy plane at x=7.2]
+			\planes
+			\duck[invisible,magicwand]
+		\end{scope}
+		\node[font=\footnotesize\ttfamily] at (7.2,-1.4) {\strut foreground};
+		\begin{scope}[canvas is zy plane at x=8.0]
+			\hooks
+		\end{scope}
+	\end{tikzpicture}
+\end{center}
+
+These hooks can be defined by the user as needed:
 
 \begin{tcblisting}{title={Hooks}}
 \begin{tikzpicture}
 	\begingroup
-		\newcommand{\duckhookclothing}{\path[pattern=fivepointed stars, pattern color=cyan] \duckpathtshirt;}
- 		\duck[tshirt=blue,longhair=red,torch]
+		\newcommand{\duckhookclothing}{\path[pattern=fivepointed stars, pattern color=yellow] \duckpathjacket;}
+		\duck[witch=black!50!gray,
+          longhair=red!80!black,
+          jacket=black!50!gray,
+          magicwand]
  	\endgroup
 \end{tikzpicture}	
 \end{tcblisting}
