@@ -1,0 +1,39 @@
+% !TeX TS-program = txs:///duck
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\definecolor{skin}{RGB}{212,183,145}
+\definecolor{tshirtcol}{RGB}{250,191,173}
+\definecolor{jacketcol}{RGB}{69,69,69}
+\definecolor{billcol}{RGB}{211,136,44}
+
+
+\begin{document}
+	
+\begin{tikzpicture}
+
+  \newcommand{\duckhookbody}{
+    \begin{scope}[scale=0.4,xshift=0.2cm,yshift=0.2cm]
+      \fill[lightgray]  (2.2193,4.6237) .. controls (1.3412,5.2280) and (0.8244,4.4045) .. (0.8244,3.5585) .. controls (0.8244,2.7125) and (1.1478,2.4867) .. (1.1478,2.4867) .. controls (2.8529,3.0021) and (0.2799,3.3673) .. (2.2193,4.6237) -- cycle;
+    \end{scope}
+  }
+
+	\duck[
+		body=skin, 
+    bill=billcol,
+		tshirt=white, 
+		jacket=jacketcol, 
+    bowtie=black,
+    buttons=black,
+    lapel=black,
+    strawhat=jacketcol,
+    ribbon=jacketcol
+	]
+
+  \fill[billcol] \duckpathbill;
+  \fill[white!85!yellow, rotate=-20] (-0.06,1.74) ellipse[x radius=0.0786, y radius=0.1143];
+  \fill[black, rotate=-20] (-0.03,1.73) ellipse[x radius=0.0286, y radius=0.0643];
+
+\end{tikzpicture}
+	
+\end{document}
