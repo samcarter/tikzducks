@@ -1,5 +1,5 @@
 % If you try this at home, replace the `crinklepaper` with an image of the comet's surface, e.g. from https://arxiv.org/abs/1707.02945
-% !TeX TS-program = txs:///duck
+% !TeX TS-program = pdflatex "\AtBeginDocument{\pagecolor{gray!20!white}}\input{%}" % | /usr/bin/sips -s format png %.pdf --out %.png | pdflatex % | txs:///view-log | txs:///view-pdf
 \documentclass{standalone}
 \usepackage{tikzducks}
 
