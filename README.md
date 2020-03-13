@@ -56,8 +56,8 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/SuperDuckBrothers.tex"><img src="./duckpond/SuperDuckBrothers.svg" alt="Super Duck Brothers" title="Super Duck Brothers" height="64"></a>
 <a href="./duckpond/QuackLongAndProsper.tex"><img src="./duckpond/QuackLongAndProsper.svg" alt="Quack long and prosper" title="Quack long and prosper" height="64"></a>
 <a href="./duckpond/StarDucks.tex"><img src="./duckpond/StarDucks.svg" alt="Star Ducks" title="Star Ducks" height="64"></a>
-<a href="./duckpond/DuckWho.svg"><img src="./duckpond/DuckWho.svg" alt="Duck Who" title="Duck Who" height="64"></a>
-<a href="./duckpond/Phantom.svg"><img src="./duckpond/Phantom.svg" alt="Phantom of the duckpond" title="Phantom of the duckpond" height="64"></a>
+<a href="./duckpond/DuckWho.tex"><img src="./duckpond/DuckWho.svg" alt="Duck Who" title="Duck Who" height="64"></a>
+<a href="./duckpond/Phantom.tex"><img src="./duckpond/Phantom.svg" alt="Phantom of the duckpond" title="Phantom of the duckpond" height="64"></a>
 
 ### Ducks in History
 
@@ -71,12 +71,12 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Ducks in Art
 
-<a href="./duckpond/MonaDuck.svg"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
-<a href="./duckpond/GirlWithPearlEarring.svg"><img src="./duckpond/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
-<a href="./duckpond/PopArt.svg"><img src="./duckpond/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
-<a href="./duckpond/Leonardo.svg"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
+<a href="./duckpond/MonaDuck.tex"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
+<a href="./duckpond/GirlWithPearlEarring.tex"><img src="./duckpond/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
+<a href="./duckpond/PopArt.tex"><img src="./duckpond/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
+<a href="./duckpond/Leonardo.tex"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
 <a href="./duckpond/Monet.pdf"><img src="./duckpond/Monet.png" alt="Monets duck pond" title="Monets duck pond" height="64"></a>
-<a href="./duckpond/Soup.svg"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
+<a href="./duckpond/Soup.tex"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
 
 
 ### TeX.SE users (and relatives)
@@ -119,7 +119,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Horse.tex"><img src="./duckpond/Horse.svg" alt="Horse Duck" title="Horse Duck" height="64"></a>
 <a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
 <a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
-<a href="./duckpond/Zebra.tex"><img src="./duckpond/Zebra2.svg" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
+<a href="./duckpond/Zebra2.tex"><img src="./duckpond/Zebra2.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
 
 ### More ducks
 
