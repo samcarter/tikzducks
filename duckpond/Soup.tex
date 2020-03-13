@@ -1,0 +1,15 @@
+% !TeX TS-program = pdflatex % | /usr/bin/sips -s format png %.pdf --out %.png | txs:///view-log | txs:///view-pdf
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\begin{document}
+\begin{tikzpicture}[inner sep=0pt]
+  \node at (1.2,2.7) {\includegraphics[width=14cm]{SoupCan}};
+	\duck[%
+		chef=white,
+		tshirt=white,
+		buttons=blue,
+		rollingpin=brown!80!black]
+	]
+\end{tikzpicture}
+\end{document}
