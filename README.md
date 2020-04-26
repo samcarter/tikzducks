@@ -75,7 +75,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/GirlWithPearlEarring.tex"><img src="./duckpond/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
 <a href="./duckpond/PopArt.tex"><img src="./duckpond/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
 <a href="./duckpond/Leonardo.tex"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
-<a href="./duckpond/Monet.pdf"><img src="./duckpond/Monet.png" alt="Monets duck pond" title="Monets duck pond" height="64"></a>
+<!--<a href="./duckpond/Monet.pdf"><img src="./duckpond/Monet.png" alt="Monets duck pond" title="Monets duck pond" height="64"></a>-->
 <a href="./duckpond/Soup.tex"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
 
 
@@ -97,7 +97,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.svg" alt="Duck, MD" title="Duck, MD" height="64"></a>
 <a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.svg" alt="Duck Scout" title="Duck Scout" height="64"></a>
 <a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.svg" title="Queens Swan Upper" alt="Queens Swan Upper" height="64"></a>
-<a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.svg" alt="Surfer Duck" title="Surfer Duck" height="64"></a>
+<!--<a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.svg" alt="Surfer Duck" title="Surfer Duck" height="64"></a>-->
 <a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.svg" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a>
 <a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.svg" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
 <a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.svg" alt="Jail Bird" title="Jail Bird" height="64"></a>
