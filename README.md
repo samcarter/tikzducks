@@ -110,6 +110,8 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/OfficeDuck.tex"><img src="./duckpond/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
 <a href="./duckpond/SailorDuck.tex"><img src="./duckpond/SailorDuck.svg" alt="Sailor Duck" title="Sailor Duck" height="64"></a>
 
+
+
 ### Animals and Beings
 
 <a href="./duckpond/AraraDuck.tex"><img src="./duckpond/AraraDuck.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
@@ -129,6 +131,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
 <a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
 <a href="./duckpond/YankeeDuck.tex"><img src="./duckpond/YankeeDuck.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
+<a href="./duckpond/FaceMask"><img src="./duckpond/FaceMask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
 
 <!--<a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.svg" alt="Chess" title="Chess" height="128"></a>
 <a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
