@@ -14,6 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{tikzducks}[2020/04/22 version v1.4 Draw rubber ducks in TikZ]
 
+\RequirePackage{expl3}
 \RequirePackage{tikz}
 \usetikzlibrary{patterns} % for the wizard hat
 \usetikzlibrary{calc} % for the sports jerseys
@@ -1364,15 +1365,21 @@
 % Random ducks
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifdefined\pdfrandomseed % pdflatex
+\ExplSyntaxOn
+\ifdefined\sys_rand_seed:
+  \pgfmathsetseed {\sys_rand_seed:}
 \else
-    \ifdefined\randomseed 
-      \let\pdfrandomseed\randomseed % post TL19 xelatex and lualatex
-    \else
-        \let\pdfrandomseed\time % pre TL19 xelatex
-    \fi
+  \ifdefined\pdfrandomseed % pdflatex
+  \else
+      \ifdefined\randomseed 
+        \let\pdfrandomseed\randomseed % post TL19 xelatex and lualatex
+      \else
+          \let\pdfrandomseed\time % pre TL19 xelatex
+      \fi
+  \fi
+  \pgfmathsetseed{\number\pdfrandomseed} 
 \fi
-\pgfmathsetseed{\number\pdfrandomseed} 
+\ExplSyntaxOff
 
 \pgfmathdeclarerandomlist{head}{{shorthair}{longhair}{crazyhair}{mohican}{mullet}{beard}{alien}{hat}{cap}{santa}{chef}{graduate}{beret}{magichat}{witch}{crown}{bunny}{peakedcap}{tophat}{queencrown}{kingcrown}{harlequin}{strawhat}{parting}}
 \pgfmathdeclarerandomlist{accessories}{{glasses}{sunglasses}{icecream}{book}{signpost}{magicwand}{cricket}{rollingpin}{lightsaber}{cake}{pizza}{hockey}{baguette}{football}{mask}{necklace}{milkshake}{wine}{prison}{cape}{torch}{crozier}{easter}{stethoscope}{neckerchief}{cheese}{shovel}{pickaxe}{crystalball}}
