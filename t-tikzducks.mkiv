@@ -1,0 +1,35 @@
+\writestatus{loading}{ConTeXt User Module / A package to bring rubber ducks into tikz}
+\setupcolors[state=start]
+\usecolors[xwi]
+\usemodule[tikz]
+\enabledirectives[colors.pgf]
+\usetikzlibrary[patterns] % for the wizard hat
+\usetikzlibrary[calc]
+\definecolor[duckoverleafcol][x=48AC3C]
+\catcode`\@=11
+\def\duck{\dosingleempty\doduck}
+\def\doduck[#1]{%
+\iffirstargument%
+\startscope%
+\tikzset{/duck/.cd,#1}%
+\duck@draw%
+\stopscope%
+\else
+\startscope%
+\tikzset{/duck/.cd}%
+\duck@draw%
+\stopscope%
+\fi
+}
+\input tikzducks-generic.tex
+\let\pdfrandomseed\randomseed
+\def\stripes{\dosingleempty\dostripes}
+\def\dostripes[#1]{
+\iffirstargument
+\tikzset{/stripes/.cd,#1}\stripes@draw
+\else
+\tikzset{/stripes/.cd}\stripes@draw
+\fi
+}
+\catcode`\@=12
+\endinput
