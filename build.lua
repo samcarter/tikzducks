@@ -53,6 +53,13 @@ function update_tag (file,content,tagname,tagdate)
 			"\\date{Version " .. packageversion .. " \\textendash{} " .. tagdate
 		)
 		return content
+	elseif string.match (file, "*.mkiv$" ) then
+		content = string.gsub (
+			content,
+            "\\writestatus{loading}{ConTeXt User Module / TikZDucks %d%d%d%d%/%d%d%/%d%d version v%d%.%d+"
+            "\\writestatus{loading}{ConTeXt User Module / TikZDucks " .. tagdate.." version "..packageversion
+		)
+		return content        
 	end
 	return content
 end
@@ -61,6 +68,7 @@ end
 function tag_hook(tagname)
 	git("add", "*.sty")
 	git("add", "*-doc.tex")
+	git("add", "*.mkiv")    
 	os.execute("latexmk " .. module .. "-doc")
 	os.execute("cp " .. module .. "-doc.pdf documentation.pdf")
 	git("add", "documentation.pdf")
@@ -73,8 +81,8 @@ docfiles = {"*-doc.tex"}
 textfiles= {"README_ctan.md"}
 ctanreadme= "README_ctan.md"
 packtdszip   = false
-installfiles = {"*.sty", "*.code.tex"}
-sourcefiles = {"*.sty", "*.code.tex"}  
+installfiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex"}
+sourcefiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex"}  
 excludefiles = {"*/documentation.pdf"}
 
 -- configuring ctan upload ===========================================
