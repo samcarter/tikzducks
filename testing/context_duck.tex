@@ -1,0 +1,16 @@
+% !TeX TS-program = context %
+
+\usemodule[tikzducks]
+\usecolors[xwi] % Predefine most colors used by tikzducks
+\starttext
+\startcolumns[n=3]
+
+\dorecurse{18}{
+
+\starttikzpicture
+\randuck
+\stoptikzpicture
+
+}
+\stopcolumns
+\stoptext
