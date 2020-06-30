@@ -37,6 +37,7 @@
 \newcommand{\tikzducks}{Ti\emph{k}Zducks\xspace}
 \newcommand{\miktex}{MiK\TeX\xspace}
 \newcommand{\texlive}{\TeX{}Live\xspace}
+\newcommand{\ConTeXt}{C\kern-.0333emon\-\kern-.0667em\TeX\kern-.0333emt}
 
 % customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{duckblue}{RGB}{0,70,140}
@@ -155,7 +156,9 @@ Mihikma created the duck's beard,
 %
 Yudai Nakata helped with problems of \lstinline|\pdfrandomseed|,
 %
-@marmot for his seemingly infinite knowledge of \TikZ which he shared with the world    
+@marmot for his seemingly infinite knowledge of \TikZ which he shared with the world,    
+%
+@JairoAdelRio for contributing the \ConTeXt{}  User Module
 %
 and last but not least my thanks go to Martin Schr\"oder for his feedback to the code review.
 
@@ -265,6 +268,27 @@ For the \TeX{} purists, there is also a picture mode variant:
 \end{picture}
 \end{tcblisting}
 }
+
+And thanks to @JairoAdelRio there is even a \ConTeXt{} User Module available (caveat: some colours might look different):
+
+\begin{tcolorbox}[title={\ConTeXt{}  User Module}]
+\begin{lstlisting}[morekeywords={usemodule,usecolors,starttext,stoptext,starttikzpicture,stoptikzpicture}]
+\usemodule[tikzducks]
+\usecolors[xwi]
+\starttext
+
+\starttikzpicture
+\duck[tophat,bowtie]
+\stoptikzpicture
+
+\stoptext
+\end{lstlisting} 
+
+\tcblower
+\begin{tikzpicture}
+\duck[tophat,bowtie]
+\end{tikzpicture}
+\end{tcolorbox}
 
 \subsection{Body parts}
 
