@@ -1,0 +1,61 @@
+% !TeX root = ./testing/plain_duck.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% The tikzducks package
+% A package to bring rubber ducks into tikz
+% Maintained by samcarter
+%
+% Project repository and bug tracker:
+% https://github.com/samcarter/tikzducks
+%
+% Released under the LaTeX Project Public License v1.3c or later
+% See http://www.latex-project.org/lppl.txt
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input miniltx
+\input graphicx.sty
+\input tikz.tex
+\usetikzlibrary{calc}%
+\usetikzlibrary{patterns}%
+
+\catcode`\@=11
+
+\let\pdfrandomseed\randomseed
+\font\tiny=cmr5
+
+% Duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\duck{\futurelet\next\doduck}
+\def\doduck{%
+  \ifx[\next %]
+    \expandafter\doduckopt
+  \else
+    \scope%%
+        \tikzset{/duck/.cd}%
+        \duck@draw%
+    \endscope%%
+  \fi
+}
+\def\doduckopt[#1]{%
+  \scope%%
+      \tikzset{/duck/.cd,#1}%
+      \duck@draw%
+  \endscope%%
+}
+
+% Stripes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\stripes{\futurelet\next\dostripes}
+\def\dostripes{
+  \ifx[\next %]
+    \expandafter\dostripesopt
+  \else
+    \tikzset{/stripes/.cd}\stripes@draw
+	\fi
+}
+\def\dostripesopt[#1]{%
+  \tikzset{/stripes/.cd,#1}\stripes@draw
+}
+
+\input tikzducks-generic.tex
+
+\catcode`\@=12
