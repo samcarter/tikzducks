@@ -19,10 +19,12 @@
 	%But otherwise, it works without further issues
     \def\ctx@tikzducks@colors{\normalunexpanded{\setup[tikzducks:colors]}}
 \else
-	\def\ctx@tikzducks@colors{}
+    \def\ctx@tikzducks@colors{}
     \ifcsname usepackage\endcsname
         \usepackage{tikzducks}
     \else
+    	%I'm not sure about this (not a Plain user).
+	%Should be commented if this doesn't pass tests.
         \input tikzducks-plain\relax
     \fi 
 \fi
