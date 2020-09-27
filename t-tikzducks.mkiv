@@ -1,40 +1,72 @@
-\writestatus{loading}{ConTeXt User Module / A package to bring rubber ducks into tikz}
-\setupcolors[state=start]
+\writestatus{loading}{ConTeXt User Module / TikZDucks 2020/06/30 version v1.5 Draw rubber ducks in TikZ}
+
 \usemodule[tikz]
 \enabledirectives[colors.pgf]
 \usetikzlibrary[patterns] % for the wizard hat
 \usetikzlibrary[calc]
+%
+\startsetups tikzducks:colors
+%To avoid keep colors local and avoid redefinitions
+%Definitions are copied from LaTeX's xcolor package
 \definecolor[duck@overleafcol][x=48AC3C]
-%\unprotect does not work here
+\definecolor[red][r=1]
+\definecolor[green][g=1]
+\definecolor[blue][b=1]
+\definecolor[cyan][c=1]
+\definecolor[magenta][m=1]
+\definecolor[yellow][y=1]
+\definecolor[orange][r=1,g=.5]
+\definecolor[pink][r=1,g=.75,b=.75]
+\definecolor[brown][r=.75,g=.5,b=.25]
+\definecolor[teal][g=.5,b=.5]
+\definecolor[gray][r=.5,g=.5,b=.5] 
+\definecolor[lightgray][r=.75,g=.75,b=.75] 
+\definecolor[lime][r=.75,g=1]
+\definecolor[violet][r=.5,b=.5]
+\definecolor[purple][r=.75,b=.25]
+\definecolor[olive][y=1,k=.5]
+\stopsetups 
+
 \catcode`\@=11
-%So \scalebox and co. works in MkIV too
-\define[2]\scalebox{\scale[factor={\ctxlua{context(3*#1)}}]{#2}}
+
+% Defining commands not available in context %%%%%%%%%%%%%%%%%%%%%%%%%
+\def\scalebox#1#2{\scale[factor={\ctxlua{context(#1)}}]{#2}}
 \let\tiny\tfxx
 \let\pdfrandomseed\randomseed
-%Duck
+
+% Duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\duck{\dosingleempty\doduck}
 \def\doduck[#1]{%
-    \iffirstargument
-        \startscope%
-            \tikzset{/duck/.cd,#1}%
-            \duck@draw%
-        \stopscope%
-    \else
-        \startscope%
-            \tikzset{/duck/.cd}%
-            \duck@draw%
-        \stopscope%
-    \fi%
+\begingroup
+\setups[tikzducks]%
+  \iffirstargument
+    \startscope%
+       \tikzset{/duck/.cd,#1}%
+       \duck@draw%
+    \stopscope%
+  \else
+    \startscope%
+       \tikzset{/duck/.cd}%
+       \duck@draw%
+    \stopscope%
+  \fi%
+\endgroup 
 }
-%Stripes
+
+% Stripes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\stripes{\dosingleempty\dostripes}
-\def\dostripes[#1]{
-	\iffirstargument
-	\tikzset{/stripes/.cd,#1}\stripes@draw
-	\else
-	\tikzset{/stripes/.cd}\stripes@draw
-	\fi
+\def\dostripes[#1]{%
+\begingroup 
+\setups[tikzducks:colors]%
+  \iffirstargument
+    \tikzset{/stripes/.cd,#1}\stripes@draw
+  \else
+    \tikzset{/stripes/.cd}\stripes@draw
+  \fi
+\endgroup 
 }
+
 \input tikzducks-generic.tex
+
 \catcode`\@=12
 \endinput

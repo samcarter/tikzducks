@@ -11,14 +11,28 @@
 % See http://www.latex-project.org/lppl.txt
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tikzducks}
+\catcode`\@=11
 
-% This is all that is needed ...
+\ifcsname usemodule\endcsname
+    \usemodule[tikzducks]
+	%It prints a weird message on ConTeXt
+	%But otherwise, it works without further issues
+    \def\ctx@tikzducks@colors{\normalunexpanded{\setup[tikzducks:colors]}}
+\else
+	\def\ctx@tikzducks@colors{}
+    \ifcsname usepackage\endcsname
+        \usepackage{tikzducks}
+    \else
+        \input tikzducks-plain\relax
+    \fi 
+\fi
+
 \tikzset{
   duck/.pic={%
-    \duck@draw
+  	\ctx@tikzducks@colors%
+    \duck@draw%
   },
   duck/.search also={,/tikz,/pgf},
 }
 
-
+\catcode`\@=12
