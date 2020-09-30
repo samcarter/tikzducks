@@ -109,8 +109,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Snowduck.tex"><img src="./duckpond/Snowduck.svg" alt="Snowduck" title="Snowduck" height="64"></a>
 <a href="./duckpond/OfficeDuck.tex"><img src="./duckpond/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
 <a href="./duckpond/SailorDuck.tex"><img src="./duckpond/SailorDuck.svg" alt="Sailor Duck" title="Sailor Duck" height="64"></a>
-
-
+<a href="./duckpond/DuckHug.tex"><img src="./duckpond/DuckHug.svg" alt="Duck Hug" title="Duck Hug" height="64"></a>
 
 ### Animals and Beings
 
