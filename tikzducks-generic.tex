@@ -1384,10 +1384,10 @@
  \edef\randomaccessories{\accessories}%
 }
 
-\def\randuck{%
+\newcommand*{\randuck}[1][]{%
   \shuffleducks%
-  \duck[\randomhead, \randomaccessories]%
-}
+  \duck[\randomhead, \randomaccessories, #1]%
+}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
