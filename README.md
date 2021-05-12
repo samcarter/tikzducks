@@ -78,7 +78,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Leonardo.tex"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
 <!--<a href="./duckpond/Monet.pdf"><img src="./duckpond/Monet.png" alt="Monets duck pond" title="Monets duck pond" height="64"></a>-->
 <a href="./duckpond/Soup.tex"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
-
+<a href="./duckpond/Frida.tex"><img src="./duckpond/Frida.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
 
 ### TeX.SE users (and relatives)
 
