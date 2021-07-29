@@ -108,6 +108,8 @@
 \newif\ifduck@cheese
 \newif\ifduck@shovel
 \newif\ifduck@pickaxe
+\newif\ifduck@strawbroom
+\newif\ifduck@broom
 \newif\ifduck@umbrella
 \newif\ifduck@umbrellaclosed
 \newif\ifduck@handbag
@@ -494,7 +496,19 @@
   shovel/.default           = gray,    
   pickaxe/.code             = \duck@pickaxetrue
                               \def\duck@pickaxe{#1},
-  pickaxe/.default          = gray,  
+  pickaxe/.default          = gray, 
+  strawbroom/.code          = \duck@strawbroomtrue
+                              \def\duck@strawbroom{#1},
+  strawbroom/.default       = brown!50!white,
+  strawbroomstick/.code     = \def\duck@strawbroomstick{#1},
+  strawbroomstick           = brown,
+  strawbroomribbon/.code    = \def\duck@strawbroomribbon{#1},
+  strawbroomribbon          = red!50!black,
+  broom/.code               = \duck@broomtrue
+                              \def\duck@broom{#1},
+  broom/.default            = brown,
+  broomstick/.code          = \def\duck@broomstick{#1},
+  broomstick                = gray!50!black,  
   umbrella/.code            = \duck@umbrellatrue
                               \def\duck@umbrella{#1},
   umbrella/.default         = cyan,      
@@ -1318,6 +1332,23 @@
 \ifduck@pickaxe
   \fill[brown!80!black,rotate around={-23:(0.91, 0.88)}] (0.87, 0.28) rectangle ++(0.1,1.4);
   \fill[\duck@pickaxe]  (-0.0085, 0.6858) .. controls (0.6422, 0.3523) and (0.7609, 0.3068) .. (1.4114, 0.1108) .. controls (0.6589, 0.1246) and (0.5556, 0.1887) .. (-0.0085, 0.6858) -- cycle;
+\fi
+%
+% strawbroom %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@strawbroom
+  \fill[\duck@strawbroomstick] (0.9160,0.5478) -- (1.2792,1.6574) .. controls (1.3063,1.6961) and (1.3956,1.6649) .. (1.3688,1.6176) -- (0.9508,0.5179) .. controls (0.9360,0.5142) and (0.9202,0.5331) .. (0.9160,0.5478) -- cycle;
+  \fill[\duck@strawbroom] (0.5528,0.2890) .. controls (0.6449,0.3598) and (0.7460,0.5693) .. (0.8911,0.6871) .. controls (0.9481,0.7215) and (1.0395,0.6925) .. (1.0553,0.6224) .. controls (1.1219,0.4385) and (0.9965,0.2147) .. (1.0056,0.1000) .. controls (0.8926,0.0241) and (0.5950,0.2078) .. (0.5528,0.2890) -- cycle;
+  \draw[\duck@strawbroomribbon,line width=\scalingfactor*0.4pt] (0.7916,0.5876) .. controls (0.7916,0.5876) and (0.8210,0.5404) .. (0.8451,0.5304) .. controls (0.8708,0.5197) and (0.9021,0.5419) .. (0.9284,0.5329) .. controls (0.9544,0.5240) and (0.9663,0.4903) .. (0.9919,0.4806) .. controls (1.0148,0.4720) and (1.0653,0.4781) .. (1.0653,0.4781);
+  \draw[\duck@strawbroomribbon,line width=\scalingfactor*0.4pt] (0.7565,0.5493) .. controls (0.7565,0.5493) and (0.7897,0.4961) .. (0.8169,0.4848) .. controls (0.8458,0.4727) and (0.8812,0.4978) .. (0.9109,0.4876) .. controls (0.9401,0.4776) and (0.9535,0.4396) .. (0.9824,0.4287) .. controls (1.0083,0.4189) and (1.0652,0.4259) .. (1.0652,0.4259);
+\fi
+%
+% broom %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@broom
+  \begin{scope}[rotate=-10]
+    \draw[\duck@broomstick,line width=\scalingfactor*1.8pt] (0.9, 1.8) -- ++(0,-1.4);
+    \draw[\duck@broomstick,line width=\scalingfactor*1.8pt] (0.6, 0.42) -- ++(0.6,0);
+    \fill[\duck@broom] (0.6, 0.40) -- ++(-0.05,-0.1) -- ++(0.7,0) -- ++(-0.05, 0.1) -- cycle;
+  \end{scope}
 \fi
 %
 % umbrella %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
