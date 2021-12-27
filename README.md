@@ -155,5 +155,7 @@ There are several videos featuring the TikZducks, kindly contributed by Ulrike a
 <a href="https://vimeo.com/337320777"><img src="https://user-images.githubusercontent.com/43832342/61394501-84b42b80-a8c3-11e9-9540-c9c80e6b3b34.png" alt="Welcome to Bayreuth" title="Welcome to Bayreuth" height="128"></a>
 <a href="https://vimeo.com/380684973"><img src="https://user-images.githubusercontent.com/43832342/71256276-8382a100-2330-11ea-8996-e87132c6ad29.png" alt="The great TikZlings Christmas Extravaganza 2019" title="The great TikZlings Christmas Extravaganza 2019" height="128"></a>
 <a href="https://vimeo.com/492532561"><img src="https://user-images.githubusercontent.com/43832342/102637280-0c0b6b80-4156-11eb-8031-c67c20b474f4.png" alt="The great TikZlings Christmas Extravaganza 2020" title="The great TikZlings Christmas Extravaganza 2020" height="128"></a>
+<a href="https://vimeo.com/660399886"><img src="https://user-images.githubusercontent.com/43832342/147475062-6180d904-c24c-4c21-877e-e55f5e4e91ad.png" alt="The great TikZlings Christmas Extravaganza 2021" title="The great TikZlings Christmas Extravaganza 2021" height="128"></a>
+
 
 The source code for some of the movies is available from [TikZlings@github](https://github.com/TikZlings/).
