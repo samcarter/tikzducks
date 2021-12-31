@@ -141,21 +141,6 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>-->
 
 
-## TikZducks movies
+## TikZducks in action
 
-There are several videos featuring the TikZducks, kindly contributed by Ulrike and Gert Fischer, Carla Maggi, Paulo Cereda and Marmot - many thanks to you all!
-
-<a href="https://vimeo.com/246256860"><img src="https://user-images.githubusercontent.com/8226363/43651585-1281b074-9743-11e8-97f5-bf70617738a5.png" alt="The great TikZducks Christmas Extravaganza 2017" title="The great TikZducks Christmas Extravaganza 2017" height="128"></a>
-<a href="https://vimeo.com/254643482"><img src="https://user-images.githubusercontent.com/8226363/43651587-12c92daa-9743-11e8-83b5-7fd3a3ac19a3.png" alt="International Pizza Day" title="International Pizza Day" height="128"></a>
-<a href="https://vimeo.com/252719006"><img src="https://user-images.githubusercontent.com/8226363/43651589-12e84334-9743-11e8-9621-d5e6e53a0ca8.png" alt="Happy Groundhog Day" title="Happy Groundhog Day" height="128"></a>
-<a href="https://vimeo.com/270727100"><img src="https://user-images.githubusercontent.com/8226363/43651586-12a6c008-9743-11e8-99d2-5a66e7f5f1ee.png" alt="Aquarela with TikZducks" title="Aquarela with TikZducks" height="128"></a>
-<a href="https://vimeo.com/295353434"><img src="https://user-images.githubusercontent.com/43832342/47496794-37d18600-d858-11e8-9e6e-777ffee1acdc.png" alt="Saint Crispin's Day" title="Saint Crispin's Day" height="128"></a>
-<a href="https://vimeo.com/284348495"><img src="https://user-images.githubusercontent.com/43832342/47496795-37d18600-d858-11e8-8c0c-20ea2d0a23cd.png" alt="James Bond" title="James Bond" height="128"></a>
-<a href="https://vimeo.com/305374856"><img src="https://user-images.githubusercontent.com/43832342/49704004-3cd27500-fc0d-11e8-9002-319a8e71aca7.png" alt="The great TikZlings Christmas Extravaganza 2018" title="The great TikZlings Christmas Extravaganza 2018" height="128"></a>
-<a href="https://vimeo.com/337320777"><img src="https://user-images.githubusercontent.com/43832342/61394501-84b42b80-a8c3-11e9-9540-c9c80e6b3b34.png" alt="Welcome to Bayreuth" title="Welcome to Bayreuth" height="128"></a>
-<a href="https://vimeo.com/380684973"><img src="https://user-images.githubusercontent.com/43832342/71256276-8382a100-2330-11ea-8996-e87132c6ad29.png" alt="The great TikZlings Christmas Extravaganza 2019" title="The great TikZlings Christmas Extravaganza 2019" height="128"></a>
-<a href="https://vimeo.com/492532561"><img src="https://user-images.githubusercontent.com/43832342/102637280-0c0b6b80-4156-11eb-8031-c67c20b474f4.png" alt="The great TikZlings Christmas Extravaganza 2020" title="The great TikZlings Christmas Extravaganza 2020" height="128"></a>
-<a href="https://vimeo.com/660399886"><img src="https://user-images.githubusercontent.com/43832342/147475062-6180d904-c24c-4c21-877e-e55f5e4e91ad.png" alt="The great TikZlings Christmas Extravaganza 2021" title="The great TikZlings Christmas Extravaganza 2021" height="128"></a>
-
-
-The source code for some of the movies is available from [TikZlings@github](https://github.com/TikZlings/).
+If you would like to observe TikZducks in their natural habitat, head over to the [TikZlings organisation](https://github.com/TikZlings/).
