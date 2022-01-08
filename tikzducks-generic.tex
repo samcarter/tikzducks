@@ -1013,10 +1013,10 @@
 %
 % Bobble hat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@bobblehat
-  \begin{pgfinterruptboundingbox}
+  \pgfinterruptboundingbox
     \fill[\duck@bobblehat] (0.4639,1.7996) .. controls (0.5789,1.8438) and (1.3853,1.6023) .. (1.4046,1.4672) .. controls (1.4581,1.5025) and (1.5242,1.5917) .. (1.4544,1.6879) .. controls (1.5205,2.1879) and (0.7711,2.3780) .. (0.5562,1.9848) .. controls (0.4314,1.9650) and (0.4277,1.8625) .. (0.4639,1.7996) -- cycle;
   \fill[\duck@bobblehat] (1.1,2.2) circle [radius=0.1];
-  \end{pgfinterruptboundingbox}
+  \endpgfinterruptboundingbox
   \path (0.43,1.3) rectangle (1.5,2.3);  
 \fi
 %
@@ -1344,11 +1344,11 @@
 %
 % broom %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@broom
-  \begin{scope}[rotate=-10]
+  \scope[rotate=-10]
     \draw[\duck@broomstick,line width=\scalingfactor*1.8pt] (0.9, 1.8) -- ++(0,-1.4);
     \draw[\duck@broomstick,line width=\scalingfactor*1.8pt] (0.6, 0.42) -- ++(0.6,0);
     \fill[\duck@broom] (0.6, 0.40) -- ++(-0.05,-0.1) -- ++(0.7,0) -- ++(-0.05, 0.1) -- cycle;
-  \end{scope}
+  \endscope
 \fi
 %
 % umbrella %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
