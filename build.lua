@@ -81,9 +81,9 @@ docfiles = {"*-doc.tex"}
 textfiles= {"README_ctan.md"}
 ctanreadme= "README_ctan.md"
 packtdszip   = false
-installfiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex"}
-sourcefiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex"}  
-excludefiles = {"*/documentation.pdf"}
+installfiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex","*-plain.tex"}
+sourcefiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex","*-plain.tex"}  
+excludefiles = {"documentation.pdf"}
 
 -- configuring ctan upload ===========================================
 require('build-private.lua')
