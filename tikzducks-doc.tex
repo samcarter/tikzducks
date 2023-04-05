@@ -290,6 +290,25 @@ And thanks to @JairoAdelRio there is even a \ConTeXt{} User Module available. So
 \end{tikzpicture}
 \end{tcolorbox}
 
+For those who prefer to work with pdf\TeX:
+
+\begin{tcolorbox}[title={pdfTeX}]
+\begin{lstlisting}[morekeywords={endtikzpicture,bye,input}]
+\input tikzducks-plain.tex
+
+\tikzpicture
+  \duck[bobblehat,cheese]
+\endtikzpicture
+
+\bye
+\end{lstlisting} 
+
+\tcblower
+\begin{tikzpicture}
+\duck[bobblehat,cheese]
+\end{tikzpicture}
+\end{tcolorbox}
+
 \subsection{Body parts}
 
 The various parts of the duck can also be coloured independently, i.e.\ \lstinline|body|, \lstinline|head| or \lstinline|bill|:
