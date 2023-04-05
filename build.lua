@@ -10,17 +10,24 @@ module = "tikzducks"
 ctanpkg = "tikzducks"
 builddir = os.getenv("TMPDIR") 
 
+-- Private settings ==================================================
+local ok, build_private = pcall(require, "build-private.lua")
+
 -- Package version ===================================================
-local handle = io.popen("git describe --tags $(git rev-list --tags --max-count=1)")
-local oldtag = handle:read("*a")
-handle:close()
-newsubtag = string.sub(oldtag, 4)
-newmajortag = string.sub(oldtag, 0, 3)
-if ( options["target"] == "tag") then
-	newsubtag = newsubtag + 1
+if ok then
+  local handle = io.popen("git describe --tags $(git rev-list --tags --max-count=1)")
+  local oldtag = handle:read("*a")
+  handle:close()
+  newsubtag = string.sub(oldtag, 4)
+  newmajortag = string.sub(oldtag, 0, 3)
+  previousversion = newmajortag .. math.floor(newsubtag)
+  if ( options["target"] == "tag") then
+    newsubtag = newsubtag + 1
+  end
+  packageversion = newmajortag .. math.floor(newsubtag)  
+else 
+  packageversion="v1.42"
 end
-packageversion = newmajortag .. math.floor(newsubtag)
---packageversion="v1.3"
 
 -- Package date ======================================================
 packagedate = os.date("!%Y-%m-%d")
@@ -36,44 +43,72 @@ function git(...)
 end
 
 -- replace version tags in .sty and -doc.tex files ===================
-tagfiles = {"*.sty", "*-doc.tex", "*.mkiv"}
+tagfiles = {"*.sty", "*-doc.tex", "*.mkiv","CHANGELOG.md"}
 function update_tag (file,content,tagname,tagdate)
-	tagdate = string.gsub (packagedate,"-", "/")
-	if string.match (file, "%.sty$" ) then
-		content = string.gsub (
-			content,
-			"\\ProvidesPackage{(.-)}%[%d%d%d%d%/%d%d%/%d%d version v%d%.%d+",
-			"\\ProvidesPackage{%1}[" .. tagdate.." version "..packageversion
-		)
-		return content
-	elseif string.match (file, "*-doc.tex$" ) then
-		content = string.gsub (
-			content,
-			"\\date{Version v%d%.%d+ \\textendash{} %d%d%d%d%/%d%d%/%d%d",
-			"\\date{Version " .. packageversion .. " \\textendash{} " .. tagdate
-		)
-		return content
-	elseif string.match (file, "%.mkiv$" ) then
-		content = string.gsub (
-			content,
+  tagdate = string.gsub (packagedate,"-", "/")
+  if string.match (file, "%.sty$" ) then
+    content = string.gsub (
+      content,
+      "\\ProvidesPackage{(.-)}%[%d%d%d%d%/%d%d%/%d%d version v%d%.%d+",
+      "\\ProvidesPackage{%1}[" .. tagdate.." version "..packageversion
+    )
+    return content
+  elseif string.match (file, "*-doc.tex$" ) then
+    content = string.gsub (
+      content,
+      "\\date{Version v%d%.%d+ \\textendash{} %d%d%d%d%/%d%d%/%d%d",
+      "\\date{Version " .. packageversion .. " \\textendash{} " .. tagdate
+    )
+    return content
+  elseif string.match (file, "%.mkiv$" ) then
+    content = string.gsub (
+      content,
             "\\writestatus{(.-)}%{ConTeXt User Module / TikZDucks %d%d%d%d%/%d%d%/%d%d version v%d%.%d+",
             "\\writestatus{%1}{ConTeXt User Module / TikZDucks " .. tagdate.." version "..packageversion
-		)
-		return content        
-	end
-	return content
+    )
+    return content        
+  elseif string.match (file, "CHANGELOG.md$" ) then
+    local url = "https://github.com/samcarter/" .. module .. "/compare/"
+    local previous = string.match(content,"compare/(v%d%.%d)%.%.%.HEAD")
+      
+    -- copying current changelong to announcement.txt
+    -- finding start and end in changelog
+    i, startstring = string.find(content, "## %[Unreleased%]")
+    stopstring, i = string.find(content, "## %[" .. previousversion .. "%]")
+    -- opening file and writing substring
+    file = io.open("announcement.txt", "w")
+    file:write(string.sub(content, startstring+3, stopstring-1), "\n")
+    file:close()
+      
+    -- adding new unreleased heading at the top
+    content = string.gsub (
+      content,
+            "## %[Unreleased%]",
+            "## [Unreleased]\n\n### New\n\n### Changed\n\n### Fixed\n\n\n## [" .. packageversion .."]"        
+    )
+        
+        -- adding new link at bottom
+    content = string.gsub (
+      content,
+            "v%d.%d%.%.%.HEAD",
+            packageversion .. "...HEAD\n[" .. packageversion .. "]: " .. url .. previousversion .. "..." .. packageversion
+    )
+    return content
+  end  
+  return content
 end
 
 -- committing retagged file and tag the commit =======================
 function tag_hook(tagname)
-	git("add", "*.sty")
-	git("add", "*-doc.tex")
-	git("add", "*.mkiv")    
-	os.execute("latexmk " .. module .. "-doc")
-	os.execute("cp " .. module .. "-doc.pdf documentation.pdf")
-	git("add", "documentation.pdf")
-	git("commit -m 'step version ", packageversion, "'" )
-	git("tag", packageversion)
+  git("add", "*.sty")
+  git("add", "*-doc.tex")
+  git("add", "*.mkiv")  
+  git("add", "CHANGELOG.md")  
+  os.execute("latexmk " .. module .. "-doc")
+  os.execute("cp " .. module .. "-doc.pdf documentation.pdf")
+  git("add", "documentation.pdf")
+  git("commit -m 'step version ", packageversion, "'" )
+  git("tag", packageversion)
 end
 
 -- collecting files for ctan =========================================
@@ -85,13 +120,10 @@ installfiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex","*-plain.tex"}
 sourcefiles = {"*.sty", "*.code.tex", "*.mkiv", "*-generic.tex","*-plain.tex"}  
 excludefiles = {"documentation.pdf"}
 
--- configuring ctan upload ===========================================
-require('build-private.lua')
-
 uploadconfig = {
-	author       = uploadconfig.author,
-	uploader     = uploadconfig.uploader,
-	email        = uploadconfig.email,
+  author       = uploadconfig.author,
+  uploader     = uploadconfig.uploader,
+  email        = uploadconfig.email,
   pkg          = ctanpkg,
   version      = packageversion .. " " .. packagedate,
   license      = "lppl1.3c",
