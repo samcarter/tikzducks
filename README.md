@@ -47,6 +47,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Knuth.tex"><img src="./duckpond/Knuth.svg" alt="Duck E. Knuth" title="Duck E. Knuth" height="64"></a>
 <a href="./duckpond/PaulinoVanDuck.tex"><img src="./duckpond/PaulinoVanDuck.svg" alt="Prof. Paulino van Duck" title="Prof. Paulino van Duck" height="64"></a>
 <a href="./duckpond/QueenDuck.tex"><img src="./duckpond/QueenDuck.svg" alt="Queen Duck" title="Queen duck" height="64"></a>
+<a href="./duckpond/KingQuackIII.tex"><img src="./duckpond/KingQuackIII.svg" alt="King Quack III" title="King Quack III" height="64"></a>
 <a href="./duckpond/DuckInBlack.tex"><img src="./duckpond/DuckInBlack.svg" alt="Duck in Black" title="Duck in Black" height="64"></a>
 <a href="./duckpond/JamesDuck.tex"><img src="./duckpond/JamesDuck.svg" alt="JamesDuck and Q(ack)" title="James Duck and Q(ack)" height="64"></a>
 <a href="./duckpond/MaryDuckings.tex"><img src="./duckpond/MaryDuckings.svg" alt="Mary Duckings" title="Mary Duckings" height="64"></a>
