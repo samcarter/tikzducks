@@ -1,4 +1,4 @@
-% !TeX TS-program = pdflatex "\AtBeginDocument{\pagecolor{gray!20!white}}\input{%}" % | /usr/bin/sips -s format png %.pdf --out %.png | pdflatex % | convert -delay 10 -loop 0 -density 100 -alpha remove %.pdf %.gif | txs:///view-log | txs:///view-pdf
+% !TeX TS-program = pdflatex "\AtBeginDocument{\pagecolor{gray!20!white}}\input{%}" % | pdftoppm -png -r 240 -singlefile %.pdf % | pdflatex % | convert -delay 10 -loop 0 -density 100 -alpha remove %.pdf %.gif | txs:///view-log | txs:///view-pdf
 
 %modified from https://tex.stackexchange.com/a/429006/36296
 \documentclass[tikz]{standalone}
