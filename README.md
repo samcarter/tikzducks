@@ -79,7 +79,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/PopArt.tex"><img src="./duckpond/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
 <a href="./duckpond/Leonardo.tex"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
 <a href="./duckpond/Soup.tex"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
-<a href="./duckpond/Frida.tex"><img src="./duckpond/Frida.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
+<a href="./duckpond/Frida.tex"><img src="./duckpond/Frida_bg.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
 
 ### TeX.SE users (and relatives)
 
@@ -106,7 +106,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Chainsaw.tex"><img src="./duckpond/Chainsaw.svg" alt="Chainsaw Duck" title="Chainsaw Duck" height="64"></a>
 <a href="./duckpond/Devil.tex"><img src="./duckpond/Devil.svg" alt="Devil Duck" title="Devil Duck" height="64"></a>
 <a href="./duckpond/Ninja.tex"><img src="./duckpond/Ninja.svg" alt="Ninja Ducks" title="Ninja Ducks" height="64"></a>
-<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck.png" alt="Party Duck" title="Party Duck" height="64"></a>
+<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck_bg.png" alt="Party Duck" title="Party Duck" height="64"></a>
 <a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.svg" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
 <a href="./duckpond/Snowduck.tex"><img src="./duckpond/Snowduck.svg" alt="Snowduck" title="Snowduck" height="64"></a>
 <a href="./duckpond/OfficeDuck.tex"><img src="./duckpond/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
@@ -115,24 +115,24 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Animals and Beings
 
-<a href="./duckpond/AraraDuck.tex"><img src="./duckpond/AraraDuck.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
+<a href="./duckpond/AraraDuck.tex"><img src="./duckpond/AraraDuck_bg.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
 <a href="./duckpond/BeeDuck.tex"><img src="./duckpond/BeeDuck.svg" alt="Bee Duck" title="Bee Duck" height="64"></a>
 <a href="./duckpond/Bunny.tex"><img src="./duckpond/Bunny.svg" alt="Bunny Duck" title="Bunny Duck" height="64"></a>
 <a href="./duckpond/Donkey.tex"><img src="./duckpond/Donkey.svg" alt="Donkey Duck" title="Donkey Duck" height="64"></a>
 <a href="./duckpond/Horse.tex"><img src="./duckpond/Horse.svg" alt="Horse Duck" title="Horse Duck" height="64"></a>
 <a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
 <a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
-<a href="./duckpond/Zebra2.tex"><img src="./duckpond/Zebra2.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
-<a href="./duckpond/Unicorn.tex"><img src="./duckpond/Unicorn.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
+<a href="./duckpond/Zebra2.tex"><img src="./duckpond/Zebra2_bg.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
+<a href="./duckpond/Unicorn.tex"><img src="./duckpond/Unicorn_bg.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
 
 ### More ducks
 
-<a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck.png" alt="3D Duck" title="3D Duck" height="64"></a>
+<a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck_bg.png" alt="3D Duck" title="3D Duck" height="64"></a>
 <a href="./duckpond/Back.tex"><img src="./duckpond/Back.svg" alt="Backside" title="Backside" height="64"></a>
-<a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
+<a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko_bg.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
+<a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil_bg.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
 <a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
-<a href="./duckpond/YankeeDuck.tex"><img src="./duckpond/YankeeDuck.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
+<a href="./duckpond/YankeeDuck.tex"><img src="./duckpond/YankeeDuck_bg.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
 <a href="./duckpond/Facemask.tex"><img src="./duckpond/Facemask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
 <!--<a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.svg" alt="Chess" title="Chess" height="128"></a>
 <a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
