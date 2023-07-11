@@ -123,6 +123,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
 <a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
 <a href="./duckpond/Zebra2.tex"><img src="./duckpond/Zebra2.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
+<a href="./duckpond/Unicorn.tex"><img src="./duckpond/Unicorn.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
 
 ### More ducks
 
