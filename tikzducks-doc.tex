@@ -11,113 +11,53 @@
 % See http://www.latex-project.org/lppl.txt
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !TeX program = txs:///arara
+% arara: latexmk: {
+% arara: --> engine: pdflatex,
+% arara: --> options: [
+% arara: -->    '-shell-escape',
+% arara: -->    '-synctex=1',
+% arara: -->    '-interaction=nonstopmode',
+% arara: -->  ]
+% arara: --> }
 \documentclass[parskip=half]{scrartcl}
 
+% meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{The \texorpdfstring{\tikzducks}{tikzducks} package}
+\subtitle{using ducks in \TikZ}
+\author{%
+  \texorpdfstring{
+    \begin{tikzpicture}
+      \duck
+    \end{tikzpicture}\\[0.8em]
+    \texttt{samcarter}\\
+    \url{https://github.com/samcarter/tikzducks}\\
+    \url{https://www.ctan.org/pkg/tikzducks}
+  }{samcarter}}
+\date{Version v1.6 \textendash{} 2023/04/05}
+
+\usepackage[
+  themecolor=samdblue
+]{\jobname-settings}
+
 % packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[T1]{fontenc}  
-\usepackage[utf8]{inputenc}    
-\usepackage[english]{babel}
-\usepackage[bitstream-charter]{mathdesign}
 \usepackage{tikzducks}
 \usetikzlibrary{ducks,3d}
-\usepackage[most]{tcolorbox}
-\usepackage[paper=a4paper,margin=3cm,foot=2cm]{geometry}
-\usepackage{url}
-\usepackage{xspace}
-\usepackage{scrlayer-scrpage} 
 \usepackage{marvosym}
 \usepackage{fontawesome}
-\usepackage[hang,flushmargin,bottom]{footmisc}
-\usepackage{imakeidx}
-\usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
-
-% macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\CTAN}{\textsc{CTAN}\xspace}
-\newcommand{\TikZ}{Ti\emph{k}Z\xspace}
-\newcommand{\tikzducks}{Ti\emph{k}Zducks\xspace}
-\newcommand{\miktex}{MiK\TeX\xspace}
-\newcommand{\texlive}{\TeX{}Live\xspace}
-\newcommand{\ConTeXt}{C\kern-.0333emon\-\kern-.0667em\TeX\kern-.0333emt}
 
 % customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\definecolor{duckblue}{RGB}{0,70,140}
-\addtokomafont{sectioning}{\color{duckblue}}
-\addtokomafont{date}{\normalsize}
-\addtokomafont{author}{\normalsize}
-\setlength{\footnotemargin}{0.7em}
-
-\lstdefinestyle{duckstyle}{%
-  language={[latex]TeX},
-  tabsize=2,
-  breaklines,
-  basicstyle=\footnotesize\ttfamily,
-  commentstyle={\color{green!50!black}\slshape}, 
-  columns=fullflexible,
-  emphstyle=\color{orange!70!black},
-  emph=[1]{water,body,head,eye,pupil,bill,grumpy,tshirt,jacket,tie,cape,shorthair,longhair,crazyhair,recedinghair,eyebrow,beard,glasses,sunglasses,alien,hat,cap,santa,chef,cheese,graduate,tassel,beret,crown,unicorn,icecream,flavoura,flavourb,flavourc,book,bookcolour,signpost,signcolour,signback,magichat,magicstars,magicwand,witch,cricket,rollingpin,lightsaber,torch,cake,pizza,hockey,baguette,wing,football,mask,bunny,inear,necklace,milkshake,wine,peakedcap,prison,tophat,speech,bubblecolour,think,buttons,sheep,squareglasses,tail,basket,easter,egga,eggb,eggc,mohican,mullet,horsetail,darthvader,crozier,queencrown,kingcrown,wing,laughing,parrot,stethoscope,niuqelrah,harlequin,neckerchief,woggle,snowduck,invisible,strawhat,ribbon,vampire,parting,crystalball,helmet,shovel,pickaxe,bowtie,lapel,umbrella,umbrellaclosed,handbag,cocktail,viking,devil,aodai,conicalhat,overleaf,sailor,bobblehat,scarf,strawbroom, strawbroomstick, strawbroomribbon, broom, broomstick},
-  texcsstyle=*\color{duckblue}\bfseries,
-  keywordstyle=\color{red!60!black}\bfseries,
-  morekeywords={tikzpicture,picture,scope,patterns,calc,pgfinterruptboundingbox},
-  moretexcs={duck,picduck,path,definecolor,duckpathjacket,duckpathbody,duckpathgrumpybill,duckpathbill,duckpathtshirt,duckpathcape,duckpathshorthair,duckpathlonghair,duckpathcrazyhair,duckpathrecedinghair,duckpathcrown,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,insignia,stripes,color,includegraphics,mcap,setboardfontcolors,setboardfontencoding,WhiteQueenOnWhite,WhiteKingOnWhite,superstripes,shuffleducks,randuck,randomhead,randomaccessories,duckpathmohican,duckpathmullet,duckpathqueencrown,duckpathkingcrown,duckpathdarthvader,duckpathhorsetail,tikzset,duckpathwing,shade,duckhookbackground,duckhookbody,duckhookclothing,duckhookhair,duckhookhat,duckhookforeground},
-  delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
-  moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
-  index=[1][emph]
-}
-
-\tcbset{%
-  colframe=duckblue,
-  arc=2mm,
-  fonttitle=\bfseries,
-  sidebyside,
-  listing options={style=duckstyle},
-  center lower,
-  righthand width=6.5cm,
-  bottom=0pt, 
-  top=0pt,
-  before lower={%
-    \setlength{\parskip}{0.5cm}%
-    \spaceskip=5\fontdimen2\font%
-  },
-}
-
-\lstset{style=duckstyle}
-\pgfkeys{/duck/|stripes|/.style={stripes={#1}}}
-
 \pgfmathsetseed{2}
 \setlength{\footheight}{41pt}
 \newlength{\duckoffset}
 
 \cfoot{%
-  \tikzset{external/export=false}%
   \shuffleducks
   \begin{tikzpicture}[scale=0.5] 
       \duck[signpost=\scalebox{0.6}{\thepage},\randomhead]
   \end{tikzpicture}
 } 
 \pagestyle{scrheadings}
-\indexsetup{firstpagestyle=scrheadings}
-\makeindex[columns=3]
-
-\usetikzlibrary{external}
-\ifnum\pdfshellescape=1
-  \tikzexternalize[prefix=./tikzducks-doc-figures/]
-\fi
-
-% meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{The \texorpdfstring{\tikzducks}{tikzducks} package}
-\subtitle{using ducks in \TikZ}
-\author{%
-  \texorpdfstring{\texttt{samcarter} (alias 
-    \tikzset{external/export=false}%
-    \begin{tikzpicture}[scale=0.3,baseline=3pt]
-      \duck[body=yellow!50!brown!50!white,
-          longhair=red!50!brown, 
-          jacket=blue!50!black]
-    \end{tikzpicture})\\[0.8em]
-    \url{https://github.com/samcarter/tikzducks}\\
-    \url{https://www.ctan.org/pkg/tikzducks}
-  }{samcarter}}
-\date{Version v1.6 \textendash{} 2023/04/05}
 
 \begin{document}
 \maketitle
@@ -146,7 +86,7 @@ Ulrike Fischer for her useful \TikZ advices and contributions to the package and
 
 Many other users contributed to this package (in random order):
 %
-Enrico Gregorio helped to implement the \lstinline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
+Enrico Gregorio helped to implement the \saminline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
 % 
 Andrew Stacey contributed the \TikZ Library ``ducks'',
 %
@@ -154,7 +94,7 @@ Symbol~1 solved a few problems with default key values,
 %
 Mihikma created the duck's beard,
 %
-Yudai Nakata helped with problems of \lstinline|\pdfrandomseed|,
+Yudai Nakata helped with problems of \saminline|\pdfrandomseed|,
 %
 @marmot for his seemingly infinite knowledge of \TikZ which he shared with the world,    
 %
@@ -162,17 +102,7 @@ Yudai Nakata helped with problems of \lstinline|\pdfrandomseed|,
 %
 and last but not least my thanks go to Martin Schr\"oder for his feedback to the code review.
 
-\pagebreak
 The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{https://inkscape.org}) and then exported to \TikZ paths using the \texttt{svg2tikz} extension (\url{https://github.com/xyz2tex/svg2tikz}).
-
-\subsection{Dependencies}
-
-The \tikzducks package loads \lstinline|expl3| and \TikZ, which in turn loads the \lstinline|xcolor| package (amongst others). If you require one of these packages to be loaded with some option, please consider loading it yourself before the \tikzducks package or use, e.g.
-
-\begin{lstlisting}[morekeywords={xcolor,svgnames}]
-  \PassOptionsToPackage{svgnames}{xcolor}
-\end{lstlisting}
-It also uses the \lstinline|\usetikzlibrary{patterns}| and \lstinline|\usetikzlibrary{calc}|. 
 
 \subsection{License}
 
@@ -190,7 +120,7 @@ The basic usage is fairly simple, to draw a duck:
 \end{tikzpicture}
 \end{tcblisting}
 
-To customise this basic duck, the package uses \lstinline|pgf| keys. For almost all parts the colour can be changed using \lstinline|<shape name>=<colour name>|. For example to change the colour of the duck:
+To customise this basic duck, the package uses \saminline|pgf| keys. For almost all parts the colour can be changed using \saminline|<shape name>=<colour name>|. For example to change the colour of the duck:
 \begin{tcblisting}{title={Blue duck}}
 \begin{tikzpicture}
   \duck[body=blue]
@@ -199,23 +129,22 @@ To customise this basic duck, the package uses \lstinline|pgf| keys. For almost 
 
 If the keyword consists of multiples words, it works both with and without spaces. In the following usually the version without spaces is given. 
 
-\clearpage
-In addition to the keys defined in this package, all usual \TikZ and \lstinline|pgf| keys can also be used. For example if the size of the ducks should be changed or shifted:
+In addition to the keys defined in this package, all usual \TikZ and \saminline|pgf| keys can also be used. For example if the size of the ducks should be changed or shifted:
 
 \begin{tcblisting}{title={Scaled duck and \emph{The Ugly Duckling}},  righthand width=3cm}
 \begin{tikzpicture}[scale=0.6]
   \duck
   \duck[xshift=90pt, scale=.3, yshift=150pt]
   \duck[xshift=60pt, scale=.3, yshift=100pt]
-  \duck[body=gray!50!white,head=gray!50!white,
-    xshift=80pt, scale=.3, yshift=50pt]
+  \duck[body=gray!50!white, head=gray!50!white,
+        xshift=80pt, scale=.3, yshift=50pt]
 \end{tikzpicture}
 \end{tcblisting}
 
-To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a \TikZ library. It can be loaded with \lstinline|\usetikzlibrary{ducks}|. In addition to the normal functionality of the \tikzducks package, the ducks are now also available as \lstinline|pic|. A short example:
+To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a \TikZ library. It can be loaded with \saminline|\usetikzlibrary{ducks}|. In addition to the normal functionality of the \tikzducks package, the ducks are now also available as \saminline|pic|. A short example:
 
 \begin{tcolorbox}[title={\TikZ library ``ducks''}]
-\begin{lstlisting}[morekeywords={ducks,duck,standalone,tikz,document}]
+\begin{samcode}
 \documentclass{standalone}
 
 \usepackage{tikz}
@@ -234,7 +163,7 @@ To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a 
 \end{tikzpicture}
 
 \end{document}
-\end{lstlisting} 
+\end{samcode} 
 
 \tcblower
 \begin{tikzpicture}
@@ -272,7 +201,7 @@ For the \TeX{} purists, there is also a picture mode variant:
 And thanks to @JairoAdelRio there is even a \ConTeXt{} User Module available. Some of the colours might look different and not being a \ConTeXt{} user myself, I can't guarantee maintenance of this module.  
 
 \begin{tcolorbox}[title={\ConTeXt{}  User Module}]
-\begin{lstlisting}[morekeywords={usemodule,usecolors,starttext,stoptext,starttikzpicture,stoptikzpicture}]
+\begin{samcode}
 \usemodule[tikzducks]
 \usecolors[xwi]
 \starttext
@@ -282,18 +211,18 @@ And thanks to @JairoAdelRio there is even a \ConTeXt{} User Module available. So
 \stoptikzpicture
 
 \stoptext
-\end{lstlisting} 
+\end{samcode} 
 
 \tcblower
 \begin{tikzpicture}
-\duck[tophat,bowtie]
+  \duck[tophat,bowtie]
 \end{tikzpicture}
 \end{tcolorbox}
 
 For those who prefer to work with pdf\TeX:
 
 \begin{tcolorbox}[title={pdfTeX}]
-\begin{lstlisting}[morekeywords={endtikzpicture,bye,input}]
+\begin{samcode}
 \input tikzducks-plain.tex
 
 \tikzpicture
@@ -301,28 +230,28 @@ For those who prefer to work with pdf\TeX:
 \endtikzpicture
 
 \bye
-\end{lstlisting} 
+\end{samcode}
 
 \tcblower
 \begin{tikzpicture}
-\duck[bobblehat,cheese]
+  \duck[bobblehat,cheese]
 \end{tikzpicture}
 \end{tcolorbox}
 
 \subsection{Body parts}
 
-The various parts of the duck can also be coloured independently, i.e.\ \lstinline|body|, \lstinline|head| or \lstinline|bill|:
+The various parts of the duck can also be coloured independently, i.e.\ \saminline|body|, \saminline|head| or \saminline|bill|:
 
 \begin{tcblisting}{title={Harlequin duck}}
 \begin{tikzpicture}
   \duck[body=yellow,
-    head=yellow!50!orange, 
-    bill=red,
-    eye=green]
+        head=yellow!50!orange, 
+        bill=red,
+        eye=green]
 \end{tikzpicture}
 \end{tcblisting}
 
-Furthermore using the keywords \lstinline|grumpy|, \lstinline|laughing| or \lstinline|parrot| the shape of the bill can be changed:
+Furthermore using the keywords \saminline|grumpy|, \saminline|laughing| or \saminline|parrot| the shape of the bill can be changed:
 
 \begin{tcblisting}{title={Grumpy duck}}
 \begin{tikzpicture}
@@ -405,7 +334,7 @@ And of course the colour of each hair style can be adjusted:
 \end{tikzpicture}
 \end{tcblisting}
 
-Eyebrows and a beard are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified (\lstinline|eyebrow=<colour name>| or \lstinline|beard=<colour name>|) this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
+Eyebrows and a beard are also part of the package. The colour choice is more tricky for them -- if a colour is explicitly specified (\saminline|eyebrow=<colour name>| or \saminline|beard=<colour name>|) this colour is of course used, but if no colour is given, it first falls back to the hair colour and only if the duck does not have any hairs, the default colour is applied.
 
 \begin{tcblisting}{title={Eye brow duck}}
 \begin{tikzpicture}
@@ -431,7 +360,7 @@ Eyebrows and a beard are also part of the package. The colour choice is more tri
 \end{tcblisting}
 \footnotetext[\thefootnote]{The beard is based on an answer by Mihikma, see \url{https://tex.stackexchange.com/a/401777/36296}}
 
-Please note that not all of the accessories, especially hats, shown in the following sections, will suite every hairstyle. In case the desired combination of hair style and hat does not work well, there is always the possibility to look up the original definition of the hat in the \lstinline|tikzducks| source code and recreate it with a more suitable position or size.
+Please note that not all of the accessories, especially hats, shown in the following sections, will suite every hairstyle. In case the desired combination of hair style and hat does not work well, there is always the possibility to look up the original definition of the hat in the \saminline|tikzducks| source code and recreate it with a more suitable position or size.
 
 \subsection{Clothing}
 
@@ -452,24 +381,23 @@ A respectable duck needs a suitable wardrobe. It can choose from several differe
 \begin{tcblisting}{title={Tie duck}}
 \begin{tikzpicture}
   \duck[tshirt,
-      jacket=gray,
-      tie]
+        jacket=gray,
+        tie]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Bowtie duck}}
 \begin{tikzpicture}
   \duck[tshirt,
-      jacket=gray,
-      bowtie]
+        jacket=gray,
+        bowtie]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Áo dài duck}}
 \begin{tikzpicture}
   \duck[tshirt=cyan,
-        aodai=blue!50!black
-  ]
+        aodai=blue!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -512,7 +440,8 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Strawhat duck}}
 \begin{tikzpicture}
-  \duck[strawhat=brown!50!white, ribbon=gray]
+  \duck[strawhat=brown!50!white, 
+        ribbon=gray]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -537,7 +466,8 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Graduate duck}}
 \begin{tikzpicture}
-  \duck[graduate=gray!20!black,tassel=red!70!black]
+  \duck[graduate=gray!20!black,
+        tassel=red!70!black]
 \end{tikzpicture}  
 \end{tcblisting}
 
@@ -556,7 +486,7 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Harlequin duck}}
 \begin{tikzpicture}
   \duck[harlequin=blue,
-    niuqelrah=red]
+        niuqelrah=red]
 \end{tikzpicture}  
 \end{tcblisting}
 
@@ -574,15 +504,15 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Crown duck}}
 \begin{tikzpicture}
-\duck[body=black!75!white,
-      crown=yellow!70!brown]
+  \duck[body=black!75!white,
+        crown=yellow!70!brown]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[queencrown=gray]
+  \duck[queencrown=gray]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[kingcrown=brown!70!red]
+  \duck[kingcrown=brown!70!red]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -607,18 +537,20 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Unicorn duck}}
 \begin{tikzpicture}
   \duck[body=pink,
-    unicorn=magenta!60!violet,
-    longhair=magenta!60!violet]
+        unicorn=magenta!60!violet,
+        longhair=magenta!60!violet]
 \end{tikzpicture}
 \end{tcblisting}
 
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Bunny duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-\duck[body=white!80!brown, bill=white!60!brown, bunny]
+  \duck[body=white!80!brown, 
+        bill=white!60!brown, 
+        bunny]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[bunny=red,inear=blue]
+  \duck[bunny=red,inear=blue]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
@@ -626,7 +558,9 @@ There is a multitude of things a duck might need. The following examples all als
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Sheep duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-\duck[body=white!80!brown, bill=white!60!brown, sheep]
+  \duck[body=white!80!brown, 
+        bill=white!60!brown, 
+        sheep]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The in-ear colour of the sheep chosen to be the same as the bill}
@@ -634,7 +568,9 @@ There is a multitude of things a duck might need. The following examples all als
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Horse duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-\duck[body=brown!80!white, longhair=brown!50!black, horsetail]
+  \duck[body=brown!80!white, 
+        longhair=brown!50!black, 
+        horsetail]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{If no colour is specified, the horse tail will have the same colour as the hair}
@@ -682,27 +618,30 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Signpost duck}}
 \begin{tikzpicture} 
-    \duck[signpost=42]
+  \duck[signpost=42]
 \end{tikzpicture}
 \begin{tikzpicture} 
-\duck[signpost=\scalebox{0.4}{
-  \parbox{2cm}{\color{black}
-  \centering Science\\ first}},
-  signcolour=brown!70!gray,
-  signback=white!80!brown]
+  \duck[signpost=\scalebox{0.4}{
+        \parbox{2cm}{\color{black}
+        \centering Science\\ first}},
+        signcolour=brown!70!gray,
+        signback=white!80!brown]
 \end{tikzpicture}
 \end{tcblisting}
 
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Speaking duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-  \duck[speech={Bla},bubblecolour=cyan!20!white,laughing]
+  \duck[speech={Bla},
+        bubblecolour=cyan!20!white,
+        laughing]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Thinking duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-  \duck[think={Blub},bubblecolour=white!95!yellow]
+  \duck[think={Blub},
+        bubblecolour=white!95!yellow]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{Both the speech and thought bubble are inspired by the wonderful \href{https://www.ctan.org/pkg/ducksay}{ducksay package}}
@@ -720,7 +659,8 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Dinner jacket duck}}
 \begin{tikzpicture}
-  \duck[jacket=gray,lapel=black,buttons]
+  \duck[jacket=gray,
+        lapel=black,buttons]
 \end{tikzpicture}  
 \end{tcblisting}
 
@@ -729,7 +669,8 @@ There is a multitude of things a duck might need. The following examples all als
   \duck[book=\scalebox{0.5}{\TeX}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[book=\scalebox{0.6}{$\pi$}, bookcolour=blue!50!black]
+  \duck[book=\scalebox{0.6}{$\pi$}, 
+        bookcolour=blue!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -756,7 +697,8 @@ There is a multitude of things a duck might need. The following examples all als
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Lightsaber duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-  \duck[lightsaber=red,darthvader=black!30!gray]
+  \duck[lightsaber=red,
+        darthvader=black!30!gray]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{Dedicated to the Counter Wizard (aka Christian Hupfer)}
@@ -801,7 +743,7 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Chef duck$^{\thefootnote}$}}
 \begin{tikzpicture}
   \duck[chef=white!95!yellow,
-      rollingpin=brown!80!black]
+        rollingpin=brown!80!black]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The chef duck is based on an idea by Carla Maggi, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
@@ -868,8 +810,8 @@ There is a multitude of things a duck might need. The following examples all als
   \duck[bunny,easter]
 \end{tikzpicture}
 \begin{tikzpicture}
-  \duck[bunny,easter=brown,
-  egga=cyan,eggb=orange,eggc=teal]
+  \duck[bunny,easter=brown,egga=cyan,
+        eggb=orange,eggc=teal]
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The basket and Easter basket was kindly contributed by Benito van der Zander}
@@ -883,14 +825,14 @@ There is a multitude of things a duck might need. The following examples all als
 \begin{tcblisting}{title={Neckerchief duck}}
 \begin{tikzpicture}
   \duck[neckerchief=red!70!black,
-    woggle=blue!60!black]
+        woggle=blue!60!black]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Winter duck}}
 \begin{tikzpicture}
   \duck[bobblehat=red!70!black,
-    scarf=red!70!black]
+        scarf=red!70!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -930,17 +872,13 @@ There is a multitude of things a duck might need. The following examples all als
 
 \begin{tcblisting}{title={Sweeping Duck}}
 \begin{tikzpicture}
-  \duck[
-    strawbroom=brown!50!white,
-    strawbroomstick=brown,
-    strawbroomribbon=red!50!black
-  ]
+  \duck[strawbroom=brown!50!white,
+        strawbroomstick=brown,
+        strawbroomribbon=red!50!black]
 \end{tikzpicture}  
 \begin{tikzpicture}
-  \duck[
-    broom=brown,
-    broomstick=gray!50!black
-  ]
+  \duck[broom=brown,
+        broomstick=gray!50!black]
 \end{tikzpicture}  
 \end{tcblisting}
 
@@ -969,7 +907,7 @@ There is a multitude of things a duck might need. The following examples all als
 
 \clearpage
 \section{Random ducks}
-With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \lstinline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
+With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \saminline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
 
 \begin{tcblisting}{title={Random duck}}
 \begin{tikzpicture}
@@ -978,7 +916,7 @@ With all these available accessories it might be hard to decide which one to cho
 \end{tikzpicture}
 \end{tcblisting}
 
-In case the duck should not be completely random, but only some of the random elements are desired, these can be accessed independently by using \lstinline|\randomhead| and \lstinline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: Before using \lstinline|\randomhead| or \lstinline|\randomaccessories|, \lstinline|\shuffleducks| has to be used to provide the random items (for \lstinline|\randuck| this is done automatically).     
+In case the duck should not be completely random, but only some of the random elements are desired, these can be accessed independently by using \saminline|\randomhead| and \saminline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: Before using \saminline|\randomhead| or \saminline|\randomaccessories|, \saminline|\shuffleducks| has to be used to provide the random items (for \saminline|\randuck| this is done automatically).     
 
 \begin{tcblisting}{title={Random head gear and accessories}}
 \begin{tikzpicture}
@@ -989,7 +927,7 @@ In case the duck should not be completely random, but only some of the random el
 
 \section{Further customisation}
 
-This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \lstinline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
+This package will never be able to do everything every potential user might want to do, as this number quickly approaches $\infty$ -- but as the ducks are simply things inside \saminline|tikzpicture|s, all the heavy weapons of the \TikZ package are available for further customisation.
 
 \begin{tcblisting}{title={Adding things to the duck}}
 \begin{tikzpicture}
@@ -1010,20 +948,26 @@ For convenience the more complex paths of this package are stored in macros, whi
 \begin{tcblisting}{title={Redraw parts}}
 \begin{tikzpicture}
   \duck
-  \path[preaction={fill, red!50!black},pattern=fivepointed stars, pattern color=yellow]  
-      \duckpathlonghair;
+  \path[preaction={fill, red!50!black},
+        pattern=fivepointed stars, 
+        pattern color=yellow]  
+        \duckpathlonghair;
 \end{tikzpicture}
 \end{tcblisting}
 
 In detail, the following paths are available:
 
-\begin{lstlisting}[aboveskip=1.2em,breakindent=0pt]
-\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt, \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, \duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown,  \duckpathmohican,  \duckpathmullet,  \duckpathqueencrown,  \duckpathkingcrown,  \duckpathdarthvader,  \duckpathhorsetail
-\end{lstlisting}
+\begin{samcode}
+\duckpathbody, \duckpathgrumpybill, \duckpathbill, \duckpathtshirt,
+\duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair, 
+\duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown,  
+\duckpathmohican,  \duckpathmullet,  \duckpathqueencrown,  
+\duckpathkingcrown,  \duckpathdarthvader,  \duckpathhorsetail
+\end{samcode}
 
-In case one of the other shapes is needed, please have a look at the package source code, which can be found in \lstinline|tikzducks.sty|.
+In case one of the other shapes is needed, please have a look at the package source code, which can be found in \saminline|tikzducks.sty|.
 
-To ease the placement of further accessories, some particular spots of the duck are marked with \TikZ coordinates, namely the \lstinline|wing|, \lstinline|head|, \lstinline|bill| and \lstinline|tail|. 
+To ease the placement of further accessories, some particular spots of the duck are marked with \TikZ coordinates, namely the \saminline|wing|, \saminline|head|, \saminline|bill| and \saminline|tail|. 
 
 {
 \footnotesize\ttfamily
@@ -1042,25 +986,25 @@ To ease the placement of further accessories, some particular spots of the duck 
 \end{tcblisting}
 }
 
-To distinguish coordinates from multiple ducks in the same \lstinline|tikzpicture|, one can name the ducks using the option \lstinline[emph={name}]|name|. If this option is used, the coordinates are prefixed with the respective name and a dash: \lstinline|<name>-<coordinate>|.
+To distinguish coordinates from multiple ducks in the same \saminline|tikzpicture|, one can name the ducks using the option \saminline|name|. If this option is used, the coordinates are prefixed with the respective name and a dash: \saminline|<name>-<coordinate>|.
 
 \begin{tcblisting}{title={Named coordinates},listing options={style={duckstyle}, emph={name,wing}}}
 \begin{tikzpicture}
   \duck[name=foo]
-   \duck[name=bar,xshift=90pt,
-         scale=.3,yshift=150pt]
+  \duck[name=bar,xshift=90pt,
+        scale=.3,yshift=150pt]
   \draw (foo-wing) -- (bar-wing);
 \end{tikzpicture}  
 \end{tcblisting}
 
-Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks: \lstinline|\duckhookbackground|, \lstinline|\duckhookbody|, \lstinline|\duckhookclothing|, \lstinline|\duckhookhair|, \lstinline|\duckhookhat| and \lstinline|\duckhookforeground|. 
+Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks: \saminline|\duckhookbackground|, \saminline|\duckhookbody|, \saminline|\duckhookclothing|, \saminline|\duckhookhair|, \saminline|\duckhookhat| and \saminline|\duckhookforeground|. 
 
 \begin{center}
 \footnotesize\ttfamily \textbackslash duckhook\dots
 
   \begin{tikzpicture}
     \newcommand{\planes}{\fill[gray!20!white,opacity=0.9] (-0.1,-0.1) rectangle (2.4,2.4);}
-    \newcommand{\hooks}{\draw[duckblue, rounded corners=3pt, line width=1pt] (-0.1,-0.1) rectangle (2.4,2.4);}
+    \newcommand{\hooks}{\draw[themecolor, rounded corners=3pt, line width=1pt] (-0.1,-0.1) rectangle (2.4,2.4);}
     \node[font=\footnotesize\ttfamily] at (-0.8,-1.4) {\strut background};
     \begin{scope}[canvas is zy plane at x=0]
       \hooks
@@ -1113,7 +1057,11 @@ These hooks can be defined by the user as needed:
 \begin{tcblisting}{title={Hooks}}
 \begin{tikzpicture}
   \begingroup
-    \newcommand{\duckhookclothing}{\path[pattern=fivepointed stars, pattern color=yellow] \duckpathjacket;}
+    \newcommand{\duckhookclothing}{
+      \path[pattern=fivepointed stars, 
+            pattern color=yellow] 
+            \duckpathjacket;
+    }
     \duck[witch=black!50!gray,
           longhair=red!80!black,
           jacket=black!50!gray,
@@ -1129,7 +1077,7 @@ These hooks can be defined by the user as needed:
 \tikzducks are huge sports fans! They do a lot of different sports themselves (see all the piece of sports equipment amongst the accessories), but to cheer their favourite teams, they need suitable fan clothing. In \href{https://tex.stackexchange.com/a/387126/36296}{The Duck Pond} Carla Maggi was so kind to contribute the necessary code to dress the ducks in their team's colours.
 
 \addtocounter{footnote}{1}
-A (non-representative) survey$^{\thefootnote}$\footnotetext[\thefootnote]{see the selection of jerseys in \url{https://tex.stackexchange.com/a/387126/36296}} showed that most sports jerseys can be emulated by drawing stripes of various colours, sizes and orientations -- and this is exactly what the \lstinline|stripes| macro does, drawing stripes across the shape of the duck's jacket. In order to preserve the whole flexibility of this powerful macro, it was integrated as an independent command into the \tikzducks package, this means it can simply be used on top of a drawn duck:
+A (non-representative) survey$^{\thefootnote}$\footnotetext[\thefootnote]{see the selection of jerseys in \url{https://tex.stackexchange.com/a/387126/36296}} showed that most sports jerseys can be emulated by drawing stripes of various colours, sizes and orientations -- and this is exactly what the \saminline|stripes| macro does, drawing stripes across the shape of the duck's jacket. In order to preserve the whole flexibility of this powerful macro, it was integrated as an independent command into the \tikzducks package, this means it can simply be used on top of a drawn duck:
 
 \begin{tcblisting}{title={\texttt{stripes} macro}}
 \begin{tikzpicture}
@@ -1138,121 +1086,122 @@ A (non-representative) survey$^{\thefootnote}$\footnotetext[\thefootnote]{see th
 \end{tikzpicture}
 \end{tcblisting}
 
-This may be impractical as the stripes are drawn on top of any accessories or hair the duck may have. Therefore the option \lstinline|stripes| let's you inject any code you would normally use to draw the stripes at the correct layer above the duck's clothing but beneath the hair and accessories:
+This may be impractical as the stripes are drawn on top of any accessories or hair the duck may have. Therefore the option \saminline|stripes| let's you inject any code you would normally use to draw the stripes at the correct layer above the duck's clothing but beneath the hair and accessories:
 
 \begin{tcblisting}{title={Using \texttt{stripes} for \texttt{tikzducks}}}
 \begin{tikzpicture}
-  \duck[longhair,|stripes|={\stripes}]
+  \duck[longhair,stripes={\stripes}]
 \end{tikzpicture}
 \end{tcblisting}
 
 Not all teams wear vertically stripped jerseys, therefore many parameters can be adjusted to best emulate your favourite teams jerseys. The available options are:
 
 \begin{tabular}{@{}ll@{}}
-  \lstinline|color|      & colour of the stripes, default:     
-                          \lstinline|black| \\
-  \lstinline|distance|  &  periodicity length of the stripes, default: 
-                           \lstinline|0.3| \\
-  \lstinline|width|      &  stripe width, default: \lstinline|0.15| \\ 
-  \lstinline|height|    &  length of the stripes, default: 
-                          \lstinline|2.7| \\
-  \lstinline|initialx|  &  x coordinate of staring point, default: 
-                          \lstinline|0.1| \\
-  \lstinline|initialy|  &  y coordinate of staring point, default: 
-                          \lstinline|-0.3| \\
-  \lstinline|rotate|    &  rotation angle in degree, default:
-                          \lstinline|-10|\\
-  \lstinline|emblem|    & possibility to add logos etc., default: empty\\
+  \saminline|color|      & colour of the stripes, default:     
+                          \saminline|black| \\
+  \saminline|distance|  &  periodicity length of the stripes, default: 
+                           \saminline|0.3| \\
+  \saminline|width|      &  stripe width, default: \saminline|0.15| \\ 
+  \saminline|height|    &  length of the stripes, default: 
+                          \saminline|2.7| \\
+  \saminline|initialx|  &  x coordinate of staring point, default: 
+                          \saminline|0.1| \\
+  \saminline|initialy|  &  y coordinate of staring point, default: 
+                          \saminline|-0.3| \\
+  \saminline|rotate|    &  rotation angle in degree, default:
+                          \saminline|-10|\\
+  \saminline|emblem|    & possibility to add logos etc., default: empty\\
 \end{tabular}
 
-Please note that the colour of the stripes only affects the stripes themselves, to influence the colour of the empty space between the stripes, clothe the duck with a \lstinline|tshirt| or \lstinline|jacket| of the desired colour underneath the stripes.
+Please note that the colour of the stripes only affects the stripes themselves, to influence the colour of the empty space between the stripes, clothe the duck with a \saminline|tshirt| or \saminline|jacket| of the desired colour underneath the stripes.
 
 \begin{tcblisting}{title={\texttt{stripes} options}}
 \begin{tikzpicture}
   \duck[stripes]
 \end{tikzpicture}
 \begin{tikzpicture}
-  \duck[|stripes|={
-        \stripes[color=blue]}]
+  \duck[stripes={\stripes[color=blue]}]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[distance=0.6]}]
+  \duck[stripes={\stripes[distance=0.6]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[width=0.03]}]
+  \duck[stripes={\stripes[width=0.03]}]
 \end{tikzpicture}
 
 \begin{tikzpicture} 
-\duck[|stripes|={\stripes[emblem={\includegraphics[width=0.3cm]{example-image-a}}]}]
+\duck[stripes={\stripes[emblem={
+\includegraphics[width=.3cm]{example-image-a}
+}]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[height=1.0]}]
-\end{tikzpicture}
-
-\begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[initialx=1]}]
-\end{tikzpicture}
-\begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[initialy=0.8]}]
+  \duck[stripes={\stripes[height=1.0]}]
 \end{tikzpicture}
 
 \begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[rotate=45]}]
+  \duck[stripes={\stripes[initialx=1]}]
 \end{tikzpicture}
 \begin{tikzpicture}
-\duck[|stripes|={
-      \stripes[rotate=-45]}]
+  \duck[stripes={\stripes[initialy=0.8]}]
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \duck[stripes={\stripes[rotate=45]}]
+\end{tikzpicture}
+\begin{tikzpicture}
+  \duck[stripes={\stripes[rotate=-45]}]
 \end{tikzpicture}
 \end{tcblisting}
 
 For more complex or multicoloured designs the stripes can easily be stacked on top of each other:
 \begin{tcblisting}{title={multicoloured \texttt{stripes}}}
 \begin{tikzpicture} 
-\duck[tshirt=red, |stripes|={
-\stripes[color=yellow, width=0.1]
-\stripes[color=orange, width=0.1, initialx=0.0]}]
+  \duck[tshirt=red, stripes={
+    \stripes[color=yellow, width=0.1]
+    \stripes[color=orange, width=0.1, 
+             initialx=0.0]}]
 \end{tikzpicture}
 \end{tcblisting}
 
-\tcbset{righthand width=3cm}
-A few examples to see \lstinline|stripes| in action:
+A few examples to see \saminline|stripes| in action:
 \begin{tcblisting}{title={Inter duck}}
 \definecolor{blueinter}{RGB}{0,102,170}%
 \begin{tikzpicture}
-\duck[tshirt=black,|stripes|={\stripes[color=blueinter]},football]
+  \duck[tshirt=black,
+        stripes={\stripes[color=blueinter]},
+        football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Juve duck}}
 \begin{tikzpicture} 
-\duck[tshirt=black,|stripes|={\stripes[color=white]},football]
+  \duck[tshirt=black,
+        stripes={\stripes[color=white]},
+        football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Milan duck}}
 \begin{tikzpicture}
-\duck[tshirt=black,|stripes|={\stripes[color=red]},football]
+  \duck[tshirt=black,
+        stripes={\stripes[color=red]},
+        football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={M\"{o}nchengladbach duck}}
 \definecolor{mggreen}{RGB}{37,166,89}%
 \begin{tikzpicture} 
-\duck[tshirt=mggreen,|stripes|={\stripes},football]
+  \duck[tshirt=mggreen,
+        stripes={\stripes},football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Palmeiras duck}}
 \definecolor{verdep}{RGB}{0,100,55}%
 \begin{tikzpicture} 
-\duck[tshirt=green,jacket=verdep,football] 
+  \duck[tshirt=green,jacket=verdep,football] 
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1260,27 +1209,38 @@ A few examples to see \lstinline|stripes| in action:
 \definecolor{rossocagliari}{RGB}{149,20,38}%
 \definecolor{blucagliari}{RGB}{23,52,84}%
 \begin{tikzpicture} 
-\duck[tshirt=white, jacket=blucagliari,|stripes|={
-\stripes[color=rossocagliari, width=0.46, distance=3]},football]
+  \duck[tshirt=white, 
+        jacket=blucagliari,
+        stripes={
+          \stripes[color=rossocagliari, 
+                   width=0.46, distance=3]},
+        football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Sampdoria duck}}
 \begin{tikzpicture} 
-\duck[tshirt=blue, jacket=blue,|stripes|={
-\stripes[color=white,rotate=-90,width=0.6,distance=1] 
-\stripes[color=red,rotate=-90,width=0.2,distance=1.2] 
-\stripes[color=black,rotate=-90,width=0.1,distance=1.3]
-},football]
+  \duck[tshirt=blue, jacket=blue,stripes={
+    \stripes[color=white,rotate=-90,
+             width=0.6,distance=1] 
+    \stripes[color=red,rotate=-90,
+             width=0.2,distance=1.2] 
+    \stripes[color=black,rotate=-90,
+             width=0.1,distance=1.3]
+  },football]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Brescia duck}}
 \begin{tikzpicture} 
-\duck[tshirt=blue, jacket=blue,|stripes|={
-  \stripes[color=white, rotate=-70, width=0.22,distance=1.1, initialy=0.01]
-  \stripes[color=white, rotate=40, width=0.2, distance=1.8, initialy=1.0,initialx=0.285]
-},football]
+  \duck[tshirt=blue, jacket=blue,stripes={
+    \stripes[color=white, rotate=-70, 
+             width=0.22,distance=1.1, 
+             initialy=0.01]
+    \stripes[color=white, rotate=40, 
+             width=0.2, distance=1.8, 
+             initialy=1.0,initialx=0.285]
+  },football]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1289,8 +1249,5 @@ A few examples to see \lstinline|stripes| in action:
 To see more examples of what can be done with the \tikzducks, you are invited to visit \url{https://github.com/samcarter/tikzducks}. 
 
 If you have created a duck you would like to share with the community, I would be happy to add it to this collection, just make a pull request or open an issue in the bug tracking system.
-
-\clearpage
-\printindex
 
 \end{document}
