@@ -26,8 +26,8 @@
 \definecolor{sammagenta}{RGB}{170,42,104}% TikZmarmots
 \definecolor{samviolet}{RGB}{136,46,114}% TikZlings
 \definecolor{samlila}{RGB}{101,67,159}% Rainbow beamer theme
-\definecolor{samdblue}{RGB}{0,51,134}% TikZducks
-\definecolor{samlblue}{RGB}{22,89,155}
+\definecolor{samdblue}{RGB}{0,51,134}% beamer theme
+\definecolor{samlblue}{RGB}{22,89,155}% TikZducks
 \definecolor{samteal}{RGB}{25,143,157}% Tcolorbox beamer theme
 \definecolor{samlgreen}{RGB}{68,170,153}% Jigsaw
 \definecolor{samdgreen}{RGB}{78,178,125}
@@ -41,7 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{xkeyval}
 \DeclareOptionX{themecolor}[samdblue]{\colorlet{themecolor}{#1}}
-\DeclareOptionX{listingcolor}[samdblue]{\colorlet{listingcolor}{#1}}
+\DeclareOptionX{listingcolor}[samlblue]{\colorlet{listingcolor}{#1}}
 \ExecuteOptionsX{themecolor,listingcolor}
 \ProcessOptionsX
 
@@ -57,12 +57,14 @@
   \let\hrulefillx\hrulefill
   \RequirePackage[bitstream-charter]{mathdesign}
   \let\hrulefill\hrulefillx
-  \RequirePackage[scaled=0.95]{beramono}% bold mono font
   \RequirePackage[hang,flushmargin,bottom]{footmisc}
   \RequirePackage[colorlinks=true,breaklinks=true,allcolors=themecolor]{hyperref}
 }
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xspace}
+\RequirePackage{inconsolata}% mono font with bold, but italic is missing
+% \RequirePackage[scale=0.85]{cascadia-code}
+% \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -73,6 +75,8 @@
   cachedir=./build/
 ]{minted}
 
+% smuggling custom pygmentize style in cache folder
+% (a real pygmentise style would need installtion in some python folder)
 \begin{filecontents*}[noheader]{./build/sam.pygstyle}
 \makeatletter
 \def\PYG@reset{\let\PYG@it=\relax \let\PYG@bf=\relax%
@@ -93,8 +97,8 @@
 % curly brakets
 \expandafter\def\csname PYG@tok@nb\endcsname{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}
 
-% comments
-\expandafter\def\csname PYG@tok@c\endcsname{\def\PYG@tc##1{\textcolor{gray}{\itshape ##1}}}
+% comments (italics won't work with the inconsolata font)
+\expandafter\def\csname PYG@tok@c\endcsname{\def\PYG@tc##1{\textcolor{gray}{##1}}}
 
 \def\PYGZbs{\char`\\}
 \def\PYGZus{\char`\_}
@@ -122,14 +126,18 @@
 \setminted{
   breaksymbolleft={},
   tabsize=2,
-  breaklines=true
+  breaklines=true,
 }
 \newminted[samcode]{latex}{}
 \newmintinline[saminline]{latex}{}
 
+% use non-bold and all coloured for inline code in articles
+\ifdefined\insertaspectratio\else
+  \patchcmd{\minted@inputpyg@inline}{\minted@input}{\color{listingcolor}\renewcommand\textcolor[3][]{##3}\renewcommand\bfseries{}\minted@input}{}{}
+\fi
+
 \RequirePackage[most]{tcolorbox}
 \tcbuselibrary{minted}
-
 \tcbset{%
   colframe=themecolor,
   arc=2mm,
