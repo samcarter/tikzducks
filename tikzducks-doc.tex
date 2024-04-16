@@ -40,6 +40,9 @@
   themecolor=samlblue
 ]{\jobname-settings}
 
+\colorlet{blue}{samlblue}
+\colorlet{red}{samred}
+
 % packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tikzducks}
 \usetikzlibrary{ducks,3d}
@@ -154,7 +157,7 @@ To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a 
 
 \begin{tikzpicture}
 \draw (0,0) pic[
-    duck/water=green,
+    duck/water=blue,
     duck/alien,
   ] {duck};
 \draw (4,0) pic[
@@ -168,8 +171,8 @@ To make the usage easier for the \TikZ-savvy users, Andrew Stacey contributed a 
 \tcblower
 \begin{tikzpicture}
 \draw (0,0) pic[
-    duck/water=green,
-    duck/alien,
+    duck/water=blue,
+    duck/alien=samdgreen,
   ] {duck};
 \draw (2,1) pic[
     scale=1.4,
@@ -397,7 +400,7 @@ A respectable duck needs a suitable wardrobe. It can choose from several differe
 \begin{tcblisting}{title={Áo dài duck}}
 \begin{tikzpicture}
   \duck[tshirt=cyan,
-        aodai=blue!50!black]
+        aodai=blue!65!black]
 \end{tikzpicture}
 \end{tcblisting}
 
