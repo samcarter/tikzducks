@@ -4,6 +4,15 @@
 
 ### New
 
+### Changed
+
+### Fixed
+
+
+## [v1.7]
+
+### New
+
 - banana and stick with leaf (kindly contributed by @NuzzleTOO)
 
 ### Changed
@@ -187,7 +196,8 @@
 
 ------
 
-[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.6...HEAD
+[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.7...HEAD
+[v1.7]: https://github.com/samcarter/tikzducks/compare/v1.6...v1.7
 [v1.6]: https://github.com/samcarter/tikzlings/compare/v1.5...v1.6
 [v1.5]: https://github.com/samcarter/tikzlings/compare/v1.4...v1.5
 [v1.4]: https://github.com/samcarter/tikzlings/compare/v1.3...v1.4
