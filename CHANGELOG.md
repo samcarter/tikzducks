@@ -4,6 +4,8 @@
 
 ### New
 
+- banana and stick with leaf (kindly contributed by @NuzzleTOO)
+
 ### Changed
 
 ### Fixed

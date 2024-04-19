@@ -115,6 +115,8 @@
 \newif\ifduck@handbag
 \newif\ifduck@cocktail
 \newif\ifduck@overleaf
+\newif\ifduck@banana
+\newif\ifduck@stick
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -519,13 +521,21 @@
   handbag/.code             = \duck@handbagtrue
                               \def\duck@handbag{#1},
   handbag/.default          = red!70!black,  
-  cocktail/.code             = \duck@cocktailtrue,
+  cocktail/.code            = \duck@cocktailtrue,
   overleaf/.code            = \duck@overleaftrue 
                               \def\duck@body{duck@overleafcol}
                               \duck@graduatetrue
                               \def\duck@graduate{black}
                               \duck@squareglassestrue
-                              \def\duck@squareglasses{black}
+                              \def\duck@squareglasses{black},
+  banana/.code              = \duck@bananatrue
+                              \def\duck@banana{#1},
+  banana/.default           = yellow!80!orange,
+  stick/.code               = \duck@sticktrue
+                              \def\duck@stick{#1},
+  stick/.default            = red!60!green,
+  leaf/.code                = \def\duck@leaf{#1},
+  leaf                      = green!70!red
 }
 
 \def\duck@draw{
@@ -1379,6 +1389,37 @@
   \fill[gray!60!white] (0.928,0.64) -- (0.85,0.77) -- (1.08,0.77) -- cycle;
   \fill[green!40!brown!60!white] (0.94,0.71) circle[radius=0.04];
   \fill[red!80!black] (0.94,0.72) circle[radius=0.01];
+\fi
+%
+% banana %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@banana
+  \begin{scope}[yshift=10,xshift=19,rotate=-25,scale=1.3]
+    \fill[\duck@banana!30!] (0.02,0) .. controls (0.21,0.20) and (0.21,0.40) .. (0.02,0.6) arc [start angle=60,end angle=120, radius =0.04] .. controls (0.07,0.40) and (0.07,0.20) .. (-0.02,0) --cycle ;
+    %peel
+    \begin{scope}
+      \clip (-0.04,-0.01) rectangle (0.20,0.3);
+      \fill[\duck@banana] (0.03,0) .. controls (0.22,0.20) and (0.22,0.40) .. (0.03,0.6) arc [start angle=60,end angle=120, radius =0.06] .. controls (0.06,0.40) and (0.06,0.20) .. (-0.03,0);
+    \end{scope}
+    \fill[\duck@banana!60!] (0.12,0.3) arc [start angle=140, end angle=-100, y radius=0.20, x radius=0.06]  arc [start angle=-90, end angle=90, y radius=0.15, x radius=0.02] (0.12,0.3) arc [start angle=60, end angle=270, y radius=0.15, x radius=0.1] arc [start angle=270, end angle=90, y radius=0.13, x radius=0.04];
+  \end{scope}
+\fi
+%
+% stick %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@stick
+  \begin{scope}[rotate=-30,yshift=16,xshift=12]
+    %leaf
+    \begin{scope}[rotate=60, xshift=8.2,yshift=8.1]
+    \fill[\duck@leaf] (-0.01,0) .. controls (-0.1,0) and (-0.02, 0.2) .. (0,0.2) .. controls (0.02, 0.2) and (0.1,0) .. (0.01,0.0);
+    \path[clip] (-0.04,-0.04)-- (-0.01,0) .. controls (-0.1,0) and (-0.02, 0.2) .. (0,0.2) .. controls (0.02, 0.2) and (0.1,0) .. (0.01,0)-- (0.04,-0.04) --cycle;
+    \draw[\duck@leaf!80!, line width=0.1] (0,-0.04) --  (0,0.2) \foreach \i in {0.02,0.04,...,0.2} {(0,\i) -- ++(0.1,\i) (0,\i) -- ++(-0.1,\i)} ;
+    \end{scope} 
+    %stick itself
+    \fill[\duck@stick!90!red] (-0.04,0.8) -- (-0.04,0.4) arc[start angle=345,end angle=270,radius=0.03] -- ++(0,-0.01) arc[start angle=90,end angle=15,radius=0.03] -- (-0.04,0) arc [start angle=180, end angle=360 ,x radius=0.04, y radius=0.02] -- (0.04, 0.4) arc [start angle=180, end angle=120, radius=0.08] arc [start angle=-90, end angle=90, x radius=0.02, y radius=0.04] arc [start angle=240, end angle=180, radius=0.08] -- (0.04,0.75) arc [start angle=0, end angle=120 ,x radius=0.04, y radius=0.02] --cycle; 
+    \fill[\duck@stick!90!] (0.08, 0.51) ellipse [x radius=0.02, y radius=0.04] (0,0.75) ellipse [x radius=0.04, y radius=0.02] ;
+    \draw[\duck@stick!90!red, line width=0.06] (0.08, 0.51) ellipse [x radius=0.016, y radius=0.032]
+    ellipse [x radius=0.012, y radius=0.024] ellipse [x radius=0.008, y radius=0.016] (0,0.75) ellipse [y radius=0.016, x radius=0.032] ellipse [y radius=0.012, x radius=0.024]  ellipse [y radius=0.008, x radius=0.016] ;
+    \fill[\duck@stick!90!red] (0.08, 0.51) ellipse [x radius=0.004, y radius=0.008] (0,0.75) ellipse [x radius=0.008, y radius=0.004];
+  \end{scope}
 \fi
 %
 % overleaf duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

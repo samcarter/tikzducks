@@ -795,11 +795,19 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}  
 \end{tcblisting}
 
-\begin{tcblisting}{title={Wing duck}}
+\addtocounter{footnote}{1}
+\begin{tcblisting}{title={Banana duck$^{\thefootnote}$}}
 \begin{tikzpicture}
-  \duck[wing=yellow!90!brown]
+  \duck[banana=yellow!80!orange]
 \end{tikzpicture}
 \end{tcblisting}
+
+\begin{tcblisting}{title={Stick duck$^{\thefootnote}$}}
+\begin{tikzpicture}
+  \duck[stick=red!60!green,leaf=green!70!red]
+\end{tikzpicture}
+\end{tcblisting}
+\footnotetext[\thefootnote]{The banana and the stick were kindly contributed by @NuzzleTOO}
 
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Basket duck$^{\thefootnote}$}}
@@ -818,6 +826,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 \footnotetext[\thefootnote]{The basket and Easter basket was kindly contributed by Benito van der Zander}
+
+\begin{tcblisting}{title={Wing duck}}
+\begin{tikzpicture}
+  \duck[wing=yellow!90!brown]
+\end{tikzpicture}
+\end{tcblisting}
 
 \begin{tcblisting}{title={Ducktor}}
 \begin{tikzpicture}
@@ -894,12 +908,6 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}  
 \end{tcblisting}
 
-\begin{tcblisting}{title={Handbag Duck}}
-\begin{tikzpicture}
-  \duck[handbag=red!70!black]
-\end{tikzpicture}   
-\end{tcblisting}
-
 \addtocounter{footnote}{1}
 \begin{tcblisting}{title={Overleaf Duck$^{\thefootnote}$}}
 \begin{tikzpicture}
@@ -908,7 +916,12 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tcblisting}
 \footnotetext[\thefootnote]{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}
 
-\clearpage
+\begin{tcblisting}{title={Handbag Duck}}
+\begin{tikzpicture}
+  \duck[handbag=red!70!black]
+\end{tikzpicture}   
+\end{tcblisting}
+
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \saminline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
 
