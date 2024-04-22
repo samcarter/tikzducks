@@ -154,6 +154,41 @@
   colback=themecolor!10
 }
 
+% avoid page breaks right in front of the tcolorbox
+% copied from `before skip balanced` and added `\nopagebreak`
+\@ifclassloaded{beamer}{}{
+  \RequirePackage[all]{nowidow}
+  \tcbset{
+    before={%
+      \ifnum\lastnodetype=-1\relax%
+      \else%
+        \par%
+        \nopagebreak[4]%
+        \ifvmode%
+          \iftcb@minipage%
+            \ifdim\parskip>\z@\relax%
+              \addvspace{-\parskip}%
+            \fi%
+          \else%
+            \ifdim\prevdepth<\z@\relax%
+              \addvspace{\glueexpr0.5\baselineskip plus 2pt-\parskip}%
+            \else%
+              \ifdim\prevdepth>.3\baselineskip\relax%
+                \addvspace{\glueexpr0.5\baselineskip plus 2pt-\parskip}%
+              \else%
+                \addvspace{\glueexpr0.5\baselineskip plus 2pt+.3\baselineskip-\prevdepth-\parskip}%
+              \fi%
+            \fi%
+          \fi%
+          \nointerlineskip%
+        \fi%
+      \fi%
+      \lineskip\z@skip%
+      \noindent%
+    }
+  } 
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % document settings
