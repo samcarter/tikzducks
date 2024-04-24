@@ -6,8 +6,6 @@
 
 This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296)
 
-Current version: 2024/04/19 version v1.7
-
 A big thank you to all the people who contributed with code, ideas or feedback to the package! Without this package would not exist!
 
 ## Usage

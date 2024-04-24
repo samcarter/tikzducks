@@ -1,9 +1,30 @@
+![](https://raw.githubusercontent.com/samcarter/tikzducks/main/icon.png)
+
 # TikZducks
 
-This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296)
+[![GitHub](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](http://www.latex-project.org/lppl.txt)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version)](https://github.com/samcarter/tikzducks/releases/latest)
+[![CTAN](https://img.shields.io/ctan/v/tikzducks.svg)](https://ctan.org/pkg/tikzducks)
 
-Current version: 2024/04/19 version v1.7
+This is a little LaTeX package for ducks to be used in TikZ pictures.
 
-This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt
+This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt . 
 
-The project repository, including a bug tracker, can be found at https://github.com/samcarter/tikzducks
+The project repository, including a bug tracker, can be found at https://github.com/samcarter/tikzducks .
+
+### Usage
+
+``````
+\documentclass{standalone}
+\usepackage{tikzducks}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \duck
+\end{tikzpicture}
+
+\end{document}
+``````
+
+For more details, please consult the [package documentation](https://github.com/samcarter/tikzducks/blob/main/documentation.pdf).

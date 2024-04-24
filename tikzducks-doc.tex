@@ -1011,15 +1011,19 @@ To distinguish coordinates from multiple ducks in the same \saminline|tikzpictur
 \end{tikzpicture}  
 \end{tcblisting}
 
-Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks: \saminline|\duckhookbackground|, \saminline|\duckhookbody|, \saminline|\duckhookclothing|, \saminline|\duckhookhair|, \saminline|\duckhookhat| and \saminline|\duckhookforeground|. 
+Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks:
+
+\begin{samcode}
+\duckhookbackground, \duckhookbody, \duckhookclothing, \duckhookhair, \duckhookhat, \duckhookforeground
+\end{samcode}
 
 \begin{center}
-\footnotesize\ttfamily \textbackslash duckhook\dots
+\texttt{\textbackslash duckhook}\dots
 
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1.59]
     \newcommand{\planes}{\fill[gray!20!white,opacity=0.9] (-0.1,-0.1) rectangle (2.4,2.4);}
     \newcommand{\hooks}{\draw[themecolor, rounded corners=3pt, line width=1pt] (-0.1,-0.1) rectangle (2.4,2.4);}
-    \node[font=\footnotesize\ttfamily] at (-0.8,-1.4) {\strut background};
+    \node[font=\ttfamily] at (-0.8,-1.4) {\strut background};
     \begin{scope}[canvas is zy plane at x=0]
       \hooks
     \end{scope}
@@ -1027,7 +1031,7 @@ Sometimes it might desirable to add things at a specific z-position, for example
       \planes
       \duck
     \end{scope}
-    \node[font=\footnotesize\ttfamily] at (0.8,-1.4) {\strut body};
+    \node[font=\ttfamily] at (0.8,-1.4) {\strut body};
     \begin{scope}[canvas is zy plane at x=1.6]
       \hooks
     \end{scope}
@@ -1035,7 +1039,7 @@ Sometimes it might desirable to add things at a specific z-position, for example
       \planes
       \duck[invisible,jacket=black!50!gray] 
     \end{scope}
-    \node[font=\footnotesize\ttfamily] at (2.4,-1.4) {\strut clothing};
+    \node[font=\ttfamily] at (2.4,-1.4) {\strut clothing};
     \begin{scope}[canvas is zy plane at x=3.2]
       \hooks
     \end{scope}
@@ -1043,7 +1047,7 @@ Sometimes it might desirable to add things at a specific z-position, for example
       \planes
       \duck[invisible,longhair=red!80!black]
     \end{scope}
-    \node[font=\footnotesize\ttfamily] at (4.0,-1.4) {\strut hair};
+    \node[font=\ttfamily] at (4.0,-1.4) {\strut hair};
     \begin{scope}[canvas is zy plane at x=4.8]
       \hooks
     \end{scope}
@@ -1051,7 +1055,7 @@ Sometimes it might desirable to add things at a specific z-position, for example
       \planes
       \duck[invisible,witch=black!50!gray];
     \end{scope}
-    \node[font=\footnotesize\ttfamily] at (5.6,-1.4) {\strut hat};
+    \node[font=\ttfamily] at (5.6,-1.4) {\strut hat};
     \begin{scope}[canvas is zy plane at x=6.4]
       \hooks
     \end{scope}
@@ -1059,7 +1063,7 @@ Sometimes it might desirable to add things at a specific z-position, for example
       \planes
       \duck[invisible,magicwand]
     \end{scope}
-    \node[font=\footnotesize\ttfamily] at (7.2,-1.4) {\strut foreground};
+    \node[font=\ttfamily] at (7.2,-1.4) {\strut foreground};
     \begin{scope}[canvas is zy plane at x=8.0]
       \hooks
     \end{scope}
@@ -1109,6 +1113,7 @@ This may be impractical as the stripes are drawn on top of any accessories or ha
 
 Not all teams wear vertically stripped jerseys, therefore many parameters can be adjusted to best emulate your favourite teams jerseys. The available options are:
 
+\nopagebreak[4]
 \begin{tabular}{@{}ll@{}}
   \saminline|color|      & colour of the stripes, default:     
                           \saminline|black| \\
