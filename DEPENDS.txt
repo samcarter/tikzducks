@@ -1,0 +1,3 @@
+hard pgf
+hard iftex
+hard epstopdf-pkg
