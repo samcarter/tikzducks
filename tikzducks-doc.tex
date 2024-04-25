@@ -350,9 +350,7 @@ Eyebrows and a beard are also part of the package. The colour choice is more tri
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The beard is based on an answer by Mihikma, see \url{https://tex.stackexchange.com/a/401777/36296}}
-\begin{tcblisting}{title={Beard duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Beard duck\footnote{The beard is based on an answer by Mihikma, see \url{https://tex.stackexchange.com/a/401777/36296}}}}
 \begin{tikzpicture}
   \duck[beard=white!80!brown]
 \end{tikzpicture}
@@ -543,9 +541,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}
-\begin{tcblisting}{title={Bunny duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Bunny duck\footnote{Unless an explicit colour is specified, the bunny ears will take the body colour as default colour, the inner parts will be drawn in a lighter shade.}}}
 \begin{tikzpicture}
   \duck[body=white!80!brown,
         bill=white!60!brown,
@@ -556,9 +552,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The in-ear colour of the sheep chosen to be the same as the bill}
-\begin{tcblisting}{title={Sheep duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Sheep duck\footnote{The in-ear colour of the sheep is chosen to be the same as the bill}}}
 \begin{tikzpicture}
   \duck[body=white!80!brown,
         bill=white!60!brown,
@@ -566,9 +560,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{If no colour is specified, the horse tail will have the same colour as the hair}
-\begin{tcblisting}{title={Horse duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Horse duck\footnote{If no colour is specified, the horse tail will have the same colour as the hair}}}
 \begin{tikzpicture}
   \duck[body=brown!80!white,
         longhair=brown!50!black,
@@ -630,9 +622,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{Both the speech and thought bubble are inspired by the wonderful \href{https://www.ctan.org/pkg/ducksay}{ducksay package}}
-\begin{tcblisting}{title={Speaking duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Speaking duck\footnote{Both the speech and thought bubble are inspired by the wonderful \href{https://www.ctan.org/pkg/ducksay}{ducksay package}}}}
 \begin{tikzpicture}
   \duck[speech={Bla},
         bubblecolour=cyan!20!white,
@@ -640,16 +630,14 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Thinking duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Thinking duck\footnotemark[\thefootnote]}}
 \begin{tikzpicture}
   \duck[think={Blub},
         bubblecolour=white!95!yellow]
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{In case the duck is wearing a jacket, the buttons are positioned a bit lower}
-\begin{tcblisting}{title={Buttons duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Buttons duck\footnote{In case the duck is wearing a jacket, the buttons are positioned a bit lower}}}
 \begin{tikzpicture}
   \duck[buttons=brown!50!black]
 \end{tikzpicture}
@@ -681,23 +669,19 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Football duck\footnote{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}}}
+\begin{tikzpicture}
+  \duck[football=white!85!yellow]
+\end{tikzpicture}
+\end{tcblisting}
+
 \begin{tcblisting}{title={Hockey duck}}
 \begin{tikzpicture}
   \duck[hockey=brown!70!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The football duck is simplified version from an answer by Carla Maggi, \url{https://tex.stackexchange.com/a/387126/36296}}
-\begin{tcblisting}{title={Football duck$^{\thefootnote}$}}
-\begin{tikzpicture}
-  \duck[football=white!85!yellow]
-\end{tikzpicture}
-\end{tcblisting}
-
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{Dedicated to the Counter Wizard (aka Christian Hupfer)}
-\begin{tcblisting}{title={Lightsaber duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Lightsaber duck\footnote{Dedicated to the Counter Wizard (aka Christian Hupfer)}}}
 \begin{tikzpicture}
   \duck[lightsaber=red,
         darthvader=black!30!gray]
@@ -740,9 +724,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The chef duck is based on an idea by Carla Maggi, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}
-\begin{tcblisting}{title={Chef duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Chef duck\footnote{The chef duck is based on an idea by Carla Maggi, please see the following link for a more sophisticated version of the toque and the rolling pin: \url{https://tex.stackexchange.com/a/387126/36296}}}}
 \begin{tikzpicture}
   \duck[chef=white!95!yellow,
         rollingpin=brown!80!black]
@@ -779,9 +761,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}
-\begin{tcblisting}{title={Wine duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Wine duck\footnote{According to the resident Italian wine expert of the \href{https://chat.stackexchange.com/transcript/message/40103109}{ TeX.SE chatroom}, the duck is drinking a fine Brunello di Montalcino}}}
 \begin{tikzpicture}
   \duck[wine=red!70!black]
 \end{tikzpicture}
@@ -793,29 +773,25 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The banana and the stick were kindly contributed by @NuzzleTOO}
-\begin{tcblisting}{title={Banana duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Banana duck\footnote{The banana and the stick were kindly contributed by @NuzzleTOO}}}
 \begin{tikzpicture}
   \duck[banana=yellow!80!orange]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Stick duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Stick duck\footnotemark[\thefootnote]}}
 \begin{tikzpicture}
   \duck[stick=red!60!green,leaf=green!70!red]
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The basket and Easter basket was kindly contributed by Benito van der Zander}
-\begin{tcblisting}{title={Basket duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Basket duck\footnote{The basket and Easter basket was kindly contributed by Benito van der Zander}}}
 \begin{tikzpicture}
   \duck[basket=brown]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Easter duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Easter duck\footnotemark[\thefootnote]}}
 \begin{tikzpicture}
   \duck[bunny,easter]
 \end{tikzpicture}
@@ -851,28 +827,9 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The snowduck is dedicated to all Japanese \TeX\ users}
-\begin{tcblisting}{title={Snow Duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Snow Duck\footnote{The snowduck is dedicated to all Japanese \TeX\ users}}}
 \begin{tikzpicture}
   \duck[snowduck=white]
-\end{tikzpicture}
-\end{tcblisting}
-
-\begin{tcblisting}{title={Vampire Duck}}
-\begin{tikzpicture}
-  \duck[vampire=white]
-\end{tikzpicture}
-\begin{tikzpicture}
-  \duck[laughing, vampire=white]
-\end{tikzpicture}
-\end{tcblisting}
-
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{The crystal ball is kindly contributed by @marmot}
-\begin{tcblisting}{title={Fortune Quacker$^{\thefootnote}$}}
-\begin{tikzpicture}
-  \duck[crystalball=cyan]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -892,8 +849,7 @@ There is a multitude of things a duck might need. The following examples all als
         strawbroomribbon=red!50!black]
 \end{tikzpicture}
 \begin{tikzpicture}
-  \duck[broom=brown,
-        broomstick=gray!50!black]
+  \duck[broom=brown, broomstick=gray!50!black]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -906,17 +862,30 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\addtocounter{footnote}{1}
-\footnotetext[\thefootnote]{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}
-\begin{tcblisting}{title={Overleaf Duck$^{\thefootnote}$}}
+\begin{tcblisting}{title={Fortune Quacker\footnote{The crystal ball is kindly contributed by @marmot}}}
 \begin{tikzpicture}
-  \duck[overleaf]
+  \duck[crystalball=cyan]
 \end{tikzpicture}
 \end{tcblisting}
 
 \begin{tcblisting}{title={Handbag Duck}}
 \begin{tikzpicture}
   \duck[handbag=red!70!black]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Vampire Duck}}
+\begin{tikzpicture}
+  \duck[vampire=white]
+\end{tikzpicture}
+\begin{tikzpicture}
+  \duck[laughing, vampire=white]
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Overleaf Duck\footnote{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}}}
+\begin{tikzpicture}
+  \duck[overleaf]
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -1093,8 +1062,7 @@ These hooks can be defined by the user as needed:
 
 \tikzducks are huge sports fans! They do a lot of different sports themselves (see all the piece of sports equipment amongst the accessories), but to cheer their favourite teams, they need suitable fan clothing. In \href{https://tex.stackexchange.com/a/387126/36296}{The Duck Pond} Carla Maggi was so kind to contribute the necessary code to dress the ducks in their team's colours.
 
-\addtocounter{footnote}{1}
-A (non-representative) survey$^{\thefootnote}$\footnotetext[\thefootnote]{see the selection of jerseys in \url{https://tex.stackexchange.com/a/387126/36296}} showed that most sports jerseys can be emulated by drawing stripes of various colours, sizes and orientations -- and this is exactly what the \saminline|stripes| macro does, drawing stripes across the shape of the duck's jacket. In order to preserve the whole flexibility of this powerful macro, it was integrated as an independent command into the \tikzducks package, this means it can simply be used on top of a drawn duck:
+A (non-representative) survey\footnote{see the selection of jerseys in \url{https://tex.stackexchange.com/a/387126/36296}} showed that most sports jerseys can be emulated by drawing stripes of various colours, sizes and orientations -- and this is exactly what the \saminline|stripes| macro does, drawing stripes across the shape of the duck's jacket. In order to preserve the whole flexibility of this powerful macro, it was integrated as an independent command into the \tikzducks package, this means it can simply be used on top of a drawn duck:
 
 \begin{tcblisting}{title={\texttt{stripes} macro}}
 \begin{tikzpicture}

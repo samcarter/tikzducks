@@ -28,7 +28,7 @@ A short example to demonstrate the use of the TikZducks:
 \end{document}
 ```
 
-An exhaustive list of possible options can be found in [package documentation](./documentation.pdf)
+An exhaustive list of possible options can be found in [package documentation](https://github.com/samcarter/tikzducks/blob/main/DOCUMENTATION.pdf)
 
 ## Examples
 

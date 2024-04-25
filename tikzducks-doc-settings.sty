@@ -58,8 +58,10 @@
   \RequirePackage[bitstream-charter]{mathdesign}
   \let\hrulefill\hrulefillx
   \RequirePackage[hang,flushmargin,bottom]{footmisc}
-  \RequirePackage[colorlinks=true,breaklinks=true,allcolors=themecolor]{hyperref}
+  \RequirePackage{footnotehyper}
+  \makesavenoteenv{tcolorbox}
   \RequirePackage[all]{nowidow}
+  \RequirePackage[colorlinks=true,breaklinks=true,allcolors=themecolor,hyperfootnotes=false]{hyperref}
 }
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xspace}

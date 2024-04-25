@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/samcarter/tikzducks/main/icon.png)
+![](https://raw.githubusercontent.com/samcarter/tikzducks/main/ICON.png)
 
 # TikZducks
 
