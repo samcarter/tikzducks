@@ -68,6 +68,7 @@
 \RequirePackage{inconsolata}% mono font with bold, but italic is missing
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
+\RequirePackage{iexec}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -75,12 +76,12 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[
-  cachedir=./build/
+  cachedir=$TMPDIR/minted/
 ]{minted}
 
 % smuggling custom pygmentize style in cache folder
 % (a real pygmentise style would need installtion in some python folder)
-\begin{filecontents*}[noheader]{./build/sam.pygstyle}
+\begin{filecontents*}[noheader]{./sam.pygstyle}
 \makeatletter
 \def\PYG@reset{\let\PYG@it=\relax \let\PYG@bf=\relax%
     \let\PYG@ul=\relax \let\PYG@tc=\relax%
@@ -124,6 +125,8 @@
 \def\PYGZrb{]}
 \makeatother
 \end{filecontents*}
+
+\iexec{mkdir -p $TMPDIR/minted && mv sam.pygstyle $TMPDIR/minted/.}
 
 \usemintedstyle{sam}
 \setminted{
