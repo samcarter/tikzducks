@@ -1,0 +1,26 @@
+% !TeX program = txs:///arara | txs:///view-log | txs:///view-pdf "?am).pdf"
+% arara: latexmk: {
+% arara: --> engine: pdflatex,
+% arara: --> }
+% arara: pdftocairo: { 
+% arara: --> format: 'png',
+% arara: --> options: ['-r', '150', '-transp', '-singlefile'],
+% arara: --> output: 'ICON'
+% arara: --> }
+% arara: clean: { extensions: [ aux, fdb_latexmk, fls, log, synctex.gz ] }
+% arara: move: { files: [ 'ICON.png' ], target: '../ICON.png' }
+
+\documentclass[border=1mm]{standalone}
+
+\usepackage{tikzducks}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \shade[right color=gray,left color=gray!30,shading angle=45] (0,1.15) circle [radius=1.2cm];
+  \begin{scope}[xshift=-1.05cm,yshift=0.1cm]
+    \duck
+  \end{scope}
+\end{tikzpicture}
+
+\end{document}
