@@ -4,6 +4,8 @@
 
 ### New
 
+- added DEPENDS.txt file
+
 ### Changed
 
 ### Fixed
