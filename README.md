@@ -37,110 +37,110 @@ Below are some examples of ducks created with the TikZducks package. Click on th
 In case you would like to share some of your ducks with the community, I would be happy to accept pull requests or simply open an issue in the bug tracking system.
 
 <!--
-<a href="./duckpond/.tex"><img src="./duckpond/.svg" alt=" Duck" height="64"></a>
+<a href="./examples/.tex"><img src="./examples/.svg" alt=" Duck" height="64"></a>
 -->
 
 ### Duckifications
 
-<a href="./duckpond/Arthur.tex"><img src="./duckpond/Arthur.svg" alt="Arthur Quack" title="Arthur Quack" height="64"></a>
-<a href="./duckpond/Hilbert.tex"><img src="./duckpond/Hilbert.svg" alt="Hilbert Duck" title="Hilbert Duck" height="64"></a>
-<a href="./duckpond/Knuth.tex"><img src="./duckpond/Knuth.svg" alt="Duck E. Knuth" title="Duck E. Knuth" height="64"></a>
-<a href="./duckpond/PaulinoVanDuck.tex"><img src="./duckpond/PaulinoVanDuck.svg" alt="Prof. Paulino van Duck" title="Prof. Paulino van Duck" height="64"></a>
-<a href="./duckpond/QueenDuck.tex"><img src="./duckpond/QueenDuck.svg" alt="Queen Duck" title="Queen duck" height="64"></a>
-<a href="./duckpond/KingQuackIII.tex"><img src="./duckpond/KingQuackIII.svg" alt="King Quack III" title="King Quack III" height="64"></a>
-<a href="./duckpond/DuckInBlack.tex"><img src="./duckpond/DuckInBlack.svg" alt="Duck in Black" title="Duck in Black" height="64"></a>
-<a href="./duckpond/JamesDuck.tex"><img src="./duckpond/JamesDuck.svg" alt="JamesDuck and Q(ack)" title="James Duck and Q(ack)" height="64"></a>
-<a href="./duckpond/MaryDuckings.tex"><img src="./duckpond/MaryDuckings.svg" alt="Mary Duckings" title="Mary Duckings" height="64"></a>
-<a href="./duckpond/MayTheQuackBeWithYou.tex"><img src="./duckpond/MayTheQuackBeWithYou.svg" alt="May the Quack be with you" title="May the Quack be with you" height="64"></a>
-<a href="./duckpond/Peppone.tex"><img src="./duckpond/Peppone.svg" alt="Peppone" title="Peppone" height="64"></a>
-<a href="./duckpond/PrincessDuck.tex"><img src="./duckpond/PrincessDuck.svg" alt="Princess Duck" title="Princess Duck" height="64"></a>
-<a href="./duckpond/SuperDuckBrothers.tex"><img src="./duckpond/SuperDuckBrothers.svg" alt="Super Duck Brothers" title="Super Duck Brothers" height="64"></a>
-<a href="./duckpond/QuackLongAndProsper.tex"><img src="./duckpond/QuackLongAndProsper.svg" alt="Quack long and prosper" title="Quack long and prosper" height="64"></a>
-<a href="./duckpond/StarDucks.tex"><img src="./duckpond/StarDucks.svg" alt="Star Ducks" title="Star Ducks" height="64"></a>
-<a href="./duckpond/DuckWho.tex"><img src="./duckpond/DuckWho.svg" alt="Duck Who" title="Duck Who" height="64"></a>
-<a href="./duckpond/Phantom.tex"><img src="./duckpond/Phantom.svg" alt="Phantom of the duckpond" title="Phantom of the duckpond" height="64"></a>
-<a href="./duckpond/Zorro.tex"><img src="./duckpond/Zorro.svg" alt="Zorro" title="Zorro" height="64"></a>
+<a href="./examples/Arthur.tex"><img src="./examples/Arthur.svg" alt="Arthur Quack" title="Arthur Quack" height="64"></a>
+<a href="./examples/Hilbert.tex"><img src="./examples/Hilbert.svg" alt="Hilbert Duck" title="Hilbert Duck" height="64"></a>
+<a href="./examples/Knuth.tex"><img src="./examples/Knuth.svg" alt="Duck E. Knuth" title="Duck E. Knuth" height="64"></a>
+<a href="./examples/PaulinoVanDuck.tex"><img src="./examples/PaulinoVanDuck.svg" alt="Prof. Paulino van Duck" title="Prof. Paulino van Duck" height="64"></a>
+<a href="./examples/QueenDuck.tex"><img src="./examples/QueenDuck.svg" alt="Queen Duck" title="Queen duck" height="64"></a>
+<a href="./examples/KingQuackIII.tex"><img src="./examples/KingQuackIII.svg" alt="King Quack III" title="King Quack III" height="64"></a>
+<a href="./examples/DuckInBlack.tex"><img src="./examples/DuckInBlack.svg" alt="Duck in Black" title="Duck in Black" height="64"></a>
+<a href="./examples/JamesDuck.tex"><img src="./examples/JamesDuck.svg" alt="JamesDuck and Q(ack)" title="James Duck and Q(ack)" height="64"></a>
+<a href="./examples/MaryDuckings.tex"><img src="./examples/MaryDuckings.svg" alt="Mary Duckings" title="Mary Duckings" height="64"></a>
+<a href="./examples/MayTheQuackBeWithYou.tex"><img src="./examples/MayTheQuackBeWithYou.svg" alt="May the Quack be with you" title="May the Quack be with you" height="64"></a>
+<a href="./examples/Peppone.tex"><img src="./examples/Peppone.svg" alt="Peppone" title="Peppone" height="64"></a>
+<a href="./examples/PrincessDuck.tex"><img src="./examples/PrincessDuck.svg" alt="Princess Duck" title="Princess Duck" height="64"></a>
+<a href="./examples/SuperDuckBrothers.tex"><img src="./examples/SuperDuckBrothers.svg" alt="Super Duck Brothers" title="Super Duck Brothers" height="64"></a>
+<a href="./examples/QuackLongAndProsper.tex"><img src="./examples/QuackLongAndProsper.svg" alt="Quack long and prosper" title="Quack long and prosper" height="64"></a>
+<a href="./examples/StarDucks.tex"><img src="./examples/StarDucks.svg" alt="Star Ducks" title="Star Ducks" height="64"></a>
+<a href="./examples/DuckWho.tex"><img src="./examples/DuckWho.svg" alt="Duck Who" title="Duck Who" height="64"></a>
+<a href="./examples/Phantom.tex"><img src="./examples/Phantom.svg" alt="Phantom of the examples" title="Phantom of the examples" height="64"></a>
+<a href="./examples/Zorro.tex"><img src="./examples/Zorro.svg" alt="Zorro" title="Zorro" height="64"></a>
 
 ### Ducks in History
 
-<a href="./duckpond/Ceasar.tex"><img src="./duckpond/Ceasar.svg" alt="Gajus Quackus Ceasar" title="Gajus Quackus Ceasar" height="64"></a>
-<a href="./duckpond/RomanDuck.tex"><img src="./duckpond/RomanDuck.svg" alt="Roman Duck" title="Roman Duck" height="64"></a>
-<a href="./duckpond/Viking.tex"><img src="./duckpond/Viking.svg" alt="Viking Duck" title="Viking Duck" height="64"></a>
-<a href="./duckpond/Pythagoras.tex"><img src="./duckpond/Pythagoras.svg" alt="Pythagoras" title="Pythagoras" height="64"></a>
-<a href="./duckpond/Geisha.tex"><img src="./duckpond/Geisha.svg" alt="Geisha Duck" title="Geisha Duck" height="64"></a>
-<a href="./duckpond/Vietnam.tex"><img src="./duckpond/Vietnam.svg" alt="Vietnam Duck" title="Vietnam Duck" height="64"></a>
-<a href="./duckpond/Knight.tex"><img src="./duckpond/Knight.svg" alt="Knight Duck" title="Knight Duck" height="64"></a>
-<a href="./duckpond/Shakespeare.tex"><img src="./duckpond/Shakespeare.svg" alt="Shakespeare Duck" title="Shakespeare Duck" height="64"></a>
+<a href="./examples/Ceasar.tex"><img src="./examples/Ceasar.svg" alt="Gajus Quackus Ceasar" title="Gajus Quackus Ceasar" height="64"></a>
+<a href="./examples/RomanDuck.tex"><img src="./examples/RomanDuck.svg" alt="Roman Duck" title="Roman Duck" height="64"></a>
+<a href="./examples/Viking.tex"><img src="./examples/Viking.svg" alt="Viking Duck" title="Viking Duck" height="64"></a>
+<a href="./examples/Pythagoras.tex"><img src="./examples/Pythagoras.svg" alt="Pythagoras" title="Pythagoras" height="64"></a>
+<a href="./examples/Geisha.tex"><img src="./examples/Geisha.svg" alt="Geisha Duck" title="Geisha Duck" height="64"></a>
+<a href="./examples/Vietnam.tex"><img src="./examples/Vietnam.svg" alt="Vietnam Duck" title="Vietnam Duck" height="64"></a>
+<a href="./examples/Knight.tex"><img src="./examples/Knight.svg" alt="Knight Duck" title="Knight Duck" height="64"></a>
+<a href="./examples/Shakespeare.tex"><img src="./examples/Shakespeare.svg" alt="Shakespeare Duck" title="Shakespeare Duck" height="64"></a>
 
 ### Ducks in Art
 
-<a href="./duckpond/MonaDuck.tex"><img src="./duckpond/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
-<a href="./duckpond/GirlWithPearlEarring.tex"><img src="./duckpond/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
-<a href="./duckpond/PopArt.tex"><img src="./duckpond/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
-<a href="./duckpond/Leonardo.tex"><img src="./duckpond/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
-<a href="./duckpond/Soup.tex"><img src="./duckpond/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
-<a href="./duckpond/Frida.tex"><img src="./duckpond/Frida_bg.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
+<a href="./examples/MonaDuck.tex"><img src="./examples/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
+<a href="./examples/GirlWithPearlEarring.tex"><img src="./examples/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
+<a href="./examples/PopArt.tex"><img src="./examples/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
+<a href="./examples/Leonardo.tex"><img src="./examples/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
+<a href="./examples/Soup.tex"><img src="./examples/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
+<a href="./examples/Frida.tex"><img src="./examples/Frida_bg.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
 
 ### TeX.SE users (and relatives)
 
-<a href="./duckpond/CarLaTeX.tex"><img src="./duckpond/CarLaTeX.svg" alt="CarLaTeX" title="CarLaTeX" height="64"></a>
-<a href="./duckpond/Ulrike.tex"><img src="./duckpond/Ulrike.svg" alt="Ulrike Fischer" title="Ulrike Fischer" height="64"></a>
-<a href="./duckpond/Gert.tex"><img src="./duckpond/Gert.svg" alt="Gert Fischer" title="Gert Fischer" height="64"></a>
-<a href="./duckpond/Paulo.tex"><img src="./duckpond/Paulo.svg" alt="Paulo" title="Paulo" height="64"></a>
-<a href="./duckpond/Manooooh.tex"><img src="./duckpond/Manooooh.svg" alt="Manooooh" title="Manooooh" height="64"></a>
-<a href="./duckpond/Samcarter.tex"><img src="./duckpond/Samcarter.svg" alt="samcarter" title="samcarter" height="64"></a>
+<a href="./examples/CarLaTeX.tex"><img src="./examples/CarLaTeX.svg" alt="CarLaTeX" title="CarLaTeX" height="64"></a>
+<a href="./examples/Ulrike.tex"><img src="./examples/Ulrike.svg" alt="Ulrike Fischer" title="Ulrike Fischer" height="64"></a>
+<a href="./examples/Gert.tex"><img src="./examples/Gert.svg" alt="Gert Fischer" title="Gert Fischer" height="64"></a>
+<a href="./examples/Paulo.tex"><img src="./examples/Paulo.svg" alt="Paulo" title="Paulo" height="64"></a>
+<a href="./examples/Manooooh.tex"><img src="./examples/Manooooh.svg" alt="Manooooh" title="Manooooh" height="64"></a>
+<a href="./examples/Samcarter.tex"><img src="./examples/Samcarter.svg" alt="samcarter" title="samcarter" height="64"></a>
 
 ### Professions and Occupation
 
-<a href="./duckpond/AirDuck.tex"><img src="./duckpond/AirDuck.svg" alt="AirDuck" title="AirDuck" height="64"></a>
-<a href="./duckpond/AstroDuck.tex"><img src="./duckpond/AstroDuck.svg" alt="Astro Duck" title="Astro Duck" height="64"></a>
-<a href="./duckpond/Chef.tex"><img src="./duckpond/Chef.svg" alt="Chef Duck" title="Chef Duck" height="64"></a>
-<a href="./duckpond/ClergyDucks.tex"><img src="./duckpond/ClergyDucks.svg" alt="Clergy Ducks" title="Clergy Ducks" height="64"></a>
-<a href="./duckpond/DuckMD.tex"><img src="./duckpond/DuckMD.svg" alt="Duck, MD" title="Duck, MD" height="64"></a>
-<a href="./duckpond/DuckScout.tex"><img src="./duckpond/DuckScout.svg" alt="Duck Scout" title="Duck Scout" height="64"></a>
-<a href="./duckpond/QueensSwanUpper.tex"><img src="./duckpond/QueensSwanUpper.svg" title="Queens Swan Upper" alt="Queens Swan Upper" height="64"></a>
-<!--<a href="./duckpond/Surfer.svg"><img src="./duckpond/Surfer.svg" alt="Surfer Duck" title="Surfer Duck" height="64"></a>-->
-<a href="./duckpond/Ghost.tex"><img src="./duckpond/Ghost.svg" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a>
-<a href="./duckpond/Harlequin.tex"><img src="./duckpond/Harlequin.svg" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
-<a href="./duckpond/Jailbird.tex"><img src="./duckpond/Jailbird.svg" alt="Jail Bird" title="Jail Bird" height="64"></a>
-<a href="./duckpond/Chainsaw.tex"><img src="./duckpond/Chainsaw.svg" alt="Chainsaw Duck" title="Chainsaw Duck" height="64"></a>
-<a href="./duckpond/Devil.tex"><img src="./duckpond/Devil.svg" alt="Devil Duck" title="Devil Duck" height="64"></a>
-<a href="./duckpond/Ninja.tex"><img src="./duckpond/Ninja.svg" alt="Ninja Ducks" title="Ninja Ducks" height="64"></a>
-<a href="./duckpond/PartyDuck.tex"><img src="./duckpond/PartyDuck_bg.png" alt="Party Duck" title="Party Duck" height="64"></a>
-<a href="./duckpond/Vampire.tex"><img src="./duckpond/Vampire.svg" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
-<a href="./duckpond/Snowduck.tex"><img src="./duckpond/Snowduck.svg" alt="Snowduck" title="Snowduck" height="64"></a>
-<a href="./duckpond/OfficeDuck.tex"><img src="./duckpond/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
-<a href="./duckpond/SailorDuck.tex"><img src="./duckpond/SailorDuck.svg" alt="Sailor Duck" title="Sailor Duck" height="64"></a>
-<a href="./duckpond/DuckHug.tex"><img src="./duckpond/DuckHug.svg" alt="Duck Hug" title="Duck Hug" height="64"></a>
+<a href="./examples/AirDuck.tex"><img src="./examples/AirDuck.svg" alt="AirDuck" title="AirDuck" height="64"></a>
+<a href="./examples/AstroDuck.tex"><img src="./examples/AstroDuck.svg" alt="Astro Duck" title="Astro Duck" height="64"></a>
+<a href="./examples/Chef.tex"><img src="./examples/Chef.svg" alt="Chef Duck" title="Chef Duck" height="64"></a>
+<a href="./examples/ClergyDucks.tex"><img src="./examples/ClergyDucks.svg" alt="Clergy Ducks" title="Clergy Ducks" height="64"></a>
+<a href="./examples/DuckMD.tex"><img src="./examples/DuckMD.svg" alt="Duck, MD" title="Duck, MD" height="64"></a>
+<a href="./examples/DuckScout.tex"><img src="./examples/DuckScout.svg" alt="Duck Scout" title="Duck Scout" height="64"></a>
+<a href="./examples/QueensSwanUpper.tex"><img src="./examples/QueensSwanUpper.svg" title="Queens Swan Upper" alt="Queens Swan Upper" height="64"></a>
+<!--<a href="./examples/Surfer.svg"><img src="./examples/Surfer.svg" alt="Surfer Duck" title="Surfer Duck" height="64"></a>-->
+<a href="./examples/Ghost.tex"><img src="./examples/Ghost.svg" alt="Ghost  Duck" title="Ghost  Duck" height="64"></a>
+<a href="./examples/Harlequin.tex"><img src="./examples/Harlequin.svg" alt="Harlequin Duck" title="Harlequin Duck" height="64"></a>
+<a href="./examples/Jailbird.tex"><img src="./examples/Jailbird.svg" alt="Jail Bird" title="Jail Bird" height="64"></a>
+<a href="./examples/Chainsaw.tex"><img src="./examples/Chainsaw.svg" alt="Chainsaw Duck" title="Chainsaw Duck" height="64"></a>
+<a href="./examples/Devil.tex"><img src="./examples/Devil.svg" alt="Devil Duck" title="Devil Duck" height="64"></a>
+<a href="./examples/Ninja.tex"><img src="./examples/Ninja.svg" alt="Ninja Ducks" title="Ninja Ducks" height="64"></a>
+<a href="./examples/PartyDuck.tex"><img src="./examples/PartyDuck_bg.png" alt="Party Duck" title="Party Duck" height="64"></a>
+<a href="./examples/Vampire.tex"><img src="./examples/Vampire.svg" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
+<a href="./examples/Snowduck.tex"><img src="./examples/Snowduck.svg" alt="Snowduck" title="Snowduck" height="64"></a>
+<a href="./examples/OfficeDuck.tex"><img src="./examples/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
+<a href="./examples/SailorDuck.tex"><img src="./examples/SailorDuck.svg" alt="Sailor Duck" title="Sailor Duck" height="64"></a>
+<a href="./examples/DuckHug.tex"><img src="./examples/DuckHug.svg" alt="Duck Hug" title="Duck Hug" height="64"></a>
 
 ### Animals and Beings
 
-<a href="./duckpond/AraraDuck.tex"><img src="./duckpond/AraraDuck_bg.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
-<a href="./duckpond/BeeDuck.tex"><img src="./duckpond/BeeDuck.svg" alt="Bee Duck" title="Bee Duck" height="64"></a>
-<a href="./duckpond/Bunny.tex"><img src="./duckpond/Bunny.svg" alt="Bunny Duck" title="Bunny Duck" height="64"></a>
-<a href="./duckpond/Donkey.tex"><img src="./duckpond/Donkey.svg" alt="Donkey Duck" title="Donkey Duck" height="64"></a>
-<a href="./duckpond/Horse.tex"><img src="./duckpond/Horse.svg" alt="Horse Duck" title="Horse Duck" height="64"></a>
-<a href="./duckpond/Pig.tex"><img src="./duckpond/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
-<a href="./duckpond/Sheep.tex"><img src="./duckpond/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
-<a href="./duckpond/Zebra2.tex"><img src="./duckpond/Zebra2_bg.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
-<a href="./duckpond/Unicorn.tex"><img src="./duckpond/Unicorn_bg.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
+<a href="./examples/AraraDuck.tex"><img src="./examples/AraraDuck_bg.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
+<a href="./examples/BeeDuck.tex"><img src="./examples/BeeDuck.svg" alt="Bee Duck" title="Bee Duck" height="64"></a>
+<a href="./examples/Bunny.tex"><img src="./examples/Bunny.svg" alt="Bunny Duck" title="Bunny Duck" height="64"></a>
+<a href="./examples/Donkey.tex"><img src="./examples/Donkey.svg" alt="Donkey Duck" title="Donkey Duck" height="64"></a>
+<a href="./examples/Horse.tex"><img src="./examples/Horse.svg" alt="Horse Duck" title="Horse Duck" height="64"></a>
+<a href="./examples/Pig.tex"><img src="./examples/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
+<a href="./examples/Sheep.tex"><img src="./examples/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
+<a href="./examples/Zebra2.tex"><img src="./examples/Zebra2_bg.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
+<a href="./examples/Unicorn.tex"><img src="./examples/Unicorn_bg.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
 
 ### More ducks
 
-<a href="./duckpond/3Dduck.tex"><img src="./duckpond/3Dduck_bg.png" alt="3D Duck" title="3D Duck" height="64"></a>
-<a href="./duckpond/Back.tex"><img src="./duckpond/Back.svg" alt="Backside" title="Backside" height="64"></a>
-<a href="./duckpond/Churyumov-Gerasimenko.tex"><img src="./duckpond/Churyumov-Gerasimenko_bg.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./duckpond/Brazil.tex"><img src="./duckpond/Brazil_bg.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
-<a href="./duckpond/FrenchDuck.tex"><img src="./duckpond/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
-<a href="./duckpond/YankeeDuck.tex"><img src="./duckpond/YankeeDuck_bg.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
-<a href="./duckpond/Facemask.tex"><img src="./duckpond/Facemask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
-<!--<a href="./duckpond/Chess.tex"><img src="./duckpond/Chess.svg" alt="Chess" title="Chess" height="128"></a>
-<a href="./duckpond/Vikings.tex"><img src="./duckpond/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
-<a href="./duckpond/GreatWall.tex"><img src="./duckpond/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
-<a href="./duckpond/Ferragosto.svg"><img src="./duckpond/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
+<a href="./examples/3Dduck.tex"><img src="./examples/3Dduck_bg.png" alt="3D Duck" title="3D Duck" height="64"></a>
+<a href="./examples/Back.tex"><img src="./examples/Back.svg" alt="Backside" title="Backside" height="64"></a>
+<a href="./examples/Churyumov-Gerasimenko.tex"><img src="./examples/Churyumov-Gerasimenko_bg.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
+<a href="./examples/Brazil.tex"><img src="./examples/Brazil_bg.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
+<a href="./examples/FrenchDuck.tex"><img src="./examples/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
+<a href="./examples/YankeeDuck.tex"><img src="./examples/YankeeDuck_bg.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
+<a href="./examples/Facemask.tex"><img src="./examples/Facemask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
+<!--<a href="./examples/Chess.tex"><img src="./examples/Chess.svg" alt="Chess" title="Chess" height="128"></a>
+<a href="./examples/Vikings.tex"><img src="./examples/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
+<a href="./examples/GreatWall.tex"><img src="./examples/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
+<a href="./examples/Ferragosto.svg"><img src="./examples/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
 
 
-<a href="./duckpond/Pacduck.tex"><img src="./duckpond/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>-->
+<a href="./examples/Pacduck.tex"><img src="./examples/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>-->
 
 
 ## TikZducks in action
