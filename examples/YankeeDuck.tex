@@ -29,14 +29,14 @@
 } }
 
 \begin{document}
-  
+
   \begin{tikzpicture}
     \duck[tshirt=dblue,cap=dred]
     \begin{pgfinterruptboundingbox}
       \path[pattern=myStars,pattern color=white] \duckpathtshirt;
-      \fill[dred] \duckpathjacket;  
+      \fill[dred] \duckpathjacket;
       \stripes[rotate=95,color=white]
     \end{pgfinterruptboundingbox}
   \end{tikzpicture}
-  
+
 \end{document}

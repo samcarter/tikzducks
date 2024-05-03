@@ -84,29 +84,29 @@
       \foreach \i in {0,...,10} {
 
         \ifnum\i=2 
-        	\draw[fill = yellow,xscale=-1] (-2,0) -- ++ (45:0.2cm) arc (45:360-45:0.2cm) -- cycle;
-        	\fill (2,0.1) circle (0.2mm);
-        \else 
-        	\ifnum\i=5 
-        		\path (8, 0) pic[scale = 0.4] {apple};
-        	\else 
-        		\ifnum\i=8  
-        			\path (5, 0) pic[scale = 0.4] {cherry};
-        		\else 
-        			\fill[gray, opacity = 0.3] (\i, 0) circle (0.2); 
+          \draw[fill = yellow,xscale=-1] (-2,0) -- ++ (45:0.2cm) arc (45:360-45:0.2cm) -- cycle;
+          \fill (2,0.1) circle (0.2mm);
+        \else
+          \ifnum\i=5
+            \path (8, 0) pic[scale = 0.4] {apple};
+          \else
+            \ifnum\i=8
+              \path (5, 0) pic[scale = 0.4] {cherry};
+            \else
+              \fill[gray, opacity = 0.3] (\i, 0) circle (0.2);
         \fi \fi \fi
       }
     \end{scope}
 
     % pacman
     \begin{scope}[yshift=-30,xscale=-1,xshift = -\x cm]
-    	\ifnum\bill<4
-    		\duck
-    	\else
-    		\duck[laughing]
-    	\fi
-    \end{scope}    
+      \ifnum\bill<4
+        \duck
+      \else
+        \duck[laughing]
+      \fi
+    \end{scope}
 
-  \end{tikzpicture}    
+  \end{tikzpicture}
 }
 \end{document}

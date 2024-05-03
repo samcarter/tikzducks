@@ -9,17 +9,17 @@
 \definecolor{billcol}{RGB}{230,132,82}
 
 \begin{document}
-  
+
 \begin{tikzpicture}
 
-  \fill[black] (-0.1,0.4) rectangle (1.9,2.8); 
+  \fill[black] (-0.1,0.4) rectangle (1.9,2.8);
 
-  \clip (-0.1,0.4) rectangle (1.9,2.8); 
+  \clip (-0.1,0.4) rectangle (1.9,2.8);
 
 
   \duck[
-    body=skin, 
-    jacket=dbrown!10!white, 
+    body=skin,
+    jacket=dbrown!10!white,
     bill=billcol
   ]
   
@@ -32,8 +32,6 @@
   
   \fill[gray!80!white] (1.24,1.35) circle[radius=0.06];
   \fill[white] (1.225,1.365) ellipse[x radius=0.015, y radius=0.03,rotate=-30];
-
-  
 \end{tikzpicture}
 
 \end{document}

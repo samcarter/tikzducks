@@ -14,28 +14,28 @@
 \begin{document}
 
 \begin{frame}
-	\begin{tikzpicture}[remember picture,overlay]
-	 	\node[at=(current page.south),anchor=south,inner sep=0pt]{%
-	  		\includegraphics[width=\paperwidth]{Great_Wall_of_China}%
-		};
-		\node[at=(current page.south),yshift=0.25cm,text width=.95\paperwidth,align=center]{
-			\tiny\color{white} 
-			Image source: \url{https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_(IV)_(7183821643).jpg}\par
-		};	
-		\begin{scope}[scale=1.4,xscale=-1,xshift=-3cm,yshift=-2cm]
-			\duck[
-				body=skin,
-				eye=white,
-				bill=darkred,
-				jacket=darkred!50!white
-			]
-			\fill[darkred] (1.8758,1.3509) .. controls (1.7585,1.2917) and (1.6389,1.2333) .. (1.5575,1.1985) .. controls (1.4761,1.1637) and (1.4103,1.1391) .. (1.3555,1.1208) .. controls (1.3008,1.1024) and (1.2569,1.0904) .. (1.2194,1.0807) .. controls (1.1819,1.0710) and (1.1507,1.0636) .. (1.1212,1.0546) .. controls (1.0916,1.0457) and (1.0637,1.0351) .. (1.0328,1.0190) .. controls (1.0019,1.0029) and (0.8865,0.9088) .. (0.8449,0.8777) .. controls (0.8033,0.8465) and (0.7541,0.8059) .. (0.6925,0.7519) .. controls (0.6516,0.7105) and (0.5560,0.6383) .. (0.5494,0.6329) .. controls (0.5494,0.6329) and (0.5900,0.3688) .. (0.7617,0.0948) -- (0.6763,0.1022) .. controls (0.4163,0.4975) and (0.4362,1.1152) .. (0.4362,1.1152) -- (0.4973,1.1357) .. controls (0.5074,0.8909) and (0.5315,0.7173) .. (0.5315,0.7173) .. controls (0.6224,0.8021) and (0.6851,0.8426) .. (0.7467,0.8967) .. controls (0.8084,0.9507) and (0.8576,0.9913) .. (0.8992,1.0224) .. controls (0.9408,1.0536) and (0.9747,1.0752) .. (1.0057,1.0914) .. controls (1.0366,1.1075) and (1.0645,1.1181) .. (1.0940,1.1270) .. controls (1.1236,1.1360) and (1.1548,1.1434) .. (1.1923,1.1531) .. controls (1.2298,1.1628) and (1.2736,1.1748) .. (1.3284,1.1932) .. controls (1.3832,1.2115) and (1.4490,1.2361) .. (1.5303,1.2709) .. controls (1.6117,1.3057) and (1.7088,1.3507) .. (1.8261,1.4098) -- cycle;
-			\draw[yellow!50!brown,thick] (1.25,2.1) -- (0.8,2.5);
-			\fill[black] (1.3543,1.2009) .. controls (1.7956,2.3034) and (0.3811,2.5095) .. (0.4156,1.6027) .. controls (0.4320,1.8832) and (0.9156,1.9103) .. (0.9156,1.9103) .. controls (0.9889,1.4396) and (1.4358,1.7248) .. (1.3543,1.2009) -- cycle;	
-			\fill[black] (1.15,2.15) circle (0.25);
-			\draw[yellow!50!brown,thick] (1.25,2.2) -- (1.65,2.45);
-		\end{scope}	
-	\end{tikzpicture}
+  \begin{tikzpicture}[remember picture,overlay]
+     \node[at=(current page.south),anchor=south,inner sep=0pt]{%
+        \includegraphics[width=\paperwidth]{Great_Wall_of_China}%
+    };
+    \node[at=(current page.south),yshift=0.25cm,text width=.95\paperwidth,align=center]{
+      \tiny\color{white}
+      Image source: \url{https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_(IV)_(7183821643).jpg}\par
+    };  
+    \begin{scope}[scale=1.4,xscale=-1,xshift=-3cm,yshift=-2cm]
+      \duck[
+        body=skin,
+        eye=white,
+        bill=darkred,
+        jacket=darkred!50!white
+      ]
+      \fill[darkred] (1.8758,1.3509) .. controls (1.7585,1.2917) and (1.6389,1.2333) .. (1.5575,1.1985) .. controls (1.4761,1.1637) and (1.4103,1.1391) .. (1.3555,1.1208) .. controls (1.3008,1.1024) and (1.2569,1.0904) .. (1.2194,1.0807) .. controls (1.1819,1.0710) and (1.1507,1.0636) .. (1.1212,1.0546) .. controls (1.0916,1.0457) and (1.0637,1.0351) .. (1.0328,1.0190) .. controls (1.0019,1.0029) and (0.8865,0.9088) .. (0.8449,0.8777) .. controls (0.8033,0.8465) and (0.7541,0.8059) .. (0.6925,0.7519) .. controls (0.6516,0.7105) and (0.5560,0.6383) .. (0.5494,0.6329) .. controls (0.5494,0.6329) and (0.5900,0.3688) .. (0.7617,0.0948) -- (0.6763,0.1022) .. controls (0.4163,0.4975) and (0.4362,1.1152) .. (0.4362,1.1152) -- (0.4973,1.1357) .. controls (0.5074,0.8909) and (0.5315,0.7173) .. (0.5315,0.7173) .. controls (0.6224,0.8021) and (0.6851,0.8426) .. (0.7467,0.8967) .. controls (0.8084,0.9507) and (0.8576,0.9913) .. (0.8992,1.0224) .. controls (0.9408,1.0536) and (0.9747,1.0752) .. (1.0057,1.0914) .. controls (1.0366,1.1075) and (1.0645,1.1181) .. (1.0940,1.1270) .. controls (1.1236,1.1360) and (1.1548,1.1434) .. (1.1923,1.1531) .. controls (1.2298,1.1628) and (1.2736,1.1748) .. (1.3284,1.1932) .. controls (1.3832,1.2115) and (1.4490,1.2361) .. (1.5303,1.2709) .. controls (1.6117,1.3057) and (1.7088,1.3507) .. (1.8261,1.4098) -- cycle;
+      \draw[yellow!50!brown,thick] (1.25,2.1) -- (0.8,2.5);
+      \fill[black] (1.3543,1.2009) .. controls (1.7956,2.3034) and (0.3811,2.5095) .. (0.4156,1.6027) .. controls (0.4320,1.8832) and (0.9156,1.9103) .. (0.9156,1.9103) .. controls (0.9889,1.4396) and (1.4358,1.7248) .. (1.3543,1.2009) -- cycle;  
+      \fill[black] (1.15,2.15) circle (0.25);
+      \draw[yellow!50!brown,thick] (1.25,2.2) -- (1.65,2.45);
+    \end{scope}
+  \end{tikzpicture}
 \end{frame}
 
 \end{document}

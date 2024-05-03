@@ -7,7 +7,7 @@
 \begin{document}
 
 \ExplSyntaxOn
-\draw_begin: 
+\draw_begin:
 
   \color_set:nnn {brown} {rgb} {0.75,0.50,0.25}
   \color_set:nnn {orange} {rgb} {1.00,0.50,0.00}
@@ -15,7 +15,7 @@
   % head
   \draw_path_ellipse:nnn
     { 0.9cm, 1.5cm }
-    { 0.5cm , 0cm } 
+    { 0.5cm , 0cm }
     { 0cm , 0.625cm }
   \color_fill:n { yellow!70!brown }
   \draw_path_use_clear:n { fill }
@@ -45,14 +45,14 @@
   \draw_path_curveto:nnn
     {0.643cm,1.530cm}
     {0.541cm,1.303cm}
-    {0.910cm,1.370cm} 
+    {0.910cm,1.370cm}
   \draw_path_curveto:nnn
     {0.083cm,0.850cm}
     {0.269cm,1.369cm}
     {0.406cm,1.472cm}
   \draw_path_close:
   \color_fill:n { orange!50!brown }
-  \draw_path_use_clear:n { fill }  
+  \draw_path_use_clear:n { fill }
   
   % eyes
   %
@@ -65,14 +65,14 @@
   % ry = (-y' sin a, y' cos a)
   \draw_path_ellipse:nnn
     { 0.8206cm,  1.5822cm }
-    { 0.0839cm, -0.0305cm } 
-    { 0.0428cm , 0.1175cm } 
+    { 0.0839cm, -0.0305cm }
+    { 0.0428cm , 0.1175cm }
   \draw_path_ellipse:nnn
     { 0.5387cm, 1.6556cm }
-    { 0.0739cm, -0.0269cm } 
-    { 0.0391cm, 0.1074cm } 
+    { 0.0739cm, -0.0269cm }
+    { 0.0391cm, 0.1074cm }
   \color_fill:n { yellow!15!white }
-  \draw_path_use_clear:n { fill } 
+  \draw_path_use_clear:n { fill }
   
   
   % pupils
@@ -88,6 +88,6 @@
   \draw_path_use_clear:n { fill }
 
 \draw_end:
-\ExplSyntaxOff 
+\ExplSyntaxOff
 
 \end{document}
