@@ -1,20 +1,20 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 
 % Based on an idea by Paulo
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		tshirt,
-		bowtie=red!70!black,
-		jacket=blue!50!black,
-		umbrellaclosed=cyan!50!green,
-		longhair=brown!60!black,
-		hat=black
-	]
+  \duck[
+    tshirt,
+    bowtie=red!70!black,
+    jacket=blue!50!black,
+    umbrellaclosed=cyan!50!green,
+    longhair=brown!60!black,
+    hat=black
+  ]
 \end{tikzpicture}
-	
+  
 \end{document}

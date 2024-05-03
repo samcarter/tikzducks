@@ -1,0 +1,35 @@
+!config
+paths:
+- '@{user.home}/Life/latex/texmf/scripts'
+loops: 3
+verbose: true
+preambles:
+  generate_examples: |
+    % arara: latexmk: {
+    % arara: --> engine: pdflatex,
+    % arara: --> options: [
+    % arara: -->    '-pretex="\\AtBeginDocument{\\pagecolor{gray!20}}"',
+    % arara: -->    '-usepretex'
+    % arara: -->  ]
+    % arara: --> }
+    % arara: pdftocairo: { 
+    % arara: --> format: 'png',
+    % arara: --> options: [
+    % arara: -->    '-r', '150', '-transp', '-singlefile',
+    % arara: -->    '@{getBasename(getOriginalReference())}_bg'
+    % arara: -->  ]
+    % arara: --> }
+    % arara: dvisvgm : {
+    % arara: --> options: [
+    % arara: -->    '--pdf', '--exact', '--font-format=woff', '--zoom=-1',
+    % arara: -->    '@{getBasename(getOriginalReference())}'
+    % arara: -->  ]
+    % arara: --> }
+    % arara: latexmk: {
+    % arara: --> engine: pdflatex,
+    % arara: --> }
+    % arara: pdftocairo: { 
+    % arara: --> format: 'png',
+    % arara: --> options: ['-r', '150', '-transp', '-singlefile'],
+    % arara: --> }
+    % arara: clean: { extensions: [ aux, log, fdb_latexmk, fls, synctex.gz ] }

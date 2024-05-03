@@ -1,14 +1,14 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks,tikzlings}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[]
+  \duck[]
   \bear[scale=0.7,xshift=1.3cm,back]
   \duck[invisible,wing,yscale=-1,scale=0.8,yshift=-1.7cm,xshift=-0.2cm]
   \duck[invisible,wing,yscale=-1,xscale=-1,scale=0.8,yshift=-1.3cm,xshift=-2.5cm]
-\end{tikzpicture}	
-	
+\end{tikzpicture}  
+  
 \end{document}

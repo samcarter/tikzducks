@@ -1,21 +1,21 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=red!20!white,
-		bill=red!30!white,
-		shorthair=red!30!white,
-		bunny=red!30!white,
-		inear=red!30!white
-	]
-	\path (0.1,0.1) rectangle (2.1,2.12);
-	\begin{pgfinterruptboundingbox}
-		\node[red!20!white,rotate=25,scale=3] at (1.7,1.51) {\textsf{s}};
-	\end{pgfinterruptboundingbox}
+  \duck[
+    body=red!20!white,
+    bill=red!30!white,
+    shorthair=red!30!white,
+    bunny=red!30!white,
+    inear=red!30!white
+  ]
+  \path (0.1,0.1) rectangle (2.1,2.12);
+  \begin{pgfinterruptboundingbox}
+    \node[red!20!white,rotate=25,scale=3] at (1.7,1.51) {\textsf{s}};
+  \end{pgfinterruptboundingbox}
 \end{tikzpicture}   
-	
+  
 \end{document}

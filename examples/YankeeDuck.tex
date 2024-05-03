@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass[margin=1pt]{standalone}
 
 \usepackage{tikz}
@@ -29,14 +29,14 @@
 } }
 
 \begin{document}
-	
-	\begin{tikzpicture}
-		\duck[tshirt=dblue,cap=dred]
-		\begin{pgfinterruptboundingbox}
-			\path[pattern=myStars,pattern color=white] \duckpathtshirt;
-			\fill[dred] \duckpathjacket;	
-			\stripes[rotate=95,color=white]
-		\end{pgfinterruptboundingbox}
-	\end{tikzpicture}
-	
+  
+  \begin{tikzpicture}
+    \duck[tshirt=dblue,cap=dred]
+    \begin{pgfinterruptboundingbox}
+      \path[pattern=myStars,pattern color=white] \duckpathtshirt;
+      \fill[dred] \duckpathjacket;  
+      \stripes[rotate=95,color=white]
+    \end{pgfinterruptboundingbox}
+  \end{tikzpicture}
+  
 \end{document}

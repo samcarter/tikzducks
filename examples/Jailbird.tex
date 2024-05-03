@@ -1,16 +1,16 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		peakedcap=gray!40!black,
-		tshirt=white,
-		stripes={\stripes[rotate=100,color=gray!40!black]},
-		prison=gray
-	]
+  \duck[
+    peakedcap=gray!40!black,
+    tshirt=white,
+    stripes={\stripes[rotate=100,color=gray!40!black]},
+    prison=gray
+  ]
 \end{tikzpicture}
-	
+  
 \end{document}

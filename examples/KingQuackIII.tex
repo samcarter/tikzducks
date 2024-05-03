@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -13,14 +13,14 @@
 \definecolor{c3e8225}{RGB}{62,130,37} % green
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=ffdab9,
-		tshirt=cf7d917,
-		shorthair=gray!30!white,
+  \duck[
+    body=ffdab9,
+    tshirt=cf7d917,
+    shorthair=gray!30!white,
     eyebrow,
-	]  
+  ]  
   
 \path (0,0) rectangle (2.2,3.1);
 
@@ -256,5 +256,5 @@
 \end{scope}
 \end{pgfinterruptboundingbox}
 \end{tikzpicture}
-	
+  
 \end{document}

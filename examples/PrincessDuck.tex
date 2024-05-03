@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -6,17 +6,17 @@
 \definecolor{phair}{RGB}{249,249,139}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=pskin!80!white,
-		longhair=phair,
-		tshirt=magenta!60!white,
-		jacket=magenta!40!white,
-		necklace=white!85!yellow
-	]
-	\path (0.7,2) rectangle (1.4,2.55);
-	\fill[yellow!80!orange,rotate=-10,xshift=-11,yshift=5] \duckpathcrown;
+  \duck[
+    body=pskin!80!white,
+    longhair=phair,
+    tshirt=magenta!60!white,
+    jacket=magenta!40!white,
+    necklace=white!85!yellow
+  ]
+  \path (0.7,2) rectangle (1.4,2.55);
+  \fill[yellow!80!orange,rotate=-10,xshift=-11,yshift=5] \duckpathcrown;
 \end{tikzpicture}
 
 \end{document}

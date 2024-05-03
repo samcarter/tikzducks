@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -7,13 +7,13 @@
 \definecolor{dred}{RGB}{46,13,7}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
 
-	\duck[
-		body=skin, 
-		jacket=dred, 
-	]
+  \duck[
+    body=skin, 
+    jacket=dred, 
+  ]
   \begin{pgfinterruptboundingbox}
   \fill[jacketcol] (0.4972,1.1357) .. controls (0.2741,1.0927) and (-0.1181,0.6473) .. (0.2962,0.2511) .. controls (0.7114,-0.1451) and (2.8718,0.1200) .. (1.8261,1.4099) .. controls (0.9512,1.0700) and (1.0031,0.5833) .. (0.4855,0.2148) .. controls (0.2857,0.5446) and (0.4972,1.1357) .. (0.4972,1.1357) -- cycle;
   
@@ -40,5 +40,5 @@
   \fill[brown] (0.3280,0.6457) -- (0.5865,0.2332) -- (0.5644,0.2132) -- (0.2705,0.6126) -- cycle;
 
 \end{tikzpicture}
-	
+  
 \end{document}

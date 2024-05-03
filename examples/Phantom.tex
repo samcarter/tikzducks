@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -9,7 +9,7 @@
 
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
 
   \newcommand{\duckhookbody}{
@@ -18,22 +18,22 @@
     \end{scope}
   }
 
-	\duck[
-		body=skin, 
+  \duck[
+    body=skin, 
     bill=billcol,
-		tshirt=white, 
-		jacket=jacketcol, 
+    tshirt=white, 
+    jacket=jacketcol, 
     bowtie=black,
     buttons=black,
     lapel=black,
     strawhat=jacketcol,
     ribbon=jacketcol
-	]
+  ]
 
   \fill[billcol] \duckpathbill;
   \fill[white!85!yellow, rotate=-20] (-0.06,1.74) ellipse[x radius=0.0786, y radius=0.1143];
   \fill[black, rotate=-20] (-0.03,1.73) ellipse[x radius=0.0286, y radius=0.0643];
 
 \end{tikzpicture}
-	
+  
 \end{document}

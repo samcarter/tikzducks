@@ -1,15 +1,15 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
 \begin{tikzpicture}[inner sep=0pt]
   \node at (1.2,2.7) {\includegraphics[width=14cm]{SoupCan}};
-	\duck[%
-		chef=white,
-		tshirt=white,
-		buttons=blue,
-		rollingpin=brown!80!black]
-	]
+  \duck[%
+    chef=white,
+    tshirt=white,
+    buttons=blue,
+    rollingpin=brown!80!black]
+  ]
 \end{tikzpicture}
 \end{document}

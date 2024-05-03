@@ -1,18 +1,18 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	
+  
   \duck[
-		jacket=black,
-	]
+    jacket=black,
+  ]
   
   % hair
-	\fill[black,overlay] (1.3543,1.2009) .. controls (1.7956,2.3034) and (0.3811,2.5095) .. (0.4156,1.6027) .. controls (0.4320,1.8832) and (0.9156,1.9103) .. (0.9156,1.9103) .. controls (0.9889,1.4396) and (1.4358,1.7248) .. (1.3543,1.2009) -- cycle;	
-	\fill[black] (1.25,1.95) circle (0.25);
+  \fill[black,overlay] (1.3543,1.2009) .. controls (1.7956,2.3034) and (0.3811,2.5095) .. (0.4156,1.6027) .. controls (0.4320,1.8832) and (0.9156,1.9103) .. (0.9156,1.9103) .. controls (0.9889,1.4396) and (1.4358,1.7248) .. (1.3543,1.2009) -- cycle;  
+  \fill[black] (1.25,1.95) circle (0.25);
   
   % eye brows
   \fill[black, rounded corners=1, rotate=70] (1.92,-0.1) rectangle ++(0.08,-0.3);
@@ -46,6 +46,6 @@
     }
   \end{scope}
 
-\end{tikzpicture}	
-	
+\end{tikzpicture}  
+  
 \end{document}

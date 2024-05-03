@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks,tikzlings}
 
@@ -11,9 +11,9 @@
 }
 
 \begin{document}
-	
+  
 \begin{tikzpicture}[scale=5]
-	\duck[tshirt=red!40!black]
+  \duck[tshirt=red!40!black]
   
   \begin{pgfinterruptboundingbox}
     
@@ -35,6 +35,6 @@
   
   \end{pgfinterruptboundingbox}
 
-\end{tikzpicture}	
-	
+\end{tikzpicture}  
+  
 \end{document}

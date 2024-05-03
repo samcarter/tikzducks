@@ -1,14 +1,14 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[tshirt=white!90!gray,jacket=red!80!black,tie=black!70!gray,peakedcap=black!70!gray,buttons=yellow!80!orange]
-	\fill[white!90!gray,rotate=-35] (-0.25,2.2) ellipse (0.555 and 0.175);
-	\draw[white!70!gray] (0.7,1.85) -- (1.0,2.0);
-	\fill[white!70!gray,rotate=25] (2.0,1.4) ellipse (0.45 and 0.12);
-\end{tikzpicture}	
-	
+  \duck[tshirt=white!90!gray,jacket=red!80!black,tie=black!70!gray,peakedcap=black!70!gray,buttons=yellow!80!orange]
+  \fill[white!90!gray,rotate=-35] (-0.25,2.2) ellipse (0.555 and 0.175);
+  \draw[white!70!gray] (0.7,1.85) -- (1.0,2.0);
+  \fill[white!70!gray,rotate=25] (2.0,1.4) ellipse (0.45 and 0.12);
+\end{tikzpicture}  
+  
 \end{document}

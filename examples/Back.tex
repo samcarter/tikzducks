@@ -1,12 +1,12 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck
-	\fill[yellow!70!brown] (0.90,1.50) ellipse (0.50 and 0.625);
-\end{tikzpicture}	
-	
+  \duck
+  \fill[yellow!70!brown] (0.90,1.50) ellipse (0.50 and 0.625);
+\end{tikzpicture}  
+  
 \end{document}

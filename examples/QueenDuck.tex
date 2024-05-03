@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -8,20 +8,20 @@
 \definecolor{qcrown}{RGB}{90,76,183}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=qskin,
-		bill=qbill,
-		jacket=qdress,
-		tshirt=teal!30!qdress,
-		shorthair=gray!60!white,
-		necklace=gray!10!white,
-		handbag=teal!30!qdress
-	]  
-	\fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
-	\fill[qcrown,scale=0.23,rotate=-20,yshift=82,xshift=38] \duckpathqueencrown;
-	\fill[qcrown,yshift=3] \duckpathkingcrown;
+  \duck[
+    body=qskin,
+    bill=qbill,
+    jacket=qdress,
+    tshirt=teal!30!qdress,
+    shorthair=gray!60!white,
+    necklace=gray!10!white,
+    handbag=teal!30!qdress
+  ]  
+  \fill[gray!60!white,rotate=-30] (0.27,1.23) rectangle (0.37,0.65);
+  \fill[qcrown,scale=0.23,rotate=-20,yshift=82,xshift=38] \duckpathqueencrown;
+  \fill[qcrown,yshift=3] \duckpathkingcrown;
 \end{tikzpicture}
-	
+  
 \end{document}

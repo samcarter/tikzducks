@@ -1,18 +1,18 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 \usepackage{fontawesome5}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		jacket=white,
-		neckerchief=blue!50!black,
-		woggle=blue!50!black,
-		sailor=white
-	]
-	\node[scale=0.8,inner sep=0pt] at (1.07,2.03) {\rotatebox{-20}{\color{blue!50!black}\faAnchor}};
-\end{tikzpicture}	
-	
+  \duck[
+    jacket=white,
+    neckerchief=blue!50!black,
+    woggle=blue!50!black,
+    sailor=white
+  ]
+  \node[scale=0.8,inner sep=0pt] at (1.07,2.03) {\rotatebox{-20}{\color{blue!50!black}\faAnchor}};
+\end{tikzpicture}  
+  
 \end{document}

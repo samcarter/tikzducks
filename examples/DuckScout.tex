@@ -1,23 +1,23 @@
 %This is a very special duck, because yo' won the scout duck in the contest "When will @egreg reach 654321" (https://tex.meta.stackexchange.com/q/7493/36296).
 % In Czech, the neckerchief is called "šátek" and the woggle "turbánek", which means "little turban".
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		head=yellow!60!brown!50!white,
-		tshirt=brown!80!gray!40!white,
-		cap=orange!50!yellow,
-		neckerchief=orange!50!yellow,
-		woggle=brown, bookcolour=brown!80!black,
-	]
-	\begin{scope}[yshift=-3,xshift=3]
-	  \fill[brown!80!black,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);
-	  \node[rotate=-20, color=white] at (0.88,0.70) {\scalebox{0.4}{\parbox{0.75cm}{\centering\tiny\sffamily Scouting\\for\\ Ducklings}}};
-	\end{scope}
+  \duck[
+    head=yellow!60!brown!50!white,
+    tshirt=brown!80!gray!40!white,
+    cap=orange!50!yellow,
+    neckerchief=orange!50!yellow,
+    woggle=brown, bookcolour=brown!80!black,
+  ]
+  \begin{scope}[yshift=-3,xshift=3]
+    \fill[brown!80!black,rotate=-20] (0.40,1.20) rectangle (0.80,0.60);
+    \node[rotate=-20, color=white] at (0.88,0.70) {\scalebox{0.4}{\parbox{0.75cm}{\centering\tiny\sffamily Scouting\\for\\ Ducklings}}};
+  \end{scope}
 \end{tikzpicture}
-	
+  
 \end{document}

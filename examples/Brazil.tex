@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -7,16 +7,16 @@
 \definecolor{brazilblue}{RGB}{0,39,118}%
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=brazilyellow,
-		shorthair=brazilgreen
-	]
-	
-	\begin{pgfinterruptboundingbox}
-		\path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] \duckpathjacket;
-	\end{pgfinterruptboundingbox}
+  \duck[
+    body=brazilyellow,
+    shorthair=brazilgreen
+  ]
+  
+  \begin{pgfinterruptboundingbox}
+    \path[preaction={fill, brazilblue},pattern=fivepointed stars, pattern color=white] \duckpathjacket;
+  \end{pgfinterruptboundingbox}
 \end{tikzpicture}
-	
+  
 \end{document}

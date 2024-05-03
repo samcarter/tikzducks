@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 \usepackage{fontawesome}
@@ -14,41 +14,41 @@
 \newcommand*{\insignia}{\node[rotate=15] at (wing) {\color{yellow!80!brown}\faLocationArrow};}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		tshirt=black!60!gray, 
-		jacket=unigold, 
-		body=skink, 
-		shorthair=brown!80!black, 
-		bill=skink!60!gray
-	]
-	\insignia
+  \duck[
+    tshirt=black!60!gray, 
+    jacket=unigold, 
+    body=skink, 
+    shorthair=brown!80!black, 
+    bill=skink!60!gray
+  ]
+  \insignia
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\duck[
-		tshirt=black!60!gray, 
-		jacket=uniblue, 
-		body=skins, 
-		mullet=black!60!brown, 
-		bill=skins!60!gray
-	]
-	\fill[skins,rotate=175, xshift=-46, yshift=-74] (0.45,1.20) -- (0.50,0.80) -- (0.65,1.20);
-	\fill[black!60!brown, rounded corners=1, rotate=70] (1.85,0.13) rectangle (1.91,-0.05);
-	\fill[black!60!brown, rounded corners=1, rotate=90] (1.7,-0.75) rectangle (1.76,-0.97);
-	\insignia
+  \duck[
+    tshirt=black!60!gray, 
+    jacket=uniblue, 
+    body=skins, 
+    mullet=black!60!brown, 
+    bill=skins!60!gray
+  ]
+  \fill[skins,rotate=175, xshift=-46, yshift=-74] (0.45,1.20) -- (0.50,0.80) -- (0.65,1.20);
+  \fill[black!60!brown, rounded corners=1, rotate=70] (1.85,0.13) rectangle (1.91,-0.05);
+  \fill[black!60!brown, rounded corners=1, rotate=90] (1.7,-0.75) rectangle (1.76,-0.97);
+  \insignia
 \end{tikzpicture}
 
 \begin{tikzpicture}
-	\duck[
-		tshirt=black!60!gray, 
-		jacket=unired, 
-		body=skinu, 
-		longhair=black!60!brown, 
-		bill=skinu!70!black
-	]
-	\insignia
+  \duck[
+    tshirt=black!60!gray, 
+    jacket=unired, 
+    body=skinu, 
+    longhair=black!60!brown, 
+    bill=skinu!70!black
+  ]
+  \insignia
 \end{tikzpicture}
-	
+  
 \end{document}

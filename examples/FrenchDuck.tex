@@ -1,17 +1,17 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture} 
-	\duck[
-		body=yellow!60!red!30!white,
-		tshirt=white!90!yellow,
-		stripes={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},
-		beret=blue!30!black,
-		baguette=brown
-	]
+  \duck[
+    body=yellow!60!red!30!white,
+    tshirt=white!90!yellow,
+    stripes={\stripes[color=blue!70!black,rotate=-87,width=0.07,distance=0.12]},
+    beret=blue!30!black,
+    baguette=brown
+  ]
 \end{tikzpicture}
-	
+  
 \end{document}

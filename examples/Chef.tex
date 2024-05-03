@@ -1,16 +1,16 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[%
-		chef=white,
-		tshirt=white,
-		buttons=blue,
-		rollingpin=brown!80!black]
-	]
-\end{tikzpicture}	
-	
+  \duck[%
+    chef=white,
+    tshirt=white,
+    buttons=blue,
+    rollingpin=brown!80!black]
+  ]
+\end{tikzpicture}  
+  
 \end{document}

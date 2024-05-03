@@ -1,15 +1,15 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=white!90!brown, 
-		bill=white!60!brown, 
-		sheep
-	]
+  \duck[
+    body=white!90!brown, 
+    bill=white!60!brown, 
+    sheep
+  ]
 \end{tikzpicture}
-	
+  
 \end{document}

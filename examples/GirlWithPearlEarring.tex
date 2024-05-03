@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
@@ -9,7 +9,7 @@
 \definecolor{billcol}{RGB}{230,132,82}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
 
   \fill[black] (-0.1,0.4) rectangle (1.9,2.8); 
@@ -17,11 +17,11 @@
   \clip (-0.1,0.4) rectangle (1.9,2.8); 
 
 
-	\duck[
-		body=skin, 
-		jacket=dbrown!10!white, 
+  \duck[
+    body=skin, 
+    jacket=dbrown!10!white, 
     bill=billcol
-	]
+  ]
   
    \fill[dbrown]  (0.490,1.145) .. controls (0.267, 1.102) and (-0.125,0.657) .. (0.289,0.261) .. controls (0.704,-0.135) and ( 2.863,0.130) .. (1.818,1.419) .. controls (0.880, 0.946) and ( 1.240,1.378) .. (0.46,0.55) -- cycle;
   

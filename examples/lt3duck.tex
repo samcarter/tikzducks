@@ -1,4 +1,4 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 
 \usepackage{xcolor}
@@ -9,83 +9,83 @@
 \ExplSyntaxOn
 \draw_begin: 
 
-	\color_set:nnn {brown} {rgb} {0.75,0.50,0.25}
-	\color_set:nnn {orange} {rgb} {1.00,0.50,0.00}
+  \color_set:nnn {brown} {rgb} {0.75,0.50,0.25}
+  \color_set:nnn {orange} {rgb} {1.00,0.50,0.00}
 
-	% head
-	\draw_path_ellipse:nnn
-		{ 0.9cm, 1.5cm }
-		{ 0.5cm , 0cm } 
-		{ 0cm , 0.625cm }
-	\color_fill:n { yellow!70!brown }
-	\draw_path_use_clear:n { fill }
-	
-	% body
-	\draw_path_moveto:n
-		{0.513cm,1.145cm}
-	\draw_path_curveto:nnn
-		{0.267cm, 1.102cm}
-		{-0.125cm,0.657cm}
-		{0.289cm,0.261cm}
-	\draw_path_curveto:nnn
-		{0.704cm,-0.135cm}
-		{2.863cm,0.130cm}
-		{1.818cm,1.419cm}
-	\draw_path_curveto:nnn
-		{0.938cm, 0.946cm}
-		{1.240cm,1.379cm}
-		{0.513cm,1.145cm}
-	\draw_path_close:
-	\color_fill:n { yellow!70!brown }
-	\draw_path_use_clear:n { fill }
-	
-	% bill
-	\draw_path_moveto:n
-		{0.406cm,1.472cm}
-	\draw_path_curveto:nnn
-		{0.643cm,1.530cm}
-		{0.541cm,1.303cm}
-		{0.910cm,1.370cm} 
-	\draw_path_curveto:nnn
-		{0.083cm,0.850cm}
-		{0.269cm,1.369cm}
-		{0.406cm,1.472cm}
-	\draw_path_close:
-	\color_fill:n { orange!50!brown }
-	\draw_path_use_clear:n { fill }	
-	
-	% eyes
-	%
-	% Transformation:
-	% x = x' cos a - y' sin a
-	% y = x' sin a + y' cos a
-	%
-	% Half-axis
-	% rx = (x' cos a , x' sin a)
-	% ry = (-y' sin a, y' cos a)
-	\draw_path_ellipse:nnn
-		{ 0.8206cm,  1.5822cm }
-		{ 0.0839cm, -0.0305cm } 
-		{ 0.0428cm , 0.1175cm } 
-	\draw_path_ellipse:nnn
-		{ 0.5387cm, 1.6556cm }
-		{ 0.0739cm, -0.0269cm } 
-		{ 0.0391cm, 0.1074cm } 
-	\color_fill:n { yellow!15!white }
-	\draw_path_use_clear:n { fill } 
-	
-	
-	% pupils
-	\draw_path_ellipse:nnn
-		{0.84542cm, 1.56258cm }
-		{0.033547cm, -0.0122101cm }
-		{0.0244202cm, 0.0670941cm }
-	\draw_path_ellipse:nnn
-		{0.563504cm, 1.63593cm }
-		{0.0268752cm, -0.00978178cm }
-		{0.0219919cm, 0.0604222cm }
-	\color_fill:n { black }
-	\draw_path_use_clear:n { fill }
+  % head
+  \draw_path_ellipse:nnn
+    { 0.9cm, 1.5cm }
+    { 0.5cm , 0cm } 
+    { 0cm , 0.625cm }
+  \color_fill:n { yellow!70!brown }
+  \draw_path_use_clear:n { fill }
+  
+  % body
+  \draw_path_moveto:n
+    {0.513cm,1.145cm}
+  \draw_path_curveto:nnn
+    {0.267cm, 1.102cm}
+    {-0.125cm,0.657cm}
+    {0.289cm,0.261cm}
+  \draw_path_curveto:nnn
+    {0.704cm,-0.135cm}
+    {2.863cm,0.130cm}
+    {1.818cm,1.419cm}
+  \draw_path_curveto:nnn
+    {0.938cm, 0.946cm}
+    {1.240cm,1.379cm}
+    {0.513cm,1.145cm}
+  \draw_path_close:
+  \color_fill:n { yellow!70!brown }
+  \draw_path_use_clear:n { fill }
+  
+  % bill
+  \draw_path_moveto:n
+    {0.406cm,1.472cm}
+  \draw_path_curveto:nnn
+    {0.643cm,1.530cm}
+    {0.541cm,1.303cm}
+    {0.910cm,1.370cm} 
+  \draw_path_curveto:nnn
+    {0.083cm,0.850cm}
+    {0.269cm,1.369cm}
+    {0.406cm,1.472cm}
+  \draw_path_close:
+  \color_fill:n { orange!50!brown }
+  \draw_path_use_clear:n { fill }  
+  
+  % eyes
+  %
+  % Transformation:
+  % x = x' cos a - y' sin a
+  % y = x' sin a + y' cos a
+  %
+  % Half-axis
+  % rx = (x' cos a , x' sin a)
+  % ry = (-y' sin a, y' cos a)
+  \draw_path_ellipse:nnn
+    { 0.8206cm,  1.5822cm }
+    { 0.0839cm, -0.0305cm } 
+    { 0.0428cm , 0.1175cm } 
+  \draw_path_ellipse:nnn
+    { 0.5387cm, 1.6556cm }
+    { 0.0739cm, -0.0269cm } 
+    { 0.0391cm, 0.1074cm } 
+  \color_fill:n { yellow!15!white }
+  \draw_path_use_clear:n { fill } 
+  
+  
+  % pupils
+  \draw_path_ellipse:nnn
+    {0.84542cm, 1.56258cm }
+    {0.033547cm, -0.0122101cm }
+    {0.0244202cm, 0.0670941cm }
+  \draw_path_ellipse:nnn
+    {0.563504cm, 1.63593cm }
+    {0.0268752cm, -0.00978178cm }
+    {0.0219919cm, 0.0604222cm }
+  \color_fill:n { black }
+  \draw_path_use_clear:n { fill }
 
 \draw_end:
 \ExplSyntaxOff 

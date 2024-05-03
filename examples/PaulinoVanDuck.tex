@@ -1,18 +1,18 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=yellow!50!brown!40!white,
-		crazyhair=gray!50!white,
-		eyebrow,
-		glasses=brown!70!black,
-		book=\scalebox{0.2}{$E=mc^2$},
-		bookcolour=red!20!brown
-	]
+  \duck[
+    body=yellow!50!brown!40!white,
+    crazyhair=gray!50!white,
+    eyebrow,
+    glasses=brown!70!black,
+    book=\scalebox{0.2}{$E=mc^2$},
+    bookcolour=red!20!brown
+  ]
 \end{tikzpicture}
-	
+  
 \end{document}

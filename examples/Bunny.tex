@@ -1,17 +1,17 @@
-% !TeX TS-program = txs:///duck
+% !TeX program = arara -p generate_examples % | txs:///view-log | txs:///view-pdf "?am).pdf"
 \documentclass{standalone}
 \usepackage{tikzducks}
 
 \begin{document}
-	
+  
 \begin{tikzpicture}
-	\duck[
-		body=white!80!brown,
-		bill=white!60!brown,
-		bunny, 
-		longhair=white!60!brown
-	]
-	\fill[white!60!brown] (tail) circle (0.2);
+  \duck[
+    body=white!80!brown,
+    bill=white!60!brown,
+    bunny, 
+    longhair=white!60!brown
+  ]
+  \fill[white!60!brown] (tail) circle (0.2);
 \end{tikzpicture}
-	
+  
 \end{document}
