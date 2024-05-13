@@ -69,6 +69,7 @@
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
 \RequirePackage{iexec}
+\usepackage{synthslant}% to fake slented comments in inconsolata
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -102,7 +103,7 @@
 \expandafter\def\csname PYG@tok@nb\endcsname{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}
 
 % comments (italics won't work with the inconsolata font)
-\expandafter\def\csname PYG@tok@c\endcsname{\def\PYG@tc##1{\textcolor{gray}{##1}}}
+\expandafter\def\csname PYG@tok@c\endcsname{\def\PYG@tc##1{\textcolor{gray}{\textsynthslant{##1}}}}
 
 \def\PYGZbs{\char`\\}
 \def\PYGZus{\char`\_}
