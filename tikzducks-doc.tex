@@ -932,7 +932,8 @@ For convenience the more complex paths of this package are stored in macros, whi
 \begin{tikzpicture}
   \duck
   \path[preaction={fill, red!50!black},
-        pattern=fivepointed stars,
+        pattern={Stars[distance=1.7mm,
+        radius=0.5mm,angle=32]},
         pattern color=yellow]
         \duckpathlonghair;
 \end{tikzpicture}
@@ -1045,7 +1046,8 @@ These hooks can be defined by the user as needed:
 \begin{tikzpicture}
   \begingroup
     \newcommand{\duckhookclothing}{
-      \path[pattern=fivepointed stars,
+      \path[pattern={Stars[distance=1.7mm,
+            radius=0.5mm,angle=32]},
             pattern color=yellow]
             \duckpathjacket;
     }

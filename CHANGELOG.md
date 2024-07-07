@@ -6,6 +6,8 @@
 
 ### Changed
 
+- switched from `patterns` to `patterns.meta` library for magic hat for more flexibility
+
 ### Fixed
 
 
