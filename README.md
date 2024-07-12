@@ -134,12 +134,13 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./examples/FrenchDuck.tex"><img src="./examples/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
 <a href="./examples/YankeeDuck.tex"><img src="./examples/YankeeDuck.svg" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
 <a href="./examples/Facemask.tex"><img src="./examples/Facemask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
-<!--<a href="./examples/Chess.tex"><img src="./examples/Chess.svg" alt="Chess" title="Chess" height="128"></a>
-<a href="./examples/Vikings.tex"><img src="./examples/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
-<a href="./examples/GreatWall.tex"><img src="./examples/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
-<a href="./examples/Ferragosto.svg"><img src="./examples/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
-<a href="./examples/Pacduck.tex"><img src="./examples/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>-->
 
+### Misc
+
+<a href="./examples/Chess.tex"><img src="./examples/Chess.svg" alt="Chess" title="Chess" height="128"></a>
+<a href="./examples/Vikings.tex"><img src="./examples/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
+<a href="./examples/GreatWall.tex"><img src="./examples/GreatWall.svg" alt="Great Wall" title="Great Wall" height="128"></a>
+<a href="./examples/Pacduck.tex"><img src="./examples/Pacduck.gif" alt="Pacduck" title="Pacduck" height="64"></a> 
 
 ## TikZducks in action
 
