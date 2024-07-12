@@ -74,12 +74,12 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Ducks in Art
 
-<a href="./examples/MonaDuck.tex"><img src="./examples/MonaDuck.png" alt="Mona Duck" title="Mona Duck" height="64"></a>
+<a href="./examples/MonaDuck.tex"><img src="./examples/MonaDuck.svg" alt="Mona Duck" title="Mona Duck" height="64"></a>
 <a href="./examples/GirlWithPearlEarring.tex"><img src="./examples/GirlWithPearlEarring.svg" alt="Duck with pearl earring" title="Duck with pearl earring" height="64"></a>
 <a href="./examples/PopArt.tex"><img src="./examples/PopArt.svg" alt="Pop ArtArt" title="Pop Art" height="64"></a>
 <a href="./examples/Leonardo.tex"><img src="./examples/Leonardo.svg" alt="Duck da Vinci" title="Duck da Vinci" height="64"></a>
-<a href="./examples/Soup.tex"><img src="./examples/Soup.png" alt="Duck Soup" title="Douck Soup" height="64"></a>
-<a href="./examples/Frida.tex"><img src="./examples/Frida_bg.png" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
+<a href="./examples/Soup.tex"><img src="./examples/Soup.svg" alt="Duck Soup" title="Douck Soup" height="64"></a>
+<a href="./examples/Frida.tex"><img src="./examples/Frida.svg" alt="Frida Quacko" title="Frida Quacko" height="64"></a>
 
 ### TeX.SE users (and relatives)
 
@@ -106,7 +106,7 @@ In case you would like to share some of your ducks with the community, I would b
 <a href="./examples/Chainsaw.tex"><img src="./examples/Chainsaw.svg" alt="Chainsaw Duck" title="Chainsaw Duck" height="64"></a>
 <a href="./examples/Devil.tex"><img src="./examples/Devil.svg" alt="Devil Duck" title="Devil Duck" height="64"></a>
 <a href="./examples/Ninja.tex"><img src="./examples/Ninja.svg" alt="Ninja Ducks" title="Ninja Ducks" height="64"></a>
-<a href="./examples/PartyDuck.tex"><img src="./examples/PartyDuck_bg.png" alt="Party Duck" title="Party Duck" height="64"></a>
+<a href="./examples/PartyDuck.tex"><img src="./examples/PartyDuck.svg" alt="Party Duck" title="Party Duck" height="64"></a>
 <a href="./examples/Vampire.tex"><img src="./examples/Vampire.svg" alt="Vampire Duck" title="Vampire Duck" height="64"></a>
 <a href="./examples/Snowduck.tex"><img src="./examples/Snowduck.svg" alt="Snowduck" title="Snowduck" height="64"></a>
 <a href="./examples/OfficeDuck.tex"><img src="./examples/OfficeDuck.svg" alt="Office Duck" title="Office Duck" height="64"></a>
@@ -115,31 +115,29 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Animals and Beings
 
-<a href="./examples/AraraDuck.tex"><img src="./examples/AraraDuck_bg.png" alt="Arara Duck" title="Arara Duck" height="64"></a>
+<a href="./examples/AraraDuck.tex"><img src="./examples/AraraDuck.svg" alt="Arara Duck" title="Arara Duck" height="64"></a>
 <a href="./examples/BeeDuck.tex"><img src="./examples/BeeDuck.svg" alt="Bee Duck" title="Bee Duck" height="64"></a>
 <a href="./examples/Bunny.tex"><img src="./examples/Bunny.svg" alt="Bunny Duck" title="Bunny Duck" height="64"></a>
 <a href="./examples/Donkey.tex"><img src="./examples/Donkey.svg" alt="Donkey Duck" title="Donkey Duck" height="64"></a>
 <a href="./examples/Horse.tex"><img src="./examples/Horse.svg" alt="Horse Duck" title="Horse Duck" height="64"></a>
 <a href="./examples/Pig.tex"><img src="./examples/Pig.svg" alt="Pig Duck" title="Pig Duck" height="64"></a>
 <a href="./examples/Sheep.tex"><img src="./examples/Sheep.svg" alt="Sheep Duck" title="Sheep Duck" height="64"></a>
-<a href="./examples/Zebra2.tex"><img src="./examples/Zebra2_bg.png" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
-<a href="./examples/Unicorn.tex"><img src="./examples/Unicorn_bg.png" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
+<a href="./examples/Zebra2.tex"><img src="./examples/Zebra2.svg" alt="Zebra Duck" title="Zebra Duck" height="64"></a>
+<a href="./examples/Unicorn.tex"><img src="./examples/Unicorn.svg" alt="Unicorn Duck" title="Unicorn Duck" height="64"></a>
 
 ### More ducks
 
-<a href="./examples/3Dduck.tex"><img src="./examples/3Dduck_bg.png" alt="3D Duck" title="3D Duck" height="64"></a>
+<a href="./examples/3Dduck.tex"><img src="./examples/3Dduck.svg" alt="3D Duck" title="3D Duck" height="64"></a>
 <a href="./examples/Back.tex"><img src="./examples/Back.svg" alt="Backside" title="Backside" height="64"></a>
-<a href="./examples/Churyumov-Gerasimenko.tex"><img src="./examples/Churyumov-Gerasimenko_bg.png" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
-<a href="./examples/Brazil.tex"><img src="./examples/Brazil_bg.png" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
+<a href="./examples/Churyumov-Gerasimenko.tex"><img src="./examples/Churyumov-Gerasimenko.svg" alt="67P/Churyumov–Gerasimenko" title="67P/Churyumov–Gerasimenko" height="64"></a>
+<a href="./examples/Brazil.tex"><img src="./examples/Brazil.svg" alt="Brazil Duck" title="Brazil Duck" height="64"></a>
 <a href="./examples/FrenchDuck.tex"><img src="./examples/FrenchDuck.svg" alt="French Duck" title="French Duck" height="64"></a>
-<a href="./examples/YankeeDuck.tex"><img src="./examples/YankeeDuck_bg.png" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
+<a href="./examples/YankeeDuck.tex"><img src="./examples/YankeeDuck.svg" alt="Yankee Duck" title="Yankee Duck" height="64"></a>
 <a href="./examples/Facemask.tex"><img src="./examples/Facemask.svg" alt="Face Mask Duck" title="Face Mask Duck" height="64"></a>
 <!--<a href="./examples/Chess.tex"><img src="./examples/Chess.svg" alt="Chess" title="Chess" height="128"></a>
 <a href="./examples/Vikings.tex"><img src="./examples/Vikings.svg" alt="Vikings" title="Vikings" height="128"></a>
 <a href="./examples/GreatWall.tex"><img src="./examples/GreatWall.png" alt="Great Wall" title="Great Wall" height="128"></a>
 <a href="./examples/Ferragosto.svg"><img src="./examples/Ferragosto.png" alt="Ferragosto" title="Ferragosto" height="128"></a>
-
-
 <a href="./examples/Pacduck.tex"><img src="./examples/Pacduck.png" alt="Pacduck" title="Pacduck" height="64"></a>-->
 
 

@@ -19,10 +19,10 @@ preambles:
     % arara: -->    '@{getBasename(getOriginalReference())}_bg'
     % arara: -->  ]
     % arara: --> }
-    % arara: dvisvgm : {
+    % arara: pdftocairo: { 
+    % arara: --> format: 'svg',
     % arara: --> options: [
-    % arara: -->    '--pdf', '--exact', '--font-format=woff', '--zoom=-1',
-    % arara: -->    '@{getBasename(getOriginalReference())}'
+    % arara: -->    '-svg', '@{getBasename(getOriginalReference())}.svg'
     % arara: -->  ]
     % arara: --> }
     % arara: latexmk: {
