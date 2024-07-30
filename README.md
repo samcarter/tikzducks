@@ -1,8 +1,8 @@
 # TikZducks
 
-[![GitHub](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](http://www.latex-project.org/lppl.txt)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version)](https://github.com/samcarter/tikzducks/releases/latest)
-[![CTAN](https://img.shields.io/ctan/v/tikzducks.svg)](https://ctan.org/pkg/tikzducks)
+[![License](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](http://www.latex-project.org/lppl.txt)
+[![GitHub tag](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version&color=blue)](https://github.com/samcarter/tikzducks/releases/latest)
+[![CTAN](https://img.shields.io/ctan/v/tikzducks.svg?color=blue)](https://ctan.org/pkg/tikzducks)
 
 This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296)
 
