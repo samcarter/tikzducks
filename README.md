@@ -1,6 +1,6 @@
 # TikZducks
 
-[![License](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](http://www.latex-project.org/lppl.txt)
+[![License](https://img.shields.io/github/license/samcarter/tikzducks.svg?color=blue)](https://www.latex-project.org/lppl.txt)
 [![GitHub tag](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version&color=blue)](https://github.com/samcarter/tikzducks/releases/latest)
 [![CTAN](https://img.shields.io/ctan/v/tikzducks.svg?color=blue)](https://ctan.org/pkg/tikzducks)
 
