@@ -68,21 +68,26 @@
 \RequirePackage{inconsolata}% mono font with bold, but italic is missing
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
-\RequirePackage{iexec}
 \usepackage{synthslant}% to fake slented comments in inconsolata
+\usepackage{currfile}% to test if _minted directory exists
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Listings
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage[
-  cachedir=$TMPDIR/minted/
-]{minted}
+\RequirePackage[cachedir=./_minted]{minted}
+
+% silence warning 
+\RequirePackage{silence}
+\WarningFilter{latex}{Writing or overwriting file}
 
 % smuggling custom pygmentize style in cache folder
 % (a real pygmentise style would need installtion in some python folder)
-\begin{filecontents*}[noheader,overwrite]{./sam.pygstyle}
+\newif\ifminteddir
+\IfFileExists{./_minted/../\currfilename}{\minteddirtrue}{}
+\ifminteddir
+\begin{filecontents*}[noheader,overwrite]{./_minted/sam.style.minted}
 \makeatletter
 \def\PYG@reset{\let\PYG@it=\relax \let\PYG@bf=\relax%
     \let\PYG@ul=\relax \let\PYG@tc=\relax%
@@ -126,8 +131,7 @@
 \def\PYGZrb{]}
 \makeatother
 \end{filecontents*}
-
-\iexec{mkdir -p $TMPDIR/minted && mv sam.pygstyle $TMPDIR/minted/.}
+\fi
 
 \usemintedstyle{sam}
 \setminted{
