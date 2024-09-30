@@ -69,71 +69,26 @@
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
 \usepackage{synthslant}% to fake slented comments in inconsolata
-\usepackage{currfile}% to test if _minted directory exists
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Listings
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage[cachedir=./_minted]{minted}
+\RequirePackage[cachedir=./.minted]{minted}
 
-% silence warning 
-\RequirePackage{silence}
-\WarningFilter{latex}{Writing or overwriting file}
+\AddToHook{env/MintedVerbatim/before}{%
+  % optional arguments
+  \@namedef{PYG@tok@na}{\def\PYG@tc##1{\textcolor{black}{##1}}}%
+  % macros
+  \@namedef{PYG@tok@k}{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}%
+  % curly brakets
+  \@namedef{PYG@tok@nb}{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}%
+  % comments (italics won't work with the inconsolata font)
+  \@namedef{PYG@tok@c}{\def\PYG@tc##1{\textcolor{gray}{\textsynthslant{##1}}}}%
+}
 
-% smuggling custom pygmentize style in cache folder
-% (a real pygmentise style would need installtion in some python folder)
-\newif\ifminteddir
-\IfFileExists{./_minted/../\currfilename}{\minteddirtrue}{}
-\ifminteddir
-\begin{filecontents*}[noheader,overwrite]{./_minted/sam.style.minted}
-\makeatletter
-\def\PYG@reset{\let\PYG@it=\relax \let\PYG@bf=\relax%
-    \let\PYG@ul=\relax \let\PYG@tc=\relax%
-    \let\PYG@bc=\relax \let\PYG@ff=\relax}
-\def\PYG@tok#1{\csname PYG@tok@#1\endcsname}
-\def\PYG@toks#1+{\ifx\relax#1\empty\else%
-    \PYG@tok{#1}\expandafter\PYG@toks\fi}
-\def\PYG@do#1{\PYG@bc{\PYG@tc{\PYG@ul{%
-    \PYG@it{\PYG@bf{\PYG@ff{#1}}}}}}}
-\def\PYG#1#2{\PYG@reset\PYG@toks#1+\relax+\PYG@do{#2}}
-
-% optional arguments
-\expandafter\def\csname PYG@tok@na\endcsname{\def\PYG@tc##1{\textcolor{black}{##1}}}
-
-% macros
-\expandafter\def\csname PYG@tok@k\endcsname{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}
-% curly brakets
-\expandafter\def\csname PYG@tok@nb\endcsname{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}
-
-% comments (italics won't work with the inconsolata font)
-\expandafter\def\csname PYG@tok@c\endcsname{\def\PYG@tc##1{\textcolor{gray}{\textsynthslant{##1}}}}
-
-\def\PYGZbs{\char`\\}
-\def\PYGZus{\char`\_}
-\def\PYGZob{\char`\{}
-\def\PYGZcb{\char`\}}
-\def\PYGZca{\char`\^}
-\def\PYGZam{\char`\&}
-\def\PYGZlt{\char`\<}
-\def\PYGZgt{\char`\>}
-\def\PYGZsh{\char`\#}
-\def\PYGZpc{\char`\%}
-\def\PYGZdl{\char`\$}
-\def\PYGZhy{\char`\-}
-\def\PYGZsq{\char`\'}
-\def\PYGZdq{\char`\"}
-\def\PYGZti{\char`\~}
-% for compatibility with earlier versions
-\def\PYGZat{@}
-\def\PYGZlb{[}
-\def\PYGZrb{]}
-\makeatother
-\end{filecontents*}
-\fi
-
-\usemintedstyle{sam}
+\usemintedstyle{default}
 \setminted{
   breaksymbolleft={},
   tabsize=2,
