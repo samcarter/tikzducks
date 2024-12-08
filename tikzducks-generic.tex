@@ -68,6 +68,7 @@
 \newif\ifduck@conicalhat
 \newif\ifduck@sailor
 \newif\ifduck@bobblehat
+\newif\ifduck@sombrero
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newif\ifduck@glasses
 \newif\ifduck@sunglasses
@@ -330,7 +331,16 @@
   bobblehat/.code           = \duck@bobblehattrue
                               \def\duck@bobblehat{#1},
   bobble hat/.forward to    = /duck/bobblehat,
-  bobblehat/.default        = red!70!black,  
+  bobblehat/.default        = red!70!black, 
+  sombrero/.code            = \duck@sombrerotrue
+                              \def\duck@sombrero{#1},
+  sombrero/.default         = orange!70!yellow,
+  sombreroa/.code           = \def\duck@sombreroa{#1},
+  sombreroa                 = green!70!blue,
+  sombrerob/.code           = \def\duck@sombrerob{#1},
+  sombrerob                 = red,
+  sombreroc/.code           = \def\duck@sombreroc{#1},
+  sombreroc                 = blue,      
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Accessories
@@ -576,6 +586,7 @@
 \pgfmathsetmacro{\scalingfactor}{sqrt(abs(\tmpscaleA*\tmpscaleD-\tmpscaleB*\tmpscaleC))*sqrt(abs((\pgf@xx/1cm)*(\pgf@yy/1cm)-(\pgf@xy/1cm)*(\pgf@yx/1cm)))}%
 \pgfmathsetmacro{\xscalefactor}{\tmpscaleA}
 \pgfmathsetmacro{\yscalefactor}{\tmpscaleD}
+\pgfmathsetmacro{\decoscalefactor}{sign(\tmpscaleA)*sign(\tmpscaleD)*\scalingfactor}%  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1028,6 +1039,22 @@
   \fill[\duck@bobblehat] (1.1,2.2) circle [radius=0.1];
   \endpgfinterruptboundingbox
   \path (0.43,1.3) rectangle (1.5,2.3);  
+\fi
+%
+% sombrero %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@sombrero
+  \begin{scope}[rotate=-20,xshift=8,yshift=2]
+    \fill[\duck@sombrero] (-.45,2) to[in=200] (0,2.8) to[out=-20] (.45,2) -- cycle;
+    \fill[\duck@sombrero] (-0.65, 1.75) .. controls (-0.85, 1.7) and (-0.85, 1.9) .. (-0.85, 1.9)  .. controls (-0.30, 2.2) and (0.30, 2.2) .. ( 0.85, 1.9)  .. controls ( 0.85, 1.9) and (0.85, 1.7) .. ( 0.65, 1.75) .. controls ( 0.30, 1.95) and (-0.30, 1.95) .. (-0.65, 1.75) -- cycle;
+    \draw[\duck@sombrerob,line width=\scalingfactor*0.8pt] (-0.85, 1.9)  .. controls (-0.30, 2.2) and (0.30, 2.2) .. ( 0.85, 1.9);
+    \draw[decorate, decoration={zigzag, amplitude=\decoscalefactor*1pt, segment length=\scalingfactor*6pt}, \duck@sombreroa, line width=\scalingfactor*1pt] (-0.81, 1.8)  .. controls (-0.30, 2.1) and (0.30, 2.1) .. ( 0.82, 1.8);
+    \begin{scope}
+      \clip (-.45,2) to[in=200] (0,2.8) to[out=-20] (.45,2) -- cycle;
+      \draw[decorate,decoration={zigzag, amplitude=\decoscalefactor*1pt, segment length=\scalingfactor*3pt},\duck@sombreroa, line width=\scalingfactor*1pt] (-.4,2.4) to[bend left] (.4,2.4);  
+      \fill[decorate,decoration={shape backgrounds,shape=circle,        shape size=\scalingfactor*2pt, shape evenly spread=7}, \duck@sombreroc] (-.3,2.6) to[bend left] (.3,2.6);  
+      \fill[decorate,decoration={shape backgrounds,shape=circle,shape size=\scalingfactor*2pt,shape evenly spread=9},\duck@sombreroc] (-.4,2.18) to[bend left] (.4,2.18);  
+    \end{scope}
+  \end{scope}
 \fi
 %
 % adding hook for users to customise %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

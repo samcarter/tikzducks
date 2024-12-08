@@ -4,6 +4,8 @@
 
 ### New
 
+- sombrero hat (many thanks to CarLaTeX for contributing the hat)
+
 ### Changed
 
 - switched from `patterns` to `patterns.meta` library for magic hat for more flexibility
