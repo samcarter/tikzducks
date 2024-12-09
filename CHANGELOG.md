@@ -5,6 +5,7 @@
 ### New
 
 - sombrero hat (many thanks to CarLaTeX for contributing the hat)
+- megaphone (see #37, many thanks to @maieul for the idea!)
 
 ### Changed
 
