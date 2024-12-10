@@ -4,6 +4,15 @@
 
 ### New
 
+### Changed
+
+### Fixed
+
+
+## [v1.9]
+
+### New
+
 - sombrero hat (many thanks to CarLaTeX for contributing the hat)
 - megaphone (see #37, many thanks to @maieul for the idea!)
 
@@ -212,7 +221,8 @@
 
 ------
 
-[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.8...HEAD
+[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.9...HEAD
+[v1.9]: https://github.com/samcarter/tikzducks/compare/v1.8...v1.9
 [v1.8]: https://github.com/samcarter/tikzducks/compare/v1.7...v1.8
 [v1.7]: https://github.com/samcarter/tikzducks/compare/v1.6...v1.7
 [v1.6]: https://github.com/samcarter/tikzlings/compare/v1.5...v1.6
