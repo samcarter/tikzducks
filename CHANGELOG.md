@@ -6,6 +6,8 @@
 
 ### Changed
 
+- updated lists of items used in `\randuck`, `\randomhead` and  `\randomaccessories` 
+
 ### Fixed
 
 
