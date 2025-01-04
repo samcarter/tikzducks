@@ -13,112 +13,130 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newif\ifduck@name
-\newif\ifduck@invisible
+\def\duck@listhead{}
+\def\duck@listacces{}
+\def\duck@headtext{head}
+\def\duck@accesstext{acess}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\duck@ini}{om}{
+  \expandafter\newif\csname ifduck@#2\endcsname
+  \def\duck@tmp{#1}
+  \ifx\duck@headtext\duck@tmp
+    \tl_put_right:Nn \duck@listhead { {#2} }
+  \fi
+  \ifx\duck@accesstext\duck@tmp
+    \tl_put_right:Nn \duck@listacces { {#2} }
+  \fi  
+}
+\ExplSyntaxOff
+
+\duck@ini{name}
+\duck@ini{invisible}
 % Environment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@water
+\duck@ini{water}
 % body parts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@grumpy
-\newif\ifduck@laughing
-\newif\ifduck@parrot
+\duck@ini{grumpy}
+\duck@ini{laughing}
+\duck@ini{parrot}
 % hair styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@shorthair
-\newif\ifduck@longhair
-\newif\ifduck@crazyhair
-\newif\ifduck@recedinghair
-\newif\ifduck@eyebrow
-\newif\ifduck@beard
-\newif\ifduck@mohican
-\newif\ifduck@mullet
-\newif\ifduck@parting
+\duck@ini[head]{shorthair}
+\duck@ini[head]{longhair}
+\duck@ini[head]{crazyhair}
+\duck@ini[head]{recedinghair}
+\duck@ini{eyebrow}
+\duck@ini[head]{beard}
+\duck@ini[head]{mohican}
+\duck@ini[head]{mullet}
+\duck@ini[head]{parting}
 % clothing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@clothing
-\newif\ifduck@tshirt
-\newif\ifduck@jacket
-\newif\ifduck@tie
-\newif\ifduck@cape
-\newif\ifduck@stripes
-\newif\ifduck@bowtie
-\newif\ifduck@lapel
-\newif\ifduck@aodai
-\newif\ifduck@scarf
+\duck@ini{clothing}
+\duck@ini{tshirt}
+\duck@ini{jacket}
+\duck@ini{tie}
+\duck@ini[acess]{cape}
+\duck@ini{stripes}
+\duck@ini[acess]{bowtie}
+\duck@ini{lapel}
+\duck@ini{aodai}
+\duck@ini[acess]{scarf}
 % Headgear %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@alien
-\newif\ifduck@hat
-\newif\ifduck@cap
-\newif\ifduck@santa
-\newif\ifduck@unicorn
-\newif\ifduck@magichat
-\newif\ifduck@chef
-\newif\ifduck@witch
-\newif\ifduck@graduate
-\newif\ifduck@beret
-\newif\ifduck@crown
-\newif\ifduck@queencrown
-\newif\ifduck@kingcrown
-\newif\ifduck@peakedcap
-\newif\ifduck@bunny
-\newif\ifduck@tophat
-\newif\ifduck@darthvader
-\newif\ifduck@harlequin
-\newif\ifduck@strawhat
-\newif\ifduck@helmet
-\newif\ifduck@viking
-\newif\ifduck@devil 
-\newif\ifduck@conicalhat
-\newif\ifduck@sailor
-\newif\ifduck@bobblehat
-\newif\ifduck@sombrero
+\duck@ini[head]{alien}
+\duck@ini[head]{hat}
+\duck@ini[head]{cap}
+\duck@ini[head]{santa}
+\duck@ini{unicorn}
+\duck@ini[head]{magichat}
+\duck@ini[head]{chef}
+\duck@ini[head]{witch}
+\duck@ini[head]{graduate}
+\duck@ini[head]{beret}
+\duck@ini[head]{crown}
+\duck@ini[head]{queencrown}
+\duck@ini[head]{kingcrown}
+\duck@ini[head]{peakedcap}
+\duck@ini[head]{bunny}
+\duck@ini[head]{tophat}
+\duck@ini[head]{darthvader}
+\duck@ini[head]{harlequin}
+\duck@ini[head]{strawhat}
+\duck@ini[head]{helmet}
+\duck@ini[head]{viking}
+\duck@ini[head]{devil}
+\duck@ini[head]{conicalhat}
+\duck@ini[head]{sailor}
+\duck@ini[head]{bobblehat}
+\duck@ini[head]{sombrero}
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newif\ifduck@glasses
-\newif\ifduck@sunglasses
-\newif\ifduck@squareglasses
-\newif\ifduck@icecream
-\newif\ifduck@book
-\newif\ifduck@magicwand
-\newif\ifduck@cricket
-\newif\ifduck@rollingpin
-\newif\ifduck@signpost
-\newif\ifduck@lightsaber
-\newif\ifduck@cake
-\newif\ifduck@pizza
-\newif\ifduck@hockey
-\newif\ifduck@baguette
-\newif\ifduck@football
-\newif\ifduck@mask
-\newif\ifduck@necklace
-\newif\ifduck@milkshake
-\newif\ifduck@wine
-\newif\ifduck@prison
-\newif\ifduck@speech
-\newif\ifduck@think
-\newif\ifduck@torch
-\newif\ifduck@easter
-\newif\ifduck@basket
-\newif\ifduck@buttons
-\newif\ifduck@sheep
-\newif\ifduck@horsetail
-\newif\ifduck@crozier
-\newif\ifduck@davidlikespineapplepizza
-\newif\ifduck@wing
-\newif\ifduck@stethoscope
-\newif\ifduck@neckerchief
-\newif\ifduck@snowduck
-\newif\ifduck@vampire
-\newif\ifduck@crystalball
-\newif\ifduck@cheese
-\newif\ifduck@shovel
-\newif\ifduck@pickaxe
-\newif\ifduck@strawbroom
-\newif\ifduck@broom
-\newif\ifduck@umbrella
-\newif\ifduck@umbrellaclosed
-\newif\ifduck@handbag
-\newif\ifduck@cocktail
-\newif\ifduck@overleaf
-\newif\ifduck@banana
-\newif\ifduck@stick
-\newif\ifduck@megaphone
+\duck@ini[acess]{glasses}
+\duck@ini[acess]{sunglasses}
+\duck@ini[acess]{squareglasses}
+\duck@ini[acess]{icecream}
+\duck@ini[acess]{book}
+\duck@ini[acess]{magicwand}
+\duck@ini[acess]{cricket}
+\duck@ini[acess]{rollingpin}
+\duck@ini[acess]{signpost}
+\duck@ini[acess]{lightsaber}
+\duck@ini[acess]{cake}
+\duck@ini[acess]{pizza}
+\duck@ini[acess]{hockey}
+\duck@ini[acess]{baguette}
+\duck@ini[acess]{football}
+\duck@ini[acess]{mask}
+\duck@ini[acess]{necklace}
+\duck@ini[acess]{milkshake}
+\duck@ini[acess]{wine}
+\duck@ini[acess]{prison}
+\duck@ini{speech}
+\duck@ini{think}
+\duck@ini[acess]{torch}
+\duck@ini[acess]{easter}
+\duck@ini[acess]{basket}
+\duck@ini{buttons}
+\duck@ini{sheep}
+\duck@ini{horsetail}
+\duck@ini[acess]{crozier}
+\duck@ini{davidlikespineapplepizza}
+\duck@ini{wing}
+\duck@ini[acess]{stethoscope}
+\duck@ini[acess]{neckerchief}
+\duck@ini{snowduck}
+\duck@ini{vampire}
+\duck@ini[acess]{crystalball}
+\duck@ini[acess]{cheese}
+\duck@ini[acess]{shovel}
+\duck@ini[acess]{pickaxe}
+\duck@ini[acess]{strawbroom}
+\duck@ini[acess]{broom}
+\duck@ini[acess]{umbrella}
+\duck@ini[acess]{umbrellaclosed}
+\duck@ini[acess]{handbag}
+\duck@ini[acess]{cocktail}
+\duck@ini{overleaf}
+\duck@ini[acess]{banana}
+\duck@ini[acess]{stick}
+\duck@ini{megaphone}
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -618,6 +636,7 @@
 \ifduck@devil
   \fill[\duck@devil] (0.7723,2.3756) .. controls (0.6369,2.1184) and (0.7916,2.0228) .. (0.8360,1.9897) .. controls (0.8744,1.9675) and (0.8774,1.9511) .. (0.8853,1.9173) .. controls (0.8853,1.8595) and (0.8407,1.8127) .. (0.7856,1.8127) .. controls (0.7535,1.8178) and (0.7240,1.8231) .. (0.6965,1.8545) .. controls (0.6965,1.8545) and (0.4451,2.2259) .. (0.7723,2.3756) -- cycle;
 \fi
+%
 % Conical Hat (background) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@conicalhat
   \fill[\duck@conicalhat!50!black,rotate=-21] (0.265,1.915) ellipse[x radius=0.79, y radius=0.1]; 
@@ -1486,8 +1505,8 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\pgfmathdeclarerandomlist{head}{{longhair}{shorthair}{parting}{crazyhair}{recedinghair}{mohican}{mullet}{beard}{alien}{hat}{tophat}{strawhat}{cap}{conicalhat}{santa}{graduate}{beret}{peakedcap}{harlequin}{sailor}{bobblehat}{crown}{queencrown}{kingcrown}{helmet}{viking}{devil}{bunny}{witch}{magichat}{sombrero}{mask}{darthvader}{chef}}
-\pgfmathdeclarerandomlist{accessories}{{bowtie}{cape}{glasses}{sunglasses}{signpost}{book}{cricket}{football}{hockey}{lightsaber}{torch}{prison}{crozier}{necklace}{icecream}{rollingpin}{cake}{pizza}{baguette}{cheese}{milkshake}{wine}{cocktail}{banana}{stick}{basket}{easter}{stethoscope}{neckerchief}{scarf}{shovel}{pickaxe}{strawbroom}{broom}{umbrella}{umbrellaclosed}{crystalball}{magicwand}{handbag}}
+\pgfmathdeclarerandomlist{head}{\duck@listhead}
+\pgfmathdeclarerandomlist{accessories}{\duck@listacces}
 
 \def\shuffleducks{%
  \pgfmathrandomitem{\head}{head}%
@@ -1499,7 +1518,7 @@
 \newcommand*{\randuck}[1][]{%
   \shuffleducks%
   \duck[\randomhead, \randomaccessories, #1]%
-}  
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
