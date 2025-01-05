@@ -6,6 +6,15 @@
 
 ### Changed
 
+### Fixed
+
+
+## [v1.10]
+
+### New
+
+### Changed
+
 - updated lists of items used in `\randuck`, `\randomhead` and  `\randomaccessories` 
 
 ### Fixed
@@ -223,7 +232,8 @@
 
 ------
 
-[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.9...HEAD
+[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.10...HEAD
+[v1.10]: https://github.com/samcarter/tikzducks/compare/v1.9...v1.10
 [v1.9]: https://github.com/samcarter/tikzducks/compare/v1.8...v1.9
 [v1.8]: https://github.com/samcarter/tikzducks/compare/v1.7...v1.8
 [v1.7]: https://github.com/samcarter/tikzducks/compare/v1.6...v1.7
