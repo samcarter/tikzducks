@@ -15,19 +15,14 @@
 
 \def\duck@listhead{}
 \def\duck@listacces{}
-\def\duck@headtext{head}
-\def\duck@accesstext{acess}
 
 \ExplSyntaxOn
+% based on https://topanswers.xyz/tex?q=8082#a7698
 \NewDocumentCommand{\duck@ini}{om}{
   \expandafter\newif\csname ifduck@#2\endcsname
-  \def\duck@tmp{#1}
-  \ifx\duck@headtext\duck@tmp
-    \tl_put_right:Nn \duck@listhead { {#2} }
-  \fi
-  \ifx\duck@accesstext\duck@tmp
-    \tl_put_right:Nn \duck@listacces { {#2} }
-  \fi  
+  \IfValueT{#1}{
+    \tl_put_right:cn { duck@list#1 } { {#2} }
+  }
 }
 \ExplSyntaxOff
 
@@ -54,12 +49,12 @@
 \duck@ini{tshirt}
 \duck@ini{jacket}
 \duck@ini{tie}
-\duck@ini[acess]{cape}
+\duck@ini[acces]{cape}
 \duck@ini{stripes}
-\duck@ini[acess]{bowtie}
+\duck@ini[acces]{bowtie}
 \duck@ini{lapel}
 \duck@ini{aodai}
-\duck@ini[acess]{scarf}
+\duck@ini[acces]{scarf}
 % Headgear %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \duck@ini[head]{alien}
 \duck@ini[head]{hat}
@@ -88,54 +83,54 @@
 \duck@ini[head]{bobblehat}
 \duck@ini[head]{sombrero}
 % Accessories %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\duck@ini[acess]{glasses}
-\duck@ini[acess]{sunglasses}
-\duck@ini[acess]{squareglasses}
-\duck@ini[acess]{icecream}
-\duck@ini[acess]{book}
-\duck@ini[acess]{magicwand}
-\duck@ini[acess]{cricket}
-\duck@ini[acess]{rollingpin}
-\duck@ini[acess]{signpost}
-\duck@ini[acess]{lightsaber}
-\duck@ini[acess]{cake}
-\duck@ini[acess]{pizza}
-\duck@ini[acess]{hockey}
-\duck@ini[acess]{baguette}
-\duck@ini[acess]{football}
-\duck@ini[acess]{mask}
-\duck@ini[acess]{necklace}
-\duck@ini[acess]{milkshake}
-\duck@ini[acess]{wine}
-\duck@ini[acess]{prison}
+\duck@ini[acces]{glasses}
+\duck@ini[acces]{sunglasses}
+\duck@ini[acces]{squareglasses}
+\duck@ini[acces]{icecream}
+\duck@ini[acces]{book}
+\duck@ini[acces]{magicwand}
+\duck@ini[acces]{cricket}
+\duck@ini[acces]{rollingpin}
+\duck@ini[acces]{signpost}
+\duck@ini[acces]{lightsaber}
+\duck@ini[acces]{cake}
+\duck@ini[acces]{pizza}
+\duck@ini[acces]{hockey}
+\duck@ini[acces]{baguette}
+\duck@ini[acces]{football}
+\duck@ini[acces]{mask}
+\duck@ini[acces]{necklace}
+\duck@ini[acces]{milkshake}
+\duck@ini[acces]{wine}
+\duck@ini[acces]{prison}
 \duck@ini{speech}
 \duck@ini{think}
-\duck@ini[acess]{torch}
-\duck@ini[acess]{easter}
-\duck@ini[acess]{basket}
+\duck@ini[acces]{torch}
+\duck@ini[acces]{easter}
+\duck@ini[acces]{basket}
 \duck@ini{buttons}
 \duck@ini{sheep}
 \duck@ini{horsetail}
-\duck@ini[acess]{crozier}
+\duck@ini[acces]{crozier}
 \duck@ini{davidlikespineapplepizza}
 \duck@ini{wing}
-\duck@ini[acess]{stethoscope}
-\duck@ini[acess]{neckerchief}
+\duck@ini[acces]{stethoscope}
+\duck@ini[acces]{neckerchief}
 \duck@ini{snowduck}
 \duck@ini{vampire}
-\duck@ini[acess]{crystalball}
-\duck@ini[acess]{cheese}
-\duck@ini[acess]{shovel}
-\duck@ini[acess]{pickaxe}
-\duck@ini[acess]{strawbroom}
-\duck@ini[acess]{broom}
-\duck@ini[acess]{umbrella}
-\duck@ini[acess]{umbrellaclosed}
-\duck@ini[acess]{handbag}
-\duck@ini[acess]{cocktail}
+\duck@ini[acces]{crystalball}
+\duck@ini[acces]{cheese}
+\duck@ini[acces]{shovel}
+\duck@ini[acces]{pickaxe}
+\duck@ini[acces]{strawbroom}
+\duck@ini[acces]{broom}
+\duck@ini[acces]{umbrella}
+\duck@ini[acces]{umbrellaclosed}
+\duck@ini[acces]{handbag}
+\duck@ini[acces]{cocktail}
 \duck@ini{overleaf}
-\duck@ini[acess]{banana}
-\duck@ini[acess]{stick}
+\duck@ini[acces]{banana}
+\duck@ini[acces]{stick}
 \duck@ini{megaphone}
 
 \tikzset{
@@ -1646,7 +1641,7 @@
   (1.3723,1.2684) -- cycle
 }
 
-% Acessoires %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Accessoires %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \def\duckpathqueencrown{%
   (0.7370,2.0732) .. controls (0.6966,2.2091) and (0.6769,2.3503) ..
