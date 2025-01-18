@@ -63,7 +63,7 @@ In case you would like to share some of your ducks with the community, I would b
 
 ### Ducks in History
 
-<a href="./examples/Ceasar.tex"><img src="./examples/Ceasar.svg" alt="Gajus Quackus Ceasar" title="Gajus Quackus Ceasar" height="64"></a>
+<a href="./examples/Caesar.tex"><img src="./examples/Caesar.svg" alt="Gajus Quackus Caesar" title="Gajus Quackus Caesar" height="64"></a>
 <a href="./examples/RomanDuck.tex"><img src="./examples/RomanDuck.svg" alt="Roman Duck" title="Roman Duck" height="64"></a>
 <a href="./examples/Viking.tex"><img src="./examples/Viking.svg" alt="Viking Duck" title="Viking Duck" height="64"></a>
 <a href="./examples/Pythagoras.tex"><img src="./examples/Pythagoras.svg" alt="Pythagoras" title="Pythagoras" height="64"></a>
