@@ -20,7 +20,7 @@ function visual_div(old, new)
     local pages_new = handle:read("*a")
     handle:close()
 
-    ---- converting pdf's into png images ---------------------------
+    ---- converting pdfs into png images ---------------------------
     os.execute("convert -density 300 " .. doc_old .. ".pdf " .. doc_old .. ".png")
     os.execute("convert -density 300 " .. doc_new .. ".pdf " .. doc_new .. ".png")
 

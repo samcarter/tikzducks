@@ -4,7 +4,7 @@
 [![GitHub tag](https://img.shields.io/github/tag/samcarter/tikzducks.svg?label=current%20version&color=blue)](https://github.com/samcarter/tikzducks/releases/latest)
 [![CTAN](https://img.shields.io/ctan/v/tikzducks.svg?color=blue)](https://ctan.org/pkg/tikzducks)
 
-This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296)
+This is a little LaTeX package for ducks to be used in TikZ pictures. The project is a continuation of the TeX.Stackexchange.com answer [How can we draw a duck](https://tex.stackexchange.com/a/347458/36296).
 
 A big thank you to all the people who contributed with code, ideas or feedback to the package! Without this package would not exist!
 
@@ -28,7 +28,7 @@ A short example to demonstrate the use of the TikZducks:
 \end{document}
 ```
 
-An exhaustive list of possible options can be found in [package documentation](https://github.com/samcarter/tikzducks/blob/main/DOCUMENTATION.pdf)
+An exhaustive list of possible options can be found in [package documentation](https://github.com/samcarter/tikzducks/blob/main/DOCUMENTATION.pdf).
 
 ## Examples
 
