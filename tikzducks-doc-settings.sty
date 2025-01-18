@@ -68,7 +68,7 @@
 \RequirePackage{inconsolata}% mono font with bold, but italic is missing
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
-\usepackage{synthslant}% to fake slented comments in inconsolata
+\usepackage{synthslant}% to fake slanted comments in inconsolata
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -82,7 +82,7 @@
   \@namedef{PYG@tok@na}{\def\PYG@tc##1{\textcolor{black}{##1}}}%
   % macros
   \@namedef{PYG@tok@k}{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}%
-  % curly brakets
+  % curly brackets
   \@namedef{PYG@tok@nb}{\def\PYG@tc##1{\textcolor{listingcolor}{\bfseries ##1}}}%
   % comments (italics won't work with the inconsolata font)
   \@namedef{PYG@tok@c}{\def\PYG@tc##1{\textcolor{gray}{\textsynthslant{##1}}}}%
