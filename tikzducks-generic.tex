@@ -141,8 +141,13 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   /duck/.search also={/tikz,/pgf},
   /duck/.cd,
-  name/.code= \duck@nametrue \def\duck@name{#1},
-  invisible/.code  = \duck@invisibletrue,
+  name/.code                = \duck@nametrue
+                              \def\duck@name{#1},
+  invisible/.code           = \duck@invisibletrue,
+  randomhead/.code          = \shuffleducks,
+  randomhead/.forward to    = /duck/\randomhead,
+  randomaccessories/.code   = \shuffleducks,
+  randomaccessories/.forward to = /duck/\randomaccessories,
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %
   % Environment
@@ -1511,8 +1516,7 @@
 }
 
 \newcommand*{\randuck}[1][]{%
-  \shuffleducks%
-  \duck[\randomhead, \randomaccessories, #1]%
+  \duck[randomhead, randomaccessories, #1]%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

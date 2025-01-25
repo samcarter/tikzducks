@@ -47,9 +47,8 @@
 \newlength{\duckoffset}
 
 \cfoot{%
-  \shuffleducks
   \begin{tikzpicture}[scale=0.5]
-      \duck[signpost=\scalebox{0.6}{\thepage},\randomhead]
+      \duck[signpost=\scalebox{0.6}{\thepage},randomhead]
   \end{tikzpicture}
 }
 \pagestyle{scrheadings}
@@ -908,12 +907,11 @@ With all these available accessories it might be hard to decide which one to cho
 \end{tikzpicture}
 \end{tcblisting}
 
-In case the duck should not be completely random, but only some of the random elements are desired, these can be accessed independently by using \saminline|\randomhead| and \saminline|\randomaccessories| for a random headpiece and a random accessories, respectively. Small caveat: Before using \saminline|\randomhead| or \saminline|\randomaccessories|, \saminline|\shuffleducks| has to be used to provide the random items (for \saminline|\randuck| this is done automatically).
+In case the duck should not be completely random, but only some of the random elements are desired, these can be accessed independently by using the \saminline|randomhead| and \saminline|randomaccessories| options for a random headpiece and a random accessories, respectively.
 
 \begin{tcblisting}{title={Random head gear and accessories}}
 \begin{tikzpicture}
-  \shuffleducks
-  \duck[\randomhead, \randomaccessories]
+  \duck[randomhead, randomaccessories]
 \end{tikzpicture}
 \end{tcblisting}
 
