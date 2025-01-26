@@ -180,7 +180,7 @@ For everybody suffering from anatidaephobia, there is also a special option to n
 
 This can also be useful to recycle some of the accessories presented in \ref{sec:accessories}.
 
-For the \TeX{} purists, there is also a picture mode variant:
+For the purists, there is also a picture mode variant:
 {
 \setlength{\unitlength}{0.6mm}
 \begin{tcblisting}{title={\texttt{picture} mode duck}}
@@ -189,46 +189,6 @@ For the \TeX{} purists, there is also a picture mode variant:
 \end{picture}
 \end{tcblisting}
 }
-
-And thanks to @JairoAdelRio there is even a \ConTeXt{} User Module available. Some of the colours might look different and not being a \ConTeXt{} user myself, I can't guarantee maintenance of this module.
-
-\begin{tcolorbox}[title={\ConTeXt{}  User Module}]
-\begin{samcode}
-\usemodule[tikzducks]
-\usecolors[xwi]
-\starttext
-
-\starttikzpicture
-  \duck[tophat,bowtie]
-\stoptikzpicture
-
-\stoptext
-\end{samcode}
-
-\tcblower
-\begin{tikzpicture}
-  \duck[tophat,bowtie]
-\end{tikzpicture}
-\end{tcolorbox}
-
-For those who prefer to work with pdf\TeX:
-
-\begin{tcolorbox}[title={pdfTeX}]
-\begin{samcode}
-\input tikzducks-plain.tex
-
-\tikzpicture
-  \duck[bobblehat,cheese]
-\endtikzpicture
-
-\bye
-\end{samcode}
-
-\tcblower
-\begin{tikzpicture}
-  \duck[bobblehat,cheese]
-\end{tikzpicture}
-\end{tcolorbox}
 
 \subsection{Body parts}
 

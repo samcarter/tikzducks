@@ -4,9 +4,11 @@
 
 ### New
 
-New options `randomhead` and `randomaccessories`. Basically the same as  `\randomhead` and `\randomaccessories`, but no longer require `\shuffleducks`
+- New options `randomhead` and `randomaccessories`. Basically the same as  `\randomhead` and `\randomaccessories`, but no longer require `\shuffleducks`
 
 ### Changed
+
+- removed ConTeXt/plain TeX support. I'm very grateful to @JairoAdelRio for contributing these modules, however after accidentally breaking these modules in 2021 (and not hearing any complains from users) I decided to stop supporting these module in favour of making maintaining the package easier and having more freedom in the code used in the package.
 
 ### Fixed
 
