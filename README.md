@@ -17,14 +17,14 @@ A short example to demonstrate the use of the TikZducks:
 \usepackage{tikzducks}
 
 \begin{document}
-	
+
 \begin{tikzpicture}
-	\duck[
-		% add options here, e.g.
-		lightsaber
-	]
-\end{tikzpicture}	
-	
+  \duck[
+    % add options here, e.g.
+    lightsaber
+  ]
+\end{tikzpicture}
+
 \end{document}
 ```
 
