@@ -14,6 +14,10 @@
 % arara: latexmk
 \documentclass{scrartcl}
 
+\usepackage[
+  themecolor=samlblue
+]{\jobname-settings}
+
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The \texorpdfstring{\tikzducks}{tikzducks} package}
 \subtitle{using ducks in \TikZ}
@@ -24,13 +28,10 @@
     \end{tikzpicture}\\[0.8em]
     \texttt{samcarter}\\
     \url{https://github.com/samcarter/tikzducks}\\
-    \url{https://www.ctan.org/pkg/tikzducks}
+    \url{https://ctan.org/pkg/tikzducks}
   }{samcarter}}
 \date{Version v1.10 \textendash{} 2025/01/05}
-
-\usepackage[
-  themecolor=samlblue
-]{\jobname-settings}
+\packagename{tikzducks}
 
 \colorlet{blue}{samlblue}
 \colorlet{red}{samred}
@@ -63,48 +64,13 @@
 Rubber ducks can be made of latex, but can they also be made with \LaTeX? Yes! The \tikzducks package is a \LaTeX{} package for rubber ducks to be used in \TikZ pictures.
 This project is a continuation of \href{https://tex.stackexchange.com/a/347458/36296}{How can we draw a duck?}.
 
-This package is work in progress (and will probably never be really finished as there is an infinite amount of things which could be added), therefore I would be happy to hear your feedback and ideas how to improve the package.
-The head version of the source code can be found on \url{https://github.com/samcarter/tikzducks}, including a bug tracker -- please make constructive use of it! A more stable package version can be found on \CTAN (\url{https://www.ctan.org/pkg/tikzducks}) and is included in both \miktex and \texlive as \tikzducks. If you seek any other assistance (not bug reports/feature requests), I suggest asking a question at \url{https://topanswers.xyz/tex}.
+Without the friendly and helpful community of \TeX{} users this package would not exist. A big thanks to all the users and contributors of this package!
 
-\subsection{Acknowledgements}
-
-Without the friendly and helpful community of \TeX{} users this package would not exist. I would like to thank a few fellow users in particular:
-
-First of all
-%
-Carla Maggi for pointing out the overwhelming need of having a \tikzducks package and valuable contribution to the package code, in particular the \hyperref[sec:footballducks]{football ducks},
-%
-Paulo Cereda for his contagious enthusiasm for ducks (\emph{Quack!}) and
-%
-Ulrike Fischer for her useful \TikZ advices and contributions to the package and coming to rescue for keyword highlighting in the package documentation.
-
-Many other users contributed to this package (in random order):
-%
-Enrico Gregorio helped to implement the \saminline|\tikzset{}| interface which makes it much easier to adjust the properties of the ducks to fit the user needs,
-%
-Andrew Stacey contributed the \TikZ Library ``ducks'',
-%
-Symbol~1 solved a few problems with default key values,
-%
-Mihikma created the duck's beard,
-%
-Yudai Nakata helped with problems of \saminline|\pdfrandomseed|,
-%
-@marmot for his seemingly infinite knowledge of \TikZ which he shared with the world,
-%
-@JairoAdelRio for contributing the \ConTeXt{}  User Module
-%
-and last but not least my thanks go to Martin Schr\"oder for his feedback to the code review.
-
-The ducks mostly consist of basic geometric shapes drawn in \TikZ. Some of the more complex shapes (e.g.\ the different hair styles) are first drawn in \texttt{inkscape} (\url{https://inkscape.org}) and then exported to \TikZ paths using the \texttt{svg2tikz} extension (\url{https://github.com/xyz2tex/svg2tikz}).
-
-\subsection{License}
-
-Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright}
-\texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{https://www.latex-project.org/lppl.txt}.
+\blurb
 
 The shown example ducks are purely fictional characters, any resemblance to real ducks or persons is purely coincidental and no copyright infringement is intended.
 
+\clearpage
 \section{Usage}
 
 The basic usage is fairly simple, to draw a duck:

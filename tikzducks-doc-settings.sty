@@ -61,6 +61,7 @@
   \RequirePackage{footnotehyper}
   \makesavenoteenv{tcolorbox}
   \RequirePackage[all]{nowidow}
+  \RequirePackage[hyphens]{url}
   \RequirePackage[colorlinks=true,breaklinks=true,allcolors=themecolor,hyperfootnotes=false]{hyperref}
 }
 \RequirePackage[T1]{fontenc}
@@ -158,3 +159,20 @@
 \providecommand*{\tikzlings}{Ti\emph{k}Zlings\xspace}
 \providecommand*{\tikzmarmots}{Ti\emph{k}Zmarmots\xspace}
 \providecommand*{\ConTeXt}{C\kern-.0333emon\-\kern-.0667em\TeX\kern-.0333emt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Doc blurb
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\packagename}[1]{\def\@packagename{#1}}
+
+\NewDocumentCommand\blurb{s}{%
+  This package is work in progress, therefore I would be happy to hear your feedback and ideas how to improve the package. The development version of the source code can be found at  \url{https://github.com/samcarter/\@packagename}, including an issue tracker.
+  \IfBooleanF#1{%
+    A more stable version of the package can be found on \CTAN (\url{https://ctan.org/pkg/\@packagename}) and is included in both \texlive and \miktex as \texttt{\@packagename}.
+  }%
+  If you seek any other assistance (not bug reports/feature requests), I suggest asking at \url{https://topanswers.xyz/tex}.
+
+  Copyright {\footnotesize\textcopyright} \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{https://www.latex-project.org/lppl.txt}.
+}
