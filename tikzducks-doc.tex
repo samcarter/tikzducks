@@ -916,12 +916,17 @@ To distinguish coordinates from multiple ducks in the same \saminline|tikzpictur
 
 Sometimes it might desirable to add things at a specific z-position, for example re-draw a t-shirt with some pattern that should be below the duck's hair and accessories. To facilitate this the \tikzducks provide a couple of hooks:
 
-\begin{samcode}
-\duckhookbackground, \duckhookbody, \duckhookclothing, \duckhookhair, \duckhookhat, \duckhookforeground
-\end{samcode}
+\begin{itemize}
+\item \saminline|\NewHook{tikzducks/background}|
+\item \saminline|\NewHook{tikzducks/body}|
+\item \saminline|\NewHook{tikzducks/clothing}|
+\item \saminline|\NewHook{tikzducks/hair}|
+\item \saminline|\NewHook{tikzducks/hat}|
+\item \saminline|\NewHook{tikzducks/foreground}|
+\end{itemize}
 
 \begin{center}
-\texttt{\textbackslash duckhook}\dots
+\saminline|\NewHook{tikzducks/...}|
 
   \begin{tikzpicture}[scale=1.59]
     \newcommand{\planes}{\fill[gray!20!white,opacity=0.9] (-0.1,-0.1) rectangle (2.4,2.4);}
@@ -973,22 +978,26 @@ Sometimes it might desirable to add things at a specific z-position, for example
   \end{tikzpicture}
 \end{center}
 
-These hooks can be defined by the user as needed:
+These hooks can be utilised by the user as needed:
 
 \begin{tcblisting}{title={Hooks}}
 \begin{tikzpicture}
-  \begingroup
-    \newcommand{\duckhookclothing}{
-      \path[pattern={Stars[distance=1.7mm,
-            radius=0.5mm,angle=32]},
-            pattern color=yellow]
-            \duckpathjacket;
-    }
-    \duck[witch=black!50!gray,
-          longhair=red!80!black,
-          jacket=black!50!gray,
-          magicwand]
-   \endgroup
+
+  \AddToHook{tikzducks/clothing}{
+    \path[pattern={Stars[distance=1.7mm,
+          radius=0.5mm,angle=32]},
+          pattern color=yellow]
+          \duckpathjacket;
+  }
+
+  \duck[witch=black!50!gray,
+        longhair=red!80!black,
+        jacket=black!50!gray,
+        magicwand]
+        
+  % optionally
+  \RemoveFromHook{tikzducks/clothing}
+
 \end{tikzpicture}
 \end{tcblisting}
 

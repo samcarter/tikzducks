@@ -9,6 +9,7 @@
 ### Changed
 
 - removed ConTeXt/plain TeX support. I'm very grateful to @JairoAdelRio for contributing these modules, however after accidentally breaking these modules in 2021 (and not hearing any complains from users) I decided to stop supporting these module in favour of making maintaining the package easier and having more freedom in the code used in the package.
+- replaced self-baked hooks with latex hooks: `\NewHook{tikzducks/background}`, `\NewHook{tikzducks/body}`, `\NewHook{tikzducks/clothing}`, `\NewHook{tikzducks/hair}`, `\NewHook{tikzducks/hat}` and `\NewHook{tikzducks/foreground}`
 
 ### Fixed
 
