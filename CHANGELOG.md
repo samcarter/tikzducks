@@ -8,7 +8,6 @@
 
 ### Fixed
 
-
 ## [v2.0]
 
 ### New
@@ -20,19 +19,11 @@
 - removed ConTeXt/plain TeX support. I'm very grateful to @JairoAdelRio for contributing these modules, however after accidentally breaking these modules in 2021 (and not hearing any complains from users) I decided to stop supporting these module in favour of making maintaining the package easier and having more freedom in the code used in the package.
 - replaced self-baked hooks with latex hooks: `\NewHook{tikzducks/background}`, `\NewHook{tikzducks/body}`, `\NewHook{tikzducks/clothing}`, `\NewHook{tikzducks/hair}`, `\NewHook{tikzducks/hat}` and `\NewHook{tikzducks/foreground}`
 
-### Fixed
-
-
 ## [v1.10]
-
-### New
 
 ### Changed
 
 - updated lists of items used in `\randuck`, `\randomhead` and  `\randomaccessories` 
-
-### Fixed
-
 
 ## [v1.9]
 
@@ -45,29 +36,17 @@
 
 - switched from `patterns` to `patterns.meta` library for magic hat for more flexibility
 
-### Fixed
-
-
 ## [v1.8]
 
 ### New
 
 - added DEPENDS.txt file
 
-### Changed
-
-### Fixed
-
-
 ## [v1.7]
 
 ### New
 
 - banana and stick with leaf (kindly contributed by @NuzzleTOO)
-
-### Changed
-
-### Fixed
 
 ## [v1.6]
 
@@ -246,7 +225,8 @@
 
 ------
 
-[Unreleased]: https://github.com/samcarter/tikzlings/compare/v1.10...HEAD
+[Unreleased]: https://github.com/samcarter/tikzlings/compare/v2.0...HEAD
+[v2.0]: https://github.com/samcarter/tikzducks/compare/v1.9...v2.0
 [v1.10]: https://github.com/samcarter/tikzducks/compare/v1.9...v1.10
 [v1.9]: https://github.com/samcarter/tikzducks/compare/v1.8...v1.9
 [v1.8]: https://github.com/samcarter/tikzducks/compare/v1.7...v1.8
