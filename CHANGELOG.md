@@ -226,7 +226,7 @@
 ------
 
 [Unreleased]: https://github.com/samcarter/tikzlings/compare/v2.0...HEAD
-[v2.0]: https://github.com/samcarter/tikzducks/compare/v1.9...v2.0
+[v2.0]: https://github.com/samcarter/tikzducks/compare/v1.10...v2.0
 [v1.10]: https://github.com/samcarter/tikzducks/compare/v1.9...v1.10
 [v1.9]: https://github.com/samcarter/tikzducks/compare/v1.8...v1.9
 [v1.8]: https://github.com/samcarter/tikzducks/compare/v1.7...v1.8
