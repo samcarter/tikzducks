@@ -21,18 +21,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{xcolor}
 \definecolor{samyellow}{RGB}{246,193,65}
-\definecolor{samorange}{RGB}{241,147,45}% pgfplotsthemebeamer
-\definecolor{samred}{RGB}{191,26,46}% TikZbricks
-\definecolor{sammagenta}{RGB}{170,42,104}% TikZmarmots
-\definecolor{samviolet}{RGB}{136,46,114}% TikZlings
-\definecolor{samlila}{RGB}{101,67,159}% Rainbow beamer theme
-\definecolor{samdblue}{RGB}{0,51,134}% beamer theme
-\definecolor{samlblue}{RGB}{22,89,155}% TikZducks
-\definecolor{samteal}{RGB}{25,143,157}% Tcolorbox beamer theme
-\definecolor{samlgreen}{RGB}{68,170,153}% Jigsaw
+\definecolor{samorange}{RGB}{241,147,45}
+\definecolor{samred}{RGB}{191,26,46}
+\definecolor{sammagenta}{RGB}{170,42,104}
+\definecolor{samviolet}{RGB}{136,46,114}
+\definecolor{samlila}{RGB}{101,67,159}
+\definecolor{samdblue}{RGB}{0,51,134}
+\definecolor{samlblue}{RGB}{22,89,155}
+\definecolor{samteal}{RGB}{25,143,157}
+\definecolor{samlgreen}{RGB}{68,170,153}
 \definecolor{samdgreen}{RGB}{78,178,125}
 \definecolor{samlgray}{RGB}{160,160,185}
 \definecolor{samdgray}{RGB}{60,60,85}
+
+\newcommand{\samcolours}{
+  \foreach \sam@col/\sam@pkg in {
+    samyellow/???,
+    samorange/Pgfplots,
+    samred/TikZbricks,
+    sammagenta/TikZmarmots,
+    samviolet/TikZlings,
+    samlila/Rainbow,
+    samdblue/Sam Theme,
+    samlblue/TikZducks,
+    samteal/Tcolorbox,
+    samlgreen/Jigsaw,
+    samdgreen/???,
+    samlgray/???,
+    samdgray/cistercian%
+  }{
+    \begingroup
+      \color{\sam@col}%
+      \makebox[0cm][l]{\rule[-0.9cm]{2.5cm}{2cm}}%
+    \endgroup
+    \parbox[c][2cm]{2.5cm}{\bfseries\color{white}\centering \sam@col\\\sam@pkg}%
+  }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -50,7 +74,7 @@
 % Packages
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\@ifclassloaded{beamer}{}{%
+\@ifclassloaded{scrartcl}{%
   \RequirePackage[english]{babel}
   \RequirePackage[paper=a4paper,margin=2.9cm]{geometry}
   \RequirePackage{scrlayer-scrpage}
@@ -63,7 +87,7 @@
   \RequirePackage[all]{nowidow}
   \RequirePackage[hyphens]{url}
   \RequirePackage[colorlinks=true,breaklinks=true,allcolors=themecolor,hyperfootnotes=false]{hyperref}
-}
+}{}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xspace}
 \RequirePackage{inconsolata}% mono font with bold, but italic is missing
@@ -77,6 +101,7 @@
 % Listings
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\@ifclassloaded{xbeamer}{}{
 \RequirePackage[cachedir=./.minted]{minted}
 
 \AddToHook{env/MintedVerbatim/before}{%
@@ -130,6 +155,7 @@
 \@ifclassloaded{beamer}{}{
   \tcbuselibrary{hooks}
   \tcbset{before pre={\nopagebreak[4]}}
+}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
