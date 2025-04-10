@@ -1,0 +1,19 @@
+name: Automated testing
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  spelling:
+    runs-on: ubuntu-latest
+    steps:
+      # Boilerplate
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check spelling
+        uses: crate-ci/typos@v1.31.1
+        with:
+          config: .github/workflows/typos.toml
