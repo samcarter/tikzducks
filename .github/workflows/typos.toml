@@ -2,3 +2,8 @@
 locale = "en-gb"
 
 [default.extend-words]
+color = "color"
+
+[files]
+extend-exclude = ["*.svg"]
+ignore-vcs = true
