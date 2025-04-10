@@ -3,7 +3,13 @@ locale = "en-gb"
 
 [default.extend-words]
 color = "color"
+center = "center"
+acces = "acces"
+itemize = "itemize"
+initialy = "initialy"
+uncolored = "uncolored"
+miter = "miter"
 
 [files]
-extend-exclude = ["*.svg"]
+extend-exclude = ["*.svg", "LICENSE.txt"]
 ignore-vcs = true
