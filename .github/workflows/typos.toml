@@ -3,12 +3,16 @@ locale = "en-gb"
 
 [default.extend-words]
 color = "color"
+colors = "colors"
 center = "center"
 acces = "acces"
 itemize = "itemize"
 initialy = "initialy"
 uncolored = "uncolored"
 miter = "miter"
+Beeing = "Beeing"
+Mis = "Mis"
+Arbor = "Arbor"
 
 [files]
 extend-exclude = ["*.svg", "LICENSE.txt"]
