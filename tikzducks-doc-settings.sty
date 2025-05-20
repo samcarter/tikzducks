@@ -131,6 +131,7 @@
 
 \RequirePackage[most]{tcolorbox}
 \tcbuselibrary{minted}
+\newcommand{\prefix}{./include}
 \tcbset{%
   colframe=themecolor,
   fonttitle=\bfseries,
@@ -148,7 +149,9 @@
   colback=themecolor!10,
   sharp corners,
   boxrule=0pt,
-  before title={\strut}
+  before title={\strut},
+  run latexmk/.style={run@system@command={latexmk -g- -pdf  -cd  }{#1}},
+  compilable listing/.style={listing file={\prefix/\jobname-listing-\thetcblistingcount.tex}},
 }
 
 % avoid page breaks right in front of the tcolorbox
