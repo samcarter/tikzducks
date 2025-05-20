@@ -13,6 +13,7 @@ miter = "miter"
 Beeing = "Beeing"
 Mis = "Mis"
 Arbor = "Arbor"
+artifact =  "artifact"
 
 [files]
 extend-exclude = ["*.svg", "LICENSE.txt"]
