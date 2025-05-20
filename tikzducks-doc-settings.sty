@@ -150,7 +150,7 @@
   sharp corners,
   boxrule=0pt,
   before title={\strut},
-  run latexmk/.style={run@system@command={latexmk -g- -pdf  -cd  }{#1}},
+  run latexmk/.style={run@system@command={latexmk}{#1}},
   compilable listing/.style={listing file={\prefix/\jobname-listing-\thetcblistingcount.tex}},
 }
 
