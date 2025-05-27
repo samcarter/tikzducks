@@ -151,6 +151,14 @@
   boxrule=0pt,
   before title={\strut},
   compilable listing/.style={listing file={\prefix/\jobname-listing-\thetcblistingcount.tex}},
+  compilable listing sam/.style={
+    listing and comment,
+    pdf comment,
+    freeze pdf,
+    compilable listing,
+    run latexmk={-g- -pdf -cd},
+    comment style={raster columns=1},
+  },
 }
 
 % avoid page breaks right in front of the tcolorbox
