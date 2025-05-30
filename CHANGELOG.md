@@ -4,6 +4,8 @@
 
 ### New
 
+- new accessories: towel
+
 ### Changed
 
 ### Fixed
