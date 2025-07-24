@@ -90,18 +90,21 @@
 }{}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xspace}
-\RequirePackage{inconsolata}% mono font with bold, but italic is missing
+\RequirePackage{inconsolata}% mono font with bold, but italic is missing  
 % \RequirePackage[scale=0.85]{cascadia-code}
 % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
 \RequirePackage{synthslant}% to fake slanted comments in inconsolata
 \RequirePackage{metalogox}% should be loaded after the fonts
+\@ifclassloaded{scrartcl}{}{%
+  \RequirePackage{lmodern}
+  \renewcommand{\ttdefault}{lmtt}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Listings
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\@ifclassloaded{xbeamer}{}{
 \RequirePackage[cachedir=./.minted]{minted}
 
 \AddToHook{env/MintedVerbatim/before}{%
@@ -125,9 +128,9 @@
 \newmintinline[saminline]{latex}{}
 
 % use non-bold and all coloured for inline code in articles
-\ifdefined\insertaspectratio\else
+\@ifclassloaded{scrartcl}{%
   \patchcmd{\minted@inputpyg@inline}{\minted@input}{\color{listingcolor}\renewcommand\textcolor[3][]{##3}\renewcommand\bfseries{}\minted@input}{}{}
-\fi
+}{}
 
 \RequirePackage[most]{tcolorbox}
 \tcbuselibrary{minted}
@@ -156,7 +159,7 @@
     pdf comment,
     freeze pdf,
     compilable listing,
-    run latexmk={-g- -pdf -cd},
+    run latexmk={-g- -pdf -cd -pdflatex=pdflatex-dev},
     comment style={raster columns=1},
   },
 }
@@ -165,7 +168,6 @@
 \@ifclassloaded{beamer}{}{
   \tcbuselibrary{hooks}
   \tcbset{before pre={\nopagebreak[4]}}
-}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
