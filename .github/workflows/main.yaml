@@ -12,8 +12,8 @@ jobs:
     steps:
       # Boilerplate
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Check spelling
-        uses: crate-ci/typos@v1.31.1
+        uses: crate-ci/typos@v1.35.5
         with:
           config: .github/workflows/typos.toml
