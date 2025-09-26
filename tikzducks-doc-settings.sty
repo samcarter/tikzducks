@@ -93,7 +93,7 @@
 \RequirePackage{inconsolata}% mono font with bold, but italic is missing
 \@ifclassloaded{scrartcl}{%
   \RequirePackage[scale=0.85]{cascadia-code}
-  \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
+  % \AddToHook{cmd/ttfamily/before}{\fontseries{sl}}
 }{}
 \RequirePackage{synthslant}% to fake slanted comments in inconsolata
 \RequirePackage{metalogox}% should be loaded after the fonts
@@ -201,11 +201,11 @@
 \providecommand*{\tikzmarmots}{Ti\emph{k}Zmarmots\xspace}
 \providecommand*{\ConTeXt}{C\kern-.0333emon\-\kern-.0667em\TeX\kern-.0333emt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Doc blurb
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\packagename}[1]{\def\@packagename{#1}}
 
 \NewDocumentCommand\blurb{s}{%
