@@ -14,7 +14,8 @@ Beeing = "Beeing"
 Mis = "Mis"
 Arbor = "Arbor"
 artifact =  "artifact"
+dolor = "dolor"
 
 [files]
-extend-exclude = ["*.svg", "LICENSE.txt"]
+extend-exclude = ["*.svg", "LICENSE.txt", "busyPanda.sty", "busyPanda_fonts_lualatex.dat", "busyPanda_fonts_pdflatex.dat", "busyPanda_fonttest.tex", "busyPanda_test.tex"]
 ignore-vcs = true
