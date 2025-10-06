@@ -17,5 +17,5 @@ artifact =  "artifact"
 dolor = "dolor"
 
 [files]
-extend-exclude = ["*.svg", "LICENSE.txt", "busyPanda.sty", "busyPanda_fonts_lualatex.dat", "busyPanda_fonts_pdflatex.dat", "busyPanda_fonttest.tex", "busyPanda_test.tex"]
+extend-exclude = ["*.svg", "LICENSE.txt", "BusyPanda.sty", "BusyPanda_fonts_lualatex.dat", "BusyPanda_fonts_pdflatex.dat", "BusyPanda_fonttest.tex", "BusyPanda_test.tex"]
 ignore-vcs = true
