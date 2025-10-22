@@ -1,4 +1,4 @@
-name: Automated testing
+name: Check for typos
 
 on:
   push:
@@ -10,7 +10,6 @@ jobs:
   spelling:
     runs-on: ubuntu-latest
     steps:
-      # Boilerplate
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: Check spelling
