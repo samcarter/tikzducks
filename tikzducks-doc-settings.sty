@@ -102,6 +102,7 @@
   \renewcommand{\ttdefault}{lmtt}
   \graphicspath{{./include}}
 }
+\RequirePackage{iftex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -185,6 +186,10 @@
   \addtokomafont{author}{\normalsize}
   \setlength{\footnotemargin}{0.7em}
 }{}
+
+\ifpdftex
+  \pdfsuppressptexinfo-1
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
