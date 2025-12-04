@@ -10,6 +10,8 @@
 
 ### Fixed
 
+- bounding box problem with different bill shapes
+
 ## [v2.0]
 
 ### New
