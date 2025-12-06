@@ -4,6 +4,8 @@
 
 ### New
 
+- new accessories: present (many thanks to Carla Maggi)
+
 ### Changed
 
 ### Fixed
@@ -42,7 +44,7 @@
 
 ### New
 
-- sombrero hat (many thanks to CarLaTeX for contributing the hat)
+- sombrero hat (many thanks to Carla Maggi for contributing the hat)
 - megaphone (see #37, many thanks to @maieul for the idea!)
 
 ### Changed

@@ -173,6 +173,7 @@
 \duck@ini[acces]{stick}
 \duck@ini{megaphone}
 \duck@ini[acces]{towel}
+\duck@ini[acces]{present}
 
 \tikzset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -611,7 +612,19 @@
   megaphone/.default        = lightgray,
   towel/.code               = \duck@toweltrue
                               \def\duck@towel{#1},
-  towel/.default            = violet
+  towel/.default            = violet,
+  present/.code             = \duck@presenttrue
+                              \def\duck@present{#1},
+  present/.default          = violet,
+  presenttop/.code          = \def\duck@presenttop{#1},
+  presenttop                = \duck@present!70,
+  present top/.forward to   = /duck/presenttop,
+  presentbottom/.code       = \def\duck@presentbottom{#1},
+  presentbottom             = \duck@present!80,
+  present bottom/.forward to = /duck/presentbottom,
+  presentribbon/.code       = \def\duck@presentribbon{#1},
+  presentribbon             = \duck@present,
+  present ribbon/.forward to = /duck/presentribbon,
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1553,6 +1566,17 @@
 % towel %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifduck@towel
   \fill[\duck@towel] \duckpathtowel;
+\fi
+%
+% present %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifduck@present
+  \fill[\duck@presentbottom] (0.65,0.25) rectangle (1.25,0.8);
+  \fill[\duck@presenttop] (0.63,0.65) rectangle (1.27,0.85);
+  \fill[\duck@presentribbon] (0.9,0.25) rectangle (1.0,0.85);
+	\draw [\duck@presentribbon,line width=\scalingfactor*0.8pt, in=0, out=40,loop,min distance=12] (0.95,0.85) to (0.95,0.85);
+	\draw [\duck@presentribbon,line width=\scalingfactor*0.8pt, in=40, out=80,loop,min distance=12] (0.95,0.85) to (0.95,0.85);
+	\draw [\duck@presentribbon,line width=\scalingfactor*0.8pt,in=100, out=140,loop,min distance=12] (0.95,0.85) to (0.95,0.85);
+	\draw [\duck@presentribbon,line width=\scalingfactor*0.8pt,in=140, out=180,loop,min distance=12] (0.95,0.85) to (0.95,0.85);
 \fi
 %
 % overleaf duck %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

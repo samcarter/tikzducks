@@ -373,7 +373,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Santa Duck}}
+\begin{tcblisting}{title={Santa duck}}
 \begin{tikzpicture}
   \duck[santa=red!80!black,
         beard=white!80!brown]
@@ -505,7 +505,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Sombrero Duck\footnote{The sombrero was kindly contributed by Carla Maggi}}}
+\begin{tcblisting}{title={Sombrero duck\footnote{The sombrero was kindly contributed by Carla Maggi}}}
 \begin{tikzpicture}
   \duck[
     sombrero=orange!70!yellow,
@@ -735,7 +735,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Ducktor}}
+\begin{tcblisting}{title={Doctor duck}}
 \begin{tikzpicture}
   \duck[stethoscope=gray!80!black]
 \end{tikzpicture}
@@ -755,13 +755,13 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Snow Duck\footnote{The snowduck is dedicated to all Japanese \TeX\ users}}}
+\begin{tcblisting}{title={Snow duck\footnote{The snowduck is dedicated to all Japanese \TeX\ users}}}
 \begin{tikzpicture}
   \duck[snowduck=white]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Shovelling Duck}}
+\begin{tcblisting}{title={Shovelling duck}}
 \begin{tikzpicture}
   \duck[shovel=gray]
 \end{tikzpicture}
@@ -770,7 +770,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Sweeping Duck}}
+\begin{tcblisting}{title={Sweeping duck}}
 \begin{tikzpicture}
   \duck[strawbroom=brown!50!white,
         strawbroomstick=brown,
@@ -781,7 +781,7 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Umbrella Duck}}
+\begin{tcblisting}{title={Umbrella duck}}
 \begin{tikzpicture}
   \duck[umbrella=cyan]
 \end{tikzpicture}
@@ -796,13 +796,13 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Handbag Duck}}
+\begin{tcblisting}{title={Handbag duck}}
 \begin{tikzpicture}
   \duck[handbag=red!70!black]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Vampire Duck}}
+\begin{tcblisting}{title={Vampire duck}}
 \begin{tikzpicture}
   \duck[vampire=white]
 \end{tikzpicture}
@@ -811,24 +811,37 @@ There is a multitude of things a duck might need. The following examples all als
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Overleaf Duck\footnote{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}}}
+\begin{tcblisting}{title={Overleaf duck\footnote{added to celebrate that \tikzducks are now also available on overleaf, see \url{https://www.overleaf.com/blog/tex-live-upgrade-september-2019}}}}
 \begin{tikzpicture}
   \duck[overleaf]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Megaphone Duck}}
+\begin{tcblisting}{title={Megaphone duck}}
 \begin{tikzpicture}
   \duck[megaphone=lightgray]
 \end{tikzpicture}
 \end{tcblisting}
 
-\begin{tcblisting}{title={Towel Duck}}
+\begin{tcblisting}{title={Towel duck}}
 \begin{tikzpicture}
   \duck[towel=violet]
 \end{tikzpicture}
 \end{tcblisting}
 
+\begin{tcblisting}{title={Present duck\footnote{The present was kindly contributed by Carla Maggi}}}
+\begin{tikzpicture}
+  \duck[present=violet]
+\end{tikzpicture}
+\begin{tikzpicture}
+  \duck[present,
+        present top=cyan,
+        present bottom=blue,
+        present ribbon=teal]
+\end{tikzpicture}
+\end{tcblisting}
+
+\clearpage
 \section{Random ducks}
 With all these available accessories it might be hard to decide which one to choose, but don't worry the \tikzducks provide a solution for this dilemma, the random duck, or short \saminline|\randuck|, which automatically creates a duck with a randomly chosen accessories and something on top of the head (hair, a hat, ears, alien antenna ...)
 
@@ -885,7 +898,7 @@ In detail, the following paths are available:
 \duckpathjacket,\duckpathcape, \duckpathshorthair, \duckpathlonghair,
 \duckpathcrazyhair, \duckpathrecedinghair, \duckpathcrown,
 \duckpathmohican,  \duckpathmullet,  \duckpathqueencrown,
-\duckpathkingcrown,  \duckpathdarthvader,  \duckpathhorsetail, 
+\duckpathkingcrown,  \duckpathdarthvader,  \duckpathhorsetail,
 \duckpathtowel
 \end{samcode}
 
@@ -1001,7 +1014,7 @@ These hooks can be utilised by the user as needed:
         longhair=red!80!black,
         jacket=black!50!gray,
         magicwand]
-        
+
   % optionally
   \RemoveFromHook{tikzducks/clothing}
 
