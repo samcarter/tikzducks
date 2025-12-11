@@ -10,6 +10,8 @@
 
 ### Fixed
 
+- randuck: avoid error due to space included in option name
+
 
 ## [v2.1]
 
