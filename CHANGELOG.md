@@ -4,6 +4,15 @@
 
 ### New
 
+### Changed
+
+### Fixed
+
+
+## [v2.2]
+
+### New
+
 - new accessories: present (many thanks to Carla Maggi)
 
 ### Changed
@@ -242,7 +251,8 @@
 
 ------
 
-[Unreleased]: https://github.com/samcarter/tikzlings/compare/v2.1...HEAD
+[Unreleased]: https://github.com/samcarter/tikzlings/compare/v2.2...HEAD
+[v2.2]: https://github.com/samcarter/tikzducks/compare/v2.1...v2.2
 [v2.1]: https://github.com/samcarter/tikzducks/compare/v2.0...v2.1
 [v2.0]: https://github.com/samcarter/tikzducks/compare/v1.10...v2.0
 [v1.10]: https://github.com/samcarter/tikzducks/compare/v1.9...v1.10
