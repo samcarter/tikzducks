@@ -13,6 +13,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
       - name: Check spelling
-        uses: crate-ci/typos@v1.43.4
+        uses: crate-ci/typos@v1.43.5
         with:
           config: .github/workflows/typos.toml
