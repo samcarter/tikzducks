@@ -168,10 +168,23 @@
   },
 }
 
-% avoid page breaks right in front of the tcolorbox
-\@ifclassloaded{beamer}{}{
+\@ifclassloaded{scrartcl}{% for package documentations
+  % avoid page breaks right in front of the tcolorbox
   \tcbuselibrary{hooks}
   \tcbset{before pre={\nopagebreak[4]}}
+}{% for presentations, either beamer or ltx-talk
+  \tcbset{
+    righthand width=.47\linewidth,
+    flushleft lower,
+    listing outside text,
+    sidebyside gap=1cm,
+    minted options app={fontsize=\normalsize},
+    before lower={%
+      \renewcommand{\documentclass}[2][]{}%
+      \renewcommand{\usepackage}[2][]{}%
+      \renewenvironment{document}{}{}%
+    },
+  }
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
